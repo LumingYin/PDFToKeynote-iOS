@@ -108,7 +108,7 @@ class DocumentViewController: UIViewController {
                 }
 
                 let pageString = String(format: "pg_%04d.pdf", (count + 1))
-                pageContent = pageContent.replacingOccurrences(of: "xxxFILENAMExxx", with: pageString)
+                rejoined = rejoined.replacingOccurrences(of: "xxxFILENAMExxx", with: pageString)
                 actualContent = "\(actualContent)\(rejoined)"
             }
         } catch {
