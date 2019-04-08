@@ -159,7 +159,7 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         do {
             for count in 0..<totalPages {
                 let progress = 0.3 + 0.3 * (Double(count + 1) / Double(totalPages))
-                SVProgressHUD.showProgress(Float(progress), status: "Parsing Slide:\n\(count + 1) of \(totalPages)")
+                SVProgressHUD.showProgress(Float(progress), status: "Parsing PDF:\n\(count + 1) of \(totalPages)")
 
                 var oldNewRamap: [String : String] = [:]
 
