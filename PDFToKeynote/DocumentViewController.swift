@@ -54,6 +54,7 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
                     let angle = CGFloat(pdfPage.rotationAngle) * CGFloat.pi / 180
                     let rotatedBox = mediaBox.applying(CGAffineTransform(rotationAngle: angle))
                     let ratio = Float(rotatedBox.width / rotatedBox.height)
+                    var matchedPreferredResolutions = false
                     for i in 0..<self.sizes.count {
                         let size = self.sizes[i]
                         let sizeRatio = Float(size.width) / Float(size.height)
@@ -61,8 +62,19 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
                             self.dimensionPicker.selectRow(i, inComponent: 0, animated: true)
                             self.selectedRow = i
                             self.aspectRatioLabel.text = size.description
+                            matchedPreferredResolutions = true
                             break
                         }
+                    }
+                    if !matchedPreferredResolutions {
+                        let factor = max(1024 / rotatedBox.width, 768 / rotatedBox.height)
+                        print("Scale factor is: \(factor)")
+                        let newWidth = rotatedBox.width * CGFloat(factor)
+                        let newHeight = rotatedBox.height * CGFloat(factor)
+                        self.sizes.append((Int(newWidth), Int(newHeight), "Native Resolution"))
+                        self.dimensionPicker.reloadComponent(0)
+                        self.dimensionPicker.selectRow(self.sizes.count - 1, inComponent: 0, animated: true)
+                        self.selectedRow = self.sizes.count - 1
                     }
                 }
             } else {
