@@ -17,6 +17,18 @@ extension String {
         return components.joined(separator: ".")
     }
 
+    static func stringForTextFileName(_ name: String) -> String {
+        if let filepath = Bundle.main.path(forResource: name, ofType: "txt") {
+            do {
+                let contents = try String(contentsOfFile: filepath)
+                return contents
+            } catch {
+                return ""
+            }
+        } else {
+            return ""
+        }
+    }
 }
 
 extension UIColor {
