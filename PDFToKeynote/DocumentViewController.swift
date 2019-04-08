@@ -38,6 +38,7 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         (1280, 720, "16:9 HDTV"),
         (1280, 800, "16:10 MacBook"),
     ]
+    var nativeSizesForPDF: [(width: Float, height: Float)] = []
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -80,6 +81,15 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
                         self.aspectRatioLabel.text = self.sizes.last?.description
                     }
                 }
+                for i in 1...cgPDF!.numberOfPages {
+                    if let pdfPage = cgPDF!.page(at: i) {
+                        let mediaBox = pdfPage.getBoxRect(.mediaBox)
+                        print(mediaBox)
+                        let angle = CGFloat(pdfPage.rotationAngle) * CGFloat.pi / 180
+                        let rotatedBox = mediaBox.applying(CGAffineTransform(rotationAngle: angle))
+                        self.nativeSizesForPDF.append((Float(rotatedBox.width), Float(rotatedBox.height)))
+                    }
+                }
             } else {
                 print("Failed to load PDF document")
             }
@@ -120,8 +130,6 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         templateBeginning = templateBeginning.replacingOccurrences(of: "xxxBGGREENxxx", with: "0.99998199939727783")
         templateBeginning = templateBeginning.replacingOccurrences(of: "xxxBGBLUExxx", with: "0.99983745813369751")
 
-        templateContent = templateContent.replacingOccurrences(of: "xxxNWIDTHxxx", with: "\(sizes[selectedRow].width)")
-        templateContent = templateContent.replacingOccurrences(of: "xxxNHEIGHTxxx", with: "\(sizes[selectedRow].height)")
         templateContent = templateContent.replacingOccurrences(of: "xxxDWIDTHxxx", with: "\(sizes[selectedRow].width)")
         templateContent = templateContent.replacingOccurrences(of: "xxxDHEIGHTxxx", with: "\(sizes[selectedRow].height)")
         templateContent = templateContent.replacingOccurrences(of: "xxxPOSXxxx", with: "0")
@@ -133,7 +141,13 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
             for count in 0..<count {
                 var oldNewRamap: [String : String] = [:]
 
-                let pageContent = templateContent
+                var pageContent = String(templateContent)
+                let formattedNaturalWidth = String(format: "%06f", nativeSizesForPDF[count].width)
+                let formattedNaturalHeight = String(format: "%06f", nativeSizesForPDF[count].height)
+
+                pageContent = pageContent.replacingOccurrences(of: "xxxNWIDTHxxx", with: formattedNaturalWidth)
+                pageContent = pageContent.replacingOccurrences(of: "xxxNHEIGHTxxx", with: formattedNaturalHeight)
+
                 var eachLine = pageContent.components(separatedBy: .newlines)
                 for i in 0..<eachLine.count {
                     let lineContent = eachLine[i]
@@ -143,7 +157,6 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
 //                        let entireSFAPart = String(lineContent[Range(match.range(at: 1), in: lineContent)!])
                         let sfaInnerQuote = String(lineContent[Range(match.range(at: 2), in: lineContent)!])
                         let sfaActualType = String(lineContent[Range(match.range(at: 3), in: lineContent)!])
-
 //                        print("entireSFAPart: \(entireSFAPart), sfaInnerQuote: \(sfaInnerQuote), sfaActualType: \(sfaActualType)")
                         if sfaIDCachedDict[sfaActualType] == nil {
                             sfaIDCachedDict[sfaActualType] = 1000
