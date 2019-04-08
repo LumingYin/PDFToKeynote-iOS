@@ -24,6 +24,7 @@
 		323F1470225B424E007D3DB3 /* UIFontDescriptorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323F146C225B424E007D3DB3 /* UIFontDescriptorExtensions.swift */; };
 		323F1472225B427E007D3DB3 /* Acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 323F1471225B427E007D3DB3 /* Acknowledgements.plist */; };
 		32BEB7B2225AE12F00F51B0F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BEB7B1225AE12F00F51B0F /* Extensions.swift */; };
+		32D4BAB8225C03120030852A /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D4BAB7225C03120030852A /* ConfigurationViewController.swift */; };
 		32D9A0D9225AB93500AEC14B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D9A0D8225AB93500AEC14B /* AppDelegate.swift */; };
 		32D9A0DB225AB93500AEC14B /* DocumentBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D9A0DA225AB93500AEC14B /* DocumentBrowserViewController.swift */; };
 		32D9A0DD225AB93500AEC14B /* DocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D9A0DC225AB93500AEC14B /* DocumentViewController.swift */; };
@@ -56,6 +57,7 @@
 		323F146C225B424E007D3DB3 /* UIFontDescriptorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFontDescriptorExtensions.swift; sourceTree = "<group>"; };
 		323F1471225B427E007D3DB3 /* Acknowledgements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Acknowledgements.plist; sourceTree = "<group>"; };
 		32BEB7B1225AE12F00F51B0F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		32D4BAB7225C03120030852A /* ConfigurationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
 		32D9A0D5225AB93500AEC14B /* PDFToKeynote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PDFToKeynote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32D9A0D8225AB93500AEC14B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32D9A0DA225AB93500AEC14B /* DocumentBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentBrowserViewController.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				32D9A0DE225AB93500AEC14B /* Document.swift */,
 				32D9A0E0225AB93500AEC14B /* Main.storyboard */,
 				32D9A0E3225AB93700AEC14B /* Assets.xcassets */,
+				32D4BAB7225C03120030852A /* ConfigurationViewController.swift */,
 				32D9A0E5225AB93700AEC14B /* LaunchScreen.storyboard */,
 				32D9A0E8225AB93700AEC14B /* Info.plist */,
 				323F1458225B2CEF007D3DB3 /* PDFToKeynote-Bridging-Header.h */,
@@ -317,6 +320,7 @@
 				32D9A0D9225AB93500AEC14B /* AppDelegate.swift in Sources */,
 				323F146E225B424E007D3DB3 /* AcknowledgementViewController.swift in Sources */,
 				323F146F225B424E007D3DB3 /* AcknowledgementsTableViewController.swift in Sources */,
+				32D4BAB8225C03120030852A /* ConfigurationViewController.swift in Sources */,
 				323F1457225B260A007D3DB3 /* ChromaAddButton.swift in Sources */,
 				323F1465225B3D8C007D3DB3 /* UITextField+Shake.m in Sources */,
 			);

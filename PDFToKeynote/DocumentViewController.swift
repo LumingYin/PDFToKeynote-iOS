@@ -70,7 +70,7 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
 
                 // Set a content view controller.
                 let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-                let contentVC = storyBoard.instantiateViewController(withIdentifier: "AddWidthHeight") as! AddWidthHeightViewController
+                let contentVC = storyBoard.instantiateViewController(withIdentifier: "ConfigurationViewController") as! ConfigurationViewController
                 fpc?.set(contentViewController: contentVC)
 
                 // Track a scroll view(or the siblings) in the content view controller.
