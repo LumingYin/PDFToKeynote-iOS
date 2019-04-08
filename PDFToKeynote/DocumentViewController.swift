@@ -27,6 +27,10 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         (800, 600, "4:3 SVGA"),
     ]
 
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return .lightContent
+    }
+
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -35,9 +39,11 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         return sizes.count
     }
 
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        let (width, height, description) = sizes[row]
-        return "\(width) × \(height) - \(description)"
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let (width, height, _) = sizes[row]
+        //        return "\(width) × \(height) - \(description)"
+        let string = "\(width) × \(height)"
+        return NSAttributedString(string: string, attributes: [NSAttributedString.Key.foregroundColor:UIColor.white])
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -50,6 +56,7 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     @IBOutlet weak var dimensionPicker: UIPickerView!
     @IBOutlet weak var aspectRatioLabel: UILabel!
     @IBOutlet weak var pdfView: PDFView!
+    var pdf: PDFDocument!
 
     @IBOutlet weak var startConversionButton: UIButton!
     var document: UIDocument?
@@ -63,6 +70,27 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
                 // Display the content of the document, e.g.:
                 self.documentNameLabel.text = self.document?.fileURL.lastPathComponent
                 self.pdfView.document = PDFDocument(url: self.document!.fileURL)
+                self.pdfView.backgroundColor = UIColor.gray
+                self.pdfView.autoScales = true
+                guard let url = self.document?.fileURL else {fatalError("INVALID URL")}
+                self.pdf = PDFDocument(url: url)
+                let cgPDF = CGPDFDocument((url as CFURL))
+                if let pdfPage = cgPDF!.page(at: 1) {
+                    let mediaBox = pdfPage.getBoxRect(.mediaBox)
+                    print(mediaBox)
+                    let angle = CGFloat(pdfPage.rotationAngle) * CGFloat.pi / 180
+                    let rotatedBox = mediaBox.applying(CGAffineTransform(rotationAngle: angle))
+                    let ratio = Float(rotatedBox.width / rotatedBox.height)
+                    for i in 0..<self.sizes.count {
+                        let size = self.sizes[i]
+                        let sizeRatio = Float(size.width) / Float(size.height)
+                        if abs(ratio - sizeRatio) < 0.01 {
+                            self.dimensionPicker.selectRow(i, inComponent: 0, animated: true)
+                            self.aspectRatioLabel.text = size.description
+                            break
+                        }
+                    }
+                }
             } else {
                 // Make sure to handle the failed import appropriately, e.g., by presenting an error message to the user.
             }
@@ -73,8 +101,6 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
 
     @IBAction func startConversion(_ sender: Any) {
-        guard let url = self.document?.fileURL else {fatalError("INVALID URL")}
-        let pdf = PDFDocument(url: url)
         guard let count = pdf?.pageCount else {return}
         let uuid = NSUUID().uuidString
         let cachePath = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)[0]
