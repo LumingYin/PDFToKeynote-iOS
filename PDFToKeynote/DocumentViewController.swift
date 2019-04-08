@@ -64,6 +64,8 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
                         let size = self.sizes[i]
                         let sizeRatio = Float(size.width) / Float(size.height)
                         if abs(ratio - sizeRatio) < 0.01 {
+                            self.sizes[i].description = "\(self.sizes[i].description) (Native)"
+                            self.dimensionPicker.reloadComponent(0)
                             self.dimensionPicker.selectRow(i, inComponent: 0, animated: true)
                             self.aspectRatioLabel.text = size.description
                             matchedPreferredResolutions = true
