@@ -18,7 +18,7 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     @IBOutlet weak var pdfView: PDFView!
     @IBOutlet weak var colorPickerButton: UIButton!
     var neatColorPicker: ChromaColorPicker!
-//    var selectedColor: UIColor = UIColor(red: 0.99989223480224609, green: 0.99998199939727783, blue: 0.99983745813369751, alpha: 1) {
+
     var selectedColor: UIColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1) {
         didSet {
             colorPickerButton.backgroundColor = selectedColor
@@ -110,6 +110,8 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     @IBAction func startConversion(_ sender: Any) {
         SVProgressHUD.show()
         let cachedRow = self.selectedRow
+        startConversionButton.backgroundColor = .gray
+        startConversionButton.isEnabled = false
         DispatchQueue.global(qos: .userInitiated).async {
             self.performConversion(selectedRow: cachedRow)
         }
@@ -225,12 +227,26 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
             DispatchQueue.main.async {
                 let activityViewController = UIActivityViewController(activityItems: filesToShare, applicationActivities: nil)
                 activityViewController.popoverPresentationController?.sourceView = self.startConversionButton
-                SVProgressHUD.dismiss()
+                self.setConversionActivationState(active: true)
                 self.present(activityViewController, animated: true, completion: nil)
             }
         }
         catch {
             print("Something went wrong: \(error)")
+        }
+        self.setConversionActivationState(active: true)
+    }
+
+    func setConversionActivationState(active: Bool) {
+        DispatchQueue.main.sync {
+            if (active) {
+                SVProgressHUD.dismiss()
+                self.startConversionButton.isEnabled = true
+                self.startConversionButton.backgroundColor = UIColor(red: 0.3882352941, green: 0.7058823529, blue: 0.8431372549, alpha: 1)
+            } else {
+                self.startConversionButton.isEnabled = false
+                self.startConversionButton.backgroundColor = UIColor.gray
+            }
         }
     }
 
