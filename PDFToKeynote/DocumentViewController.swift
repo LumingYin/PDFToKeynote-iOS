@@ -38,6 +38,10 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     var document: UIDocument?
     var fpc: FloatingPanelController?
 
+    func floatingPanel(_ vc: FloatingPanelController, layoutFor newCollection: UITraitCollection) -> FloatingPanelLayout? {
+        return ConverterFloatingPanelLayout()
+    }
+
     var sizes: [(width: Int, height: Int, description: String)] = [
         (1024, 768, "4:3 XGA"),
         (1920, 1080, "16:9 WUXGA/HDTV"),
