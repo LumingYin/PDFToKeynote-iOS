@@ -55,8 +55,7 @@ class DocumentViewController: UIViewController {
         }
         var templateBeginning = stringForTextFileName("template_beginning")
         var templateContent = stringForTextFileName("template_content")
-        var templateEnding = stringForTextFileName("template_ending")
-//        print(templateEnding)
+        let templateEnding = stringForTextFileName("template_ending")
 
         var actualContent = ""
         templateBeginning = templateBeginning.replacingOccurrences(of: "xxxSWIDTHxxx", with: "1024")
@@ -78,7 +77,7 @@ class DocumentViewController: UIViewController {
             for count in 0..<count {
                 var oldNewRamap: [String : String] = [:]
 
-                var pageContent = templateContent
+                let pageContent = templateContent
                 var eachLine = pageContent.components(separatedBy: .newlines)
                 for i in 0..<eachLine.count {
                     let lineContent = eachLine[i]
@@ -118,20 +117,14 @@ class DocumentViewController: UIViewController {
         }
 
 
-        var finalText = "\(templateBeginning)\(actualContent)\(templateEnding)"
-//        print(finalText)
+        let finalText = "\(templateBeginning)\(actualContent)\(templateEnding)"
         do {
-//            try templateBeginning.write(to: URL(fileURLWithPath: "\(documentsPath)/\(uuid)/wth1.txt"), atomically: true, encoding: .utf8)
-//            try actualContent.write(to: URL(fileURLWithPath: "\(documentsPath)/\(uuid)/wth2.txt"), atomically: true, encoding: .utf8)
-//            try templateEnding.write(to: URL(fileURLWithPath: "\(documentsPath)/\(uuid)/wth3.txt"), atomically: true, encoding: .utf8)
             try finalText.write(to: URL(fileURLWithPath: "\(documentsPath)/\(uuid)/index.apxl"), atomically: true, encoding: .utf8)
         } catch {
             print(error)
         }
 
         do {
-//            let filePath = Bundle.main.url(forResource: "file", withExtension: "zip")!
-//            let unzipDirectory = try Zip.quickUnzipFile(filePath) // Unzip
             Zip.addCustomFileExtension("key")
             let fileName = "\(self.document?.fileURL.lastPathComponent.stripFileExtension() ?? "exported-\(uuid)")"
             let fileManager = FileManager.default
@@ -149,7 +142,6 @@ class DocumentViewController: UIViewController {
         catch {
             print("Something went wrong: \(error)")
         }
-
     }
 
 
