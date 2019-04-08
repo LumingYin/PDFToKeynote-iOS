@@ -8,11 +8,13 @@
 
 import UIKit
 import PDFKit
+import Zip
 
 class DocumentViewController: UIViewController {
     
     @IBOutlet weak var documentNameLabel: UILabel!
     
+    @IBOutlet weak var startConversionButton: UIButton!
     var document: UIDocument?
     
     override func viewWillAppear(_ animated: Bool) {
@@ -125,6 +127,27 @@ class DocumentViewController: UIViewController {
             try finalText.write(to: URL(fileURLWithPath: "\(documentsPath)/\(uuid)/index.apxl"), atomically: true, encoding: .utf8)
         } catch {
             print(error)
+        }
+
+        do {
+//            let filePath = Bundle.main.url(forResource: "file", withExtension: "zip")!
+//            let unzipDirectory = try Zip.quickUnzipFile(filePath) // Unzip
+            Zip.addCustomFileExtension("key")
+            let fileName = "\(self.document?.fileURL.lastPathComponent.stripFileExtension() ?? "exported-\(uuid)")"
+            let fileManager = FileManager.default
+            let documentsUrl = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0] as URL
+            let destinationUrl = documentsUrl.appendingPathComponent("\(fileName).key")
+            try Zip.zipFiles(paths: [URL(fileURLWithPath: "\(documentsPath)/\(uuid)", isDirectory: false)], zipFilePath: destinationUrl, password: nil, progress: nil)
+
+            var filesToShare = [Any]()
+            filesToShare.append(destinationUrl)
+            let activityViewController = UIActivityViewController(activityItems: filesToShare, applicationActivities: nil)
+            activityViewController.popoverPresentationController?.sourceView = self.startConversionButton
+            self.present(activityViewController, animated: true, completion: nil)
+
+        }
+        catch {
+            print("Something went wrong: \(error)")
         }
 
     }

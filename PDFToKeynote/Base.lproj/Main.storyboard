@@ -78,6 +78,7 @@
                     </view>
                     <connections>
                         <outlet property="documentNameLabel" destination="s46-Uc-0IM" id="S9N-4c-eHT"/>
+                        <outlet property="startConversionButton" destination="ttI-Nd-7Xo" id="rYu-db-UY3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rl9-ES-qQn" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D55A8556036E5F92222E213 /* Pods_PDFToKeynote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13B24480D71B5F0564439EC4 /* Pods_PDFToKeynote.framework */; };
 		3228E9F4225ABC4B005F923D /* PDFKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3228E9F3225ABC4B005F923D /* PDFKit.framework */; };
+		32BEB7B2225AE12F00F51B0F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BEB7B1225AE12F00F51B0F /* Extensions.swift */; };
 		32D9A0D9225AB93500AEC14B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D9A0D8225AB93500AEC14B /* AppDelegate.swift */; };
 		32D9A0DB225AB93500AEC14B /* DocumentBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D9A0DA225AB93500AEC14B /* DocumentBrowserViewController.swift */; };
 		32D9A0DD225AB93500AEC14B /* DocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D9A0DC225AB93500AEC14B /* DocumentViewController.swift */; };
@@ -21,7 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		13B24480D71B5F0564439EC4 /* Pods_PDFToKeynote.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PDFToKeynote.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3228E9F3225ABC4B005F923D /* PDFKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PDFKit.framework; path = System/Library/Frameworks/PDFKit.framework; sourceTree = SDKROOT; };
+		32BEB7B1225AE12F00F51B0F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		32D9A0D5225AB93500AEC14B /* PDFToKeynote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PDFToKeynote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32D9A0D8225AB93500AEC14B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32D9A0DA225AB93500AEC14B /* DocumentBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentBrowserViewController.swift; sourceTree = "<group>"; };
@@ -34,6 +38,8 @@
 		32D9A0EE225ABAAB00AEC14B /* template_content.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = template_content.txt; sourceTree = "<group>"; };
 		32D9A0EF225ABAAB00AEC14B /* template_ending.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = template_ending.txt; sourceTree = "<group>"; };
 		32D9A0F0225ABAAB00AEC14B /* template_beginning.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = template_beginning.txt; sourceTree = "<group>"; };
+		3B6F695D52E13E08A70619DA /* Pods-PDFToKeynote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PDFToKeynote.release.xcconfig"; path = "Pods/Target Support Files/Pods-PDFToKeynote/Pods-PDFToKeynote.release.xcconfig"; sourceTree = "<group>"; };
+		9A9AFBF59FCC80F55919B9C1 /* Pods-PDFToKeynote.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PDFToKeynote.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PDFToKeynote/Pods-PDFToKeynote.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,16 +48,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				3228E9F4225ABC4B005F923D /* PDFKit.framework in Frameworks */,
+				2D55A8556036E5F92222E213 /* Pods_PDFToKeynote.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		23343A32AC5095005E43B8D5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9A9AFBF59FCC80F55919B9C1 /* Pods-PDFToKeynote.debug.xcconfig */,
+				3B6F695D52E13E08A70619DA /* Pods-PDFToKeynote.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		3228E9F2225ABC4B005F923D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				3228E9F3225ABC4B005F923D /* PDFKit.framework */,
+				13B24480D71B5F0564439EC4 /* Pods_PDFToKeynote.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -62,6 +79,7 @@
 				32D9A0D7225AB93500AEC14B /* PDFToKeynote */,
 				32D9A0D6225AB93500AEC14B /* Products */,
 				3228E9F2225ABC4B005F923D /* Frameworks */,
+				23343A32AC5095005E43B8D5 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,6 +100,7 @@
 				32D9A0D8225AB93500AEC14B /* AppDelegate.swift */,
 				32D9A0DA225AB93500AEC14B /* DocumentBrowserViewController.swift */,
 				32D9A0DC225AB93500AEC14B /* DocumentViewController.swift */,
+				32BEB7B1225AE12F00F51B0F /* Extensions.swift */,
 				32D9A0DE225AB93500AEC14B /* Document.swift */,
 				32D9A0E0225AB93500AEC14B /* Main.storyboard */,
 				32D9A0E3225AB93700AEC14B /* Assets.xcassets */,
@@ -98,9 +117,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 32D9A0EB225AB93700AEC14B /* Build configuration list for PBXNativeTarget "PDFToKeynote" */;
 			buildPhases = (
+				17A594D8BBC0A79D444D08F4 /* [CP] Check Pods Manifest.lock */,
 				32D9A0D1225AB93500AEC14B /* Sources */,
 				32D9A0D2225AB93500AEC14B /* Frameworks */,
 				32D9A0D3225AB93500AEC14B /* Resources */,
+				650B751DBAE199A0B8D8C5C0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -161,11 +182,59 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		17A594D8BBC0A79D444D08F4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PDFToKeynote-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		650B751DBAE199A0B8D8C5C0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PDFToKeynote/Pods-PDFToKeynote-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Zip/Zip.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Zip.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PDFToKeynote/Pods-PDFToKeynote-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		32D9A0D1225AB93500AEC14B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32BEB7B2225AE12F00F51B0F /* Extensions.swift in Sources */,
 				32D9A0DF225AB93500AEC14B /* Document.swift in Sources */,
 				32D9A0DD225AB93500AEC14B /* DocumentViewController.swift in Sources */,
 				32D9A0DB225AB93500AEC14B /* DocumentBrowserViewController.swift in Sources */,
@@ -313,6 +382,7 @@
 		};
 		32D9A0EC225AB93700AEC14B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A9AFBF59FCC80F55919B9C1 /* Pods-PDFToKeynote.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -331,6 +401,7 @@
 		};
 		32D9A0ED225AB93700AEC14B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B6F695D52E13E08A70619DA /* Pods-PDFToKeynote.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
