@@ -42,11 +42,13 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectedRow = row
+        aspectRatioLabel.text = sizes[selectedRow].description
     }
 
     
     @IBOutlet weak var documentNameLabel: UILabel!
     @IBOutlet weak var dimensionPicker: UIPickerView!
+    @IBOutlet weak var aspectRatioLabel: UILabel!
 
     @IBOutlet weak var startConversionButton: UIButton!
     var document: UIDocument?
@@ -121,7 +123,7 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
                     let pattern = #"(sfa:ID="((\D+?)-\d+)")"#
                     let regex = try NSRegularExpression(pattern: pattern, options: [])
                     if let match = regex.firstMatch(in: lineContent, range: NSRange(lineContent.startIndex..., in: lineContent)) {
-                        let entireSFAPart = String(lineContent[Range(match.range(at: 1), in: lineContent)!])
+//                        let entireSFAPart = String(lineContent[Range(match.range(at: 1), in: lineContent)!])
                         let sfaInnerQuote = String(lineContent[Range(match.range(at: 2), in: lineContent)!])
                         let sfaActualType = String(lineContent[Range(match.range(at: 3), in: lineContent)!])
 

@@ -135,6 +135,7 @@
                         <viewLayoutGuide key="safeArea" id="BoZ-jc-2Y8"/>
                     </view>
                     <connections>
+                        <outlet property="aspectRatioLabel" destination="EEz-SR-FEI" id="Vxc-Rg-ZxU"/>
                         <outlet property="dimensionPicker" destination="hnx-RI-uPC" id="CZa-Xu-J9a"/>
                         <outlet property="documentNameLabel" destination="s46-Uc-0IM" id="S9N-4c-eHT"/>
                         <outlet property="startConversionButton" destination="ttI-Nd-7Xo" id="rYu-db-UY3"/>
