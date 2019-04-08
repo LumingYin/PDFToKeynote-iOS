@@ -22,9 +22,35 @@ class AddWidthHeightViewController: UIViewController {
     }
 
     @IBAction func addTapped(_ sender: Any) {
-        if let callback = self.newSizeAdded, let width = Int(widthTextField.text ?? ""), let height = Int(heightTextField.text ?? "") {
+        guard let callback = self.newSizeAdded else {
+            self.dismiss(animated: true, completion: nil)
+            return
+        }
+        var width = 0
+        var height = 0
+        if let w = Int(widthTextField.text ?? "") {
+            if (w > 300 && w < 8000) {
+                width = w
+            }
+        }
+        if let h = Int(heightTextField.text ?? "") {
+            if (h > 300 && h < 8000) {
+                height = h
+            }
+        }
+        shake(shakeWidth: width == 0, shakeHeight: height == 0)
+        if width != 0 && height != 0 {
             callback(width, height)
             self.dismiss(animated: true, completion: nil)
+        }
+    }
+
+    func shake(shakeWidth: Bool, shakeHeight: Bool) {
+        if shakeWidth {
+            widthTextField.shake()
+        }
+        if shakeHeight {
+            heightTextField.shake()
         }
     }
 
