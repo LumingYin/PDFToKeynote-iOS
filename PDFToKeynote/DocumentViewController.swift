@@ -38,7 +38,6 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        // Access the document
         document?.open(completionHandler: { (success) in
             if success {
                 // Display the content of the document, e.g.:
