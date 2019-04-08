@@ -71,10 +71,11 @@ class DocumentViewController: UIViewController {
         templateContent = templateContent.replacingOccurrences(of: "xxxPOSYxxx", with: "0")
 
         var sfaIDCachedDict: [String : Int] = [:]
-        var sfaIDRefCachedDict: [String : Int] = [:]
 
         do {
             for count in 0..<count {
+                var oldNewRamap: [String : String] = [:]
+
                 var pageContent = templateContent
                 var eachLine = pageContent.components(separatedBy: .newlines)
                 for i in 0..<eachLine.count {
@@ -82,46 +83,33 @@ class DocumentViewController: UIViewController {
                     let pattern = #"(sfa:ID="((\D+?)-\d+)")"#
                     let regex = try NSRegularExpression(pattern: pattern, options: [])
                     if let match = regex.firstMatch(in: lineContent, range: NSRange(lineContent.startIndex..., in: lineContent)) {
-                        let part1 = String(lineContent[Range(match.range(at: 1), in: lineContent)!])
-                        let part2 = String(lineContent[Range(match.range(at: 2), in: lineContent)!])
-                        print("Part 1: \(part1), part 2:\(part2)")
-//                        print(String(part1 + part2))
-                        if sfaIDCachedDict[part2] == nil {
-                            sfaIDCachedDict[part2] = 1000
+                        let entireSFAPart = String(lineContent[Range(match.range(at: 1), in: lineContent)!])
+                        let sfaInnerQuote = String(lineContent[Range(match.range(at: 2), in: lineContent)!])
+                        let sfaActualType = String(lineContent[Range(match.range(at: 3), in: lineContent)!])
+
+                        print("entireSFAPart: \(entireSFAPart), sfaInnerQuote: \(sfaInnerQuote), sfaActualType: \(sfaActualType)")
+                        if sfaIDCachedDict[sfaActualType] == nil {
+                            sfaIDCachedDict[sfaActualType] = 1000
                         } else {
-                            sfaIDCachedDict[part2] = sfaIDCachedDict[part2]! + 1
+                            sfaIDCachedDict[sfaActualType] = sfaIDCachedDict[sfaActualType]! + 1
                         }
-                        let reconstructedIndex = "sfa:ID=\"\(part2)-\(sfaIDCachedDict[part2]!)\""
+                        let newIndex = "\(sfaActualType)-\(sfaIDCachedDict[sfaActualType]!)"
+                        let reconstructedIndex = "sfa:ID=\"\(newIndex)\""
                         let replacementRange = NSMakeRange(0, lineContent.count)
                         let modString = regex.stringByReplacingMatches(in: lineContent, options: [], range: replacementRange, withTemplate: reconstructedIndex) // reconstructedIndex is not a template
+                        oldNewRamap[sfaInnerQuote] = newIndex
                         eachLine[i] = modString
                     }
                 }
 
-//                for i in 0..<eachLine.count {
-//                    let lineContent = eachLine[i]
-//                    let pattern = #"sfa:IDREF="((\D+?)-\d+)""#
-//                    let regex = try NSRegularExpression(pattern: pattern, options: [])
-//                    if let match = regex.firstMatch(in: lineContent, range: NSRange(lineContent.startIndex..., in: lineContent)) {
-//                        let part1 = String(lineContent[Range(match.range(at: 1), in: lineContent)!])
-//                        let part2 = String(lineContent[Range(match.range(at: 2), in: lineContent)!])
-//                        print("Part 1: \(part1), part 2:\(part2)")
-//                        //                        print(String(part1 + part2))
-//                        if sfaIDRefCachedDict[part2] == nil {
-//                            sfaIDRefCachedDict[part2] = 1000
-//                        } else {
-//                            sfaIDRefCachedDict[part2] = sfaIDRefCachedDict[part2]! + 1
-//                        }
-//                        let reconstructedIndex = "sfa:IDREF=\"\(part2)-\(sfaIDRefCachedDict[part2]!)\""
-//                        let replacementRange = NSMakeRange(0, lineContent.count)
-//                        let modString = regex.stringByReplacingMatches(in: lineContent, options: [], range: replacementRange, withTemplate: reconstructedIndex) // reconstructedIndex is not a template
-//                        eachLine[i] = modString
-//                    }
-//                }
+                var rejoined = eachLine.joined(separator: "\n")
+                for (old, new) in oldNewRamap {
+                    rejoined = rejoined.replacingOccurrences(of: "sfa:IDREF=\"\(old)\"", with: "sfa:IDREF=\"\(new)\"")
+                }
 
                 let pageString = String(format: "pg_%04d.pdf", (count + 1))
                 pageContent = pageContent.replacingOccurrences(of: "xxxFILENAMExxx", with: pageString)
-                actualContent = "\(actualContent)\(eachLine.joined(separator: "\n"))"
+                actualContent = "\(actualContent)\(rejoined))"
             }
         } catch {
             print(error)
