@@ -66,7 +66,7 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
                 let cgPDF = CGPDFDocument((url as CFURL))
                 if let pdfPage = cgPDF!.page(at: 1) {
                     let mediaBox = pdfPage.getBoxRect(.mediaBox)
-                    print(mediaBox)
+//                    print(mediaBox)
                     let angle = CGFloat(pdfPage.rotationAngle) * CGFloat.pi / 180
                     let rotatedBox = mediaBox.applying(CGAffineTransform(rotationAngle: angle))
                     let ratio = Float(rotatedBox.width / rotatedBox.height)
@@ -84,7 +84,7 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
                     }
                     if !matchedPreferredResolutions {
                         let factor = max(1024 / rotatedBox.width, 768 / rotatedBox.height)
-                        print("Scale factor is: \(factor)")
+//                        print("Scale factor is: \(factor)")
                         let newWidth = rotatedBox.width * CGFloat(factor)
                         let newHeight = rotatedBox.height * CGFloat(factor)
                         self.sizes.append((Int(newWidth), Int(newHeight), "Native Resolution"))
@@ -96,7 +96,7 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
                 for i in 1...cgPDF!.numberOfPages {
                     if let pdfPage = cgPDF!.page(at: i) {
                         let mediaBox = pdfPage.getBoxRect(.mediaBox)
-                        print(mediaBox)
+//                        print(mediaBox)
                         let angle = CGFloat(pdfPage.rotationAngle) * CGFloat.pi / 180
                         let rotatedBox = mediaBox.applying(CGAffineTransform(rotationAngle: angle))
                         self.nativeSizesForPDF.append((Float(rotatedBox.width), Float(rotatedBox.height)))
