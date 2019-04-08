@@ -86,6 +86,7 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
                         let sizeRatio = Float(size.width) / Float(size.height)
                         if abs(ratio - sizeRatio) < 0.01 {
                             self.dimensionPicker.selectRow(i, inComponent: 0, animated: true)
+                            self.selectedRow = i
                             self.aspectRatioLabel.text = size.description
                             break
                         }
