@@ -126,6 +126,8 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         let cachePath = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)[0]
 
         for count in 0..<totalPages {
+            let progress = (Float(count + 1) / Float(totalPages)) * 0.3
+            SVProgressHUD.showProgress(Float(progress), status: "Extracting PDF:\n\(count + 1) of \(totalPages)")
             if let page = pdf?.page(at: count) {
                 let document = PDFDocument()
                 document.insert(page, at: 0)
@@ -140,6 +142,7 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
                 }
             }
         }
+
         var templateBeginning = stringForTextFileName("template_beginning")
         let templateContent = stringForTextFileName("template_content")
         let templateEnding = stringForTextFileName("template_ending")
@@ -155,6 +158,9 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
 
         do {
             for count in 0..<totalPages {
+                let progress = 0.3 + 0.3 * (Double(count + 1) / Double(totalPages))
+                SVProgressHUD.showProgress(Float(progress), status: "Parsing Slide:\n\(count + 1) of \(totalPages)")
+
                 var oldNewRamap: [String : String] = [:]
 
                 var pageContent = String(templateContent)
@@ -221,7 +227,9 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
             let fileManager = FileManager.default
             let documentsUrl = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0] as URL
             let destinationUrl = documentsUrl.appendingPathComponent("\(fileName).key")
-            try Zip.zipFiles(paths: [URL(fileURLWithPath: "\(cachePath)/\(uuid)", isDirectory: false)], zipFilePath: destinationUrl, password: nil, progress: nil)
+            try Zip.zipFiles(paths: [URL(fileURLWithPath: "\(cachePath)/\(uuid)", isDirectory: false)], zipFilePath: destinationUrl, password: nil, progress: { (progress: Double) in
+                SVProgressHUD.showProgress(Float(0.6 + 0.3 * progress), status: "Exporting Keynote File:\n\(Int(Double(totalPages) * progress)) of \(totalPages)")
+            })
 
             try FileManager.default.removeItem(atPath: "\(cachePath)/\(uuid)")
             var filesToShare = [Any]()
