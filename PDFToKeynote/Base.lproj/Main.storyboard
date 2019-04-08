@@ -108,18 +108,18 @@
                                         </connections>
                                     </button>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hnx-RI-uPC">
-                                        <rect key="frame" x="0.0" y="152" width="280" height="114"/>
+                                        <rect key="frame" x="0.0" y="152" width="330" height="114"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="280" id="JQy-7G-aFh"/>
                                             <constraint firstAttribute="height" constant="114" id="Q3f-Qa-u6z"/>
                                         </constraints>
                                     </pickerView>
                                 </subviews>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="ttI-Nd-7Xo" firstAttribute="leading" secondItem="F1j-9X-ZdW" secondAttribute="leading" id="2iE-3M-f63"/>
                                     <constraint firstItem="EEz-SR-FEI" firstAttribute="leading" secondItem="F1j-9X-ZdW" secondAttribute="leading" id="6ja-55-c7c"/>
                                     <constraint firstItem="TDw-Fo-hfZ" firstAttribute="top" secondItem="F1j-9X-ZdW" secondAttribute="top" id="BdJ-kJ-Ikw"/>
+                                    <constraint firstAttribute="trailing" secondItem="hnx-RI-uPC" secondAttribute="trailing" constant="5" id="L4h-N6-Ikf"/>
                                     <constraint firstItem="5x3-s9-Xfu" firstAttribute="top" secondItem="s46-Uc-0IM" secondAttribute="bottom" constant="41" id="LGy-MO-XWa"/>
                                     <constraint firstItem="hnx-RI-uPC" firstAttribute="leading" secondItem="F1j-9X-ZdW" secondAttribute="leading" id="LIa-5f-fWI"/>
                                     <constraint firstItem="s46-Uc-0IM" firstAttribute="leading" secondItem="F1j-9X-ZdW" secondAttribute="leading" id="M1B-CA-w3P"/>
