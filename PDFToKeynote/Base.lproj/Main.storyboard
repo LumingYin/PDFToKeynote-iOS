@@ -248,6 +248,7 @@
                     <connections>
                         <outlet property="aspectRatioLabel" destination="EEz-SR-FEI" id="Vxc-Rg-ZxU"/>
                         <outlet property="colorPickerButton" destination="ejU-ru-j9m" id="THf-Vj-yH1"/>
+                        <outlet property="customizeAspectRatioButton" destination="ldf-wZ-ENj" id="nU2-rh-a17"/>
                         <outlet property="dimensionPicker" destination="hnx-RI-uPC" id="CZa-Xu-J9a"/>
                         <outlet property="documentNameLabel" destination="s46-Uc-0IM" id="S9N-4c-eHT"/>
                         <outlet property="natigationBarItem" destination="Ydo-kM-W4o" id="1rf-cC-97G"/>

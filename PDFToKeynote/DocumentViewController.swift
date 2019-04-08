@@ -19,6 +19,7 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     @IBOutlet weak var colorPickerButton: UIButton!
     @IBOutlet weak var natigationBarItem: UINavigationItem!
     @IBOutlet weak var navigationDoneButton: UIBarButtonItem!
+    @IBOutlet weak var customizeAspectRatioButton: UIButton!
 
     var neatColorPicker: ChromaColorPicker!
 
@@ -260,6 +261,7 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
                 self.colorPickerButton.isEnabled = true
                 self.dimensionPicker.isUserInteractionEnabled = true
                 self.startConversionButton.isEnabled = true
+                self.customizeAspectRatioButton.isEnabled = true
                 self.startConversionButton.backgroundColor = UIColor(red: 0.3882352941, green: 0.7058823529, blue: 0.8431372549, alpha: 1)
             } else {
                 self.navigationDoneButton.isEnabled = false
@@ -267,6 +269,7 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
                 self.dimensionPicker.isUserInteractionEnabled = false
                 self.startConversionButton.isEnabled = false
                 self.startConversionButton.backgroundColor = UIColor.gray
+                self.customizeAspectRatioButton.isEnabled = false
             }
         }
     }
