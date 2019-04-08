@@ -10,7 +10,7 @@ import UIKit
 import PDFKit
 import Zip
 
-class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, ChromaColorPickerDelegate {
+class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, ChromaColorPickerDelegate, UIPopoverPresentationControllerDelegate {
     @IBOutlet weak var startConversionButton: UIButton!
     @IBOutlet weak var documentNameLabel: UILabel!
     @IBOutlet weak var dimensionPicker: UIPickerView!
@@ -328,15 +328,20 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         neatColorPicker.stroke = 3
         neatColorPicker.hexLabel.textColor = UIColor.white
         neatColorPicker.addTarget(self, action: #selector(colorChanged(_:)), for: .valueChanged)
-        let controller = UIViewController()
+        let controller = PopoverViewController()
         controller.view = neatColorPicker
         controller.modalPresentationStyle = .popover
         controller.preferredContentSize = CGSize(width: 300, height: 300)
         let presentationController = controller.presentationController as! UIPopoverPresentationController
+        presentationController.delegate = self
         presentationController.sourceView = sender
         presentationController.sourceRect = sender.bounds
         presentationController.permittedArrowDirections = [.down, .up]
         self.present(controller, animated: true)
+    }
+
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return UIModalPresentationStyle.none
     }
 
     @objc func colorChanged(_ colorPicker: ChromaColorPicker) {

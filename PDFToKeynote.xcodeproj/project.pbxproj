@@ -16,6 +16,7 @@
 		323F1456225B260A007D3DB3 /* ChromaHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323F1450225B260A007D3DB3 /* ChromaHandle.swift */; };
 		323F1457225B260A007D3DB3 /* ChromaAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323F1451225B260A007D3DB3 /* ChromaAddButton.swift */; };
 		323F145B225B2CF0007D3DB3 /* ConverterObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 323F145A225B2CF0007D3DB3 /* ConverterObject.m */; };
+		323F1460225B3872007D3DB3 /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323F145F225B3872007D3DB3 /* PopoverViewController.swift */; };
 		32BEB7B2225AE12F00F51B0F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BEB7B1225AE12F00F51B0F /* Extensions.swift */; };
 		32D9A0D9225AB93500AEC14B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D9A0D8225AB93500AEC14B /* AppDelegate.swift */; };
 		32D9A0DB225AB93500AEC14B /* DocumentBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D9A0DA225AB93500AEC14B /* DocumentBrowserViewController.swift */; };
@@ -41,6 +42,7 @@
 		323F1458225B2CEF007D3DB3 /* PDFToKeynote-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PDFToKeynote-Bridging-Header.h"; sourceTree = "<group>"; };
 		323F1459225B2CF0007D3DB3 /* ConverterObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConverterObject.h; sourceTree = "<group>"; };
 		323F145A225B2CF0007D3DB3 /* ConverterObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConverterObject.m; sourceTree = "<group>"; };
+		323F145F225B3872007D3DB3 /* PopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PopoverViewController.swift; path = /Volumes/SSD/blue/Repos/PDFToKeynote/PDFToKeynote/PopoverViewController.swift; sourceTree = "<absolute>"; };
 		32BEB7B1225AE12F00F51B0F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		32D9A0D5225AB93500AEC14B /* PDFToKeynote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PDFToKeynote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32D9A0D8225AB93500AEC14B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				32D9A0D8225AB93500AEC14B /* AppDelegate.swift */,
 				32D9A0DA225AB93500AEC14B /* DocumentBrowserViewController.swift */,
 				32D9A0DC225AB93500AEC14B /* DocumentViewController.swift */,
+				323F145F225B3872007D3DB3 /* PopoverViewController.swift */,
 				323F1459225B2CF0007D3DB3 /* ConverterObject.h */,
 				323F145A225B2CF0007D3DB3 /* ConverterObject.m */,
 				32BEB7B1225AE12F00F51B0F /* Extensions.swift */,
@@ -271,6 +274,7 @@
 			files = (
 				323F1452225B260A007D3DB3 /* ChromaShadeSlider.swift in Sources */,
 				323F1454225B260A007D3DB3 /* ChromaColorPicker.swift in Sources */,
+				323F1460225B3872007D3DB3 /* PopoverViewController.swift in Sources */,
 				323F1455225B260A007D3DB3 /* ColorModeToggleButton.swift in Sources */,
 				32BEB7B2225AE12F00F51B0F /* Extensions.swift in Sources */,
 				32D9A0DF225AB93500AEC14B /* Document.swift in Sources */,
