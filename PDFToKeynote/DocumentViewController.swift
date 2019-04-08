@@ -49,6 +49,7 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     @IBOutlet weak var documentNameLabel: UILabel!
     @IBOutlet weak var dimensionPicker: UIPickerView!
     @IBOutlet weak var aspectRatioLabel: UILabel!
+    @IBOutlet weak var pdfView: PDFView!
 
     @IBOutlet weak var startConversionButton: UIButton!
     var document: UIDocument?
@@ -61,6 +62,7 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
             if success {
                 // Display the content of the document, e.g.:
                 self.documentNameLabel.text = self.document?.fileURL.lastPathComponent
+                self.pdfView.document = PDFDocument(url: self.document!.fileURL)
             } else {
                 // Make sure to handle the failed import appropriately, e.g., by presenting an error message to the user.
             }
