@@ -17,7 +17,11 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     @IBOutlet weak var aspectRatioLabel: UILabel!
     @IBOutlet weak var pdfView: PDFView!
 
-    var selectedRow = 0
+    var selectedRow: Int {
+        get {
+            return self.dimensionPicker.selectedRow(inComponent: 0)
+        }
+    }
     var pdf: PDFDocument!
     var document: UIDocument?
     var sizes: [(width: Int, height: Int, description: String)] = [
@@ -60,7 +64,6 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
                         let sizeRatio = Float(size.width) / Float(size.height)
                         if abs(ratio - sizeRatio) < 0.01 {
                             self.dimensionPicker.selectRow(i, inComponent: 0, animated: true)
-                            self.selectedRow = i
                             self.aspectRatioLabel.text = size.description
                             matchedPreferredResolutions = true
                             break
@@ -74,7 +77,7 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
                         self.sizes.append((Int(newWidth), Int(newHeight), "Native Resolution"))
                         self.dimensionPicker.reloadComponent(0)
                         self.dimensionPicker.selectRow(self.sizes.count - 1, inComponent: 0, animated: true)
-                        self.selectedRow = self.sizes.count - 1
+                        self.aspectRatioLabel.text = self.sizes.last?.description
                     }
                 }
             } else {
@@ -219,7 +222,6 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectedRow = row
         aspectRatioLabel.text = sizes[selectedRow].description
     }
 
