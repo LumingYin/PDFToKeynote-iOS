@@ -10,10 +10,44 @@ import UIKit
 import PDFKit
 import Zip
 
-class DocumentViewController: UIViewController {
+class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    var selectedRow = 0
+    var sizes: [(width: Int, height: Int, description: String)] = [
+        (1024, 768, "4:3 XGA"),
+        (1280, 720, "16:9 HDTV"),
+        (1280, 800, "16:10 MacBook"),
+        (1280, 1024, "5:4 SXGA"),
+        (1600, 1200, "4:3 UXGA"),
+        (1680, 1050, "16:10 WSXGA+ — 20\" Apple Cinema Display"),
+        (1920, 1080, "16:9 WUXGA/HDTV — 23\" Apple Cinema Display"),
+        (612, 792, "US Letter (Portrait)"),
+        (792, 612, "US Letter (Landscape)"),
+        (595, 842, "A4 Paper (Portrait)"),
+        (842, 595, "A4 Paper (Landscape)"),
+        (800, 600, "4:3 SVGA"),
+    ]
+
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return sizes.count
+    }
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        let (width, height, description) = sizes[row]
+        return "\(width) × \(height) - \(description)"
+    }
+
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedRow = row
+    }
+
     
     @IBOutlet weak var documentNameLabel: UILabel!
-    
+    @IBOutlet weak var dimensionPicker: UIPickerView!
+
     @IBOutlet weak var startConversionButton: UIButton!
     var document: UIDocument?
     
@@ -29,6 +63,9 @@ class DocumentViewController: UIViewController {
                 // Make sure to handle the failed import appropriately, e.g., by presenting an error message to the user.
             }
         })
+
+        dimensionPicker.dataSource = self
+        dimensionPicker.delegate = self
     }
 
     @IBAction func startConversion(_ sender: Any) {
@@ -58,16 +95,16 @@ class DocumentViewController: UIViewController {
         let templateEnding = stringForTextFileName("template_ending")
 
         var actualContent = ""
-        templateBeginning = templateBeginning.replacingOccurrences(of: "xxxSWIDTHxxx", with: "1024")
-        templateBeginning = templateBeginning.replacingOccurrences(of: "xxxSHEIGHTxxx", with: "768")
+        templateBeginning = templateBeginning.replacingOccurrences(of: "xxxSWIDTHxxx", with: "\(sizes[selectedRow].width)")
+        templateBeginning = templateBeginning.replacingOccurrences(of: "xxxSHEIGHTxxx", with: "\(sizes[selectedRow].height)")
         templateBeginning = templateBeginning.replacingOccurrences(of: "xxxBGREDxxx", with: "0.99989223480224609")
         templateBeginning = templateBeginning.replacingOccurrences(of: "xxxBGGREENxxx", with: "0.99998199939727783")
         templateBeginning = templateBeginning.replacingOccurrences(of: "xxxBGBLUExxx", with: "0.99983745813369751")
 
-        templateContent = templateContent.replacingOccurrences(of: "xxxNWIDTHxxx", with: "1024")
-        templateContent = templateContent.replacingOccurrences(of: "xxxNHEIGHTxxx", with: "768")
-        templateContent = templateContent.replacingOccurrences(of: "xxxDWIDTHxxx", with: "1024")
-        templateContent = templateContent.replacingOccurrences(of: "xxxDHEIGHTxxx", with: "768")
+        templateContent = templateContent.replacingOccurrences(of: "xxxNWIDTHxxx", with: "\(sizes[selectedRow].width)")
+        templateContent = templateContent.replacingOccurrences(of: "xxxNHEIGHTxxx", with: "\(sizes[selectedRow].height)")
+        templateContent = templateContent.replacingOccurrences(of: "xxxDWIDTHxxx", with: "\(sizes[selectedRow].width)")
+        templateContent = templateContent.replacingOccurrences(of: "xxxDHEIGHTxxx", with: "\(sizes[selectedRow].height)")
         templateContent = templateContent.replacingOccurrences(of: "xxxPOSXxxx", with: "0")
         templateContent = templateContent.replacingOccurrences(of: "xxxPOSYxxx", with: "0")
 
@@ -88,7 +125,7 @@ class DocumentViewController: UIViewController {
                         let sfaInnerQuote = String(lineContent[Range(match.range(at: 2), in: lineContent)!])
                         let sfaActualType = String(lineContent[Range(match.range(at: 3), in: lineContent)!])
 
-                        print("entireSFAPart: \(entireSFAPart), sfaInnerQuote: \(sfaInnerQuote), sfaActualType: \(sfaActualType)")
+//                        print("entireSFAPart: \(entireSFAPart), sfaInnerQuote: \(sfaInnerQuote), sfaActualType: \(sfaActualType)")
                         if sfaIDCachedDict[sfaActualType] == nil {
                             sfaIDCachedDict[sfaActualType] = 1000
                         } else {
