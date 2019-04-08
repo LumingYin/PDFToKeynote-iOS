@@ -1,4 +1,4 @@
-    <key:slide sfa:ID="BGSlide-yyySNUMyyy" key:depth="0">
+    <key:slide sfa:ID="BGSlide-28" key:depth="0">
       <key:stylesheet sfa:ID="key:stylesheet-2">
         <sf:styles>
           <sf:paragraphstyle sfa:ID="sf:paragraphstyle-67" sf:ident="kBGSlideNumberPlaceholderParagraphStyleID" sf:parent-ident="kBGSlideNumberPlaceholderParagraphStyleID">
