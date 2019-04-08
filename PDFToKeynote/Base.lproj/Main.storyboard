@@ -69,7 +69,6 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="File Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TDw-Fo-hfZ">
                                         <rect key="frame" x="0.0" y="0.0" width="81" height="21"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="81" id="Tzk-8U-3DH"/>
                                             <constraint firstAttribute="height" constant="21" id="hL4-si-V9u"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
