@@ -83,6 +83,8 @@ extension UIGestureRecognizer.State: CustomDebugStringConvertible {
         case .cancelled: return "Cancelled"
         case .ended: return "Endeded"
         case .possible: return "Possible"
+        @unknown default:
+            return "Failed"
         }
     }
 }
