@@ -463,7 +463,7 @@
             </sf:type>
             <sf:drawables sfa:ID="sf:drawables-3">
               <sf:media sfa:ID="sf:media-0">
-                <sf:geometry sfa:ID="sf:geometry-11">
+                <sf:geometry sf:aspectRatioLocked="true" sfa:ID="sf:geometry-11">
                   <sf:naturalSize sfa:w="xxxNWIDTHxxx" sfa:h="xxxNHEIGHTxxx" />
                   <sf:size sfa:w="xxxDWIDTHxxx" sfa:h="xxxDHEIGHTxxx" />
                   <sf:position sfa:x="xxxPOSXxxx" sfa:y="xxxPOSYxxx" />
