@@ -17,7 +17,16 @@ class ConfigurationViewController: UIViewController {
         customizeImageView.image = image
         customizeImageView.tintColor = UIColor(named: "customBlue")
     }
-    
+
+    @IBAction func buttonTouched(_ sender: UIButton) {
+        UIButton.animate(withDuration: 0.2, animations: {
+            sender.transform = CGAffineTransform(scaleX: 0.975, y: 0.96)
+        }, completion: { finish in
+            UIButton.animate(withDuration: 0.2, animations: {
+                sender.transform = CGAffineTransform.identity
+            })
+        })
+    }
 
     /*
     // MARK: - Navigation

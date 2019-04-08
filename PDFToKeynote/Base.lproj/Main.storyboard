@@ -387,11 +387,12 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="buttonTouched:" destination="ofo-jH-SYk" eventType="touchDown" id="GLR-Kp-Tzb"/>
                                     <action selector="startConversion:" destination="M2k-L8-Olo" eventType="touchUpInside" id="4v5-D5-vv4"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Convert to Keynote" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6nL-d0-MF9">
-                                <rect key="frame" x="194" y="120" width="163" height="16"/>
+                                <rect key="frame" x="194" y="122" width="163" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -412,6 +413,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="buttonTouched:" destination="ofo-jH-SYk" eventType="touchDown" id="9rU-hj-tJc"/>
                                     <action selector="startConversion:" destination="M2k-L8-Olo" eventType="touchUpInside" id="vp3-tt-GL7"/>
                                 </connections>
                             </button>
@@ -448,7 +450,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="convert" translatesAutoresizingMaskIntoConstraints="NO" id="LQC-gp-bhu">
-                                <rect key="frame" x="194" y="94" width="163" height="24"/>
+                                <rect key="frame" x="194" y="96" width="163" height="24"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="kNO-Jc-qOZ"/>
@@ -522,7 +524,7 @@
                             <constraint firstItem="GjE-GS-rmP" firstAttribute="leading" secondItem="Tqo-vm-IWB" secondAttribute="trailing" constant="8" id="5lw-q7-AlU"/>
                             <constraint firstItem="HQc-EP-wpV" firstAttribute="trailing" secondItem="2PO-bo-h0c" secondAttribute="trailing" id="6Ct-d6-wdV"/>
                             <constraint firstItem="LQC-gp-bhu" firstAttribute="width" secondItem="itw-CY-Mq2" secondAttribute="width" id="AiB-Th-mbu"/>
-                            <constraint firstItem="LQC-gp-bhu" firstAttribute="top" secondItem="GjE-GS-rmP" secondAttribute="bottom" constant="28" id="B2I-n7-keK"/>
+                            <constraint firstItem="LQC-gp-bhu" firstAttribute="top" secondItem="GjE-GS-rmP" secondAttribute="bottom" constant="30" id="B2I-n7-keK"/>
                             <constraint firstItem="HQc-EP-wpV" firstAttribute="leading" secondItem="HVh-QO-i0X" secondAttribute="leading" constant="16" id="I4g-Xa-yjr"/>
                             <constraint firstItem="2PO-bo-h0c" firstAttribute="top" secondItem="GjE-GS-rmP" secondAttribute="bottom" constant="28" id="JxH-IN-D1B"/>
                             <constraint firstItem="HVh-QO-i0X" firstAttribute="trailing" secondItem="itw-CY-Mq2" secondAttribute="trailing" constant="18" id="LSV-37-8gd"/>
