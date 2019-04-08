@@ -229,8 +229,8 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
             Zip.addCustomFileExtension("key")
             let fileName = "\(self.document?.fileURL.lastPathComponent.stripFileExtension() ?? "exported-\(uuid)")"
             let fileManager = FileManager.default
-            let documentsUrl = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0] as URL
-            let destinationUrl = documentsUrl.appendingPathComponent("\(fileName).key")
+            let cachesUrl = fileManager.urls(for: .cachesDirectory, in: .userDomainMask)[0] as URL
+            let destinationUrl = cachesUrl.appendingPathComponent("\(fileName).key")
             try Zip.zipFiles(paths: [URL(fileURLWithPath: "\(cachePath)/\(uuid)", isDirectory: false)], zipFilePath: destinationUrl, password: nil, progress: { (progress: Double) in
                 SVProgressHUD.showProgress(Float(0.6 + 0.3 * progress), status: "Exporting Keynote File:\n\(Int(Double(totalPages) * progress)) of \(totalPages)")
             })
