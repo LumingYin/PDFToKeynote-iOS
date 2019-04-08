@@ -73,7 +73,7 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         let pdf = PDFDocument(url: url)
         guard let count = pdf?.pageCount else {return}
         let uuid = NSUUID().uuidString
-        let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+        let libraryPath = NSSearchPathForDirectoriesInDomains(.libraryDirectory, .userDomainMask, true)[0]
 
         for count in 0..<count {
             if let page = pdf?.page(at: count) {
@@ -81,9 +81,9 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
                 document.insert(page, at: 0)
                 let data = document.dataRepresentation()
                 do {
-                    try FileManager.default.createDirectory(atPath: "\(documentsPath)/\(uuid)", withIntermediateDirectories: true, attributes: nil)
+                    try FileManager.default.createDirectory(atPath: "\(libraryPath)/\(uuid)", withIntermediateDirectories: true, attributes: nil)
                     let pageString = String(format: "pg_%04d.pdf", (count + 1))
-                    let url = URL(fileURLWithPath: "\(documentsPath)/\(uuid)/\(pageString)")
+                    let url = URL(fileURLWithPath: "\(libraryPath)/\(uuid)/\(pageString)")
                     try data?.write(to: url)
                 } catch {
                     print(error)
@@ -156,7 +156,7 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
 
         let finalText = "\(templateBeginning)\(actualContent)\(templateEnding)"
         do {
-            try finalText.write(to: URL(fileURLWithPath: "\(documentsPath)/\(uuid)/index.apxl"), atomically: true, encoding: .utf8)
+            try finalText.write(to: URL(fileURLWithPath: "\(libraryPath)/\(uuid)/index.apxl"), atomically: true, encoding: .utf8)
         } catch {
             print(error)
         }
@@ -167,7 +167,9 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
             let fileManager = FileManager.default
             let documentsUrl = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0] as URL
             let destinationUrl = documentsUrl.appendingPathComponent("\(fileName).key")
-            try Zip.zipFiles(paths: [URL(fileURLWithPath: "\(documentsPath)/\(uuid)", isDirectory: false)], zipFilePath: destinationUrl, password: nil, progress: nil)
+            try Zip.zipFiles(paths: [URL(fileURLWithPath: "\(libraryPath)/\(uuid)", isDirectory: false)], zipFilePath: destinationUrl, password: nil, progress: nil)
+
+            try FileManager.default.removeItem(atPath: "\(libraryPath)/\(uuid)")
 
             var filesToShare = [Any]()
             filesToShare.append(destinationUrl)
