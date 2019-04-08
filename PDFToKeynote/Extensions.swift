@@ -30,3 +30,9 @@ extension UIColor {
         return (red, green, blue, alpha)
     }
 }
+
+extension UIViewController {
+    func sizeClass() -> (UIUserInterfaceSizeClass, UIUserInterfaceSizeClass) {
+        return (self.traitCollection.horizontalSizeClass, self.traitCollection.verticalSizeClass)
+    }
+}

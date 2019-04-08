@@ -9,8 +9,9 @@
 import UIKit
 import PDFKit
 import Zip
+import FloatingPanel
 
-class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, ChromaColorPickerDelegate, UIPopoverPresentationControllerDelegate {
+class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, ChromaColorPickerDelegate, UIPopoverPresentationControllerDelegate, FloatingPanelControllerDelegate {
     @IBOutlet weak var startConversionButton: UIButton!
     @IBOutlet weak var documentNameLabel: UILabel!
     @IBOutlet weak var dimensionPicker: UIPickerView!
@@ -35,6 +36,8 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
     var pdf: PDFDocument!
     var document: UIDocument?
+    var fpc: FloatingPanelController?
+
     var sizes: [(width: Int, height: Int, description: String)] = [
         (1024, 768, "4:3 XGA"),
         (1920, 1080, "16:9 WUXGA/HDTV"),
@@ -53,6 +56,31 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
 
     override func viewDidLoad() {
         self.startConversionButton.setTitleColor(UIColor.darkGray, for: .disabled)
+    }
+
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        if (traitCollection.horizontalSizeClass == .compact) {
+            if fpc == nil {
+                fpc = FloatingPanelController()
+                fpc?.surfaceView.backgroundColor = .clear
+                fpc?.surfaceView.cornerRadius = 9.0
+                fpc?.surfaceView.shadowHidden = false
+                // Assign self as the delegate of the controller.
+                fpc?.delegate = self
+
+                // Set a content view controller.
+                let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                let contentVC = storyBoard.instantiateViewController(withIdentifier: "AddWidthHeight") as! AddWidthHeightViewController
+                fpc?.set(contentViewController: contentVC)
+
+                // Track a scroll view(or the siblings) in the content view controller.
+                // fpc.track(scrollView: contentVC.tableView)
+            }
+            // Add and show the views managed by the `FloatingPanelController` object to self.view.
+            fpc?.addPanel(toParent: self)
+        } else {
+            fpc?.removePanelFromParent(animated: false)
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {

@@ -9,4 +9,5 @@ target 'PDFToKeynote' do
 source 'https://github.com/CocoaPods/Specs.git'
 pod 'Zip'
 pod 'SVProgressHUD'
+pod 'FloatingPanel'
 end

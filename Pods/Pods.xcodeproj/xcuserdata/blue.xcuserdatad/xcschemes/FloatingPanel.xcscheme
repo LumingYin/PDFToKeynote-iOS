@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D9284C1B0A76840C1C09A8F22FA2D758"
-               BlueprintName = "SVProgressHUD"
+               BlueprintIdentifier = "BAB9AB6EB252264FABBBA1BF7977858A"
+               BlueprintName = "FloatingPanel"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "SVProgressHUD.framework">
+               BuildableName = "FloatingPanel.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
