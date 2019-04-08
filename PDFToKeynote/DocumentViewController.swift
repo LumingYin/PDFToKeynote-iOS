@@ -67,7 +67,7 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
                     }
                 }
             } else {
-                // Make sure to handle the failed import appropriately, e.g., by presenting an error message to the user.
+                print("Failed to load PDF document")
             }
         })
 
