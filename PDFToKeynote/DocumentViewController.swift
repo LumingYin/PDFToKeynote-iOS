@@ -11,56 +11,30 @@ import PDFKit
 import Zip
 
 class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-    var selectedRow = 0
-    var sizes: [(width: Int, height: Int, description: String)] = [
-        (1024, 768, "4:3 XGA"),
-        (1280, 720, "16:9 HDTV"),
-        (1280, 800, "16:10 MacBook"),
-        (1280, 1024, "5:4 SXGA"),
-        (1600, 1200, "4:3 UXGA"),
-        (1680, 1050, "16:10 WSXGA+"),
-        (1920, 1080, "16:9 WUXGA/HDTV"),
-        (612, 792, "US Letter (Portrait)"),
-        (792, 612, "US Letter (Landscape)"),
-        (595, 842, "A4 Paper (Portrait)"),
-        (842, 595, "A4 Paper (Landscape)"),
-        (800, 600, "4:3 SVGA"),
-    ]
-
-    override var preferredStatusBarStyle : UIStatusBarStyle {
-        return .lightContent
-    }
-
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return sizes.count
-    }
-
-    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        let (width, height, _) = sizes[row]
-        //        return "\(width) × \(height) - \(description)"
-        let string = "\(width) × \(height)"
-        return NSAttributedString(string: string, attributes: [NSAttributedString.Key.foregroundColor:UIColor.white])
-    }
-
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectedRow = row
-        aspectRatioLabel.text = sizes[selectedRow].description
-    }
-
-    
+    @IBOutlet weak var startConversionButton: UIButton!
     @IBOutlet weak var documentNameLabel: UILabel!
     @IBOutlet weak var dimensionPicker: UIPickerView!
     @IBOutlet weak var aspectRatioLabel: UILabel!
     @IBOutlet weak var pdfView: PDFView!
-    var pdf: PDFDocument!
 
-    @IBOutlet weak var startConversionButton: UIButton!
+    var selectedRow = 0
+    var pdf: PDFDocument!
     var document: UIDocument?
-    
+    var sizes: [(width: Int, height: Int, description: String)] = [
+        (1024, 768, "4:3 XGA"),
+        (1920, 1080, "16:9 WUXGA/HDTV"),
+        (1680, 1050, "16:10 WSXGA+"),
+        (612, 792, "US Letter (Portrait)"),
+        (792, 612, "US Letter (Landscape)"),
+        (595, 842, "A4 Paper (Portrait)"),
+        (842, 595, "A4 Paper (Landscape)"),
+        (1600, 1200, "4:3 UXGA"),
+        (800, 600, "4:3 SVGA"),
+        (1280, 1024, "5:4 SXGA"),
+        (1280, 720, "16:9 HDTV"),
+        (1280, 800, "16:10 MacBook"),
+    ]
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -214,6 +188,29 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         }
     }
 
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return .lightContent
+    }
+
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return sizes.count
+    }
+
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let (width, height, _) = sizes[row]
+        // return "\(width) × \(height) - \(description)"
+        let string = "\(width) × \(height)"
+        return NSAttributedString(string: string, attributes: [NSAttributedString.Key.foregroundColor:UIColor.white])
+    }
+
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedRow = row
+        aspectRatioLabel.text = sizes[selectedRow].description
+    }
 
     func stringForTextFileName(_ name: String) -> String {
         if let filepath = Bundle.main.path(forResource: name, ofType: "txt") {
