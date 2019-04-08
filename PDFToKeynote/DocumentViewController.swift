@@ -10,13 +10,20 @@ import UIKit
 import PDFKit
 import Zip
 
-class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, ChromaColorPickerDelegate {
     @IBOutlet weak var startConversionButton: UIButton!
     @IBOutlet weak var documentNameLabel: UILabel!
     @IBOutlet weak var dimensionPicker: UIPickerView!
     @IBOutlet weak var aspectRatioLabel: UILabel!
     @IBOutlet weak var pdfView: PDFView!
-
+    @IBOutlet weak var colorPickerButton: UIButton!
+    var neatColorPicker: ChromaColorPicker!
+//    var selectedColor: UIColor = UIColor(red: 0.99989223480224609, green: 0.99998199939727783, blue: 0.99983745813369751, alpha: 1) {
+    var selectedColor: UIColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1) {
+        didSet {
+            colorPickerButton.backgroundColor = selectedColor
+        }
+    }
     var selectedRow: Int {
         get {
             return self.dimensionPicker.selectedRow(inComponent: 0)
@@ -127,9 +134,9 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         var actualContent = ""
         templateBeginning = templateBeginning.replacingOccurrences(of: "xxxSWIDTHxxx", with: "\(sizes[selectedRow].width)")
         templateBeginning = templateBeginning.replacingOccurrences(of: "xxxSHEIGHTxxx", with: "\(sizes[selectedRow].height)")
-        templateBeginning = templateBeginning.replacingOccurrences(of: "xxxBGREDxxx", with: "0.99989223480224609")
-        templateBeginning = templateBeginning.replacingOccurrences(of: "xxxBGGREENxxx", with: "0.99998199939727783")
-        templateBeginning = templateBeginning.replacingOccurrences(of: "xxxBGBLUExxx", with: "0.99983745813369751")
+        templateBeginning = templateBeginning.replacingOccurrences(of: "xxxBGREDxxx", with: "\(selectedColor.rgba.red)")
+        templateBeginning = templateBeginning.replacingOccurrences(of: "xxxBGGREENxxx", with: "\(selectedColor.rgba.green)")
+        templateBeginning = templateBeginning.replacingOccurrences(of: "xxxBGBLUExxx", with: "\(selectedColor.rgba.blue)")
 
         var sfaIDCachedDict: [String : Int] = [:]
 
@@ -262,6 +269,34 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         } else {
             return ""
         }
+    }
+
+    @IBAction func changeColorTapped(_ sender: UIButton) {
+        neatColorPicker = ChromaColorPicker(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
+        neatColorPicker.adjustToColor(selectedColor)
+        neatColorPicker.delegate = self
+        neatColorPicker.supportsShadesOfGray = true
+        neatColorPicker.padding = 5
+        neatColorPicker.stroke = 3
+        neatColorPicker.hexLabel.textColor = UIColor.white
+        neatColorPicker.addTarget(self, action: #selector(colorChanged(_:)), for: .valueChanged)
+        let controller = UIViewController()
+        controller.view = neatColorPicker
+        controller.modalPresentationStyle = .popover
+        controller.preferredContentSize = CGSize(width: 300, height: 300)
+        let presentationController = controller.presentationController as! UIPopoverPresentationController
+        presentationController.sourceView = sender
+        presentationController.sourceRect = sender.bounds
+        presentationController.permittedArrowDirections = [.down, .up]
+        self.present(controller, animated: true)
+    }
+
+    @objc func colorChanged(_ colorPicker: ChromaColorPicker) {
+        selectedColor = colorPicker.currentColor
+    }
+
+    func colorPickerDidChooseColor(_ colorPicker: ChromaColorPicker, color: UIColor) {
+        selectedColor = color
     }
 
     @IBAction func dismissDocumentViewController() {

@@ -113,12 +113,31 @@
                                             <constraint firstAttribute="height" constant="114" id="Q3f-Qa-u6z"/>
                                         </constraints>
                                     </pickerView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ejU-ru-j9m">
+                                        <rect key="frame" x="300" y="0.0" width="30" height="30"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="xqb-2V-029"/>
+                                            <constraint firstAttribute="width" constant="30" id="zYd-rP-d6T"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="changeColorTapped:" destination="M2k-L8-Olo" eventType="touchUpInside" id="IzF-a6-1Ek"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="ttI-Nd-7Xo" firstAttribute="leading" secondItem="F1j-9X-ZdW" secondAttribute="leading" id="2iE-3M-f63"/>
+                                    <constraint firstItem="ejU-ru-j9m" firstAttribute="top" secondItem="F1j-9X-ZdW" secondAttribute="top" id="4xn-3q-wMS"/>
+                                    <constraint firstItem="ejU-ru-j9m" firstAttribute="trailing" secondItem="hnx-RI-uPC" secondAttribute="trailing" id="5YR-n0-nYM"/>
                                     <constraint firstItem="EEz-SR-FEI" firstAttribute="leading" secondItem="F1j-9X-ZdW" secondAttribute="leading" id="6ja-55-c7c"/>
                                     <constraint firstItem="TDw-Fo-hfZ" firstAttribute="top" secondItem="F1j-9X-ZdW" secondAttribute="top" id="BdJ-kJ-Ikw"/>
+                                    <constraint firstItem="ejU-ru-j9m" firstAttribute="top" secondItem="TDw-Fo-hfZ" secondAttribute="top" id="Ii9-1a-ugk"/>
                                     <constraint firstAttribute="trailing" secondItem="hnx-RI-uPC" secondAttribute="trailing" constant="5" id="L4h-N6-Ikf"/>
                                     <constraint firstItem="5x3-s9-Xfu" firstAttribute="top" secondItem="s46-Uc-0IM" secondAttribute="bottom" constant="41" id="LGy-MO-XWa"/>
                                     <constraint firstItem="hnx-RI-uPC" firstAttribute="leading" secondItem="F1j-9X-ZdW" secondAttribute="leading" id="LIa-5f-fWI"/>
@@ -129,6 +148,7 @@
                                     <constraint firstAttribute="trailing" secondItem="s46-Uc-0IM" secondAttribute="trailing" id="Smc-qf-dJh"/>
                                     <constraint firstItem="ttI-Nd-7Xo" firstAttribute="centerX" secondItem="F1j-9X-ZdW" secondAttribute="centerX" id="UvN-0f-6DU"/>
                                     <constraint firstItem="hnx-RI-uPC" firstAttribute="top" secondItem="EEz-SR-FEI" secondAttribute="bottom" constant="15" id="XhT-bL-T4w"/>
+                                    <constraint firstAttribute="trailing" secondItem="ejU-ru-j9m" secondAttribute="trailing" constant="5" id="Xpe-xl-8HP"/>
                                     <constraint firstAttribute="height" constant="344" id="dUI-1m-BMd"/>
                                     <constraint firstItem="EEz-SR-FEI" firstAttribute="top" secondItem="5x3-s9-Xfu" secondAttribute="bottom" constant="7" id="dpl-O1-0vW"/>
                                     <constraint firstItem="TDw-Fo-hfZ" firstAttribute="leading" secondItem="F1j-9X-ZdW" secondAttribute="leading" id="gK4-QU-yfN"/>
@@ -220,6 +240,7 @@
                     </view>
                     <connections>
                         <outlet property="aspectRatioLabel" destination="EEz-SR-FEI" id="Vxc-Rg-ZxU"/>
+                        <outlet property="colorPickerButton" destination="ejU-ru-j9m" id="THf-Vj-yH1"/>
                         <outlet property="dimensionPicker" destination="hnx-RI-uPC" id="CZa-Xu-J9a"/>
                         <outlet property="documentNameLabel" destination="s46-Uc-0IM" id="S9N-4c-eHT"/>
                         <outlet property="pdfView" destination="CXB-4o-Rvd" id="nbK-Hu-LLf"/>

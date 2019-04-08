@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		2D55A8556036E5F92222E213 /* Pods_PDFToKeynote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13B24480D71B5F0564439EC4 /* Pods_PDFToKeynote.framework */; };
 		3228E9F4225ABC4B005F923D /* PDFKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3228E9F3225ABC4B005F923D /* PDFKit.framework */; };
+		323F1452225B260A007D3DB3 /* ChromaShadeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323F144C225B260A007D3DB3 /* ChromaShadeSlider.swift */; };
+		323F1453225B260A007D3DB3 /* UIColor+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323F144D225B260A007D3DB3 /* UIColor+Utilities.swift */; };
+		323F1454225B260A007D3DB3 /* ChromaColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323F144E225B260A007D3DB3 /* ChromaColorPicker.swift */; };
+		323F1455225B260A007D3DB3 /* ColorModeToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323F144F225B260A007D3DB3 /* ColorModeToggleButton.swift */; };
+		323F1456225B260A007D3DB3 /* ChromaHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323F1450225B260A007D3DB3 /* ChromaHandle.swift */; };
+		323F1457225B260A007D3DB3 /* ChromaAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323F1451225B260A007D3DB3 /* ChromaAddButton.swift */; };
 		32BEB7B2225AE12F00F51B0F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BEB7B1225AE12F00F51B0F /* Extensions.swift */; };
 		32D9A0D9225AB93500AEC14B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D9A0D8225AB93500AEC14B /* AppDelegate.swift */; };
 		32D9A0DB225AB93500AEC14B /* DocumentBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D9A0DA225AB93500AEC14B /* DocumentBrowserViewController.swift */; };
@@ -25,6 +31,12 @@
 /* Begin PBXFileReference section */
 		13B24480D71B5F0564439EC4 /* Pods_PDFToKeynote.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PDFToKeynote.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3228E9F3225ABC4B005F923D /* PDFKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PDFKit.framework; path = System/Library/Frameworks/PDFKit.framework; sourceTree = SDKROOT; };
+		323F144C225B260A007D3DB3 /* ChromaShadeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromaShadeSlider.swift; sourceTree = "<group>"; };
+		323F144D225B260A007D3DB3 /* UIColor+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Utilities.swift"; sourceTree = "<group>"; };
+		323F144E225B260A007D3DB3 /* ChromaColorPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromaColorPicker.swift; sourceTree = "<group>"; };
+		323F144F225B260A007D3DB3 /* ColorModeToggleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorModeToggleButton.swift; sourceTree = "<group>"; };
+		323F1450225B260A007D3DB3 /* ChromaHandle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromaHandle.swift; sourceTree = "<group>"; };
+		323F1451225B260A007D3DB3 /* ChromaAddButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromaAddButton.swift; sourceTree = "<group>"; };
 		32BEB7B1225AE12F00F51B0F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		32D9A0D5225AB93500AEC14B /* PDFToKeynote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PDFToKeynote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32D9A0D8225AB93500AEC14B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +85,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		323F144B225B260A007D3DB3 /* ChromaColorPicker */ = {
+			isa = PBXGroup;
+			children = (
+				323F144C225B260A007D3DB3 /* ChromaShadeSlider.swift */,
+				323F144D225B260A007D3DB3 /* UIColor+Utilities.swift */,
+				323F144E225B260A007D3DB3 /* ChromaColorPicker.swift */,
+				323F144F225B260A007D3DB3 /* ColorModeToggleButton.swift */,
+				323F1450225B260A007D3DB3 /* ChromaHandle.swift */,
+				323F1451225B260A007D3DB3 /* ChromaAddButton.swift */,
+			);
+			path = ChromaColorPicker;
+			sourceTree = "<group>";
+		};
 		32D9A0CC225AB93500AEC14B = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +119,7 @@
 		32D9A0D7225AB93500AEC14B /* PDFToKeynote */ = {
 			isa = PBXGroup;
 			children = (
+				323F144B225B260A007D3DB3 /* ChromaColorPicker */,
 				32D9A0F0225ABAAB00AEC14B /* template_beginning.txt */,
 				32D9A0EE225ABAAB00AEC14B /* template_content.txt */,
 				32D9A0EF225ABAAB00AEC14B /* template_ending.txt */,
@@ -234,11 +260,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				323F1452225B260A007D3DB3 /* ChromaShadeSlider.swift in Sources */,
+				323F1454225B260A007D3DB3 /* ChromaColorPicker.swift in Sources */,
+				323F1455225B260A007D3DB3 /* ColorModeToggleButton.swift in Sources */,
 				32BEB7B2225AE12F00F51B0F /* Extensions.swift in Sources */,
 				32D9A0DF225AB93500AEC14B /* Document.swift in Sources */,
+				323F1456225B260A007D3DB3 /* ChromaHandle.swift in Sources */,
 				32D9A0DD225AB93500AEC14B /* DocumentViewController.swift in Sources */,
+				323F1453225B260A007D3DB3 /* UIColor+Utilities.swift in Sources */,
 				32D9A0DB225AB93500AEC14B /* DocumentBrowserViewController.swift in Sources */,
 				32D9A0D9225AB93500AEC14B /* AppDelegate.swift in Sources */,
+				323F1457225B260A007D3DB3 /* ChromaAddButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
