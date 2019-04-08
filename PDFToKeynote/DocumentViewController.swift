@@ -47,6 +47,10 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     ]
     var nativeSizesForPDF: [(width: Float, height: Float)] = []
 
+    override func viewDidLoad() {
+        self.startConversionButton.setTitleColor(UIColor.darkGray, for: .disabled)
+    }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -110,8 +114,7 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     @IBAction func startConversion(_ sender: Any) {
         SVProgressHUD.show()
         let cachedRow = self.selectedRow
-        startConversionButton.backgroundColor = .gray
-        startConversionButton.isEnabled = false
+        setConversionActivationState(active: false)
         DispatchQueue.global(qos: .userInitiated).async {
             self.performConversion(selectedRow: cachedRow)
         }
@@ -238,12 +241,16 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
 
     func setConversionActivationState(active: Bool) {
-        DispatchQueue.main.sync {
+        DispatchQueue.main.async {
             if (active) {
                 SVProgressHUD.dismiss()
+                self.colorPickerButton.isEnabled = true
+                self.dimensionPicker.isUserInteractionEnabled = true
                 self.startConversionButton.isEnabled = true
                 self.startConversionButton.backgroundColor = UIColor(red: 0.3882352941, green: 0.7058823529, blue: 0.8431372549, alpha: 1)
             } else {
+                self.colorPickerButton.isEnabled = false
+                self.dimensionPicker.isUserInteractionEnabled = false
                 self.startConversionButton.isEnabled = false
                 self.startConversionButton.backgroundColor = UIColor.gray
             }
