@@ -15,6 +15,7 @@
 		323F1455225B260A007D3DB3 /* ColorModeToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323F144F225B260A007D3DB3 /* ColorModeToggleButton.swift */; };
 		323F1456225B260A007D3DB3 /* ChromaHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323F1450225B260A007D3DB3 /* ChromaHandle.swift */; };
 		323F1457225B260A007D3DB3 /* ChromaAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323F1451225B260A007D3DB3 /* ChromaAddButton.swift */; };
+		323F145B225B2CF0007D3DB3 /* ConverterObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 323F145A225B2CF0007D3DB3 /* ConverterObject.m */; };
 		32BEB7B2225AE12F00F51B0F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BEB7B1225AE12F00F51B0F /* Extensions.swift */; };
 		32D9A0D9225AB93500AEC14B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D9A0D8225AB93500AEC14B /* AppDelegate.swift */; };
 		32D9A0DB225AB93500AEC14B /* DocumentBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D9A0DA225AB93500AEC14B /* DocumentBrowserViewController.swift */; };
@@ -37,6 +38,9 @@
 		323F144F225B260A007D3DB3 /* ColorModeToggleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorModeToggleButton.swift; sourceTree = "<group>"; };
 		323F1450225B260A007D3DB3 /* ChromaHandle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromaHandle.swift; sourceTree = "<group>"; };
 		323F1451225B260A007D3DB3 /* ChromaAddButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromaAddButton.swift; sourceTree = "<group>"; };
+		323F1458225B2CEF007D3DB3 /* PDFToKeynote-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PDFToKeynote-Bridging-Header.h"; sourceTree = "<group>"; };
+		323F1459225B2CF0007D3DB3 /* ConverterObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConverterObject.h; sourceTree = "<group>"; };
+		323F145A225B2CF0007D3DB3 /* ConverterObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConverterObject.m; sourceTree = "<group>"; };
 		32BEB7B1225AE12F00F51B0F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		32D9A0D5225AB93500AEC14B /* PDFToKeynote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PDFToKeynote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32D9A0D8225AB93500AEC14B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -126,12 +130,15 @@
 				32D9A0D8225AB93500AEC14B /* AppDelegate.swift */,
 				32D9A0DA225AB93500AEC14B /* DocumentBrowserViewController.swift */,
 				32D9A0DC225AB93500AEC14B /* DocumentViewController.swift */,
+				323F1459225B2CF0007D3DB3 /* ConverterObject.h */,
+				323F145A225B2CF0007D3DB3 /* ConverterObject.m */,
 				32BEB7B1225AE12F00F51B0F /* Extensions.swift */,
 				32D9A0DE225AB93500AEC14B /* Document.swift */,
 				32D9A0E0225AB93500AEC14B /* Main.storyboard */,
 				32D9A0E3225AB93700AEC14B /* Assets.xcassets */,
 				32D9A0E5225AB93700AEC14B /* LaunchScreen.storyboard */,
 				32D9A0E8225AB93700AEC14B /* Info.plist */,
+				323F1458225B2CEF007D3DB3 /* PDFToKeynote-Bridging-Header.h */,
 			);
 			path = PDFToKeynote;
 			sourceTree = "<group>";
@@ -240,12 +247,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PDFToKeynote/Pods-PDFToKeynote-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Zip/Zip.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Zip.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,6 +280,7 @@
 				32D9A0DB225AB93500AEC14B /* DocumentBrowserViewController.swift in Sources */,
 				32D9A0D9225AB93500AEC14B /* AppDelegate.swift in Sources */,
 				323F1457225B260A007D3DB3 /* ChromaAddButton.swift in Sources */,
+				323F145B225B2CF0007D3DB3 /* ConverterObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,6 +427,7 @@
 			baseConfigurationReference = 9A9AFBF59FCC80F55919B9C1 /* Pods-PDFToKeynote.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3Q7XKEDZ36;
 				INFOPLIST_FILE = PDFToKeynote/Info.plist;
@@ -427,6 +438,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.blue.PDFToKeynote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PDFToKeynote/PDFToKeynote-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -437,6 +450,7 @@
 			baseConfigurationReference = 3B6F695D52E13E08A70619DA /* Pods-PDFToKeynote.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3Q7XKEDZ36;
 				INFOPLIST_FILE = PDFToKeynote/Info.plist;
@@ -447,6 +461,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.blue.PDFToKeynote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PDFToKeynote/PDFToKeynote-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

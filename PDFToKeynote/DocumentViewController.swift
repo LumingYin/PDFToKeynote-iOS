@@ -108,6 +108,14 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
 
     @IBAction func startConversion(_ sender: Any) {
+        SVProgressHUD.show()
+        let cachedRow = self.selectedRow
+        DispatchQueue.global(qos: .userInitiated).async {
+            self.performConversion(selectedRow: cachedRow)
+        }
+    }
+
+    func performConversion(selectedRow: Int) {
         guard let totalPages = pdf?.pageCount else {return}
         let uuid = NSUUID().uuidString
         let cachePath = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)[0]
@@ -163,10 +171,10 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
                     let pattern = #"(sfa:ID="((\D+?)-\d+)")"#
                     let regex = try NSRegularExpression(pattern: pattern, options: [])
                     if let match = regex.firstMatch(in: lineContent, range: NSRange(lineContent.startIndex..., in: lineContent)) {
-//                        let entireSFAPart = String(lineContent[Range(match.range(at: 1), in: lineContent)!])
+                        // let entireSFAPart = String(lineContent[Range(match.range(at: 1), in: lineContent)!])
                         let sfaInnerQuote = String(lineContent[Range(match.range(at: 2), in: lineContent)!])
                         let sfaActualType = String(lineContent[Range(match.range(at: 3), in: lineContent)!])
-//                        print("entireSFAPart: \(entireSFAPart), sfaInnerQuote: \(sfaInnerQuote), sfaActualType: \(sfaActualType)")
+                        // print("entireSFAPart: \(entireSFAPart), sfaInnerQuote: \(sfaInnerQuote), sfaActualType: \(sfaActualType)")
                         if sfaIDCachedDict[sfaActualType] == nil {
                             sfaIDCachedDict[sfaActualType] = 1000
                         } else {
@@ -211,13 +219,15 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
             try Zip.zipFiles(paths: [URL(fileURLWithPath: "\(cachePath)/\(uuid)", isDirectory: false)], zipFilePath: destinationUrl, password: nil, progress: nil)
 
             try FileManager.default.removeItem(atPath: "\(cachePath)/\(uuid)")
-
             var filesToShare = [Any]()
             filesToShare.append(destinationUrl)
-            let activityViewController = UIActivityViewController(activityItems: filesToShare, applicationActivities: nil)
-            activityViewController.popoverPresentationController?.sourceView = self.startConversionButton
-            self.present(activityViewController, animated: true, completion: nil)
 
+            DispatchQueue.main.async {
+                let activityViewController = UIActivityViewController(activityItems: filesToShare, applicationActivities: nil)
+                activityViewController.popoverPresentationController?.sourceView = self.startConversionButton
+                SVProgressHUD.dismiss()
+                self.present(activityViewController, animated: true, completion: nil)
+            }
         }
         catch {
             print("Something went wrong: \(error)")
