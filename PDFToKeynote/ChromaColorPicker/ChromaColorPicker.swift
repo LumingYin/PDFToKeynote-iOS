@@ -117,7 +117,7 @@ open class ChromaColorPicker: UIControl {
         /* Setup Color Mode Toggle Button */
         colorToggleButton = ColorModeToggleButton()
         self.layoutColorToggleButton() //layout frame
-        colorToggleButton.colorState = .grayscale // Default as starting state is hue
+        colorToggleButton.colorState = .hue // Default as starting state is hue
         colorToggleButton.addTarget(self, action: #selector(togglePickerColorMode), for: .touchUpInside)
         colorToggleButton.isHidden = !supportsShadesOfGray // default to hiding if not supported
         

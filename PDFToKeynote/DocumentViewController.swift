@@ -273,9 +273,10 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
 
     @IBAction func changeColorTapped(_ sender: UIButton) {
         neatColorPicker = ChromaColorPicker(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
+        neatColorPicker.supportsShadesOfGray = true
+        neatColorPicker.togglePickerColorMode()
         neatColorPicker.adjustToColor(selectedColor)
         neatColorPicker.delegate = self
-        neatColorPicker.supportsShadesOfGray = true
         neatColorPicker.padding = 5
         neatColorPicker.stroke = 3
         neatColorPicker.hexLabel.textColor = UIColor.white
