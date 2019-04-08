@@ -17,6 +17,9 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     @IBOutlet weak var aspectRatioLabel: UILabel!
     @IBOutlet weak var pdfView: PDFView!
     @IBOutlet weak var colorPickerButton: UIButton!
+    @IBOutlet weak var natigationBarItem: UINavigationItem!
+    @IBOutlet weak var navigationDoneButton: UIBarButtonItem!
+
     var neatColorPicker: ChromaColorPicker!
 
     var selectedColor: UIColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1) {
@@ -58,6 +61,7 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
             if success {
                 // Display the content of the document, e.g.:
                 self.documentNameLabel.text = self.document?.fileURL.lastPathComponent
+                self.natigationBarItem.title = self.document?.fileURL.lastPathComponent.stripFileExtension()
                 self.pdfView.document = PDFDocument(url: self.document!.fileURL)
                 self.pdfView.backgroundColor = UIColor.gray
                 self.pdfView.autoScales = true
@@ -252,11 +256,13 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         DispatchQueue.main.async {
             if (active) {
                 SVProgressHUD.dismiss()
+                self.navigationDoneButton.isEnabled = true
                 self.colorPickerButton.isEnabled = true
                 self.dimensionPicker.isUserInteractionEnabled = true
                 self.startConversionButton.isEnabled = true
                 self.startConversionButton.backgroundColor = UIColor(red: 0.3882352941, green: 0.7058823529, blue: 0.8431372549, alpha: 1)
             } else {
+                self.navigationDoneButton.isEnabled = false
                 self.colorPickerButton.isEnabled = false
                 self.dimensionPicker.isUserInteractionEnabled = false
                 self.startConversionButton.isEnabled = false

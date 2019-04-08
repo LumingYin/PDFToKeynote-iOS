@@ -243,6 +243,8 @@
                         <outlet property="colorPickerButton" destination="ejU-ru-j9m" id="THf-Vj-yH1"/>
                         <outlet property="dimensionPicker" destination="hnx-RI-uPC" id="CZa-Xu-J9a"/>
                         <outlet property="documentNameLabel" destination="s46-Uc-0IM" id="S9N-4c-eHT"/>
+                        <outlet property="natigationBarItem" destination="Ydo-kM-W4o" id="1rf-cC-97G"/>
+                        <outlet property="navigationDoneButton" destination="bno-78-7mt" id="LiX-C5-Ipz"/>
                         <outlet property="pdfView" destination="CXB-4o-Rvd" id="nbK-Hu-LLf"/>
                         <outlet property="startConversionButton" destination="ttI-Nd-7Xo" id="rYu-db-UY3"/>
                     </connections>
