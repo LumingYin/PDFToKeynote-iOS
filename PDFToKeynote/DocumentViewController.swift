@@ -104,12 +104,12 @@ class DocumentViewController: UIViewController {
 
                 var rejoined = eachLine.joined(separator: "\n")
                 for (old, new) in oldNewRamap {
-                    rejoined = rejoined.replacingOccurrences(of: "sfa:IDREF=\"\(old)\"", with: "sfa:IDREF=\"\(new)\"")
+                    rejoined = rejoined.replacingOccurrences(of: "\"\(old)\"", with: "\"\(new)\"")
                 }
 
                 let pageString = String(format: "pg_%04d.pdf", (count + 1))
                 pageContent = pageContent.replacingOccurrences(of: "xxxFILENAMExxx", with: pageString)
-                actualContent = "\(actualContent)\(rejoined))"
+                actualContent = "\(actualContent)\(rejoined)"
             }
         } catch {
             print(error)
