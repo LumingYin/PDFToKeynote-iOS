@@ -352,6 +352,26 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         selectedColor = color
     }
 
+    @IBAction func addNewAspectRatioTapped(_ sender: UIButton) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyBoard.instantiateViewController(withIdentifier: "AddWidthHeight") as! AddWidthHeightViewController
+        controller.newSizeAdded = { (width, height) in
+            self.sizes.append((width, height, "Custom: \(width) × \(height)"))
+            self.dimensionPicker.reloadComponent(0)
+            self.dimensionPicker.selectRow(self.sizes.count - 1, inComponent: 0, animated: true)
+            self.aspectRatioLabel.text = self.sizes[self.selectedRow].description
+        }
+        controller.modalPresentationStyle = .popover
+        controller.preferredContentSize = CGSize(width: 300, height: 200)
+        let presentationController = controller.presentationController as! UIPopoverPresentationController
+        presentationController.backgroundColor = controller.view.backgroundColor
+        presentationController.delegate = self
+        presentationController.sourceView = sender
+        presentationController.sourceRect = sender.bounds
+        presentationController.permittedArrowDirections = [.down, .up]
+        self.present(controller, animated: true)
+    }
+
     @IBAction func dismissDocumentViewController() {
         dismiss(animated: true) {
             self.document?.close(completionHandler: nil)
