@@ -101,11 +101,11 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
 
     @IBAction func startConversion(_ sender: Any) {
-        guard let count = pdf?.pageCount else {return}
+        guard let totalPages = pdf?.pageCount else {return}
         let uuid = NSUUID().uuidString
         let cachePath = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)[0]
 
-        for count in 0..<count {
+        for count in 0..<totalPages {
             if let page = pdf?.page(at: count) {
                 let document = PDFDocument()
                 document.insert(page, at: 0)
@@ -121,7 +121,7 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
             }
         }
         var templateBeginning = stringForTextFileName("template_beginning")
-        var templateContent = stringForTextFileName("template_content")
+        let templateContent = stringForTextFileName("template_content")
         let templateEnding = stringForTextFileName("template_ending")
 
         var actualContent = ""
@@ -131,15 +131,10 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         templateBeginning = templateBeginning.replacingOccurrences(of: "xxxBGGREENxxx", with: "0.99998199939727783")
         templateBeginning = templateBeginning.replacingOccurrences(of: "xxxBGBLUExxx", with: "0.99983745813369751")
 
-        templateContent = templateContent.replacingOccurrences(of: "xxxDWIDTHxxx", with: "\(sizes[selectedRow].width)")
-        templateContent = templateContent.replacingOccurrences(of: "xxxDHEIGHTxxx", with: "\(sizes[selectedRow].height)")
-        templateContent = templateContent.replacingOccurrences(of: "xxxPOSXxxx", with: "0")
-        templateContent = templateContent.replacingOccurrences(of: "xxxPOSYxxx", with: "0")
-
         var sfaIDCachedDict: [String : Int] = [:]
 
         do {
-            for count in 0..<count {
+            for count in 0..<totalPages {
                 var oldNewRamap: [String : String] = [:]
 
                 var pageContent = String(templateContent)
@@ -148,6 +143,12 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
 
                 pageContent = pageContent.replacingOccurrences(of: "xxxNWIDTHxxx", with: formattedNaturalWidth)
                 pageContent = pageContent.replacingOccurrences(of: "xxxNHEIGHTxxx", with: formattedNaturalHeight)
+
+                let (finalWidth, finalHeight, offsetX, offsetY) = fitSizeIntoSlide(pdfWidth: nativeSizesForPDF[count].width, pdfHeight: nativeSizesForPDF[count].height, canvasWidth: sizes[selectedRow].width, canvasHeight: sizes[selectedRow].height)
+                pageContent = pageContent.replacingOccurrences(of: "xxxDWIDTHxxx", with: String(format: "%06f", finalWidth))
+                pageContent = pageContent.replacingOccurrences(of: "xxxDHEIGHTxxx", with: String(format: "%06f", finalHeight))
+                pageContent = pageContent.replacingOccurrences(of: "xxxPOSXxxx", with: String(format: "%06f", offsetX))
+                pageContent = pageContent.replacingOccurrences(of: "xxxPOSYxxx", with: String(format: "%06f", offsetY))
 
                 var eachLine = pageContent.components(separatedBy: .newlines)
                 for i in 0..<eachLine.count {
@@ -214,6 +215,17 @@ class DocumentViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         catch {
             print("Something went wrong: \(error)")
         }
+    }
+
+    func fitSizeIntoSlide(pdfWidth: Float, pdfHeight: Float, canvasWidth: Int, canvasHeight: Int) -> (fittingWidth: Float, fittingHeight: Float, originX: Float, originY: Float) {
+        let displayWidthRatio = Float(canvasWidth) / pdfWidth
+        let displayHeightRatio = Float(canvasHeight) / pdfHeight
+        let zoomShrinkFactor = min(displayWidthRatio, displayHeightRatio)
+        let finalWidth = pdfWidth * zoomShrinkFactor
+        let finalHeight = pdfHeight * zoomShrinkFactor
+        let x = (Float(canvasWidth) - finalWidth) / 2
+        let y = (Float(canvasHeight) - finalHeight) / 2
+        return (finalWidth, finalHeight, x, y)
     }
 
     override var preferredStatusBarStyle : UIStatusBarStyle {
