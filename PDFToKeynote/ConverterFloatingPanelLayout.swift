@@ -30,12 +30,13 @@ public class ConverterFloatingLandscapePanelLayout: FloatingPanelLayout {
     }
 
     public var supportedPositions: Set<FloatingPanelPosition> {
-        return [.full, .tip]
+        return [.full, .half, .tip]
     }
 
     public func insetFor(position: FloatingPanelPosition) -> CGFloat? {
         switch position {
         case .full: return 16.0
+        case .half: return 300.0
         case .tip: return 150.0
         default: return nil
         }
@@ -43,7 +44,7 @@ public class ConverterFloatingLandscapePanelLayout: FloatingPanelLayout {
 
     public func prepareLayout(surfaceView: UIView, in view: UIView) -> [NSLayoutConstraint] {
         return [
-            surfaceView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 8.0),
+            surfaceView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -18.0),
             surfaceView.widthAnchor.constraint(equalToConstant: 350),
         ]
     }

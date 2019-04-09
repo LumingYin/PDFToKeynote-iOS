@@ -213,7 +213,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="buttonTouched:" destination="ofo-jH-SYk" eventType="touchDown" id="GLR-Kp-Tzb"/>
-                                    <action selector="startConversion:" destination="M2k-L8-Olo" eventType="touchUpInside" id="4v5-D5-vv4"/>
+                                    <action selector="startConversion:" destination="ofo-jH-SYk" eventType="touchUpInside" id="6qG-Gl-Z0o"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Convert to Keynote" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6nL-d0-MF9">
@@ -324,6 +324,7 @@
                                 <rect key="frame" x="133" y="237" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
+                                    <action selector="addNewAspectRatioTapped:" destination="ofo-jH-SYk" eventType="touchUpInside" id="ahD-ax-bZz"/>
                                     <action selector="addNewAspectRatioTapped:" destination="M2k-L8-Olo" eventType="touchUpInside" id="mBj-Ox-hHL"/>
                                 </connections>
                             </button>
@@ -338,6 +339,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="changeColorTapped:" destination="M2k-L8-Olo" eventType="touchUpInside" id="24Z-2v-fU3"/>
+                                    <action selector="changeColorTapped:" destination="ofo-jH-SYk" eventType="touchUpInside" id="raf-Q2-NuL"/>
                                 </connections>
                             </button>
                         </subviews>
