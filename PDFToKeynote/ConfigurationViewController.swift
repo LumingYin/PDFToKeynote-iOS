@@ -128,6 +128,26 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
     var selectedSizeIndex: Int = 0
     var useRetina2x: Bool = false
 
+    func updateParticularCollectionViewIndex(i: Int, native: Bool, selected: Bool) {
+        guard let sizeCell = self.tableView.cellForRow(at: IndexPath(row: 0, section: 1)) as? SlideSizeTableViewCell else { return }
+        let path = ConfigurationViewController.findIndexPathForResolutionIndex(i: i, delegate: self)
+        guard let asp = sizeCell.collectionView.cellForItem(at: path) as? AspectRatioCollectionViewCell else { return }
+        if native {
+            asp.configurateAsNativeSize()
+        }
+        if selected {
+            asp.selectSizeTapped(self)
+        }
+//        asp.configurateCellAppearance()
+    }
+
+    static func findIndexPathForResolutionIndex(i: Int, delegate: SlideSizeDelegate) -> IndexPath {
+        let correctedI = i >= delegate.getCutoffCountForScreenResolution() ? i - delegate.getCutoffCountForScreenResolution() : i
+        let section = i >= delegate.getCutoffCountForScreenResolution() ? 1 : 0
+        let path = IndexPath(row: correctedI, section: section)
+        return path
+    }
+
     func initialSetupForPDF(_ newDocument: Document) {
         self.document = newDocument
         cachedFileName = self.document?.fileURL.lastPathComponent ?? "Unknown"
@@ -150,7 +170,8 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
                 if abs(ratio - sizeRatio) < 0.01 {
                     self.sizes[i].description = "\(self.sizes[i].description) (Native)"
                     self.nativeSizeIndex = i
-                    self.selectedSizeIndex = i
+                    self.updateParticularCollectionViewIndex(i: i, native: true, selected: false)
+                    self.selectSizeAtIndex(index: i)
 //                    self.dimensionPicker.selectRow(i, inComponent: 0, animated: true)
 //                    self.aspectRatioLabel.text = self.sizes[i].description
                     matchedPreferredResolutions = true
@@ -162,9 +183,12 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
                 // print("Scale factor is: \(factor)")
                 let newWidth = rotatedBox.width * CGFloat(factor)
                 let newHeight = rotatedBox.height * CGFloat(factor)
-                self.addNewSize(width: Int(newWidth), height: Int(newHeight), description: "Native Resolution")
+                self.addNewSize(width: Int(newWidth), height: Int(newHeight), description: "\(Int(newWidth))\n\(Int(newHeight))")
                 self.nativeSizeIndex = self.sizes.count - 1
-                self.selectedSizeIndex = self.nativeSizeIndex
+                self.selectSizeAtIndex(index: self.nativeSizeIndex)
+                self.updateParticularCollectionViewIndex(i: self.nativeSizeIndex, native: true, selected: true)
+
+//                self.selectedSizeIndex = self.nativeSizeIndex
 //                self.dimensionPicker.reloadComponent(0)
 //                self.dimensionPicker.selectRow(self.sizes.count - 1, inComponent: 0, animated: true)
 //                self.aspectRatioLabel.text = self.sizes.last?.description
@@ -172,6 +196,7 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
         }
         cachedFileSize = url.fileSizeString
         tableView.reloadData()
+//        tableView.reloadRows(at: [IndexPath(row: 0, column: 0)], with: .automatic)
     }
 
     @IBAction func buttonTouched(_ sender: UIButton) {

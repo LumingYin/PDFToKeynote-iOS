@@ -48,15 +48,25 @@ class AspectRatioCollectionViewCell: UICollectionViewCell {
         }
     }
 
+    func configurateAsNativeSize() {
+        self.nativeGoldstarView.isHidden = false
+        for i in 0..<delegate.getAllSizes().count {
+            if i != ratioCorrespondingIndex {
+                let path = ConfigurationViewController.findIndexPathForResolutionIndex(i: i, delegate: delegate)
+                if let toDehighlight = self.parentTableCell.collectionView.cellForItem(at: path) as? AspectRatioCollectionViewCell {
+                    toDehighlight.nativeGoldstarView.isHidden = true
+                }
+            }
+        }
+    }
+
     @IBAction func selectSizeTapped(_ sender: Any) {
         self.greenTickView.isHidden = false
         delegate.selectSizeAtIndex(index: ratioCorrespondingIndex)
 //        var paths : [IndexPath] = []
         for i in 0..<delegate.getAllSizes().count {
             if i != ratioCorrespondingIndex {
-                let correctedI = i >= delegate.getCutoffCountForScreenResolution() ? i - delegate.getCutoffCountForScreenResolution() : i
-                let section = i >= delegate.getCutoffCountForScreenResolution() ? 1 : 0
-                let path = IndexPath(row: correctedI, section: section)
+                let path = ConfigurationViewController.findIndexPathForResolutionIndex(i: i, delegate: delegate)
                 if let toDehighlight = self.parentTableCell.collectionView.cellForItem(at: path) as? AspectRatioCollectionViewCell {
                     toDehighlight.greenTickView.isHidden = true
                 }
