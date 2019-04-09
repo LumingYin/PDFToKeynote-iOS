@@ -43,16 +43,25 @@ class SlideSizeTableViewCell: UITableViewCell, UICollectionViewDelegate, UIColle
             ratioCell.selectSizeTapped(ratioCell)
         } else {
             // When the native res bubble is scrolled out of view
-            for i in 0..<delegate.getAllSizes().count {
-                let path = ConfigurationViewController.findIndexPathForResolutionIndex(i: i, delegate: delegate)
-                if let toDehighlight = collectionView.cellForItem(at: path) as? AspectRatioCollectionViewCell {
-                    toDehighlight.greenTickView.isHidden = true
-                }
-            }
+            deselectEveryView(ticked: true, native: false)
             delegate.selectSizeAtIndex(index: delegate.getNativeSizeIndex())
         }
     }
-    
+
+    func deselectEveryView(ticked: Bool, native: Bool) {
+        for i in 0..<delegate.getAllSizes().count {
+            let path = ConfigurationViewController.findIndexPathForResolutionIndex(i: i, delegate: delegate)
+            if let toDehighlight = collectionView.cellForItem(at: path) as? AspectRatioCollectionViewCell {
+                if ticked {
+                    toDehighlight.greenTickView.isHidden = true
+                }
+                if native {
+                    toDehighlight.nativeGoldstarView.isHidden = true
+                }
+            }
+        }
+    }
+
     func configurateCollectionView() {
         if !configurated {
             let layout = JEKScrollableSectionCollectionViewLayout()

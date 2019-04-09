@@ -34,6 +34,14 @@ class AspectRatioCollectionViewCell: UICollectionViewCell {
             ratio = paintHeight / CGFloat(correspondingSize.height)
             paintWidth = ratio * CGFloat(correspondingSize.width)
         }
+        if paintWidth < 15 {
+            paintWidth = 20
+            ratioTextLabel.text = ""
+        }
+        if paintHeight < 15 {
+            paintHeight = 20
+            ratioTextLabel.text = ""
+        }
         effectsWidth.constant = paintWidth
         effectsHeight.constant = paintHeight
 

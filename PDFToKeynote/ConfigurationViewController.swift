@@ -138,7 +138,10 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
     func updateParticularCollectionViewIndex(i: Int, native: Bool, selected: Bool) {
         guard let sizeCell = self.tableView.cellForRow(at: IndexPath(row: 0, section: 1)) as? SlideSizeTableViewCell else { return }
         let path = ConfigurationViewController.findIndexPathForResolutionIndex(i: i, delegate: self)
-        guard let asp = sizeCell.collectionView.cellForItem(at: path) as? AspectRatioCollectionViewCell else { return }
+        guard let asp = sizeCell.collectionView.cellForItem(at: path) as? AspectRatioCollectionViewCell else {
+            sizeCell.deselectEveryView(ticked: true, native: true)
+            return
+        }
         if native {
             asp.configurateAsNativeSize()
         }
