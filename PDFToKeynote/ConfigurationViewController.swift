@@ -193,7 +193,7 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
                 // print("Scale factor is: \(factor)")
                 let newWidth = rotatedBox.width * CGFloat(factor)
                 let newHeight = rotatedBox.height * CGFloat(factor)
-                self.addNewSize(width: Int(newWidth), height: Int(newHeight), description: "\(Int(newWidth))\n\(Int(newHeight))")
+                self.addNewSize(width: Int(newWidth), height: Int(newHeight), description: "W:\(Int(newWidth))\nH:\(Int(newHeight))")
                 self.nativeSizeIndex = self.sizes.count - 1
                 self.selectSizeAtIndex(index: self.nativeSizeIndex)
                 self.updateParticularCollectionViewIndex(i: self.nativeSizeIndex, native: true, selected: true)
