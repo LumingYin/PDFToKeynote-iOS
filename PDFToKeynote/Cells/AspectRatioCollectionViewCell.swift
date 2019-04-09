@@ -14,6 +14,7 @@ class AspectRatioCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var visualEffectContainerView: UIVisualEffectView!
     @IBOutlet weak var greenTickView: UIImageView!
     weak var delegate: SlideSizeDelegate!
+    weak var parentTableCell: SlideSizeTableViewCell!
     var ratioCorrespondingIndex: Int = 0
     var correspondingSize: SlideSize!
 
@@ -50,6 +51,19 @@ class AspectRatioCollectionViewCell: UICollectionViewCell {
     @IBAction func selectSizeTapped(_ sender: Any) {
         self.greenTickView.isHidden = false
         delegate.selectSizeAtIndex(index: ratioCorrespondingIndex)
+//        var paths : [IndexPath] = []
+        for i in 0..<delegate.getAllSizes().count {
+            if i != ratioCorrespondingIndex {
+                let correctedI = i >= delegate.getCutoffCountForScreenResolution() ? i - delegate.getCutoffCountForScreenResolution() : i
+                let section = i >= delegate.getCutoffCountForScreenResolution() ? 1 : 0
+                let path = IndexPath(row: correctedI, section: section)
+                if let toDehighlight = self.parentTableCell.collectionView.cellForItem(at: path) as? AspectRatioCollectionViewCell {
+                    toDehighlight.greenTickView.isHidden = true
+                }
+//                paths.append()
+            }
+        }
+//        self.parentTableCell.collectionView.reloadItems(at: paths)
     }
 
 }

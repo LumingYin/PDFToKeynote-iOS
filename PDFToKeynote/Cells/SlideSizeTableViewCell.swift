@@ -57,6 +57,7 @@ class SlideSizeTableViewCell: UITableViewCell, UICollectionViewDelegate, UIColle
             cell.ratioCorrespondingIndex = arrayIndex
             cell.ratioTextLabel.text = size.description
             cell.delegate = self.delegate
+            cell.parentTableCell = self
             cell.configurateCellAppearance()
             return cell
         } else {
