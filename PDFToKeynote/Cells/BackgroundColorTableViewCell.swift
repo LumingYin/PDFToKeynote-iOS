@@ -119,6 +119,8 @@ class BackgroundColorTableViewCell: UITableViewCell, UICollectionViewDataSource,
                 self.selectedColorIndex = (-1, index)
                 cell.greenTickView.isHidden = false
                 self.hideTickOnEverythingExceptSelection()
+                self.colorHexCodeLabel.text = "#\(color.hexCode)"
+                self.colorReadableDescriptionLabel.text = "Color"
             }
 
             return cell
@@ -142,10 +144,21 @@ class BackgroundColorTableViewCell: UITableViewCell, UICollectionViewDataSource,
                 cell.setTickAtLocation(self.selectedColorIndex.1)
                 cell.greenTickView.isHidden = false
                 self.hideTickOnEverythingExceptSelection()
+                self.colorHexCodeLabel.text = "#\(color.hexCode)"
+                self.colorReadableDescriptionLabel.text = "Color"
             }
             return cell
         } else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomEntryCollectionViewCell", for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomEntryCollectionViewCell", for: indexPath) as! CustomEntryCollectionViewCell
+            cell.colorSelectionCallback = { color in
+                self.selectedColorIndex = (-2, 0) // FIXME: Use better semantics.
+                self.hideTickOnEverythingExceptSelection()
+                self.delegate?.changeToNewColor(color: color)
+                self.colorHexCodeLabel.text = "#\(color.hexCode)"
+                self.colorReadableDescriptionLabel.text = "Color"
+            }
+            cell.colorDelegate = self.delegate
+            cell.isColorMode = true
             return cell
         }
     }

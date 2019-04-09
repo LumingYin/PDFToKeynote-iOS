@@ -13,13 +13,53 @@ enum CustomEntryMode {
     case size
 }
 
-class CustomEntryCollectionViewCell: UICollectionViewCell, UIPopoverPresentationControllerDelegate {
+class CustomEntryCollectionViewCell: UICollectionViewCell, UIPopoverPresentationControllerDelegate, ChromaColorPickerDelegate {
     weak var delegate: SlideSizeDelegate!
     weak var parentTableViewCell: SlideSizeTableViewCell!
+    var isColorMode = false
+    var colorSelectionCallback: ((UIColor) -> Void)?
+    weak var colorDelegate: ColorPickerDelegate!
 
     @IBAction func addCustomEntryTapped(_ sender: UIButton) {
-        self.addNewAspectRatioTapped(sender)
+        if !isColorMode {
+            self.addNewAspectRatioTapped(sender)
+        } else {
+            var neatColorPicker: ChromaColorPicker!
+
+            neatColorPicker = ChromaColorPicker(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
+            neatColorPicker.supportsShadesOfGray = true
+            neatColorPicker.togglePickerColorMode()
+//            neatColorPicker.adjustToColor(selectedColor)
+            neatColorPicker.delegate = self
+            neatColorPicker.padding = 5
+            neatColorPicker.stroke = 3
+            neatColorPicker.hexLabel.textColor = UIColor.white
+            neatColorPicker.addTarget(self, action: #selector(colorChanged(_:)), for: .valueChanged)
+            let controller = PopoverViewController()
+            controller.view = neatColorPicker
+            controller.modalPresentationStyle = .popover
+            controller.preferredContentSize = CGSize(width: 300, height: 300)
+            let presentationController = controller.presentationController as! UIPopoverPresentationController
+            presentationController.delegate = self
+            presentationController.sourceView = sender
+            presentationController.sourceRect = sender.bounds
+            presentationController.permittedArrowDirections = [.down, .up]
+            if let presenter = self.colorDelegate as? ConfigurationViewController {
+                presenter.present(controller, animated: true)
+            }
+
+        }
     }
+
+    @objc func colorChanged(_ colorPicker: ChromaColorPicker) {
+//        colorSelectionCallback?(colorPicker.currentColor)
+//        selectedColor = colorPicker.currentColor
+    }
+
+    func colorPickerDidChooseColor(_ colorPicker: ChromaColorPicker, color: UIColor) {
+        colorSelectionCallback?(color)
+    }
+
 
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return UIModalPresentationStyle.none

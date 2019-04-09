@@ -12,7 +12,7 @@ import FloatingPanel
 
 typealias SlideSize = (width: Int, height: Int, description: String)
 
-class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, ChromaColorPickerDelegate, UIPopoverPresentationControllerDelegate, UITableViewDelegate, UITableViewDataSource, SlideSizeDelegate, ColorPickerDelegate {
+class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UIPopoverPresentationControllerDelegate, UITableViewDelegate, UITableViewDataSource, SlideSizeDelegate, ColorPickerDelegate {
 
     @IBOutlet weak var customizeImageView: UIImageView!
     @IBOutlet weak var startConversionButton: UIButton!
@@ -26,7 +26,7 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
     var enableDisableStateChanged: ((Bool) -> ())?
     var moveToPosition: (() -> ())?
     var hideToTip: (() -> ())?
-    var neatColorPicker: ChromaColorPicker!
+//    var neatColorPicker: ChromaColorPicker!
 
     var selectedColor: UIColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
 //    {
@@ -291,40 +291,40 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
 //        aspectRatioLabel.text = sizes[selectedRow].description
 //    }
 
-    @IBAction func changeColorTapped(_ sender: UIButton) {
-        neatColorPicker = ChromaColorPicker(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
-        neatColorPicker.supportsShadesOfGray = true
-        neatColorPicker.togglePickerColorMode()
-        neatColorPicker.adjustToColor(selectedColor)
-        neatColorPicker.delegate = self
-        neatColorPicker.padding = 5
-        neatColorPicker.stroke = 3
-        neatColorPicker.hexLabel.textColor = UIColor.white
-        neatColorPicker.addTarget(self, action: #selector(colorChanged(_:)), for: .valueChanged)
-        let controller = PopoverViewController()
-        controller.view = neatColorPicker
-        controller.modalPresentationStyle = .popover
-        controller.preferredContentSize = CGSize(width: 300, height: 300)
-        let presentationController = controller.presentationController as! UIPopoverPresentationController
-        presentationController.delegate = self
-        presentationController.sourceView = sender
-        presentationController.sourceRect = sender.bounds
-        presentationController.permittedArrowDirections = [.down, .up]
-        self.present(controller, animated: true)
-    }
+//    @IBAction func changeColorTapped(_ sender: UIButton) {
+//        neatColorPicker = ChromaColorPicker(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
+//        neatColorPicker.supportsShadesOfGray = true
+//        neatColorPicker.togglePickerColorMode()
+//        neatColorPicker.adjustToColor(selectedColor)
+//        neatColorPicker.delegate = self
+//        neatColorPicker.padding = 5
+//        neatColorPicker.stroke = 3
+//        neatColorPicker.hexLabel.textColor = UIColor.white
+//        neatColorPicker.addTarget(self, action: #selector(colorChanged(_:)), for: .valueChanged)
+//        let controller = PopoverViewController()
+//        controller.view = neatColorPicker
+//        controller.modalPresentationStyle = .popover
+//        controller.preferredContentSize = CGSize(width: 300, height: 300)
+//        let presentationController = controller.presentationController as! UIPopoverPresentationController
+//        presentationController.delegate = self
+//        presentationController.sourceView = sender
+//        presentationController.sourceRect = sender.bounds
+//        presentationController.permittedArrowDirections = [.down, .up]
+//        self.present(controller, animated: true)
+//    }
 
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return UIModalPresentationStyle.none
     }
 
-    @objc func colorChanged(_ colorPicker: ChromaColorPicker) {
-        selectedColor = colorPicker.currentColor
-    }
-
-    func colorPickerDidChooseColor(_ colorPicker: ChromaColorPicker, color: UIColor) {
-        selectedColor = color
-    }
-
+//    @objc func colorChanged(_ colorPicker: ChromaColorPicker) {
+//        selectedColor = colorPicker.currentColor
+//    }
+//
+//    func colorPickerDidChooseColor(_ colorPicker: ChromaColorPicker, color: UIColor) {
+//        selectedColor = color
+//    }
+//
     @IBAction func customizeButtonTapped(_ sender: Any) {
         moveToPosition?()
     }
