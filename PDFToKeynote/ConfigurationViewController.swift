@@ -77,6 +77,11 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
             if let c = cell as? SlideSizeTableViewCell {
                 c.configurateCollectionView()
             }
+        } else if row == 2 {
+            cell = tableView.dequeueReusableCell(withIdentifier: "BackgroundColorViewCell", for: indexPath)
+            if let c = cell as? BackgroundColorViewCell {
+                c.configurateCollectionView()
+            }
         } else {
             cell = tableView.dequeueReusableCell(withIdentifier: "FileInformationTableViewCell", for: indexPath)
         }
@@ -88,6 +93,8 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
         if row == 0 {
             return 130
         } else if row == 1 {
+            return 268
+        } else if row == 2 {
             return 268
         }
         return 200

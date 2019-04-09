@@ -9,5 +9,12 @@
 import UIKit
 
 class AspectRatioCollectionViewCell: UICollectionViewCell {
-    
+    @IBOutlet weak var ratioTextLabel: UILabel!
+    @IBOutlet weak var nativeGoldstarView: UIImageView!
+    @IBOutlet weak var visualEffectContainerView: UIVisualEffectView!
+
+    @IBAction func selectColorTapped(_ sender: Any) {
+
+    }
+
 }

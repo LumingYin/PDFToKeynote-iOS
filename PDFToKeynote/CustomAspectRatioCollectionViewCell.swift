@@ -9,5 +9,7 @@
 import UIKit
 
 class CustomAspectRatioCollectionViewCell: UICollectionViewCell {
-    
+    @IBAction func addCustomColorTapped(_ sender: Any) {
+        
+    }
 }
