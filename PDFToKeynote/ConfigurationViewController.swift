@@ -330,6 +330,7 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
 
     func addNewSize(width: Int, height: Int, description: String) {
         self.sizes.append((width, height, description))
+        self.tableView.reloadData()
     }
 
     func addNewSize(width: Int, height: Int) {
@@ -347,6 +348,10 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
     func getUsingRetina2x() -> Bool {
         return self.useRetina2x
     }
+
+    func getCutoffCountForScreenResolution() -> Int {
+        return 4
+    }
 }
 
 protocol SlideSizeDelegate : class {
@@ -358,4 +363,5 @@ protocol SlideSizeDelegate : class {
     func addNewSize(width: Int, height: Int, description: String)
     func selectSizeAtIndex(index: Int)
     func setShouldUseRetina2x(shouldUse: Bool)
+    func getCutoffCountForScreenResolution() -> Int
 }

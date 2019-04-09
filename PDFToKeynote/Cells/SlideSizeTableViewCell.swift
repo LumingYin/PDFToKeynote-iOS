@@ -38,22 +38,27 @@ class SlideSizeTableViewCell: UITableViewCell, UICollectionViewDelegate, UIColle
         }
     }
 
+//    let hardcodedResolutionCount = 4
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 0 {
-            return delegate.getAllSizes().count
+            return delegate.getCutoffCountForScreenResolution()
         } else {
-            return 1
+            return delegate.getAllSizes().count - delegate.getCutoffCountForScreenResolution() + 1
         }
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if indexPath.section == 0 {
+        let arrayIndex = indexPath.row + (indexPath.section == 1 ? delegate.getCutoffCountForScreenResolution() : 0)
+        if arrayIndex <= delegate.getAllSizes().count - 1  {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AspectRatioCollectionViewCell", for: indexPath) as! AspectRatioCollectionViewCell
-            let size = delegate.getAllSizes()[indexPath.row]
+            let size = delegate.getAllSizes()[arrayIndex]
             cell.ratioTextLabel.text = size.description
             return cell
         } else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomEntryCollectionViewCell", for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomEntryCollectionViewCell", for: indexPath) as! CustomEntryCollectionViewCell
+            cell.delegate = self.delegate
+            cell.parentTableViewCell = self
             return cell
         }
     }
