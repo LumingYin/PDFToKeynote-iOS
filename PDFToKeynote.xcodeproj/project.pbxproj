@@ -41,6 +41,7 @@
 		32009C31225C703D005D5042 /* SingleColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009C30225C703D005D5042 /* SingleColorCollectionViewCell.swift */; };
 		32009C33225C707E005D5042 /* MultipleColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009C32225C707E005D5042 /* MultipleColorCollectionViewCell.swift */; };
 		32009C36225C73E9005D5042 /* MultpleLineLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 32009C34225C73E9005D5042 /* MultpleLineLayout.m */; };
+		3207B005225C78260036A470 /* JEKScrollableSectionCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3207B003225C78260036A470 /* JEKScrollableSectionCollectionViewLayout.m */; };
 		3228E9F4225ABC4B005F923D /* PDFKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3228E9F3225ABC4B005F923D /* PDFKit.framework */; };
 		323F1452225B260A007D3DB3 /* ChromaShadeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323F144C225B260A007D3DB3 /* ChromaShadeSlider.swift */; };
 		323F1453225B260A007D3DB3 /* UIColor+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323F144D225B260A007D3DB3 /* UIColor+Utilities.swift */; };
@@ -107,6 +108,8 @@
 		32009C32225C707E005D5042 /* MultipleColorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleColorCollectionViewCell.swift; sourceTree = "<group>"; };
 		32009C34225C73E9005D5042 /* MultpleLineLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MultpleLineLayout.m; path = /Volumes/SSD/blue/Repos/PDFToKeynote/PDFToKeynote/MultpleLineLayout.m; sourceTree = "<absolute>"; };
 		32009C35225C73E9005D5042 /* MultpleLineLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MultpleLineLayout.h; path = /Volumes/SSD/blue/Repos/PDFToKeynote/PDFToKeynote/MultpleLineLayout.h; sourceTree = "<absolute>"; };
+		3207B003225C78260036A470 /* JEKScrollableSectionCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JEKScrollableSectionCollectionViewLayout.m; sourceTree = "<group>"; };
+		3207B004225C78260036A470 /* JEKScrollableSectionCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEKScrollableSectionCollectionViewLayout.h; sourceTree = "<group>"; };
 		3228E9F3225ABC4B005F923D /* PDFKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PDFKit.framework; path = System/Library/Frameworks/PDFKit.framework; sourceTree = SDKROOT; };
 		323F144C225B260A007D3DB3 /* ChromaShadeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromaShadeSlider.swift; sourceTree = "<group>"; };
 		323F144D225B260A007D3DB3 /* UIColor+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Utilities.swift"; sourceTree = "<group>"; };
@@ -287,6 +290,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		3207B002225C78260036A470 /* JEKScrollableSectionCollectionViewLayout */ = {
+			isa = PBXGroup;
+			children = (
+				3207B003225C78260036A470 /* JEKScrollableSectionCollectionViewLayout.m */,
+				3207B004225C78260036A470 /* JEKScrollableSectionCollectionViewLayout.h */,
+			);
+			path = JEKScrollableSectionCollectionViewLayout;
+			sourceTree = "<group>";
+		};
 		3228E9F2225ABC4B005F923D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -341,6 +353,7 @@
 		32D9A0D7225AB93500AEC14B /* PDFToKeynote */ = {
 			isa = PBXGroup;
 			children = (
+				3207B002225C78260036A470 /* JEKScrollableSectionCollectionViewLayout */,
 				32009BEA225C37D5005D5042 /* Libraries */,
 				32009BE8225C37C6005D5042 /* Support */,
 				32009BE7225C37B8005D5042 /* Templates */,
@@ -524,6 +537,7 @@
 				32009C1B225C605B005D5042 /* ModernTimer.swift in Sources */,
 				32D9A0DB225AB93500AEC14B /* DocumentBrowserViewController.swift in Sources */,
 				323F1462225B39FE007D3DB3 /* AddWidthHeightViewController.swift in Sources */,
+				3207B005225C78260036A470 /* JEKScrollableSectionCollectionViewLayout.m in Sources */,
 				32009C24225C605B005D5042 /* ModernContinuousContourView.swift in Sources */,
 				32009C18225C605B005D5042 /* UIEdgeInsets+Math.swift in Sources */,
 				32009C31225C703D005D5042 /* SingleColorCollectionViewCell.swift in Sources */,

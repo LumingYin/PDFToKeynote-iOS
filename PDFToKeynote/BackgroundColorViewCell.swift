@@ -48,6 +48,15 @@ class BackgroundColorViewCell: UITableViewCell, UICollectionViewDataSource, UICo
 
     func configurateCollectionView() {
         if !isConfigured {
+            let layout = JEKScrollableSectionCollectionViewLayout()
+            layout.itemSize = CGSize(width: 86, height: 86);
+//            layout.headerReferenceSize = CGSize(width: 0, height: 22)
+            layout.minimumInteritemSpacing = 10
+            collectionView.collectionViewLayout = layout
+
+//            collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+//            collectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header")
+
 //            (collectionView.collectionViewLayout as! UICollectionViewFlowLayout).minimumLineSpacing = CGFloat.greatestFiniteMagnitude
 //            let flowLayout = UICollectionViewFlowLayout()
 //            flowLayout.itemSize = CGSize(width: 86, height: 86)
