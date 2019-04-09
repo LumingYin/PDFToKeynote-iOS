@@ -22,7 +22,7 @@ class SlideSizeTableViewCell: UITableViewCell, UICollectionViewDelegate, UIColle
     }
 
     @IBAction func switch1xRetinaTapped(_ sender: Any) {
-        delegate.setShouldUseRetina2x(shouldUse: delegate.getUsingRetina2x())
+        delegate.setShouldUseRetina2x(shouldUse: !delegate.getUsingRetina2x())
         if delegate.getUsingRetina2x() {
             if twoXImage == nil {
                 twoXImage = UIImage(named: "slideSizeCell_Retina")
@@ -31,7 +31,7 @@ class SlideSizeTableViewCell: UITableViewCell, UICollectionViewDelegate, UIColle
             retinaScaleLabel.text = "Retina"
         } else {
             if oneXImage == nil {
-                oneXImage = UIImage(named: "slideSizeCell_1x")
+                oneXImage = UIImage(named: "slideSizeCell1x")
             }
             retinaScaleButton.setImage(oneXImage, for: .normal)
             retinaScaleLabel.text = "Normal"
