@@ -230,7 +230,7 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
 
     func performConversion(selectedRow: Int) {
         var size = sizes[selectedRow]
-        if useRetina2x {
+        if useRetina2x && (size.width <= 2000 && size.height <= 2000) {
             size = (width: size.width * 2, height: size.height * 2, description: "2x")
         }
         Converter.performConversion(pdf: pdf, selectedSize: size, selectedColor: selectedColor, pdfFileName: self.document?.fileURL.lastPathComponent.stripFileExtension(), conversionSucceededCallback: { (destinationUrl) -> (Void) in
