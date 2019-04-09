@@ -170,8 +170,8 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
                 if abs(ratio - sizeRatio) < 0.01 {
                     self.sizes[i].description = "\(self.sizes[i].description) (Native)"
                     self.nativeSizeIndex = i
-                    self.updateParticularCollectionViewIndex(i: i, native: true, selected: false)
                     self.selectSizeAtIndex(index: i)
+                    self.updateParticularCollectionViewIndex(i: i, native: true, selected: true)
 //                    self.dimensionPicker.selectRow(i, inComponent: 0, animated: true)
 //                    self.aspectRatioLabel.text = self.sizes[i].description
                     matchedPreferredResolutions = true
