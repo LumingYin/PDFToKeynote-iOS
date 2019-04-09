@@ -35,6 +35,8 @@
 		32009C24225C605B005D5042 /* ModernContinuousContourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009C0B225C605B005D5042 /* ModernContinuousContourView.swift */; };
 		32009C27225C6579005D5042 /* FileInformationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009C26225C6579005D5042 /* FileInformationTableViewCell.swift */; };
 		32009C29225C6B62005D5042 /* SlideSizeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009C28225C6B62005D5042 /* SlideSizeTableViewCell.swift */; };
+		32009C2B225C6C67005D5042 /* AspectRatioCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009C2A225C6C67005D5042 /* AspectRatioCollectionViewCell.swift */; };
+		32009C2D225C6C73005D5042 /* CustomAspectRatioCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009C2C225C6C73005D5042 /* CustomAspectRatioCollectionViewCell.swift */; };
 		3228E9F4225ABC4B005F923D /* PDFKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3228E9F3225ABC4B005F923D /* PDFKit.framework */; };
 		323F1452225B260A007D3DB3 /* ChromaShadeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323F144C225B260A007D3DB3 /* ChromaShadeSlider.swift */; };
 		323F1453225B260A007D3DB3 /* UIColor+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323F144D225B260A007D3DB3 /* UIColor+Utilities.swift */; };
@@ -94,6 +96,8 @@
 		32009C0B225C605B005D5042 /* ModernContinuousContourView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModernContinuousContourView.swift; sourceTree = "<group>"; };
 		32009C26225C6579005D5042 /* FileInformationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FileInformationTableViewCell.swift; path = PDFToKeynote/FileInformationTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		32009C28225C6B62005D5042 /* SlideSizeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideSizeTableViewCell.swift; sourceTree = "<group>"; };
+		32009C2A225C6C67005D5042 /* AspectRatioCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectRatioCollectionViewCell.swift; sourceTree = "<group>"; };
+		32009C2C225C6C73005D5042 /* CustomAspectRatioCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAspectRatioCollectionViewCell.swift; sourceTree = "<group>"; };
 		3228E9F3225ABC4B005F923D /* PDFKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PDFKit.framework; path = System/Library/Frameworks/PDFKit.framework; sourceTree = SDKROOT; };
 		323F144C225B260A007D3DB3 /* ChromaShadeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromaShadeSlider.swift; sourceTree = "<group>"; };
 		323F144D225B260A007D3DB3 /* UIColor+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Utilities.swift"; sourceTree = "<group>"; };
@@ -340,6 +344,8 @@
 				323F1461225B39FE007D3DB3 /* AddWidthHeightViewController.swift */,
 				323F145F225B3872007D3DB3 /* PopoverViewController.swift */,
 				32D4BAB7225C03120030852A /* ConfigurationViewController.swift */,
+				32009C2A225C6C67005D5042 /* AspectRatioCollectionViewCell.swift */,
+				32009C2C225C6C73005D5042 /* CustomAspectRatioCollectionViewCell.swift */,
 				32009C28225C6B62005D5042 /* SlideSizeTableViewCell.swift */,
 				32D9A0E3225AB93700AEC14B /* Assets.xcassets */,
 				32D9A0E0225AB93500AEC14B /* Main.storyboard */,
@@ -497,6 +503,7 @@
 				32009C17225C605B005D5042 /* UIStoryboard+Core.swift in Sources */,
 				32D9A0DD225AB93500AEC14B /* DocumentViewController.swift in Sources */,
 				32009C29225C6B62005D5042 /* SlideSizeTableViewCell.swift in Sources */,
+				32009C2D225C6C73005D5042 /* CustomAspectRatioCollectionViewCell.swift in Sources */,
 				32009BEC225C3804005D5042 /* Converter.swift in Sources */,
 				323F1453225B260A007D3DB3 /* UIColor+Utilities.swift in Sources */,
 				32009C1B225C605B005D5042 /* ModernTimer.swift in Sources */,
@@ -512,6 +519,7 @@
 				323F146E225B424E007D3DB3 /* AcknowledgementViewController.swift in Sources */,
 				32009C15225C605B005D5042 /* CGSize+Math.swift in Sources */,
 				323F146F225B424E007D3DB3 /* AcknowledgementsTableViewController.swift in Sources */,
+				32009C2B225C6C67005D5042 /* AspectRatioCollectionViewCell.swift in Sources */,
 				32009C12225C605B005D5042 /* IndexPath+Grid.swift in Sources */,
 				32009C1E225C605B005D5042 /* ModernFluidButton.swift in Sources */,
 				32D4BAB8225C03120030852A /* ConfigurationViewController.swift in Sources */,

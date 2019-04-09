@@ -8,11 +8,43 @@
 
 import UIKit
 
-class SlideSizeTableViewCell: UITableViewCell {
+class SlideSizeTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if section == 0 {
+            return 10
+        } else {
+            return 1
+        }
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if indexPath.section == 0 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AspectRatioCollectionViewCell", for: indexPath)
+            return cell
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomAspectRatioCollectionViewCell", for: indexPath)
+            return cell
+        }
+    }
+
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 2
+    }
+
+    @IBOutlet weak var collectionView: UICollectionView!
+    var configurated = false
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+
+    func configurateCollectionView() {
+        if !configurated {
+            collectionView.delegate = self
+            collectionView.dataSource = self
+            configurated = true
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

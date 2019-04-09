@@ -394,18 +394,18 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SlideSizeTableViewCell" rowHeight="245" id="fVo-70-8Ve" customClass="SlideSizeTableViewCell" customModule="PDFToKeynote" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="158" width="350" height="245"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SlideSizeTableViewCell" rowHeight="268" id="fVo-70-8Ve" customClass="SlideSizeTableViewCell" customModule="PDFToKeynote" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="158" width="350" height="268"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fVo-70-8Ve" id="wCs-mH-NHO">
-                                            <rect key="frame" x="0.0" y="0.0" width="350" height="245"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="350" height="268"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wXu-FL-f0B">
-                                                    <rect key="frame" x="17" y="10" width="318" height="232"/>
+                                                    <rect key="frame" x="17" y="10" width="318" height="255"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="E7G-g1-fpG">
-                                                        <rect key="frame" x="0.0" y="0.0" width="318" height="232"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="318" height="255"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Slide Size" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3r-wq-qw4">
@@ -449,7 +449,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jg5-8D-xrU">
-                                                                <rect key="frame" x="12" y="52" width="288" height="165"/>
+                                                                <rect key="frame" x="12" y="52" width="288" height="187"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="YvU-oN-r1Q">
@@ -459,8 +459,8 @@
                                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                                 </collectionViewFlowLayout>
                                                                 <cells>
-                                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="AWc-nr-hKN">
-                                                                        <rect key="frame" x="0.0" y="39.5" width="86" height="86"/>
+                                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AspectRatioCollectionViewCell" id="AWc-nr-hKN" customClass="AspectRatioCollectionViewCell" customModule="PDFToKeynote" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="86" height="86"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                                             <rect key="frame" x="0.0" y="0.0" width="86" height="86"/>
@@ -474,21 +474,39 @@
                                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                         <subviews>
                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="4:3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dWf-bX-eEx">
-                                                                                                <rect key="frame" x="10" y="15" width="45" height="16"/>
+                                                                                                <rect key="frame" x="14" y="15" width="45" height="16"/>
                                                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                 <nil key="highlightedColor"/>
                                                                                             </label>
+                                                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p1T-ln-RlI">
+                                                                                                <rect key="frame" x="-11" y="-20" width="86" height="86"/>
+                                                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                            </button>
+                                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="goldStarView" translatesAutoresizingMaskIntoConstraints="NO" id="ATZ-am-rMU">
+                                                                                                <rect key="frame" x="8" y="15" width="15" height="15"/>
+                                                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                            </imageView>
                                                                                         </subviews>
                                                                                     </view>
                                                                                     <blurEffect style="light"/>
+                                                                                    <userDefinedRuntimeAttributes>
+                                                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                                            <integer key="value" value="9"/>
+                                                                                        </userDefinedRuntimeAttribute>
+                                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                                                    </userDefinedRuntimeAttributes>
                                                                                 </visualEffectView>
+                                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="greenTickView" translatesAutoresizingMaskIntoConstraints="NO" id="20E-J4-QfH">
+                                                                                    <rect key="frame" x="36" y="59" width="15" height="15"/>
+                                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                </imageView>
                                                                             </subviews>
                                                                         </view>
                                                                     </collectionViewCell>
-                                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="F5s-bP-SDl">
-                                                                        <rect key="frame" x="96" y="39.5" width="86" height="86"/>
+                                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CustomAspectRatioCollectionViewCell" id="F5s-bP-SDl" customClass="CustomAspectRatioCollectionViewCell" customModule="PDFToKeynote" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="101" width="86" height="86"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                                             <rect key="frame" x="0.0" y="0.0" width="86" height="86"/>
@@ -513,6 +531,7 @@
                                                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                                                             <integer key="value" value="23"/>
                                                                                         </userDefinedRuntimeAttribute>
+                                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                                                     </userDefinedRuntimeAttributes>
                                                                                 </visualEffectView>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Custom" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n94-Pd-HkJ">
@@ -522,6 +541,10 @@
                                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
+                                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F0q-JR-xE9">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="86" height="86"/>
+                                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                </button>
                                                                             </subviews>
                                                                         </view>
                                                                     </collectionViewCell>
@@ -545,9 +568,12 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="collectionView" destination="jg5-8D-xrU" id="qRH-yg-fz0"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="201" id="9uM-mI-a8I">
-                                        <rect key="frame" x="0.0" y="403" width="350" height="201"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="201" id="9uM-mI-a8I">
+                                        <rect key="frame" x="0.0" y="426" width="350" height="201"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9uM-mI-a8I" id="cRR-Me-ZNR">
                                             <rect key="frame" x="0.0" y="0.0" width="350" height="201"/>
@@ -583,8 +609,8 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="155" id="Y9t-Y3-pZI">
-                                        <rect key="frame" x="0.0" y="604" width="350" height="155"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="155" id="Y9t-Y3-pZI">
+                                        <rect key="frame" x="0.0" y="627" width="350" height="155"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Y9t-Y3-pZI" id="s2z-08-dd9">
                                             <rect key="frame" x="0.0" y="0.0" width="350" height="155"/>
@@ -671,6 +697,8 @@
         <image name="Settings" width="32" height="32"/>
         <image name="closeButton" width="23" height="22.666666030883789"/>
         <image name="convert" width="256" height="256"/>
+        <image name="goldStarView" width="46" height="46"/>
+        <image name="greenTickView" width="61" height="61"/>
         <image name="pdf" width="512" height="512"/>
         <image name="plusSign" width="20.333333969116211" height="20.333333969116211"/>
         <image name="slideSizeCell1x" width="15.333333015441895" height="15.666666984558105"/>
