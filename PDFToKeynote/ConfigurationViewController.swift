@@ -168,7 +168,7 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
                 let size = self.sizes[i]
                 let sizeRatio = Float(size.width) / Float(size.height)
                 if abs(ratio - sizeRatio) < 0.01 {
-                    self.sizes[i].description = "\(self.sizes[i].description) (Native)"
+//                    self.sizes[i].description = "\(self.sizes[i].description) (Native)"
                     self.nativeSizeIndex = i
                     self.selectSizeAtIndex(index: i)
                     self.updateParticularCollectionViewIndex(i: i, native: true, selected: true)
