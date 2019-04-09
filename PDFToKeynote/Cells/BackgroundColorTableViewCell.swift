@@ -87,7 +87,20 @@ class BackgroundColorTableViewCell: UITableViewCell, UICollectionViewDataSource,
     }
 
     func hideTickOnEverythingExceptSelection() {
-//        for
+        for i in 0..<greyscaleColors.count {
+            if (-1, i) != selectedColorIndex {
+                if let sc = self.collectionView.cellForItem(at: IndexPath(row: i, section: 0)) as? SingleColorCollectionViewCell {
+                    sc.greenTickView.isHidden = true
+                }
+            }
+        }
+        for i in 0..<rainbowColors.count {
+            if selectedColorIndex.0 != i {
+                if let sc = self.collectionView.cellForItem(at: IndexPath(row: i, section: 1)) as? MultipleColorCollectionViewCell {
+                    sc.greenTickView.isHidden = true
+                }
+            }
+        }
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -105,6 +118,7 @@ class BackgroundColorTableViewCell: UITableViewCell, UICollectionViewDataSource,
                 self.delegate?.changeToNewColor(color: color)
                 self.selectedColorIndex = (-1, index)
                 cell.greenTickView.isHidden = false
+                self.hideTickOnEverythingExceptSelection()
             }
 
             return cell
@@ -126,6 +140,7 @@ class BackgroundColorTableViewCell: UITableViewCell, UICollectionViewDataSource,
                 self.selectedColorIndex = index
                 cell.setTickAtLocation(self.selectedColorIndex.1)
                 cell.greenTickView.isHidden = false
+                self.hideTickOnEverythingExceptSelection()
             }
             return cell
         } else {
