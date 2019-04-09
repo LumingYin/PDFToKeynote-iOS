@@ -64,11 +64,15 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 8
+        return 1
+    }
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 3
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let row = indexPath.row
+        let row = indexPath.section
         var cell: UITableViewCell!
         if row == 0 {
             cell = tableView.dequeueReusableCell(withIdentifier: "FileInformationTableViewCell", for: indexPath)
@@ -88,8 +92,18 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
         return cell
     }
 
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 5
+    }
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView()
+        view.backgroundColor = UIColor.clear
+        return view
+    }
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let row = indexPath.row
+        let row = indexPath.section
         if row == 0 {
             return 130
         } else if row == 1 {
