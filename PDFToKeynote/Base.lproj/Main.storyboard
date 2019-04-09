@@ -197,7 +197,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2U4-Uw-ejU">
-                                            <rect key="frame" x="307" y="43.5" width="23" height="22.5"/>
+                                            <rect key="frame" x="314" y="44" width="16" height="22"/>
                                             <state key="normal" image="closeButton"/>
                                             <connections>
                                                 <action selector="dismissToTipModeTapped:" destination="ofo-jH-SYk" eventType="touchUpInside" id="ujX-bX-ylq"/>
@@ -428,7 +428,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="1cB-WG-PpQ" firstAttribute="leading" secondItem="rJa-6P-Ag1" secondAttribute="leading" constant="17" id="FGy-nO-5T7"/>
-                                                <constraint firstAttribute="trailing" secondItem="1cB-WG-PpQ" secondAttribute="trailing" constant="15" id="faI-he-OMO"/>
+                                                <constraint firstAttribute="trailing" secondItem="1cB-WG-PpQ" secondAttribute="trailing" constant="15" id="t3S-th-bov"/>
                                                 <constraint firstItem="1cB-WG-PpQ" firstAttribute="top" secondItem="rJa-6P-Ag1" secondAttribute="top" constant="10" id="xxM-ue-9CH"/>
                                             </constraints>
                                         </tableViewCellContentView>
