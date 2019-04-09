@@ -25,7 +25,7 @@ class CustomEntryCollectionViewCell: UICollectionViewCell, UIPopoverPresentation
         let controller = storyBoard.instantiateViewController(withIdentifier: "AddWidthHeight") as! AddWidthHeightViewController
         controller.newSizeAdded = { (width, height) in
 //            self.delegate.addNewSize(width: width, height: height, description: "\(width) × \(height)")
-            self.delegate.addNewSize(width: width, height: height, description: "\(width)\n\(height)")
+            self.delegate.addNewSize(width: width, height: height, description: "W:\(width)\nH:\(height)")
             let sectionOneLocation = self.delegate.getAllSizes().count - self.delegate.getCutoffCountForScreenResolution() - 1
             self.delegate.selectSizeAtIndex(index: self.delegate.getAllSizes().count - 1)
             let newIndexPath = IndexPath(row: sectionOneLocation, section: 1)

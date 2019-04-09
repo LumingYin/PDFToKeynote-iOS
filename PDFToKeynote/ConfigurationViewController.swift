@@ -43,6 +43,7 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
         (1680, 1050, "16:10"),
         (1024, 768, "4:3"),
         (1280, 1024, "5:4"),
+        (1024, 1024, "1:1"),
 //        (768, 1024, "3:4"),
 //        (1080, 1920, "9:16"),
 //        (1050, 1680, "10:16"),
@@ -377,8 +378,25 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
         return self.useRetina2x
     }
 
+    var cachedCutoff: Int?
+
+    // If an aspect ratio contains the ":" sign, we show it in the 0th collection section, which is the first row in the UI.
     func getCutoffCountForScreenResolution() -> Int {
-        return 4
+        if cachedCutoff == nil {
+            var count = 0
+            var lastOneContainingRatio = -1
+            for i in 0..<sizes.count {
+                let size = sizes[i]
+                if size.description.contains(":") && i == lastOneContainingRatio + 1 {
+                    lastOneContainingRatio += 1
+                    count += 1
+                } else {
+                    break
+                }
+            }
+            cachedCutoff = count
+        }
+        return cachedCutoff ?? 0
     }
 }
 
