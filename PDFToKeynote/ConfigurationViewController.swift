@@ -39,13 +39,13 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
 //    }
 
     var sizes: [SlideSize] = [
-        (1024, 768, "4:3"),
-        (1680, 1050, "16:10"),
         (1920, 1080, "16:9"),
-        (1080, 1920, "9:16"),
-        (1050, 1680, "10:16"),
+        (1680, 1050, "16:10"),
+        (1024, 768, "4:3"),
         (1280, 1024, "5:4"),
-        (768, 1024, "3:4"),
+//        (768, 1024, "3:4"),
+//        (1080, 1920, "9:16"),
+//        (1050, 1680, "10:16"),
         (612, 792, "Letter\nPortrait"),
         (792, 612, "Letter\nLandscape"),
         (595, 842, "A4\nPortrait"),
@@ -353,7 +353,7 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
     }
 
     func getCutoffCountForScreenResolution() -> Int {
-        return 7
+        return 4
     }
 }
 

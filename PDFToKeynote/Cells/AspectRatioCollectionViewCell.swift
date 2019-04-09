@@ -35,9 +35,14 @@ class AspectRatioCollectionViewCell: UICollectionViewCell {
         }
         visualEffectContainerView.frame = CGRect(x: (self.bounds.width - paintWidth) / 2, y: (self.bounds.height - paintHeight) / 2, width: paintWidth, height: paintHeight)
         ratioTextLabel.center = CGPoint(x: visualEffectContainerView.frame.width / 2, y: visualEffectContainerView.frame.height / 2)
+//        ratioTextLabel.sizeToFit()
 //        }
 
         if self.ratioCorrespondingIndex == self.delegate.getNativeSizeIndex() {
+            self.nativeGoldstarView.frame = CGRect(x: visualEffectContainerView.frame.origin.x + visualEffectContainerView.frame.size.width - 20, y: visualEffectContainerView.frame.origin.y + 10, width: self.nativeGoldstarView.frame.size.width, height: self.nativeGoldstarView.frame.size.height)
+//            self.nativeGoldstarView.center = CGPoint(x: visualEffectContainerView.frame.origin.x + visualEffectContainerView.frame.size.width - 20, y: visualEffectContainerView.frame.origin.y + 10)
+//            self.nativeGoldstarView.frame = CGRect(x: ratioTextLabel.frame.origin.x - self.nativeGoldstarView.frame.width, y: ratioTextLabel.frame.origin.y, width: self.nativeGoldstarView.frame.width, height: self.nativeGoldstarView.frame.height)
+//            self.ratioTextLabel.frame = CGRect(x: self.ratioTextLabel.frame.origin.x + self.nativeGoldstarView.frame.width, y: self.ratioTextLabel.frame.origin.y, width: self.ratioTextLabel.frame.width, height: self.ratioTextLabel.frame.height)
             self.nativeGoldstarView.isHidden = false
         }
     }
