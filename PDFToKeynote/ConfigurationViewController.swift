@@ -158,7 +158,7 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
 //                self.aspectRatioLabel.text = self.sizes.last?.description
             }
         }
-        cachedFileSize = Helper.convertSizeToFileString(with: Helper.sizeForLocalFilePath(filePath: url.absoluteString))
+        cachedFileSize = url.fileSizeString
         tableView.reloadData()
     }
 
