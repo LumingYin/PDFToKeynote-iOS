@@ -23,14 +23,17 @@ class DocumentViewController: UIViewController, FloatingPanelControllerDelegate 
     func floatingPanel(_ vc: FloatingPanelController, layoutFor newCollection: UITraitCollection) -> FloatingPanelLayout? {
         print("Size class: (V: \(newCollection.verticalSizeClass.rawValue), H: \(newCollection.horizontalSizeClass.rawValue))")
         if newCollection.verticalSizeClass == .regular && newCollection.horizontalSizeClass == .regular {
+            print("Returning ConverterFloatingLandscapePanelLayout")
             return ConverterFloatingLandscapePanelLayout()
         } else {
+            print("Returning ConverterFloatingPanelLayout")
             return ConverterFloatingPanelLayout()
         }
 //        return (newCollection.verticalSizeClass == .regular) ? ConverterFloatingPanelLayout() : ConverterFloatingLandscapePanelLayout()
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+
 //        if (traitCollection.horizontalSizeClass == .compact) {
 //        } else {
 //            floatingController?.removePanelFromParent(animated: false)
@@ -52,10 +55,17 @@ class DocumentViewController: UIViewController, FloatingPanelControllerDelegate 
                 self.navigationDoneButton.isEnabled = state
             }
             floatingController?.set(contentViewController: configurationVC)
-
+            configurationVC?.moveToPosition = {
+                if self.floatingController?.position != .full {
+                    self.floatingController?.move(to: .full, animated: true)
+                } else {
+                    self.floatingController?.move(to: .tip, animated: true)
+                }
+            }
+            floatingController?.addPanel(toParent: self)
+            //            floatingController?.move(to: .full, animated: true)
             // fpc.track(scrollView: contentVC.tableView)
         }
-        floatingController?.addPanel(toParent: self)
 
         document?.open(completionHandler: { (success) in
             if success {
@@ -72,6 +82,7 @@ class DocumentViewController: UIViewController, FloatingPanelControllerDelegate 
     }
 
     override func viewDidLoad() {
+        super.viewDidLoad()
     }
 
     @IBAction func dismissDocumentViewController() {

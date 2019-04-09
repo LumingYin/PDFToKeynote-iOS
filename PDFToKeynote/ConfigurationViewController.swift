@@ -8,6 +8,7 @@
 
 import UIKit
 import PDFKit
+import FloatingPanel
 
 class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, ChromaColorPickerDelegate, UIPopoverPresentationControllerDelegate {
     @IBOutlet weak var customizeImageView: UIImageView!
@@ -20,7 +21,7 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
     var pdf: PDFDocument!
     weak var document: UIDocument?
     var enableDisableStateChanged: ((Bool) -> ())?
-
+    var moveToPosition: (() -> ())?
     var neatColorPicker: ChromaColorPicker!
 
     var selectedColor: UIColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1) {
@@ -208,6 +209,10 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
         selectedColor = color
     }
 
+    @IBAction func customizeButtonTapped(_ sender: Any) {
+        moveToPosition?()
+    }
+    
     @IBAction func addNewAspectRatioTapped(_ sender: UIButton) {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyBoard.instantiateViewController(withIdentifier: "AddWidthHeight") as! AddWidthHeightViewController

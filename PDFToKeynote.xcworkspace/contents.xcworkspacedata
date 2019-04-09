@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Volumes/SSD/blue/Repos/PDFToKeynote/PDFToKeynote/Converter.swift">
-   </FileRef>
-   <FileRef
       location = "group:PDFToKeynote.xcodeproj">
    </FileRef>
    <FileRef

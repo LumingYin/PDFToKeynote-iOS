@@ -22,6 +22,13 @@ class ConverterFloatingPanelLayout: FloatingPanelLayout {
         default: return nil // Or `case .hidden: return nil`
         }
     }
+
+    public func prepareLayout(surfaceView: UIView, in view: UIView) -> [NSLayoutConstraint] {
+        return [
+            surfaceView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -5.0),
+            surfaceView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 5.0),
+        ]
+    }
 }
 
 public class ConverterFloatingLandscapePanelLayout: FloatingPanelLayout {

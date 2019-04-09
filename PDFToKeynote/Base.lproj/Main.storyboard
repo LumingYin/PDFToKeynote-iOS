@@ -239,7 +239,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="buttonTouched:" destination="ofo-jH-SYk" eventType="touchDown" id="9rU-hj-tJc"/>
-                                    <action selector="startConversion:" destination="M2k-L8-Olo" eventType="touchUpInside" id="vp3-tt-GL7"/>
+                                    <action selector="customizeButtonTapped:" destination="ofo-jH-SYk" eventType="touchUpInside" id="W5v-n9-hSG"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Settings" translatesAutoresizingMaskIntoConstraints="NO" id="2PO-bo-h0c">

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2D55A8556036E5F92222E213 /* Pods_PDFToKeynote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13B24480D71B5F0564439EC4 /* Pods_PDFToKeynote.framework */; };
+		32009BEC225C3804005D5042 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009BEB225C3804005D5042 /* Converter.swift */; };
 		3228E9F4225ABC4B005F923D /* PDFKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3228E9F3225ABC4B005F923D /* PDFKit.framework */; };
 		323F1452225B260A007D3DB3 /* ChromaShadeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323F144C225B260A007D3DB3 /* ChromaShadeSlider.swift */; };
 		323F1453225B260A007D3DB3 /* UIColor+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323F144D225B260A007D3DB3 /* UIColor+Utilities.swift */; };
@@ -26,7 +27,6 @@
 		32BEB7B2225AE12F00F51B0F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BEB7B1225AE12F00F51B0F /* Extensions.swift */; };
 		32D4BAB8225C03120030852A /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D4BAB7225C03120030852A /* ConfigurationViewController.swift */; };
 		32D4BABA225C09210030852A /* ConverterFloatingPanelLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D4BAB9225C09210030852A /* ConverterFloatingPanelLayout.swift */; };
-		32D4BABC225C0AFE0030852A /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D4BABB225C0AFE0030852A /* Converter.swift */; };
 		32D9A0D9225AB93500AEC14B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D9A0D8225AB93500AEC14B /* AppDelegate.swift */; };
 		32D9A0DB225AB93500AEC14B /* DocumentBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D9A0DA225AB93500AEC14B /* DocumentBrowserViewController.swift */; };
 		32D9A0DD225AB93500AEC14B /* DocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D9A0DC225AB93500AEC14B /* DocumentViewController.swift */; };
@@ -41,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		13B24480D71B5F0564439EC4 /* Pods_PDFToKeynote.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PDFToKeynote.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		32009BEB225C3804005D5042 /* Converter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
 		3228E9F3225ABC4B005F923D /* PDFKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PDFKit.framework; path = System/Library/Frameworks/PDFKit.framework; sourceTree = SDKROOT; };
 		323F144C225B260A007D3DB3 /* ChromaShadeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromaShadeSlider.swift; sourceTree = "<group>"; };
 		323F144D225B260A007D3DB3 /* UIColor+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Utilities.swift"; sourceTree = "<group>"; };
@@ -61,7 +62,6 @@
 		32BEB7B1225AE12F00F51B0F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		32D4BAB7225C03120030852A /* ConfigurationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
 		32D4BAB9225C09210030852A /* ConverterFloatingPanelLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterFloatingPanelLayout.swift; sourceTree = "<group>"; };
-		32D4BABB225C0AFE0030852A /* Converter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Converter.swift; path = /Volumes/SSD/blue/Repos/PDFToKeynote/PDFToKeynote/Converter.swift; sourceTree = "<absolute>"; };
 		32D9A0D5225AB93500AEC14B /* PDFToKeynote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PDFToKeynote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32D9A0D8225AB93500AEC14B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32D9A0DA225AB93500AEC14B /* DocumentBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentBrowserViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +98,64 @@
 				3B6F695D52E13E08A70619DA /* Pods-PDFToKeynote.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		32009BE5225C37A9005D5042 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				32009BEB225C3804005D5042 /* Converter.swift */,
+				32D9A0DE225AB93500AEC14B /* Document.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		32009BE7225C37B8005D5042 /* Templates */ = {
+			isa = PBXGroup;
+			children = (
+				32D9A0F0225ABAAB00AEC14B /* template_beginning.txt */,
+				32D9A0EE225ABAAB00AEC14B /* template_content.txt */,
+				32D9A0EF225ABAAB00AEC14B /* template_ending.txt */,
+			);
+			path = Templates;
+			sourceTree = "<group>";
+		};
+		32009BE8225C37C6005D5042 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				323F1471225B427E007D3DB3 /* Acknowledgements.plist */,
+				32D9A0E5225AB93700AEC14B /* LaunchScreen.storyboard */,
+				32D9A0E8225AB93700AEC14B /* Info.plist */,
+				323F1458225B2CEF007D3DB3 /* PDFToKeynote-Bridging-Header.h */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		32009BE9225C37CF005D5042 /* UITextField+Shake */ = {
+			isa = PBXGroup;
+			children = (
+				323F1463225B3D8C007D3DB3 /* UITextField+Shake.h */,
+				323F1464225B3D8C007D3DB3 /* UITextField+Shake.m */,
+			);
+			path = "UITextField+Shake";
+			sourceTree = "<group>";
+		};
+		32009BEA225C37D5005D5042 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				323F1468225B424E007D3DB3 /* SwiftyAcknowledgements */,
+				323F144B225B260A007D3DB3 /* ChromaColorPicker */,
+				32009BE9225C37CF005D5042 /* UITextField+Shake */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		32009BED225C382A005D5042 /* Auxillary */ = {
+			isa = PBXGroup;
+			children = (
+				32D4BAB9225C09210030852A /* ConverterFloatingPanelLayout.swift */,
+				32BEB7B1225AE12F00F51B0F /* Extensions.swift */,
+			);
+			path = Auxillary;
 			sourceTree = "<group>";
 		};
 		3228E9F2225ABC4B005F923D /* Frameworks */ = {
@@ -154,29 +212,19 @@
 		32D9A0D7225AB93500AEC14B /* PDFToKeynote */ = {
 			isa = PBXGroup;
 			children = (
-				323F1468225B424E007D3DB3 /* SwiftyAcknowledgements */,
-				323F144B225B260A007D3DB3 /* ChromaColorPicker */,
-				323F1471225B427E007D3DB3 /* Acknowledgements.plist */,
-				32D9A0F0225ABAAB00AEC14B /* template_beginning.txt */,
-				32D9A0EE225ABAAB00AEC14B /* template_content.txt */,
-				32D9A0EF225ABAAB00AEC14B /* template_ending.txt */,
-				32D4BABB225C0AFE0030852A /* Converter.swift */,
+				32009BEA225C37D5005D5042 /* Libraries */,
+				32009BE8225C37C6005D5042 /* Support */,
+				32009BE7225C37B8005D5042 /* Templates */,
+				32009BE5225C37A9005D5042 /* Model */,
+				32009BED225C382A005D5042 /* Auxillary */,
 				32D9A0D8225AB93500AEC14B /* AppDelegate.swift */,
 				32D9A0DA225AB93500AEC14B /* DocumentBrowserViewController.swift */,
 				32D9A0DC225AB93500AEC14B /* DocumentViewController.swift */,
-				32D4BAB9225C09210030852A /* ConverterFloatingPanelLayout.swift */,
 				323F1461225B39FE007D3DB3 /* AddWidthHeightViewController.swift */,
 				323F145F225B3872007D3DB3 /* PopoverViewController.swift */,
-				323F1463225B3D8C007D3DB3 /* UITextField+Shake.h */,
-				323F1464225B3D8C007D3DB3 /* UITextField+Shake.m */,
-				32BEB7B1225AE12F00F51B0F /* Extensions.swift */,
-				32D9A0DE225AB93500AEC14B /* Document.swift */,
-				32D9A0E0225AB93500AEC14B /* Main.storyboard */,
-				32D9A0E3225AB93700AEC14B /* Assets.xcassets */,
 				32D4BAB7225C03120030852A /* ConfigurationViewController.swift */,
-				32D9A0E5225AB93700AEC14B /* LaunchScreen.storyboard */,
-				32D9A0E8225AB93700AEC14B /* Info.plist */,
-				323F1458225B2CEF007D3DB3 /* PDFToKeynote-Bridging-Header.h */,
+				32D9A0E3225AB93700AEC14B /* Assets.xcassets */,
+				32D9A0E0225AB93500AEC14B /* Main.storyboard */,
 			);
 			path = PDFToKeynote;
 			sourceTree = "<group>";
@@ -320,7 +368,7 @@
 				32D9A0DF225AB93500AEC14B /* Document.swift in Sources */,
 				323F1456225B260A007D3DB3 /* ChromaHandle.swift in Sources */,
 				32D9A0DD225AB93500AEC14B /* DocumentViewController.swift in Sources */,
-				32D4BABC225C0AFE0030852A /* Converter.swift in Sources */,
+				32009BEC225C3804005D5042 /* Converter.swift in Sources */,
 				323F1453225B260A007D3DB3 /* UIColor+Utilities.swift in Sources */,
 				32D9A0DB225AB93500AEC14B /* DocumentBrowserViewController.swift in Sources */,
 				323F1462225B39FE007D3DB3 /* AddWidthHeightViewController.swift in Sources */,
@@ -480,7 +528,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3Q7XKEDZ36;
-				INFOPLIST_FILE = PDFToKeynote/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/PDFToKeynote/Support/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -488,7 +536,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.blue.PDFToKeynote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "PDFToKeynote/PDFToKeynote-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "PDFToKeynote/Support/PDFToKeynote-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -503,7 +551,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3Q7XKEDZ36;
-				INFOPLIST_FILE = PDFToKeynote/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/PDFToKeynote/Support/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -511,7 +559,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.blue.PDFToKeynote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "PDFToKeynote/PDFToKeynote-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "PDFToKeynote/Support/PDFToKeynote-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
