@@ -16,30 +16,15 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
 
     @IBOutlet weak var customizeImageView: UIImageView!
     @IBOutlet weak var startConversionButton: UIButton!
-//    @IBOutlet weak var dimensionPicker: UIPickerView!
-//    @IBOutlet weak var aspectRatioLabel: UILabel!
     @IBOutlet weak var colorPickerButton: UIButton!
-//    @IBOutlet weak var customizeAspectRatioButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     var pdf: PDFDocument!
     weak var document: UIDocument?
     var enableDisableStateChanged: ((Bool) -> ())?
     var moveToPosition: (() -> ())?
     var hideToTip: (() -> ())?
-//    var neatColorPicker: ChromaColorPicker!
 
     var selectedColor: UIColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
-//    {
-//        didSet {
-//            colorPickerButton.backgroundColor = selectedColor
-//        }
-//    }
-//    var selectedRow: Int {
-//        get {
-//            return self.dimensionPicker.selectedRow(inComponent: 0)
-//        }
-//    }
-
     var sizes: [SlideSize] = [
         (1920, 1080, "16:9"),
         (1680, 1050, "16:10"),
@@ -63,8 +48,6 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
         customizeImageView.tintColor = UIColor(named: "customBlue")
         tableView.delegate = self
         tableView.dataSource = self
-        // dimensionPicker.dataSource = self
-        // dimensionPicker.delegate = self
     }
 
 
@@ -150,7 +133,6 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
         if selected {
             asp.selectSizeTapped(self)
         }
-//        asp.configurateCellAppearance()
     }
 
     static func findIndexPathForResolutionIndex(i: Int, delegate: SlideSizeDelegate) -> IndexPath {
@@ -199,16 +181,10 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
                 self.nativeSizeIndex = self.sizes.count - 1
                 self.selectSizeAtIndex(index: self.nativeSizeIndex)
                 self.updateParticularCollectionViewIndex(i: self.nativeSizeIndex, native: true, selected: true)
-
-//                self.selectedSizeIndex = self.nativeSizeIndex
-//                self.dimensionPicker.reloadComponent(0)
-//                self.dimensionPicker.selectRow(self.sizes.count - 1, inComponent: 0, animated: true)
-//                self.aspectRatioLabel.text = self.sizes.last?.description
             }
         }
         cachedFileSize = url.fileSizeString
         tableView.reloadData()
-//        tableView.reloadRows(at: [IndexPath(row: 0, column: 0)], with: .automatic)
     }
 
     @IBAction func buttonTouched(_ sender: UIButton) {
@@ -252,18 +228,12 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
             if (active) {
                 SVProgressHUD.dismiss()
                 self.enableDisableStateChanged?(true)
-//                self.colorPickerButton.isEnabled = true
-//                self.dimensionPicker.isUserInteractionEnabled = true
                 self.startConversionButton.isEnabled = true
-//                self.customizeAspectRatioButton.isEnabled = true
                 self.startConversionButton.backgroundColor = UIColor(red: 0.3882352941, green: 0.7058823529, blue: 0.8431372549, alpha: 1)
             } else {
                 self.enableDisableStateChanged?(false)
-//                self.colorPickerButton.isEnabled = false
-//                self.dimensionPicker.isUserInteractionEnabled = false
                 self.startConversionButton.isEnabled = false
                 self.startConversionButton.backgroundColor = UIColor.gray
-//                self.customizeAspectRatioButton.isEnabled = false
             }
         }
     }
@@ -287,77 +257,13 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
         return NSAttributedString(string: string, attributes: [NSAttributedString.Key.foregroundColor:UIColor.white])
     }
 
-//    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-//        aspectRatioLabel.text = sizes[selectedRow].description
-//    }
-
-//    @IBAction func changeColorTapped(_ sender: UIButton) {
-//        neatColorPicker = ChromaColorPicker(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
-//        neatColorPicker.supportsShadesOfGray = true
-//        neatColorPicker.togglePickerColorMode()
-//        neatColorPicker.adjustToColor(selectedColor)
-//        neatColorPicker.delegate = self
-//        neatColorPicker.padding = 5
-//        neatColorPicker.stroke = 3
-//        neatColorPicker.hexLabel.textColor = UIColor.white
-//        neatColorPicker.addTarget(self, action: #selector(colorChanged(_:)), for: .valueChanged)
-//        let controller = PopoverViewController()
-//        controller.view = neatColorPicker
-//        controller.modalPresentationStyle = .popover
-//        controller.preferredContentSize = CGSize(width: 300, height: 300)
-//        let presentationController = controller.presentationController as! UIPopoverPresentationController
-//        presentationController.delegate = self
-//        presentationController.sourceView = sender
-//        presentationController.sourceRect = sender.bounds
-//        presentationController.permittedArrowDirections = [.down, .up]
-//        self.present(controller, animated: true)
-//    }
-
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return UIModalPresentationStyle.none
     }
 
-//    @objc func colorChanged(_ colorPicker: ChromaColorPicker) {
-//        selectedColor = colorPicker.currentColor
-//    }
-//
-//    func colorPickerDidChooseColor(_ colorPicker: ChromaColorPicker, color: UIColor) {
-//        selectedColor = color
-//    }
-//
     @IBAction func customizeButtonTapped(_ sender: Any) {
         moveToPosition?()
     }
-    
-//    @IBAction func addNewAspectRatioTapped(_ sender: UIButton) {
-//        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-//        let controller = storyBoard.instantiateViewController(withIdentifier: "AddWidthHeight") as! AddWidthHeightViewController
-//        controller.newSizeAdded = { (width, height) in
-//            self.sizes.append((width, height, "Custom: \(width) × \(height)"))
-//            self.dimensionPicker.reloadComponent(0)
-//            self.dimensionPicker.selectRow(self.sizes.count - 1, inComponent: 0, animated: true)
-//            self.aspectRatioLabel.text = self.sizes[self.selectedRow].description
-//        }
-//        controller.modalPresentationStyle = .popover
-//        controller.preferredContentSize = CGSize(width: 300, height: 200)
-//        let presentationController = controller.presentationController as! UIPopoverPresentationController
-//        presentationController.backgroundColor = controller.view.backgroundColor
-//        presentationController.delegate = self
-//        presentationController.sourceView = sender
-//        presentationController.sourceRect = sender.bounds
-//        presentationController.permittedArrowDirections = [.down, .up]
-//        self.present(controller, animated: true)
-//    }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     // MARK: - SlideSizeDelegate
     func getAllSizes() -> [SlideSize] {
