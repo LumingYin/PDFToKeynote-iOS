@@ -13,9 +13,18 @@ class AspectRatioCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var nativeGoldstarView: UIImageView!
     @IBOutlet weak var visualEffectContainerView: UIVisualEffectView!
     @IBOutlet weak var greenTickView: UIImageView!
+    weak var delegate: SlideSizeDelegate!
+    var ratioCorrespondingIndex: Int = 0
+    var correspondingSize: SlideSize!
+
+    func configurateCellAppearance() {
+        self.greenTickView.isHidden = true
+        self.nativeGoldstarView.isHidden = true
+    }
 
     @IBAction func selectSizeTapped(_ sender: Any) {
-
+        self.greenTickView.isHidden = false
+        delegate.selectSizeAtIndex(index: ratioCorrespondingIndex)
     }
 
 }

@@ -53,7 +53,11 @@ class SlideSizeTableViewCell: UITableViewCell, UICollectionViewDelegate, UIColle
         if arrayIndex <= delegate.getAllSizes().count - 1  {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AspectRatioCollectionViewCell", for: indexPath) as! AspectRatioCollectionViewCell
             let size = delegate.getAllSizes()[arrayIndex]
+            cell.correspondingSize = size
+            cell.ratioCorrespondingIndex = arrayIndex
             cell.ratioTextLabel.text = size.description
+            cell.delegate = self.delegate
+            cell.configurateCellAppearance()
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomEntryCollectionViewCell", for: indexPath) as! CustomEntryCollectionViewCell
