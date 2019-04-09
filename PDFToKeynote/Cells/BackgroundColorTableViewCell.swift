@@ -13,6 +13,8 @@ class BackgroundColorTableViewCell: UITableViewCell, UICollectionViewDataSource,
     @IBOutlet weak var colorHexCodeLabel: UILabel!
     @IBOutlet weak var colorReadableDescriptionLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
+    weak var delegate: ColorPickerDelegate?
+    
     var greyscaleColors: [UIColor] = [UIColor(hexString: "FFFFFE"),
                                       UIColor(hexString: "000000"),
                                       UIColor(hexString: "929192"),
@@ -58,7 +60,7 @@ class BackgroundColorTableViewCell: UITableViewCell, UICollectionViewDataSource,
             let layout = JEKScrollableSectionCollectionViewLayout()
             layout.itemSize = CGSize(width: 86, height: 86)
             layout.sectionInset = UIEdgeInsets(top: 3, left: 0, bottom: 3, right: 0)
-            layout.minimumInteritemSpacing = 10
+            layout.minimumInteritemSpacing = 0
             collectionView.collectionViewLayout = layout
             collectionView.delegate = self
             collectionView.dataSource = self

@@ -8,6 +8,11 @@
 
 import UIKit
 
+enum CustomEntryMode {
+    case color
+    case size
+}
+
 class CustomEntryCollectionViewCell: UICollectionViewCell, UIPopoverPresentationControllerDelegate {
     weak var delegate: SlideSizeDelegate!
     weak var parentTableViewCell: SlideSizeTableViewCell!

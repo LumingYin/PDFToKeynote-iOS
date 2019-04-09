@@ -12,7 +12,7 @@ import FloatingPanel
 
 typealias SlideSize = (width: Int, height: Int, description: String)
 
-class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, ChromaColorPickerDelegate, UIPopoverPresentationControllerDelegate, UITableViewDelegate, UITableViewDataSource, SlideSizeDelegate {
+class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, ChromaColorPickerDelegate, UIPopoverPresentationControllerDelegate, UITableViewDelegate, UITableViewDataSource, SlideSizeDelegate, ColorPickerDelegate {
 
     @IBOutlet weak var customizeImageView: UIImageView!
     @IBOutlet weak var startConversionButton: UIButton!
@@ -28,11 +28,12 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
     var hideToTip: (() -> ())?
     var neatColorPicker: ChromaColorPicker!
 
-    var selectedColor: UIColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1) {
-        didSet {
-            colorPickerButton.backgroundColor = selectedColor
-        }
-    }
+    var selectedColor: UIColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+//    {
+//        didSet {
+//            colorPickerButton.backgroundColor = selectedColor
+//        }
+//    }
 //    var selectedRow: Int {
 //        get {
 //            return self.dimensionPicker.selectedRow(inComponent: 0)
@@ -96,6 +97,7 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
         } else if row == 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "BackgroundColorTableViewCell", for: indexPath) as! BackgroundColorTableViewCell
             cell.configurateCollectionView()
+            cell.delegate = self
             return cell
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: "FileInformationTableViewCell", for: indexPath)
@@ -411,6 +413,10 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
         }
         return cachedCutoff ?? 0
     }
+
+    func changeToNewColor(color: UIColor) {
+        self.selectedColor = color
+    }
 }
 
 protocol SlideSizeDelegate : class {
@@ -423,4 +429,8 @@ protocol SlideSizeDelegate : class {
     func selectSizeAtIndex(index: Int)
     func setShouldUseRetina2x(shouldUse: Bool)
     func getCutoffCountForScreenResolution() -> Int
+}
+
+protocol ColorPickerDelegate: class {
+    func changeToNewColor(color: UIColor)
 }
