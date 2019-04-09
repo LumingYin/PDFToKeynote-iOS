@@ -40,7 +40,6 @@
 		32009C2F225C6F07005D5042 /* BackgroundColorViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009C2E225C6F07005D5042 /* BackgroundColorViewCell.swift */; };
 		32009C31225C703D005D5042 /* SingleColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009C30225C703D005D5042 /* SingleColorCollectionViewCell.swift */; };
 		32009C33225C707E005D5042 /* MultipleColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009C32225C707E005D5042 /* MultipleColorCollectionViewCell.swift */; };
-		32009C36225C73E9005D5042 /* MultpleLineLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 32009C34225C73E9005D5042 /* MultpleLineLayout.m */; };
 		3207B005225C78260036A470 /* JEKScrollableSectionCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3207B003225C78260036A470 /* JEKScrollableSectionCollectionViewLayout.m */; };
 		3228E9F4225ABC4B005F923D /* PDFKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3228E9F3225ABC4B005F923D /* PDFKit.framework */; };
 		323F1452225B260A007D3DB3 /* ChromaShadeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323F144C225B260A007D3DB3 /* ChromaShadeSlider.swift */; };
@@ -106,8 +105,6 @@
 		32009C2E225C6F07005D5042 /* BackgroundColorViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundColorViewCell.swift; sourceTree = "<group>"; };
 		32009C30225C703D005D5042 /* SingleColorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleColorCollectionViewCell.swift; sourceTree = "<group>"; };
 		32009C32225C707E005D5042 /* MultipleColorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleColorCollectionViewCell.swift; sourceTree = "<group>"; };
-		32009C34225C73E9005D5042 /* MultpleLineLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MultpleLineLayout.m; path = /Volumes/SSD/blue/Repos/PDFToKeynote/PDFToKeynote/MultpleLineLayout.m; sourceTree = "<absolute>"; };
-		32009C35225C73E9005D5042 /* MultpleLineLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MultpleLineLayout.h; path = /Volumes/SSD/blue/Repos/PDFToKeynote/PDFToKeynote/MultpleLineLayout.h; sourceTree = "<absolute>"; };
 		3207B003225C78260036A470 /* JEKScrollableSectionCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JEKScrollableSectionCollectionViewLayout.m; sourceTree = "<group>"; };
 		3207B004225C78260036A470 /* JEKScrollableSectionCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEKScrollableSectionCollectionViewLayout.h; sourceTree = "<group>"; };
 		3228E9F3225ABC4B005F923D /* PDFKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PDFKit.framework; path = System/Library/Frameworks/PDFKit.framework; sourceTree = SDKROOT; };
@@ -372,8 +369,6 @@
 				32009C30225C703D005D5042 /* SingleColorCollectionViewCell.swift */,
 				32009C32225C707E005D5042 /* MultipleColorCollectionViewCell.swift */,
 				32009C28225C6B62005D5042 /* SlideSizeTableViewCell.swift */,
-				32009C35225C73E9005D5042 /* MultpleLineLayout.h */,
-				32009C34225C73E9005D5042 /* MultpleLineLayout.m */,
 				32D9A0E3225AB93700AEC14B /* Assets.xcassets */,
 				32D9A0E0225AB93500AEC14B /* Main.storyboard */,
 			);
@@ -548,7 +543,6 @@
 				32009C0F225C605B005D5042 /* UIWindow+Core.swift in Sources */,
 				323F146E225B424E007D3DB3 /* AcknowledgementViewController.swift in Sources */,
 				32009C15225C605B005D5042 /* CGSize+Math.swift in Sources */,
-				32009C36225C73E9005D5042 /* MultpleLineLayout.m in Sources */,
 				323F146F225B424E007D3DB3 /* AcknowledgementsTableViewController.swift in Sources */,
 				32009C2B225C6C67005D5042 /* AspectRatioCollectionViewCell.swift in Sources */,
 				32009C12225C605B005D5042 /* IndexPath+Grid.swift in Sources */,

@@ -41,6 +41,11 @@ class SlideSizeTableViewCell: UITableViewCell, UICollectionViewDelegate, UIColle
 
     func configurateCollectionView() {
         if !configurated {
+            let layout = JEKScrollableSectionCollectionViewLayout()
+            layout.itemSize = CGSize(width: 86, height: 86)
+            layout.sectionInset = UIEdgeInsets(top: 3, left: 0, bottom: 3, right: 0)
+            layout.minimumInteritemSpacing = 10
+            collectionView.collectionViewLayout = layout
             collectionView.delegate = self
             collectionView.dataSource = self
             configurated = true

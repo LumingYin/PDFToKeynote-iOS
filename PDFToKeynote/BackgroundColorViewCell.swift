@@ -49,22 +49,10 @@ class BackgroundColorViewCell: UITableViewCell, UICollectionViewDataSource, UICo
     func configurateCollectionView() {
         if !isConfigured {
             let layout = JEKScrollableSectionCollectionViewLayout()
-            layout.itemSize = CGSize(width: 86, height: 86);
-//            layout.headerReferenceSize = CGSize(width: 0, height: 22)
+            layout.itemSize = CGSize(width: 86, height: 86)
+            layout.sectionInset = UIEdgeInsets(top: 3, left: 0, bottom: 3, right: 0)
             layout.minimumInteritemSpacing = 10
             collectionView.collectionViewLayout = layout
-
-//            collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
-//            collectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header")
-
-//            (collectionView.collectionViewLayout as! UICollectionViewFlowLayout).minimumLineSpacing = CGFloat.greatestFiniteMagnitude
-//            let flowLayout = UICollectionViewFlowLayout()
-//            flowLayout.itemSize = CGSize(width: 86, height: 86)
-//            flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-//            flowLayout.scrollDirection = UICollectionView.ScrollDirection.horizontal
-//            flowLayout.minimumInteritemSpacing = 0.0
-//            self.collectionView.collectionViewLayout = flowLayout
-//            collectionView.collectionViewLayout = MultpleLineLayout()
             collectionView.delegate = self
             collectionView.dataSource = self
             isConfigured = true
