@@ -19,6 +19,7 @@ class AspectRatioCollectionViewCell: UICollectionViewCell {
     weak var parentTableCell: SlideSizeTableViewCell!
     var ratioCorrespondingIndex: Int = 0
     var correspondingSize: SlideSize!
+    let cutoffForVisualization: CGFloat = 30
 
     func configurateCellAppearance() {
         print("AspectRatioCollectionViewCell.bounds: \(self.bounds)")
@@ -34,13 +35,11 @@ class AspectRatioCollectionViewCell: UICollectionViewCell {
             ratio = paintHeight / CGFloat(correspondingSize.height)
             paintWidth = ratio * CGFloat(correspondingSize.width)
         }
-        if paintWidth < 15 {
-            paintWidth = 20
-            ratioTextLabel.text = ""
+        if paintWidth < cutoffForVisualization {
+            paintWidth = maxSide
         }
-        if paintHeight < 15 {
-            paintHeight = 20
-            ratioTextLabel.text = ""
+        if paintHeight < cutoffForVisualization {
+            paintHeight = maxSide
         }
         effectsWidth.constant = paintWidth
         effectsHeight.constant = paintHeight
