@@ -130,6 +130,7 @@ class BackgroundColorTableViewCell: UITableViewCell, UICollectionViewDataSource,
             cell.color2Button.backgroundColor = rainbow[1]
             cell.color3Button.backgroundColor = rainbow[2]
             cell.color4Button.backgroundColor = rainbow[3]
+            cell.correspondingIndex = indexPath.row
             if (selectedColorIndex.0 == indexPath.row) {
                 cell.setTickAtLocation(selectedColorIndex.1)
             } else {

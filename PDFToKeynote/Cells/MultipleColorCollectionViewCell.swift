@@ -16,15 +16,25 @@ class MultipleColorCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var color4Button: UIButton!
     @IBOutlet weak var greenTickView: UIImageView!
     weak var delegate: ColorPickerDelegate?
-    var correspondingIndex: (Int, Int)?
+    var correspondingIndex: Int = 0
     var colorTappedCallback: ((_ color: UIColor, _ index: (Int, Int), _ cell: MultipleColorCollectionViewCell) -> ())?
 
     @IBAction func colorButtonTapped(_ sender: UIButton) {
 //        delegate?.changeToNewColor(color: sender.backgroundColor!)
-        colorTappedCallback?(sender.backgroundColor!, correspondingIndex ?? (0, 0), self)
+        var index = 0
+        if sender == color1Button {
+            index = 0
+        } else if sender == color2Button {
+            index = 1
+        } else if sender == color3Button {
+            index = 2
+        } else if sender == color4Button {
+            index = 3
+        }
+        colorTappedCallback?(sender.backgroundColor!, (correspondingIndex, index), self)
     }
 
     func setTickAtLocation(_ location: Int) {
-        greenTickView.frame = CGRect(x: (self.bounds.height / 4) * CGFloat(location), y: (self.bounds.width - greenTickView.frame.width) / 2, width: greenTickView.frame.width, height: greenTickView.frame.height)
+        greenTickView.frame = CGRect(x: (self.bounds.width - greenTickView.frame.width) / 2, y: (self.bounds.height / 4) * CGFloat(location), width: greenTickView.frame.width, height: greenTickView.frame.height)
     }
 }
