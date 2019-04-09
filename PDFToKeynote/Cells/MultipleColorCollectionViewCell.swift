@@ -35,6 +35,6 @@ class MultipleColorCollectionViewCell: UICollectionViewCell {
     }
 
     func setTickAtLocation(_ location: Int) {
-        greenTickView.frame = CGRect(x: (self.bounds.width - greenTickView.frame.width) / 2, y: (self.bounds.height / 4) * CGFloat(location), width: greenTickView.frame.width, height: greenTickView.frame.height)
+        greenTickView.frame = CGRect(x: (self.colorContainerView.bounds.width - greenTickView.frame.width) / 2, y: (self.colorContainerView.bounds.height / 4) * CGFloat(location) + 3, width: greenTickView.frame.width, height: greenTickView.frame.height)
     }
 }
