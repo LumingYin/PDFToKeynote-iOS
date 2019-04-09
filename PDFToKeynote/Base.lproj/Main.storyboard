@@ -300,7 +300,7 @@
                                 <rect key="frame" x="0.0" y="154" width="350" height="680"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FileInformationTableViewCell" rowHeight="130" id="y74-x3-hsg" customClass="FileInformationTableViewCell" customModule="PDFToKeynote" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FileInformationTableViewCell" rowHeight="130" id="y74-x3-hsg" customClass="FileInformationTableViewCell" customModule="PDFToKeynote" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="350" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="y74-x3-hsg" id="rJa-6P-Ag1">
@@ -620,7 +620,7 @@
                                                                 <rect key="frame" x="12" y="52" width="288" height="187"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tYB-4Z-zHc">
+                                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ZLw-7U-Cre">
                                                                     <size key="itemSize" width="86" height="86"/>
                                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -657,6 +657,7 @@
                                                                                 </button>
                                                                             </subviews>
                                                                         </view>
+                                                                        <size key="customSize" width="86" height="86"/>
                                                                     </collectionViewCell>
                                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MultipleColorCollectionViewCell" id="chp-EN-YqS" customClass="MultipleColorCollectionViewCell" customModule="PDFToKeynote" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="101" width="86" height="86"/>
@@ -708,6 +709,7 @@
                                                                                 </view>
                                                                             </subviews>
                                                                         </view>
+                                                                        <size key="customSize" width="86" height="86"/>
                                                                     </collectionViewCell>
                                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CustomAspectRatioCollectionViewCell" id="C8Z-GJ-5H4" customClass="CustomAspectRatioCollectionViewCell" customModule="PDFToKeynote" customModuleProvider="target">
                                                                         <rect key="frame" x="96" y="0.0" width="86" height="86"/>
@@ -754,6 +756,7 @@
                                                                                 </button>
                                                                             </subviews>
                                                                         </view>
+                                                                        <size key="customSize" width="86" height="86"/>
                                                                     </collectionViewCell>
                                                                 </cells>
                                                             </collectionView>

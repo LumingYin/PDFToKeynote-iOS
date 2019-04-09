@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Volumes/SSD/blue/Repos/PDFToKeynote/PDFToKeynote/MultpleLineLayout.h">
+   </FileRef>
+   <FileRef
+      location = "group:/Volumes/SSD/blue/Repos/PDFToKeynote/PDFToKeynote/MultpleLineLayout.m">
+   </FileRef>
+   <FileRef
       location = "group:PDFToKeynote.xcodeproj">
    </FileRef>
    <FileRef

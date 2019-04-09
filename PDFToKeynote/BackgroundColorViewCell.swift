@@ -18,7 +18,7 @@ class BackgroundColorViewCell: UITableViewCell, UICollectionViewDataSource, UICo
     }
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 3
+        return 2
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -27,6 +27,10 @@ class BackgroundColorViewCell: UITableViewCell, UICollectionViewDataSource, UICo
             return cell
         } else if (indexPath.section == 1) {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MultipleColorCollectionViewCell", for: indexPath)
+            if (indexPath.row == 5) {
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomAspectRatioCollectionViewCell", for: indexPath)
+                return cell
+            }
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomAspectRatioCollectionViewCell", for: indexPath)
@@ -44,9 +48,18 @@ class BackgroundColorViewCell: UITableViewCell, UICollectionViewDataSource, UICo
 
     func configurateCollectionView() {
         if !isConfigured {
+//            (collectionView.collectionViewLayout as! UICollectionViewFlowLayout).minimumLineSpacing = CGFloat.greatestFiniteMagnitude
+//            let flowLayout = UICollectionViewFlowLayout()
+//            flowLayout.itemSize = CGSize(width: 86, height: 86)
+//            flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+//            flowLayout.scrollDirection = UICollectionView.ScrollDirection.horizontal
+//            flowLayout.minimumInteritemSpacing = 0.0
+//            self.collectionView.collectionViewLayout = flowLayout
+//            collectionView.collectionViewLayout = MultpleLineLayout()
             collectionView.delegate = self
             collectionView.dataSource = self
             isConfigured = true
+            collectionView.reloadData()
         }
     }
 
