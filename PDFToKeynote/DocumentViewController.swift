@@ -74,7 +74,9 @@ class DocumentViewController: UIViewController, FloatingPanelControllerDelegate 
                 self.pdfView.backgroundColor = UIColor.gray
                 self.pdfView.autoScales = true
                 self.configurationVC?.pdf = self.pdfView.document
-                self.configurationVC?.document = self.document
+                if let doc = self.document as? Document {
+                    self.configurationVC?.initialSetupForPDF(doc)
+                }
             } else {
                 print("Failed to load PDF document")
             }

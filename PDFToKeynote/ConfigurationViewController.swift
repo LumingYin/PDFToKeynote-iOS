@@ -13,7 +13,6 @@ import FloatingPanel
 class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, ChromaColorPickerDelegate, UIPopoverPresentationControllerDelegate, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var customizeImageView: UIImageView!
     @IBOutlet weak var startConversionButton: UIButton!
-    @IBOutlet weak var documentNameLabel: UILabel!
     @IBOutlet weak var dimensionPicker: UIPickerView!
     @IBOutlet weak var aspectRatioLabel: UILabel!
     @IBOutlet weak var colorPickerButton: UIButton!
@@ -73,22 +72,23 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let row = indexPath.section
-        var cell: UITableViewCell!
         if row == 0 {
-            cell = tableView.dequeueReusableCell(withIdentifier: "FileInformationTableViewCell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "FileInformationTableViewCell", for: indexPath) as! FileInformationTableViewCell
+            cell.documentNameLabel.text = cachedFileName
+            cell.documentResolutionLabel.text = cachedFileResulution
+            cell.documentSizeLabel.text = cachedFileSize
+            cell.documentPageCountLabel.text = cachedPageCount
+            return cell
         } else if row == 1 {
-            cell = tableView.dequeueReusableCell(withIdentifier: "SlideSizeTableViewCell", for: indexPath)
-            if let c = cell as? SlideSizeTableViewCell {
-                c.configurateCollectionView()
-            }
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SlideSizeTableViewCell", for: indexPath) as! SlideSizeTableViewCell
+            cell.configurateCollectionView()
+            return cell
         } else if row == 2 {
-            cell = tableView.dequeueReusableCell(withIdentifier: "BackgroundColorTableViewCell", for: indexPath)
-            if let c = cell as? BackgroundColorTableViewCell {
-                c.configurateCollectionView()
-            }
-        } else {
-            cell = tableView.dequeueReusableCell(withIdentifier: "FileInformationTableViewCell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "BackgroundColorTableViewCell", for: indexPath) as! BackgroundColorTableViewCell
+            cell.configurateCollectionView()
+            return cell
         }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FileInformationTableViewCell", for: indexPath)
         return cell
     }
 
@@ -114,17 +114,26 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
         return 200
     }
 
+    // File information
+    var cachedFileName: String = "Unknown"
+    var cachedFileResulution: String = "Unknown"
+    var cachedFileSize: String = "Unknown"
+    var cachedPageCount: String = "? page"
+
     func initialSetupForPDF(_ newDocument: Document) {
         self.document = newDocument
-        self.documentNameLabel.text = self.document?.fileURL.lastPathComponent
+        cachedFileName = self.document?.fileURL.lastPathComponent ?? "Unknown"
         guard let url = self.document?.fileURL else {fatalError("INVALID URL")}
         self.pdf = PDFDocument(url: url)
         let cgPDF = CGPDFDocument((url as CFURL))
+        let pageCount = cgPDF?.numberOfPages ?? 0
+        cachedPageCount = "\(pageCount) \(pageCount > 1 ? "pages" : "page")"
         if let pdfPage = cgPDF!.page(at: 1) {
             let mediaBox = pdfPage.getBoxRect(.mediaBox)
             // print(mediaBox)
             let angle = CGFloat(pdfPage.rotationAngle) * CGFloat.pi / 180
             let rotatedBox = mediaBox.applying(CGAffineTransform(rotationAngle: angle))
+            cachedFileResulution = "\(Int(rotatedBox.width)) × \(Int(rotatedBox.height))"
             let ratio = Float(rotatedBox.width / rotatedBox.height)
             var matchedPreferredResolutions = false
             for i in 0..<self.sizes.count {
@@ -132,24 +141,25 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
                 let sizeRatio = Float(size.width) / Float(size.height)
                 if abs(ratio - sizeRatio) < 0.01 {
                     self.sizes[i].description = "\(self.sizes[i].description) (Native)"
-                    self.dimensionPicker.selectRow(i, inComponent: 0, animated: true)
-                    self.aspectRatioLabel.text = self.sizes[i].description
+//                    self.dimensionPicker.selectRow(i, inComponent: 0, animated: true)
+//                    self.aspectRatioLabel.text = self.sizes[i].description
                     matchedPreferredResolutions = true
                     break
                 }
             }
             if !matchedPreferredResolutions {
                 let factor = max(1024 / rotatedBox.width, 768 / rotatedBox.height)
-                //                        print("Scale factor is: \(factor)")
+                // print("Scale factor is: \(factor)")
                 let newWidth = rotatedBox.width * CGFloat(factor)
                 let newHeight = rotatedBox.height * CGFloat(factor)
                 self.sizes.append((Int(newWidth), Int(newHeight), "Native Resolution"))
-                self.dimensionPicker.reloadComponent(0)
-                self.dimensionPicker.selectRow(self.sizes.count - 1, inComponent: 0, animated: true)
-                self.aspectRatioLabel.text = self.sizes.last?.description
+//                self.dimensionPicker.reloadComponent(0)
+//                self.dimensionPicker.selectRow(self.sizes.count - 1, inComponent: 0, animated: true)
+//                self.aspectRatioLabel.text = self.sizes.last?.description
             }
         }
-
+        cachedFileSize = Helper.convertSizeToFileString(with: Helper.sizeForLocalFilePath(filePath: url.absoluteString))
+        tableView.reloadData()
     }
 
     @IBAction func buttonTouched(_ sender: UIButton) {
