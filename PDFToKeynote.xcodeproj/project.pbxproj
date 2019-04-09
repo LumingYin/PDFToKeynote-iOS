@@ -36,7 +36,7 @@
 		32009C27225C6579005D5042 /* FileInformationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009C26225C6579005D5042 /* FileInformationTableViewCell.swift */; };
 		32009C29225C6B62005D5042 /* SlideSizeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009C28225C6B62005D5042 /* SlideSizeTableViewCell.swift */; };
 		32009C2B225C6C67005D5042 /* AspectRatioCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009C2A225C6C67005D5042 /* AspectRatioCollectionViewCell.swift */; };
-		32009C2D225C6C73005D5042 /* CustomAspectRatioCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009C2C225C6C73005D5042 /* CustomAspectRatioCollectionViewCell.swift */; };
+		32009C2D225C6C73005D5042 /* CustomEntryRatioCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009C2C225C6C73005D5042 /* CustomEntryRatioCollectionViewCell.swift */; };
 		32009C2F225C6F07005D5042 /* BackgroundColorViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009C2E225C6F07005D5042 /* BackgroundColorViewCell.swift */; };
 		32009C31225C703D005D5042 /* SingleColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009C30225C703D005D5042 /* SingleColorCollectionViewCell.swift */; };
 		32009C33225C707E005D5042 /* MultipleColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009C32225C707E005D5042 /* MultipleColorCollectionViewCell.swift */; };
@@ -101,7 +101,7 @@
 		32009C26225C6579005D5042 /* FileInformationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FileInformationTableViewCell.swift; path = PDFToKeynote/FileInformationTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		32009C28225C6B62005D5042 /* SlideSizeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideSizeTableViewCell.swift; sourceTree = "<group>"; };
 		32009C2A225C6C67005D5042 /* AspectRatioCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectRatioCollectionViewCell.swift; sourceTree = "<group>"; };
-		32009C2C225C6C73005D5042 /* CustomAspectRatioCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAspectRatioCollectionViewCell.swift; sourceTree = "<group>"; };
+		32009C2C225C6C73005D5042 /* CustomEntryRatioCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomEntryRatioCollectionViewCell.swift; sourceTree = "<group>"; };
 		32009C2E225C6F07005D5042 /* BackgroundColorViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundColorViewCell.swift; sourceTree = "<group>"; };
 		32009C30225C703D005D5042 /* SingleColorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleColorCollectionViewCell.swift; sourceTree = "<group>"; };
 		32009C32225C707E005D5042 /* MultipleColorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleColorCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -364,7 +364,7 @@
 				323F145F225B3872007D3DB3 /* PopoverViewController.swift */,
 				32D4BAB7225C03120030852A /* ConfigurationViewController.swift */,
 				32009C2A225C6C67005D5042 /* AspectRatioCollectionViewCell.swift */,
-				32009C2C225C6C73005D5042 /* CustomAspectRatioCollectionViewCell.swift */,
+				32009C2C225C6C73005D5042 /* CustomEntryRatioCollectionViewCell.swift */,
 				32009C2E225C6F07005D5042 /* BackgroundColorViewCell.swift */,
 				32009C30225C703D005D5042 /* SingleColorCollectionViewCell.swift */,
 				32009C32225C707E005D5042 /* MultipleColorCollectionViewCell.swift */,
@@ -526,7 +526,7 @@
 				32009C17225C605B005D5042 /* UIStoryboard+Core.swift in Sources */,
 				32D9A0DD225AB93500AEC14B /* DocumentViewController.swift in Sources */,
 				32009C29225C6B62005D5042 /* SlideSizeTableViewCell.swift in Sources */,
-				32009C2D225C6C73005D5042 /* CustomAspectRatioCollectionViewCell.swift in Sources */,
+				32009C2D225C6C73005D5042 /* CustomEntryRatioCollectionViewCell.swift in Sources */,
 				32009BEC225C3804005D5042 /* Converter.swift in Sources */,
 				323F1453225B260A007D3DB3 /* UIColor+Utilities.swift in Sources */,
 				32009C1B225C605B005D5042 /* ModernTimer.swift in Sources */,

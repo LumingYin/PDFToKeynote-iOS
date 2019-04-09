@@ -9,5 +9,14 @@
 import UIKit
 
 class MultipleColorCollectionViewCell: UICollectionViewCell {
-    
+    @IBOutlet weak var colorContainerView: UIView!
+    @IBOutlet weak var color1Button: UIButton!
+    @IBOutlet weak var color2Button: UIButton!
+    @IBOutlet weak var color3Button: UIButton!
+    @IBOutlet weak var color4Button: UIButton!
+    @IBOutlet weak var greenTickView: UIImageView!
+
+    @IBAction func colorButtonTapped(_ sender: Any) {
+        
+    }
 }

@@ -28,12 +28,12 @@ class BackgroundColorViewCell: UITableViewCell, UICollectionViewDataSource, UICo
         } else if (indexPath.section == 1) {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MultipleColorCollectionViewCell", for: indexPath)
             if (indexPath.row == 5) {
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomAspectRatioCollectionViewCell", for: indexPath)
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomEntryCollectionViewCell", for: indexPath)
                 return cell
             }
             return cell
         } else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomAspectRatioCollectionViewCell", for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomEntryCollectionViewCell", for: indexPath)
             return cell
         }
     }

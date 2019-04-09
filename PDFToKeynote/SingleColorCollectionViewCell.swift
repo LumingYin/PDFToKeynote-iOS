@@ -9,5 +9,10 @@
 import UIKit
 
 class SingleColorCollectionViewCell: UICollectionViewCell {
-    
+    @IBOutlet weak var colorView: UIView!
+    @IBOutlet weak var greenTickView: UIImageView!
+
+    @IBAction func colorButtonTapped(_ sender: Any) {
+        
+    }
 }

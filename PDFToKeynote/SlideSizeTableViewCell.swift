@@ -22,7 +22,7 @@ class SlideSizeTableViewCell: UITableViewCell, UICollectionViewDelegate, UIColle
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AspectRatioCollectionViewCell", for: indexPath)
             return cell
         } else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomAspectRatioCollectionViewCell", for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomEntryCollectionViewCell", for: indexPath)
             return cell
         }
     }

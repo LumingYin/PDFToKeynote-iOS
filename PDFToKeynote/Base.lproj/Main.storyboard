@@ -296,7 +296,7 @@
                                     <constraint firstAttribute="height" constant="24" id="kNO-Jc-qOZ"/>
                                 </constraints>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zaa-b6-Yi3">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zaa-b6-Yi3" customClass="ModernFluidTableView" customModule="PDFToKeynote" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="154" width="350" height="680"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -513,7 +513,7 @@
                                                                             <outlet property="visualEffectContainerView" destination="cvZ-YT-g9u" id="cwJ-aS-tai"/>
                                                                         </connections>
                                                                     </collectionViewCell>
-                                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CustomAspectRatioCollectionViewCell" id="F5s-bP-SDl" customClass="CustomAspectRatioCollectionViewCell" customModule="PDFToKeynote" customModuleProvider="target">
+                                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CustomEntryCollectionViewCell" id="F5s-bP-SDl" customClass="CustomEntryCollectionViewCell" customModule="PDFToKeynote" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="101" width="86" height="86"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -553,7 +553,7 @@
                                                                                     <rect key="frame" x="0.0" y="0.0" width="86" height="86"/>
                                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                     <connections>
-                                                                                        <action selector="addCustomColorTapped:" destination="F5s-bP-SDl" eventType="touchUpInside" id="xdu-eM-QhK"/>
+                                                                                        <action selector="addCustomEntryTapped:" destination="F5s-bP-SDl" eventType="touchUpInside" id="YVf-Lv-BmL"/>
                                                                                     </connections>
                                                                                 </button>
                                                                             </subviews>
@@ -654,10 +654,17 @@
                                                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P43-8o-i1r">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="86" height="86"/>
                                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                    <connections>
+                                                                                        <action selector="colorButtonTapped:" destination="zF5-2F-8IO" eventType="touchUpInside" id="K6T-hl-aXQ"/>
+                                                                                    </connections>
                                                                                 </button>
                                                                             </subviews>
                                                                         </view>
                                                                         <size key="customSize" width="86" height="86"/>
+                                                                        <connections>
+                                                                            <outlet property="colorView" destination="uLi-ha-tvS" id="rxe-y1-iVP"/>
+                                                                            <outlet property="greenTickView" destination="Rhe-Tr-ouq" id="h8y-Tl-za4"/>
+                                                                        </connections>
                                                                     </collectionViewCell>
                                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MultipleColorCollectionViewCell" id="chp-EN-YqS" customClass="MultipleColorCollectionViewCell" customModule="PDFToKeynote" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="101" width="86" height="86"/>
@@ -666,10 +673,6 @@
                                                                             <rect key="frame" x="0.0" y="0.0" width="86" height="86"/>
                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                             <subviews>
-                                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yz0-5s-jMq">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="86" height="86"/>
-                                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                                </button>
                                                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c6h-Pg-GjP" userLabel="containerView">
                                                                                     <rect key="frame" x="13" y="1" width="60" height="84"/>
                                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -678,21 +681,33 @@
                                                                                             <rect key="frame" x="0.0" y="0.0" width="60" height="21"/>
                                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                             <color key="backgroundColor" red="0.44647878408432007" green="0.74247825145721436" blue="0.97632497549057007" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                                            <connections>
+                                                                                                <action selector="colorButtonTapped:" destination="chp-EN-YqS" eventType="touchUpInside" id="dEc-U1-bu6"/>
+                                                                                            </connections>
                                                                                         </button>
                                                                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sTt-de-9ZM">
                                                                                             <rect key="frame" x="0.0" y="21" width="60" height="21"/>
                                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                             <color key="backgroundColor" red="0.28077390789985657" green="0.61908239126205444" blue="0.96842473745346069" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                                            <connections>
+                                                                                                <action selector="colorButtonTapped:" destination="chp-EN-YqS" eventType="touchUpInside" id="8J4-lF-itY"/>
+                                                                                            </connections>
                                                                                         </button>
                                                                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oOT-vJ-I9G">
                                                                                             <rect key="frame" x="0.0" y="42" width="60" height="21"/>
                                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                             <color key="backgroundColor" red="0.1955839991569519" green="0.45568996667861938" blue="0.70573621988296509" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                                            <connections>
+                                                                                                <action selector="colorButtonTapped:" destination="chp-EN-YqS" eventType="touchUpInside" id="eXP-bs-29H"/>
+                                                                                            </connections>
                                                                                         </button>
                                                                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OjG-st-kHL">
                                                                                             <rect key="frame" x="0.0" y="63" width="60" height="21"/>
                                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                             <color key="backgroundColor" red="0.11871211975812912" green="0.29564574360847473" blue="0.48224502801895142" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                                            <connections>
+                                                                                                <action selector="colorButtonTapped:" destination="chp-EN-YqS" eventType="touchUpInside" id="eNY-92-5zL"/>
+                                                                                            </connections>
                                                                                         </button>
                                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="greenTickView" translatesAutoresizingMaskIntoConstraints="NO" id="znH-jV-MML">
                                                                                             <rect key="frame" x="23" y="3" width="15" height="15"/>
@@ -707,11 +722,28 @@
                                                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                                                     </userDefinedRuntimeAttributes>
                                                                                 </view>
+                                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yz0-5s-jMq">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="86" height="86"/>
+                                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                </button>
                                                                             </subviews>
                                                                         </view>
                                                                         <size key="customSize" width="86" height="86"/>
+                                                                        <variation key="default">
+                                                                            <mask key="subviews">
+                                                                                <exclude reference="yz0-5s-jMq"/>
+                                                                            </mask>
+                                                                        </variation>
+                                                                        <connections>
+                                                                            <outlet property="color1Button" destination="TJm-Q6-UfW" id="lHv-GA-sQ0"/>
+                                                                            <outlet property="color2Button" destination="sTt-de-9ZM" id="ghO-63-qvV"/>
+                                                                            <outlet property="color3Button" destination="oOT-vJ-I9G" id="O5S-ST-v9m"/>
+                                                                            <outlet property="color4Button" destination="OjG-st-kHL" id="rTD-zb-2v0"/>
+                                                                            <outlet property="colorContainerView" destination="c6h-Pg-GjP" id="apC-oD-NaM"/>
+                                                                            <outlet property="greenTickView" destination="znH-jV-MML" id="Ky1-sJ-tH3"/>
+                                                                        </connections>
                                                                     </collectionViewCell>
-                                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CustomAspectRatioCollectionViewCell" id="C8Z-GJ-5H4" customClass="CustomAspectRatioCollectionViewCell" customModule="PDFToKeynote" customModuleProvider="target">
+                                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CustomEntryCollectionViewCell" id="C8Z-GJ-5H4" customClass="CustomEntryCollectionViewCell" customModule="PDFToKeynote" customModuleProvider="target">
                                                                         <rect key="frame" x="96" y="0.0" width="86" height="86"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -751,7 +783,7 @@
                                                                                     <rect key="frame" x="0.0" y="0.0" width="86" height="86"/>
                                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                     <connections>
-                                                                                        <action selector="addCustomColorTapped:" destination="C8Z-GJ-5H4" eventType="touchUpInside" id="wBH-Wv-b6F"/>
+                                                                                        <action selector="addCustomEntryTapped:" destination="C8Z-GJ-5H4" eventType="touchUpInside" id="Wcq-cX-Xba"/>
                                                                                     </connections>
                                                                                 </button>
                                                                             </subviews>
@@ -793,7 +825,7 @@
                                         <rect key="frame" x="0.0" y="694" width="350" height="201"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9uM-mI-a8I" id="cRR-Me-ZNR">
-                                            <rect key="frame" x="0.0" y="0.0" width="350" height="200.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="350" height="201"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Aspect Ratio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AjK-b1-sXx">
