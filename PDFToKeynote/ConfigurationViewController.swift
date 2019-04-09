@@ -183,7 +183,7 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
 
     @IBAction func startConversion(_ sender: Any) {
         SVProgressHUD.show()
-        let cachedRow = self.selectedRow
+        let cachedRow = self.selectedSizeIndex
         setConversionActivationState(active: false)
         DispatchQueue.global(qos: .userInitiated).async {
             self.performConversion(selectedRow: cachedRow)
