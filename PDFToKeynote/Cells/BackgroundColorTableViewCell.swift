@@ -86,15 +86,23 @@ class BackgroundColorTableViewCell: UITableViewCell, UICollectionViewDataSource,
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.section == 0 && indexPath.row < greyscaleColors.count {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SingleColorCollectionViewCell", for: indexPath) as! SingleColorCollectionViewCell
+            cell.delegate = self.delegate
             cell.colorView.backgroundColor = greyscaleColors[indexPath.row]
+            cell.colorTappedCallback = { Int, cell in
+                cell.greenTickView.isHidden = false
+            }
             return cell
         } else if indexPath.section == 1 && indexPath.row < rainbowColors.count  {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MultipleColorCollectionViewCell", for: indexPath) as! MultipleColorCollectionViewCell
+            cell.delegate = self.delegate
             let rainbow = rainbowColors[indexPath.row]
             cell.color1Button.backgroundColor = rainbow[0]
             cell.color2Button.backgroundColor = rainbow[1]
             cell.color3Button.backgroundColor = rainbow[2]
             cell.color4Button.backgroundColor = rainbow[3]
+            cell.colorTappedCallback = { index, cell in
+                cell.greenTickView.isHidden = false
+            }
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomEntryCollectionViewCell", for: indexPath)

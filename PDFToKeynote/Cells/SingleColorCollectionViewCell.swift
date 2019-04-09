@@ -12,8 +12,10 @@ class SingleColorCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var colorView: UIView!
     @IBOutlet weak var greenTickView: UIImageView!
     weak var delegate: ColorPickerDelegate?
+    var correspondingIndex: Int?
+    var colorTappedCallback: ((_ index: Int, _ cell: SingleColorCollectionViewCell) -> ())?
 
     @IBAction func colorButtonTapped(_ sender: UIButton) {
-        delegate?.changeToNewColor(color: sender.backgroundColor!)
+        delegate?.changeToNewColor(color: colorView.backgroundColor!)
     }
 }

@@ -16,6 +16,8 @@ class MultipleColorCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var color4Button: UIButton!
     @IBOutlet weak var greenTickView: UIImageView!
     weak var delegate: ColorPickerDelegate?
+    var correspondingIndex: (Int, Int)?
+    var colorTappedCallback: ((_ index: (Int, Int), _ cell: MultipleColorCollectionViewCell) -> ())?
 
     @IBAction func colorButtonTapped(_ sender: UIButton) {
         delegate?.changeToNewColor(color: sender.backgroundColor!)
