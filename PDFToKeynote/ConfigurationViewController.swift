@@ -243,9 +243,9 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
         return NSAttributedString(string: string, attributes: [NSAttributedString.Key.foregroundColor:UIColor.white])
     }
 
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        aspectRatioLabel.text = sizes[selectedRow].description
-    }
+//    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+//        aspectRatioLabel.text = sizes[selectedRow].description
+//    }
 
     @IBAction func changeColorTapped(_ sender: UIButton) {
         neatColorPicker = ChromaColorPicker(frame: CGRect(x: 0, y: 0, width: 300, height: 300))

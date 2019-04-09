@@ -26,7 +26,7 @@ class CustomEntryCollectionViewCell: UICollectionViewCell, UIPopoverPresentation
         controller.newSizeAdded = { (width, height) in
             self.delegate.addNewSize(width: width, height: height, description: "\(width) × \(height)")
             let sectionOneLocation = self.delegate.getAllSizes().count - self.delegate.getCutoffCountForScreenResolution() - 1
-            self.delegate.selectSizeAtIndex(index: sectionOneLocation)
+            self.delegate.selectSizeAtIndex(index: self.delegate.getAllSizes().count - 1)
             let newIndexPath = IndexPath(row: sectionOneLocation, section: 1)
             self.parentTableViewCell.collectionView.insertItems(at: [newIndexPath])
             self.parentTableViewCell.collectionView.reloadItems(at: [newIndexPath])
