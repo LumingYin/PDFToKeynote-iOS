@@ -20,6 +20,7 @@ class BackgroundColorTableViewCell: UITableViewCell, UICollectionViewDataSource,
                                       UIColor(hexString: "929192"),
                                       UIColor(hexString: "5D5D5D"),
                                       UIColor(hexString: "D5D4D4")]
+
     var rainbowColors: [[UIColor]] = [[UIColor(hexString: "73BDF9"),
                                        UIColor(hexString: "489EF7"),
                                        UIColor(hexString: "3274B4"),
@@ -42,7 +43,7 @@ class BackgroundColorTableViewCell: UITableViewCell, UICollectionViewDataSource,
 
                                       [UIColor(hexString: "F09B90"),
                                        UIColor(hexString: "EB6E57"),
-                                       UIColor(hexString: "EB6E57"),
+                                       UIColor(hexString: "DB3A26"),
                                        UIColor(hexString: "A62B19")],
 
                                       [UIColor(hexString: "EF92C3"),
@@ -50,6 +51,8 @@ class BackgroundColorTableViewCell: UITableViewCell, UICollectionViewDataSource,
                                        UIColor(hexString: "BA3979"),
                                        UIColor(hexString: "8D275D")],
     ]
+
+    var selectedColorIndex: (Int, Int) = (-1, 0)
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -83,14 +86,27 @@ class BackgroundColorTableViewCell: UITableViewCell, UICollectionViewDataSource,
         return 2
     }
 
+    func hideTickOnEverythingExceptSelection() {
+//        for
+    }
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.section == 0 && indexPath.row < greyscaleColors.count {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SingleColorCollectionViewCell", for: indexPath) as! SingleColorCollectionViewCell
             cell.delegate = self.delegate
             cell.colorView.backgroundColor = greyscaleColors[indexPath.row]
-            cell.colorTappedCallback = { Int, cell in
+            cell.correspondingIndex = indexPath.row
+            if ((-1, cell.correspondingIndex!) != selectedColorIndex) {
+                cell.greenTickView.isHidden = true
+            } else {
                 cell.greenTickView.isHidden = false
             }
+            cell.colorTappedCallback = { color, index, cell in
+                self.delegate?.changeToNewColor(color: color)
+                self.selectedColorIndex = (-1, index)
+                cell.greenTickView.isHidden = false
+            }
+
             return cell
         } else if indexPath.section == 1 && indexPath.row < rainbowColors.count  {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MultipleColorCollectionViewCell", for: indexPath) as! MultipleColorCollectionViewCell
@@ -100,7 +116,15 @@ class BackgroundColorTableViewCell: UITableViewCell, UICollectionViewDataSource,
             cell.color2Button.backgroundColor = rainbow[1]
             cell.color3Button.backgroundColor = rainbow[2]
             cell.color4Button.backgroundColor = rainbow[3]
-            cell.colorTappedCallback = { index, cell in
+            if (selectedColorIndex.0 == indexPath.row) {
+                cell.setTickAtLocation(selectedColorIndex.1)
+            } else {
+                cell.greenTickView.isHidden = true
+            }
+            cell.colorTappedCallback = { color, index, cell in
+                self.delegate?.changeToNewColor(color: color)
+                self.selectedColorIndex = index
+                cell.setTickAtLocation(self.selectedColorIndex.1)
                 cell.greenTickView.isHidden = false
             }
             return cell
