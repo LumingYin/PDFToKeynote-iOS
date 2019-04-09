@@ -220,7 +220,11 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
     }
 
     func performConversion(selectedRow: Int) {
-        Converter.performConversion(pdf: pdf, selectedSize: sizes[selectedRow], selectedColor: selectedColor, pdfFileName: self.document?.fileURL.lastPathComponent.stripFileExtension(), conversionSucceededCallback: { (destinationUrl) -> (Void) in
+        var size = sizes[selectedRow]
+        if useRetina2x {
+            size = (width: size.width * 2, height: size.height * 2, description: "2x")
+        }
+        Converter.performConversion(pdf: pdf, selectedSize: size, selectedColor: selectedColor, pdfFileName: self.document?.fileURL.lastPathComponent.stripFileExtension(), conversionSucceededCallback: { (destinationUrl) -> (Void) in
             var filesToShare = [Any]()
             filesToShare.append(destinationUrl)
             let activityViewController = UIActivityViewController(activityItems: filesToShare, applicationActivities: nil)

@@ -12,6 +12,10 @@ class SlideSizeTableViewCell: UITableViewCell, UICollectionViewDelegate, UIColle
     weak var delegate: SlideSizeDelegate!
     @IBOutlet weak var collectionView: UICollectionView!
     var configurated = false
+    @IBOutlet weak var retinaScaleLabel: UILabel!
+    @IBOutlet weak var retinaScaleButton: UIButton!
+    var oneXImage: UIImage?
+    var twoXImage: UIImage?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,10 +23,34 @@ class SlideSizeTableViewCell: UITableViewCell, UICollectionViewDelegate, UIColle
 
     @IBAction func switch1xRetinaTapped(_ sender: Any) {
         delegate.setShouldUseRetina2x(shouldUse: delegate.getUsingRetina2x())
+        if delegate.getUsingRetina2x() {
+            if twoXImage == nil {
+                twoXImage = UIImage(named: "slideSizeCell_Retina")
+            }
+            retinaScaleButton.setImage(twoXImage, for: .normal)
+            retinaScaleLabel.text = "Retina"
+        } else {
+            if oneXImage == nil {
+                oneXImage = UIImage(named: "slideSizeCell_1x")
+            }
+            retinaScaleButton.setImage(oneXImage, for: .normal)
+            retinaScaleLabel.text = "Normal"
+        }
     }
 
     @IBAction func resetToNativeResTapped(_ sender: Any) {
-        delegate.selectSizeAtIndex(index: delegate.getNativeSizeIndex())
+        if let ratioCell = self.collectionView.cellForItem(at: ConfigurationViewController.findIndexPathForResolutionIndex(i: delegate.getNativeSizeIndex(), delegate: delegate)) as? AspectRatioCollectionViewCell {
+            ratioCell.selectSizeTapped(ratioCell)
+        } else {
+            // When the native res bubble is scrolled out of view
+            for i in 0..<delegate.getAllSizes().count {
+                let path = ConfigurationViewController.findIndexPathForResolutionIndex(i: i, delegate: delegate)
+                if let toDehighlight = collectionView.cellForItem(at: path) as? AspectRatioCollectionViewCell {
+                    toDehighlight.greenTickView.isHidden = true
+                }
+            }
+            delegate.selectSizeAtIndex(index: delegate.getNativeSizeIndex())
+        }
     }
     
     func configurateCollectionView() {

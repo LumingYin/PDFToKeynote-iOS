@@ -448,8 +448,8 @@
                                                                     <action selector="resetToNativeResTapped:" destination="fVo-70-8Ve" eventType="touchUpInside" id="T4I-H7-bTe"/>
                                                                 </connections>
                                                             </button>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Retina" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LaE-Hn-uXu">
-                                                                <rect key="frame" x="222" y="26" width="28" height="11"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Normal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LaE-Hn-uXu">
+                                                                <rect key="frame" x="220" y="26" width="32" height="11"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -621,6 +621,8 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="collectionView" destination="jg5-8D-xrU" id="qRH-yg-fz0"/>
+                                            <outlet property="retinaScaleButton" destination="U5Q-Tq-ntp" id="P8l-NT-Xad"/>
+                                            <outlet property="retinaScaleLabel" destination="LaE-Hn-uXu" id="glH-tg-74r"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BackgroundColorTableViewCell" rowHeight="268" id="Bz9-Su-DDx" customClass="BackgroundColorTableViewCell" customModule="PDFToKeynote" customModuleProvider="target">
