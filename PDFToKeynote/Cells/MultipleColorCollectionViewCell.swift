@@ -21,5 +21,6 @@ class MultipleColorCollectionViewCell: UICollectionViewCell {
 
     @IBAction func colorButtonTapped(_ sender: UIButton) {
         delegate?.changeToNewColor(color: sender.backgroundColor!)
+        colorTappedCallback?(correspondingIndex ?? (0, 0), self)
     }
 }

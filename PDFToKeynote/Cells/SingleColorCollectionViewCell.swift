@@ -17,5 +17,6 @@ class SingleColorCollectionViewCell: UICollectionViewCell {
 
     @IBAction func colorButtonTapped(_ sender: UIButton) {
         delegate?.changeToNewColor(color: colorView.backgroundColor!)
+        colorTappedCallback?(correspondingIndex ?? 0, self)
     }
 }
