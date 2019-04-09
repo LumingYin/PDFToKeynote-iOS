@@ -190,6 +190,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WtT-iS-yoK">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="wdM-rf-gtH">
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Convert to Keynote" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GjE-GS-rmP">
                                 <rect key="frame" x="57" y="45" width="157.5" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -343,22 +351,25 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.33333674073219299" green="0.33332890272140503" blue="0.3333304226398468" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="PhZ-7I-lmj" firstAttribute="bottom" secondItem="2PO-bo-h0c" secondAttribute="bottom" constant="17" id="0vc-Dn-Vxg"/>
                             <constraint firstItem="PhZ-7I-lmj" firstAttribute="width" secondItem="HQc-EP-wpV" secondAttribute="width" id="1XK-Ne-H64"/>
                             <constraint firstItem="6nL-d0-MF9" firstAttribute="leading" secondItem="itw-CY-Mq2" secondAttribute="leading" id="2Ae-WF-6hE"/>
                             <constraint firstItem="GjE-GS-rmP" firstAttribute="leading" secondItem="Tqo-vm-IWB" secondAttribute="trailing" constant="8" id="5lw-q7-AlU"/>
                             <constraint firstItem="HQc-EP-wpV" firstAttribute="trailing" secondItem="2PO-bo-h0c" secondAttribute="trailing" id="6Ct-d6-wdV"/>
+                            <constraint firstItem="WtT-iS-yoK" firstAttribute="trailing" secondItem="2K3-a1-G5m" secondAttribute="trailing" id="8hy-SA-gOU"/>
                             <constraint firstItem="LQC-gp-bhu" firstAttribute="width" secondItem="itw-CY-Mq2" secondAttribute="width" id="AiB-Th-mbu"/>
                             <constraint firstItem="LQC-gp-bhu" firstAttribute="top" secondItem="GjE-GS-rmP" secondAttribute="bottom" constant="30" id="B2I-n7-keK"/>
                             <constraint firstItem="HQc-EP-wpV" firstAttribute="leading" secondItem="HVh-QO-i0X" secondAttribute="leading" constant="16" id="I4g-Xa-yjr"/>
+                            <constraint firstItem="WtT-iS-yoK" firstAttribute="bottom" secondItem="2K3-a1-G5m" secondAttribute="bottom" id="Ix9-E3-j2y"/>
                             <constraint firstItem="2PO-bo-h0c" firstAttribute="top" secondItem="GjE-GS-rmP" secondAttribute="bottom" constant="28" id="JxH-IN-D1B"/>
                             <constraint firstItem="HVh-QO-i0X" firstAttribute="trailing" secondItem="itw-CY-Mq2" secondAttribute="trailing" constant="18" id="LSV-37-8gd"/>
                             <constraint firstItem="6nL-d0-MF9" firstAttribute="width" secondItem="itw-CY-Mq2" secondAttribute="width" id="Mzl-1f-zye"/>
                             <constraint firstItem="itw-CY-Mq2" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="PhZ-7I-lmj" secondAttribute="trailing" constant="8" symbolic="YES" id="RGE-XS-2Ii"/>
                             <constraint firstItem="Tqo-vm-IWB" firstAttribute="leading" secondItem="HVh-QO-i0X" secondAttribute="leading" constant="16" id="SNp-dh-ACf"/>
                             <constraint firstItem="GjE-GS-rmP" firstAttribute="top" secondItem="HVh-QO-i0X" secondAttribute="top" constant="25" id="StP-nz-HWa"/>
+                            <constraint firstItem="WtT-iS-yoK" firstAttribute="leading" secondItem="2K3-a1-G5m" secondAttribute="leading" id="T66-Gk-3PG"/>
                             <constraint firstItem="itw-CY-Mq2" firstAttribute="width" secondItem="HQc-EP-wpV" secondAttribute="width" id="W9U-Mm-YS3"/>
                             <constraint firstItem="itw-CY-Mq2" firstAttribute="leading" secondItem="HQc-EP-wpV" secondAttribute="trailing" constant="15" id="c5p-7G-Kgw"/>
                             <constraint firstItem="LQC-gp-bhu" firstAttribute="leading" secondItem="itw-CY-Mq2" secondAttribute="leading" id="ddx-Th-JTd"/>
@@ -368,6 +379,7 @@
                             <constraint firstItem="2PO-bo-h0c" firstAttribute="leading" secondItem="PhZ-7I-lmj" secondAttribute="leading" id="qzM-1Y-RLe"/>
                             <constraint firstItem="HQc-EP-wpV" firstAttribute="top" secondItem="Tqo-vm-IWB" secondAttribute="bottom" constant="15" id="rxA-89-dsv"/>
                             <constraint firstItem="PhZ-7I-lmj" firstAttribute="leading" secondItem="HQc-EP-wpV" secondAttribute="leading" id="sf2-G3-e0R"/>
+                            <constraint firstItem="WtT-iS-yoK" firstAttribute="top" secondItem="2K3-a1-G5m" secondAttribute="top" id="wlb-x5-6RP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HVh-QO-i0X"/>
                     </view>
@@ -383,7 +395,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2pQ-a2-6hN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2448.8000000000002" y="653.52323838080963"/>
+            <point key="canvasLocation" x="2448.4375" y="653.3203125"/>
         </scene>
     </scenes>
     <resources>
