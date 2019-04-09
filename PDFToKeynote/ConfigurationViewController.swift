@@ -10,7 +10,10 @@ import UIKit
 import PDFKit
 import FloatingPanel
 
-class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, ChromaColorPickerDelegate, UIPopoverPresentationControllerDelegate, UITableViewDelegate, UITableViewDataSource {
+typealias SlideSize = (width: Int, height: Int, description: String)
+
+class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, ChromaColorPickerDelegate, UIPopoverPresentationControllerDelegate, UITableViewDelegate, UITableViewDataSource, SlideSizeDelegate {
+
     @IBOutlet weak var customizeImageView: UIImageView!
     @IBOutlet weak var startConversionButton: UIButton!
     @IBOutlet weak var dimensionPicker: UIPickerView!
@@ -35,19 +38,15 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
         }
     }
 
-    var sizes: [(width: Int, height: Int, description: String)] = [
-        (1024, 768, "4:3 XGA"),
-        (1920, 1080, "16:9 WUXGA/HDTV"),
-        (1680, 1050, "16:10 WSXGA+"),
-        (612, 792, "US Letter (Portrait)"),
-        (792, 612, "US Letter (Landscape)"),
-        (595, 842, "A4 Paper (Portrait)"),
-        (842, 595, "A4 Paper (Landscape)"),
-        (1600, 1200, "4:3 UXGA"),
-        (800, 600, "4:3 SVGA"),
-        (1280, 1024, "5:4 SXGA"),
-        (1280, 720, "16:9 HDTV"),
-        (1280, 800, "16:10 MacBook"),
+    var sizes: [SlideSize] = [
+        (1024, 768, "4:3"),
+        (1280, 1024, "5:4"),
+        (1920, 1080, "16:9"),
+        (1680, 1050, "16:10"),
+        (612, 792, "Letter\nPortrait"),
+        (792, 612, "Letter\nLandscape"),
+        (595, 842, "A4\nPortrait"),
+        (842, 595, "A4\nLandscape")
     ]
 
     override func viewDidLoad() {
@@ -82,6 +81,7 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
         } else if row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "SlideSizeTableViewCell", for: indexPath) as! SlideSizeTableViewCell
             cell.configurateCollectionView()
+            cell.delegate = self
             return cell
         } else if row == 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "BackgroundColorTableViewCell", for: indexPath) as! BackgroundColorTableViewCell
@@ -120,6 +120,11 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
     var cachedFileSize: String = "Unknown"
     var cachedPageCount: String = "? page"
 
+    // Size information
+    var nativeSizeIndex: Int = 0
+    var selectedSizeIndex: Int = 0
+    var useRetina2x: Bool = false
+
     func initialSetupForPDF(_ newDocument: Document) {
         self.document = newDocument
         cachedFileName = self.document?.fileURL.lastPathComponent ?? "Unknown"
@@ -141,6 +146,8 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
                 let sizeRatio = Float(size.width) / Float(size.height)
                 if abs(ratio - sizeRatio) < 0.01 {
                     self.sizes[i].description = "\(self.sizes[i].description) (Native)"
+                    self.nativeSizeIndex = i
+                    self.selectedSizeIndex = i
 //                    self.dimensionPicker.selectRow(i, inComponent: 0, animated: true)
 //                    self.aspectRatioLabel.text = self.sizes[i].description
                     matchedPreferredResolutions = true
@@ -152,7 +159,9 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
                 // print("Scale factor is: \(factor)")
                 let newWidth = rotatedBox.width * CGFloat(factor)
                 let newHeight = rotatedBox.height * CGFloat(factor)
-                self.sizes.append((Int(newWidth), Int(newHeight), "Native Resolution"))
+                self.addNewSize(width: Int(newWidth), height: Int(newHeight), description: "Native Resolution")
+                self.nativeSizeIndex = self.sizes.count - 1
+                self.selectedSizeIndex = self.nativeSizeIndex
 //                self.dimensionPicker.reloadComponent(0)
 //                self.dimensionPicker.selectRow(self.sizes.count - 1, inComponent: 0, animated: true)
 //                self.aspectRatioLabel.text = self.sizes.last?.description
@@ -306,4 +315,47 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
     }
     */
 
+    // MARK: - SlideSizeDelegate
+    func getAllSizes() -> [SlideSize] {
+        return self.sizes
+    }
+
+    func getNativeSizeIndex() -> Int {
+        return self.nativeSizeIndex
+    }
+
+    func getSelectedSizeIndex() -> Int {
+        return self.selectedSizeIndex
+    }
+
+    func addNewSize(width: Int, height: Int, description: String) {
+        self.sizes.append((width, height, description))
+    }
+
+    func addNewSize(width: Int, height: Int) {
+        self.addNewSize(width: width, height: height, description: "Custom")
+    }
+
+    func selectSizeAtIndex(index: Int) {
+        self.selectedSizeIndex = index
+    }
+
+    func setShouldUseRetina2x(shouldUse: Bool) {
+        self.useRetina2x = shouldUse
+    }
+
+    func getUsingRetina2x() -> Bool {
+        return self.useRetina2x
+    }
+}
+
+protocol SlideSizeDelegate : class {
+    func getAllSizes() -> [SlideSize]
+    func getNativeSizeIndex() -> Int
+    func getSelectedSizeIndex() -> Int
+    func getUsingRetina2x() -> Bool
+    func addNewSize(width: Int, height: Int)
+    func addNewSize(width: Int, height: Int, description: String)
+    func selectSizeAtIndex(index: Int)
+    func setShouldUseRetina2x(shouldUse: Bool)
 }

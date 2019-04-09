@@ -516,7 +516,7 @@
                                                                                     <rect key="frame" x="0.0" y="0.0" width="86" height="86"/>
                                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                     <connections>
-                                                                                        <action selector="selectColorTapped:" destination="AWc-nr-hKN" eventType="touchUpInside" id="tan-xW-Mfd"/>
+                                                                                        <action selector="selectSizeTapped:" destination="AWc-nr-hKN" eventType="touchUpInside" id="sOK-ZH-Kxg"/>
                                                                                     </connections>
                                                                                 </button>
                                                                             </subviews>
