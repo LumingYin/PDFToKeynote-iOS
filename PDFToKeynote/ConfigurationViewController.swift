@@ -68,7 +68,15 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FileInformationTableViewCell", for: indexPath)
+        let row = indexPath.row
+        var cell: UITableViewCell!
+        if row == 0 {
+            cell = tableView.dequeueReusableCell(withIdentifier: "FileInformationTableViewCell", for: indexPath)
+        } else if row == 1 {
+            cell = tableView.dequeueReusableCell(withIdentifier: "SlideSizeTableViewCell", for: indexPath)
+        } else {
+            cell = tableView.dequeueReusableCell(withIdentifier: "FileInformationTableViewCell", for: indexPath)
+        }
         return cell
     }
 
@@ -76,6 +84,8 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
         let row = indexPath.row
         if row == 0 {
             return 130
+        } else if row == 1 {
+            return 245
         }
         return 200
     }
