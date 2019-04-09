@@ -32,11 +32,11 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
             colorPickerButton.backgroundColor = selectedColor
         }
     }
-    var selectedRow: Int {
-        get {
-            return self.dimensionPicker.selectedRow(inComponent: 0)
-        }
-    }
+//    var selectedRow: Int {
+//        get {
+//            return self.dimensionPicker.selectedRow(inComponent: 0)
+//        }
+//    }
 
     var sizes: [SlideSize] = [
         (1024, 768, "4:3"),
@@ -208,18 +208,18 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
             if (active) {
                 SVProgressHUD.dismiss()
                 self.enableDisableStateChanged?(true)
-                self.colorPickerButton.isEnabled = true
-                self.dimensionPicker.isUserInteractionEnabled = true
+//                self.colorPickerButton.isEnabled = true
+//                self.dimensionPicker.isUserInteractionEnabled = true
                 self.startConversionButton.isEnabled = true
-                self.customizeAspectRatioButton.isEnabled = true
+//                self.customizeAspectRatioButton.isEnabled = true
                 self.startConversionButton.backgroundColor = UIColor(red: 0.3882352941, green: 0.7058823529, blue: 0.8431372549, alpha: 1)
             } else {
                 self.enableDisableStateChanged?(false)
-                self.colorPickerButton.isEnabled = false
-                self.dimensionPicker.isUserInteractionEnabled = false
+//                self.colorPickerButton.isEnabled = false
+//                self.dimensionPicker.isUserInteractionEnabled = false
                 self.startConversionButton.isEnabled = false
                 self.startConversionButton.backgroundColor = UIColor.gray
-                self.customizeAspectRatioButton.isEnabled = false
+//                self.customizeAspectRatioButton.isEnabled = false
             }
         }
     }
@@ -285,25 +285,25 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
         moveToPosition?()
     }
     
-    @IBAction func addNewAspectRatioTapped(_ sender: UIButton) {
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyBoard.instantiateViewController(withIdentifier: "AddWidthHeight") as! AddWidthHeightViewController
-        controller.newSizeAdded = { (width, height) in
-            self.sizes.append((width, height, "Custom: \(width) × \(height)"))
-            self.dimensionPicker.reloadComponent(0)
-            self.dimensionPicker.selectRow(self.sizes.count - 1, inComponent: 0, animated: true)
-            self.aspectRatioLabel.text = self.sizes[self.selectedRow].description
-        }
-        controller.modalPresentationStyle = .popover
-        controller.preferredContentSize = CGSize(width: 300, height: 200)
-        let presentationController = controller.presentationController as! UIPopoverPresentationController
-        presentationController.backgroundColor = controller.view.backgroundColor
-        presentationController.delegate = self
-        presentationController.sourceView = sender
-        presentationController.sourceRect = sender.bounds
-        presentationController.permittedArrowDirections = [.down, .up]
-        self.present(controller, animated: true)
-    }
+//    @IBAction func addNewAspectRatioTapped(_ sender: UIButton) {
+//        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+//        let controller = storyBoard.instantiateViewController(withIdentifier: "AddWidthHeight") as! AddWidthHeightViewController
+//        controller.newSizeAdded = { (width, height) in
+//            self.sizes.append((width, height, "Custom: \(width) × \(height)"))
+//            self.dimensionPicker.reloadComponent(0)
+//            self.dimensionPicker.selectRow(self.sizes.count - 1, inComponent: 0, animated: true)
+//            self.aspectRatioLabel.text = self.sizes[self.selectedRow].description
+//        }
+//        controller.modalPresentationStyle = .popover
+//        controller.preferredContentSize = CGSize(width: 300, height: 200)
+//        let presentationController = controller.presentationController as! UIPopoverPresentationController
+//        presentationController.backgroundColor = controller.view.backgroundColor
+//        presentationController.delegate = self
+//        presentationController.sourceView = sender
+//        presentationController.sourceRect = sender.bounds
+//        presentationController.permittedArrowDirections = [.down, .up]
+//        self.present(controller, animated: true)
+//    }
 
     /*
     // MARK: - Navigation
