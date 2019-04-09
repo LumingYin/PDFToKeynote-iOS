@@ -14,10 +14,8 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        allowsDocumentCreation = false
         delegate = self
-        
-        allowsDocumentCreation = true
         allowsPickingMultipleItems = false
         
         // Update the style of the UIDocumentBrowserViewController
@@ -27,7 +25,7 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
         // Specify the allowed content types of your application via the Info.plist.
         
         // Do any additional setup after loading the view, typically from a nib.
-        let creditsBarButtonItem = UIBarButtonItem(image: UIImage(named: "Settings"), style: .done, target: self, action: #selector(showCredits))
+        let creditsBarButtonItem = UIBarButtonItem(image: UIImage(named: "info"), style: .done, target: self, action: #selector(showCredits))
         self.additionalTrailingNavigationBarButtonItems = [creditsBarButtonItem]
     }
 
@@ -45,18 +43,18 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
 
     // MARK: UIDocumentBrowserViewControllerDelegate
     
-    func documentBrowser(_ controller: UIDocumentBrowserViewController, didRequestDocumentCreationWithHandler importHandler: @escaping (URL?, UIDocumentBrowserViewController.ImportMode) -> Void) {
-        let newDocumentURL: URL? = nil
-        
-        // Set the URL for the new document here. Optionally, you can present a template chooser before calling the importHandler.
-        // Make sure the importHandler is always called, even if the user cancels the creation request.
-        if newDocumentURL != nil {
-            importHandler(newDocumentURL, .move)
-        } else {
-            importHandler(nil, .none)
-        }
-    }
-    
+//    func documentBrowser(_ controller: UIDocumentBrowserViewController, didRequestDocumentCreationWithHandler importHandler: @escaping (URL?, UIDocumentBrowserViewController.ImportMode) -> Void) {
+//        let newDocumentURL: URL? = nil
+//
+//        // Set the URL for the new document here. Optionally, you can present a template chooser before calling the importHandler.
+//        // Make sure the importHandler is always called, even if the user cancels the creation request.
+//        if newDocumentURL != nil {
+//            importHandler(newDocumentURL, .move)
+//        } else {
+//            importHandler(nil, .none)
+//        }
+//    }
+
     func documentBrowser(_ controller: UIDocumentBrowserViewController, didPickDocumentsAt documentURLs: [URL]) {
         guard let sourceURL = documentURLs.first else { return }
         
@@ -83,6 +81,10 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
         documentViewController.document = Document(fileURL: documentURL)
         
         present(documentViewController, animated: true, completion: nil)
+    }
+
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return .lightContent
     }
 }
 

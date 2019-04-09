@@ -8,6 +8,40 @@
 
 /* Begin PBXBuildFile section */
 		2D55A8556036E5F92222E213 /* Pods_PDFToKeynote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13B24480D71B5F0564439EC4 /* Pods_PDFToKeynote.framework */; };
+		32009BEC225C3804005D5042 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009BEB225C3804005D5042 /* Converter.swift */; };
+		32009C0D225C605B005D5042 /* ModernUIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009BEF225C605B005D5042 /* ModernUIConstants.swift */; };
+		32009C0E225C605B005D5042 /* UIViewController+Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009BF2225C605B005D5042 /* UIViewController+Core.swift */; };
+		32009C0F225C605B005D5042 /* UIWindow+Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009BF3225C605B005D5042 /* UIWindow+Core.swift */; };
+		32009C10225C605B005D5042 /* UIColor+Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009BF4225C605B005D5042 /* UIColor+Core.swift */; };
+		32009C11225C605B005D5042 /* CGRect+Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009BF6225C605B005D5042 /* CGRect+Math.swift */; };
+		32009C12225C605B005D5042 /* IndexPath+Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009BF7225C605B005D5042 /* IndexPath+Grid.swift */; };
+		32009C13225C605B005D5042 /* Array+ColorConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009BF8225C605B005D5042 /* Array+ColorConversion.swift */; };
+		32009C14225C605B005D5042 /* EdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009BF9225C605B005D5042 /* EdgeInsets.swift */; };
+		32009C15225C605B005D5042 /* CGSize+Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009BFA225C605B005D5042 /* CGSize+Math.swift */; };
+		32009C16225C605B005D5042 /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009BFB225C605B005D5042 /* UIViewController+Alerts.swift */; };
+		32009C17225C605B005D5042 /* UIStoryboard+Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009BFC225C605B005D5042 /* UIStoryboard+Core.swift */; };
+		32009C18225C605B005D5042 /* UIEdgeInsets+Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009BFD225C605B005D5042 /* UIEdgeInsets+Math.swift */; };
+		32009C19225C605B005D5042 /* UIView+Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009BFE225C605B005D5042 /* UIView+Core.swift */; };
+		32009C1A225C605B005D5042 /* UIDevice+Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009BFF225C605B005D5042 /* UIDevice+Core.swift */; };
+		32009C1B225C605B005D5042 /* ModernTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009C01225C605B005D5042 /* ModernTimer.swift */; };
+		32009C1C225C605B005D5042 /* ModernCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009C02225C605B005D5042 /* ModernCollectionViewFlowLayout.swift */; };
+		32009C1D225C605B005D5042 /* ModernGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009C04225C605B005D5042 /* ModernGridView.swift */; };
+		32009C1E225C605B005D5042 /* ModernFluidButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009C05225C605B005D5042 /* ModernFluidButton.swift */; };
+		32009C1F225C605B005D5042 /* ModernCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009C06225C605B005D5042 /* ModernCircleView.swift */; };
+		32009C20225C605B005D5042 /* ModernGradientContourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009C07225C605B005D5042 /* ModernGradientContourView.swift */; };
+		32009C21225C605B005D5042 /* ModernFluidTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009C08225C605B005D5042 /* ModernFluidTableView.swift */; };
+		32009C22225C605B005D5042 /* ModernNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009C09225C605B005D5042 /* ModernNavigationBar.swift */; };
+		32009C23225C605B005D5042 /* ModernGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009C0A225C605B005D5042 /* ModernGradientView.swift */; };
+		32009C24225C605B005D5042 /* ModernContinuousContourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009C0B225C605B005D5042 /* ModernContinuousContourView.swift */; };
+		32009C27225C6579005D5042 /* FileInformationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009C26225C6579005D5042 /* FileInformationTableViewCell.swift */; };
+		32009C29225C6B62005D5042 /* SlideSizeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009C28225C6B62005D5042 /* SlideSizeTableViewCell.swift */; };
+		32009C2B225C6C67005D5042 /* AspectRatioCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009C2A225C6C67005D5042 /* AspectRatioCollectionViewCell.swift */; };
+		32009C2D225C6C73005D5042 /* CustomEntryRatioCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009C2C225C6C73005D5042 /* CustomEntryRatioCollectionViewCell.swift */; };
+		32009C2F225C6F07005D5042 /* BackgroundColorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009C2E225C6F07005D5042 /* BackgroundColorTableViewCell.swift */; };
+		32009C31225C703D005D5042 /* SingleColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009C30225C703D005D5042 /* SingleColorCollectionViewCell.swift */; };
+		32009C33225C707E005D5042 /* MultipleColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009C32225C707E005D5042 /* MultipleColorCollectionViewCell.swift */; };
+		3207B005225C78260036A470 /* JEKScrollableSectionCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3207B003225C78260036A470 /* JEKScrollableSectionCollectionViewLayout.m */; };
+		3207B008225C824E0036A470 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3207B007225C824E0036A470 /* Helper.swift */; };
 		3228E9F4225ABC4B005F923D /* PDFKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3228E9F3225ABC4B005F923D /* PDFKit.framework */; };
 		323F1452225B260A007D3DB3 /* ChromaShadeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323F144C225B260A007D3DB3 /* ChromaShadeSlider.swift */; };
 		323F1453225B260A007D3DB3 /* UIColor+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323F144D225B260A007D3DB3 /* UIColor+Utilities.swift */; };
@@ -24,6 +58,8 @@
 		323F1470225B424E007D3DB3 /* UIFontDescriptorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323F146C225B424E007D3DB3 /* UIFontDescriptorExtensions.swift */; };
 		323F1472225B427E007D3DB3 /* Acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 323F1471225B427E007D3DB3 /* Acknowledgements.plist */; };
 		32BEB7B2225AE12F00F51B0F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BEB7B1225AE12F00F51B0F /* Extensions.swift */; };
+		32D4BAB8225C03120030852A /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D4BAB7225C03120030852A /* ConfigurationViewController.swift */; };
+		32D4BABA225C09210030852A /* ConverterFloatingPanelLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D4BAB9225C09210030852A /* ConverterFloatingPanelLayout.swift */; };
 		32D9A0D9225AB93500AEC14B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D9A0D8225AB93500AEC14B /* AppDelegate.swift */; };
 		32D9A0DB225AB93500AEC14B /* DocumentBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D9A0DA225AB93500AEC14B /* DocumentBrowserViewController.swift */; };
 		32D9A0DD225AB93500AEC14B /* DocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D9A0DC225AB93500AEC14B /* DocumentViewController.swift */; };
@@ -38,6 +74,41 @@
 
 /* Begin PBXFileReference section */
 		13B24480D71B5F0564439EC4 /* Pods_PDFToKeynote.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PDFToKeynote.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		32009BEB225C3804005D5042 /* Converter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
+		32009BEF225C605B005D5042 /* ModernUIConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModernUIConstants.swift; sourceTree = "<group>"; };
+		32009BF2225C605B005D5042 /* UIViewController+Core.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Core.swift"; sourceTree = "<group>"; };
+		32009BF3225C605B005D5042 /* UIWindow+Core.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIWindow+Core.swift"; sourceTree = "<group>"; };
+		32009BF4225C605B005D5042 /* UIColor+Core.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Core.swift"; sourceTree = "<group>"; };
+		32009BF6225C605B005D5042 /* CGRect+Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+Math.swift"; sourceTree = "<group>"; };
+		32009BF7225C605B005D5042 /* IndexPath+Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IndexPath+Grid.swift"; sourceTree = "<group>"; };
+		32009BF8225C605B005D5042 /* Array+ColorConversion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+ColorConversion.swift"; sourceTree = "<group>"; };
+		32009BF9225C605B005D5042 /* EdgeInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdgeInsets.swift; sourceTree = "<group>"; };
+		32009BFA225C605B005D5042 /* CGSize+Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGSize+Math.swift"; sourceTree = "<group>"; };
+		32009BFB225C605B005D5042 /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
+		32009BFC225C605B005D5042 /* UIStoryboard+Core.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Core.swift"; sourceTree = "<group>"; };
+		32009BFD225C605B005D5042 /* UIEdgeInsets+Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+Math.swift"; sourceTree = "<group>"; };
+		32009BFE225C605B005D5042 /* UIView+Core.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Core.swift"; sourceTree = "<group>"; };
+		32009BFF225C605B005D5042 /* UIDevice+Core.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+Core.swift"; sourceTree = "<group>"; };
+		32009C01225C605B005D5042 /* ModernTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModernTimer.swift; sourceTree = "<group>"; };
+		32009C02225C605B005D5042 /* ModernCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModernCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		32009C04225C605B005D5042 /* ModernGridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModernGridView.swift; sourceTree = "<group>"; };
+		32009C05225C605B005D5042 /* ModernFluidButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModernFluidButton.swift; sourceTree = "<group>"; };
+		32009C06225C605B005D5042 /* ModernCircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModernCircleView.swift; sourceTree = "<group>"; };
+		32009C07225C605B005D5042 /* ModernGradientContourView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModernGradientContourView.swift; sourceTree = "<group>"; };
+		32009C08225C605B005D5042 /* ModernFluidTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModernFluidTableView.swift; sourceTree = "<group>"; };
+		32009C09225C605B005D5042 /* ModernNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModernNavigationBar.swift; sourceTree = "<group>"; };
+		32009C0A225C605B005D5042 /* ModernGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModernGradientView.swift; sourceTree = "<group>"; };
+		32009C0B225C605B005D5042 /* ModernContinuousContourView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModernContinuousContourView.swift; sourceTree = "<group>"; };
+		32009C26225C6579005D5042 /* FileInformationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FileInformationTableViewCell.swift; path = PDFToKeynote/Cells/FileInformationTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		32009C28225C6B62005D5042 /* SlideSizeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideSizeTableViewCell.swift; sourceTree = "<group>"; };
+		32009C2A225C6C67005D5042 /* AspectRatioCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectRatioCollectionViewCell.swift; sourceTree = "<group>"; };
+		32009C2C225C6C73005D5042 /* CustomEntryRatioCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomEntryRatioCollectionViewCell.swift; sourceTree = "<group>"; };
+		32009C2E225C6F07005D5042 /* BackgroundColorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundColorTableViewCell.swift; sourceTree = "<group>"; };
+		32009C30225C703D005D5042 /* SingleColorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleColorCollectionViewCell.swift; sourceTree = "<group>"; };
+		32009C32225C707E005D5042 /* MultipleColorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleColorCollectionViewCell.swift; sourceTree = "<group>"; };
+		3207B003225C78260036A470 /* JEKScrollableSectionCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JEKScrollableSectionCollectionViewLayout.m; sourceTree = "<group>"; };
+		3207B004225C78260036A470 /* JEKScrollableSectionCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEKScrollableSectionCollectionViewLayout.h; sourceTree = "<group>"; };
+		3207B007225C824E0036A470 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		3228E9F3225ABC4B005F923D /* PDFKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PDFKit.framework; path = System/Library/Frameworks/PDFKit.framework; sourceTree = SDKROOT; };
 		323F144C225B260A007D3DB3 /* ChromaShadeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromaShadeSlider.swift; sourceTree = "<group>"; };
 		323F144D225B260A007D3DB3 /* UIColor+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Utilities.swift"; sourceTree = "<group>"; };
@@ -56,6 +127,8 @@
 		323F146C225B424E007D3DB3 /* UIFontDescriptorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFontDescriptorExtensions.swift; sourceTree = "<group>"; };
 		323F1471225B427E007D3DB3 /* Acknowledgements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Acknowledgements.plist; sourceTree = "<group>"; };
 		32BEB7B1225AE12F00F51B0F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		32D4BAB7225C03120030852A /* ConfigurationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
+		32D4BAB9225C09210030852A /* ConverterFloatingPanelLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterFloatingPanelLayout.swift; sourceTree = "<group>"; };
 		32D9A0D5225AB93500AEC14B /* PDFToKeynote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PDFToKeynote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32D9A0D8225AB93500AEC14B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32D9A0DA225AB93500AEC14B /* DocumentBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentBrowserViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +165,154 @@
 				3B6F695D52E13E08A70619DA /* Pods-PDFToKeynote.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		32009BE5225C37A9005D5042 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				32009BEB225C3804005D5042 /* Converter.swift */,
+				32D9A0DE225AB93500AEC14B /* Document.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		32009BE7225C37B8005D5042 /* Templates */ = {
+			isa = PBXGroup;
+			children = (
+				32D9A0F0225ABAAB00AEC14B /* template_beginning.txt */,
+				32D9A0EE225ABAAB00AEC14B /* template_content.txt */,
+				32D9A0EF225ABAAB00AEC14B /* template_ending.txt */,
+			);
+			path = Templates;
+			sourceTree = "<group>";
+		};
+		32009BE8225C37C6005D5042 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				323F1471225B427E007D3DB3 /* Acknowledgements.plist */,
+				32D9A0E5225AB93700AEC14B /* LaunchScreen.storyboard */,
+				32D9A0E8225AB93700AEC14B /* Info.plist */,
+				323F1458225B2CEF007D3DB3 /* PDFToKeynote-Bridging-Header.h */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		32009BE9225C37CF005D5042 /* UITextField+Shake */ = {
+			isa = PBXGroup;
+			children = (
+				323F1463225B3D8C007D3DB3 /* UITextField+Shake.h */,
+				323F1464225B3D8C007D3DB3 /* UITextField+Shake.m */,
+			);
+			path = "UITextField+Shake";
+			sourceTree = "<group>";
+		};
+		32009BEA225C37D5005D5042 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				3207B002225C78260036A470 /* JEKScrollableSectionCollectionViewLayout */,
+				32009BEE225C605B005D5042 /* ModernUIKit */,
+				323F1468225B424E007D3DB3 /* SwiftyAcknowledgements */,
+				323F144B225B260A007D3DB3 /* ChromaColorPicker */,
+				32009BE9225C37CF005D5042 /* UITextField+Shake */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		32009BED225C382A005D5042 /* Auxillary */ = {
+			isa = PBXGroup;
+			children = (
+				32D4BAB9225C09210030852A /* ConverterFloatingPanelLayout.swift */,
+				32BEB7B1225AE12F00F51B0F /* Extensions.swift */,
+				3207B007225C824E0036A470 /* Helper.swift */,
+				323F145F225B3872007D3DB3 /* PopoverViewController.swift */,
+			);
+			path = Auxillary;
+			sourceTree = "<group>";
+		};
+		32009BEE225C605B005D5042 /* ModernUIKit */ = {
+			isa = PBXGroup;
+			children = (
+				32009BEF225C605B005D5042 /* ModernUIConstants.swift */,
+				32009BF1225C605B005D5042 /* Extensions */,
+				32009C00225C605B005D5042 /* Model */,
+				32009C03225C605B005D5042 /* View */,
+			);
+			path = ModernUIKit;
+			sourceTree = "<group>";
+		};
+		32009BF1225C605B005D5042 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				32009BF2225C605B005D5042 /* UIViewController+Core.swift */,
+				32009BF3225C605B005D5042 /* UIWindow+Core.swift */,
+				32009BF4225C605B005D5042 /* UIColor+Core.swift */,
+				32009BF5225C605B005D5042 /* Foundation */,
+				32009BFB225C605B005D5042 /* UIViewController+Alerts.swift */,
+				32009BFC225C605B005D5042 /* UIStoryboard+Core.swift */,
+				32009BFD225C605B005D5042 /* UIEdgeInsets+Math.swift */,
+				32009BFE225C605B005D5042 /* UIView+Core.swift */,
+				32009BFF225C605B005D5042 /* UIDevice+Core.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		32009BF5225C605B005D5042 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				32009BF6225C605B005D5042 /* CGRect+Math.swift */,
+				32009BF7225C605B005D5042 /* IndexPath+Grid.swift */,
+				32009BF8225C605B005D5042 /* Array+ColorConversion.swift */,
+				32009BF9225C605B005D5042 /* EdgeInsets.swift */,
+				32009BFA225C605B005D5042 /* CGSize+Math.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		32009C00225C605B005D5042 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				32009C01225C605B005D5042 /* ModernTimer.swift */,
+				32009C02225C605B005D5042 /* ModernCollectionViewFlowLayout.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		32009C03225C605B005D5042 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				32009C04225C605B005D5042 /* ModernGridView.swift */,
+				32009C05225C605B005D5042 /* ModernFluidButton.swift */,
+				32009C06225C605B005D5042 /* ModernCircleView.swift */,
+				32009C07225C605B005D5042 /* ModernGradientContourView.swift */,
+				32009C08225C605B005D5042 /* ModernFluidTableView.swift */,
+				32009C09225C605B005D5042 /* ModernNavigationBar.swift */,
+				32009C0A225C605B005D5042 /* ModernGradientView.swift */,
+				32009C0B225C605B005D5042 /* ModernContinuousContourView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3207B002225C78260036A470 /* JEKScrollableSectionCollectionViewLayout */ = {
+			isa = PBXGroup;
+			children = (
+				3207B003225C78260036A470 /* JEKScrollableSectionCollectionViewLayout.m */,
+				3207B004225C78260036A470 /* JEKScrollableSectionCollectionViewLayout.h */,
+			);
+			path = JEKScrollableSectionCollectionViewLayout;
+			sourceTree = "<group>";
+		};
+		3207B006225C7C790036A470 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				32009C26225C6579005D5042 /* FileInformationTableViewCell.swift */,
+				32009C28225C6B62005D5042 /* SlideSizeTableViewCell.swift */,
+				32009C2A225C6C67005D5042 /* AspectRatioCollectionViewCell.swift */,
+				32009C2E225C6F07005D5042 /* BackgroundColorTableViewCell.swift */,
+				32009C30225C703D005D5042 /* SingleColorCollectionViewCell.swift */,
+				32009C32225C707E005D5042 /* MultipleColorCollectionViewCell.swift */,
+				32009C2C225C6C73005D5042 /* CustomEntryRatioCollectionViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		3228E9F2225ABC4B005F923D /* Frameworks */ = {
@@ -148,26 +369,19 @@
 		32D9A0D7225AB93500AEC14B /* PDFToKeynote */ = {
 			isa = PBXGroup;
 			children = (
-				323F1468225B424E007D3DB3 /* SwiftyAcknowledgements */,
-				323F144B225B260A007D3DB3 /* ChromaColorPicker */,
-				323F1471225B427E007D3DB3 /* Acknowledgements.plist */,
-				32D9A0F0225ABAAB00AEC14B /* template_beginning.txt */,
-				32D9A0EE225ABAAB00AEC14B /* template_content.txt */,
-				32D9A0EF225ABAAB00AEC14B /* template_ending.txt */,
+				32009BEA225C37D5005D5042 /* Libraries */,
+				32009BE8225C37C6005D5042 /* Support */,
+				32009BE7225C37B8005D5042 /* Templates */,
+				32009BE5225C37A9005D5042 /* Model */,
+				32009BED225C382A005D5042 /* Auxillary */,
 				32D9A0D8225AB93500AEC14B /* AppDelegate.swift */,
 				32D9A0DA225AB93500AEC14B /* DocumentBrowserViewController.swift */,
 				32D9A0DC225AB93500AEC14B /* DocumentViewController.swift */,
 				323F1461225B39FE007D3DB3 /* AddWidthHeightViewController.swift */,
-				323F145F225B3872007D3DB3 /* PopoverViewController.swift */,
-				323F1463225B3D8C007D3DB3 /* UITextField+Shake.h */,
-				323F1464225B3D8C007D3DB3 /* UITextField+Shake.m */,
-				32BEB7B1225AE12F00F51B0F /* Extensions.swift */,
-				32D9A0DE225AB93500AEC14B /* Document.swift */,
-				32D9A0E0225AB93500AEC14B /* Main.storyboard */,
+				32D4BAB7225C03120030852A /* ConfigurationViewController.swift */,
+				3207B006225C7C790036A470 /* Cells */,
 				32D9A0E3225AB93700AEC14B /* Assets.xcassets */,
-				32D9A0E5225AB93700AEC14B /* LaunchScreen.storyboard */,
-				32D9A0E8225AB93700AEC14B /* Info.plist */,
-				323F1458225B2CEF007D3DB3 /* PDFToKeynote-Bridging-Header.h */,
+				32D9A0E0225AB93500AEC14B /* Main.storyboard */,
 			);
 			path = PDFToKeynote;
 			sourceTree = "<group>";
@@ -277,6 +491,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PDFToKeynote/Pods-PDFToKeynote-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FloatingPanel/FloatingPanel.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Zip/Zip.framework",
 			);
@@ -284,6 +499,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FloatingPanel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Zip.framework",
 			);
@@ -300,23 +516,59 @@
 			buildActionMask = 2147483647;
 			files = (
 				323F1452225B260A007D3DB3 /* ChromaShadeSlider.swift in Sources */,
+				32009C11225C605B005D5042 /* CGRect+Math.swift in Sources */,
 				323F1454225B260A007D3DB3 /* ChromaColorPicker.swift in Sources */,
+				32009C1A225C605B005D5042 /* UIDevice+Core.swift in Sources */,
+				32009C1C225C605B005D5042 /* ModernCollectionViewFlowLayout.swift in Sources */,
+				3207B008225C824E0036A470 /* Helper.swift in Sources */,
 				323F1470225B424E007D3DB3 /* UIFontDescriptorExtensions.swift in Sources */,
+				32009C20225C605B005D5042 /* ModernGradientContourView.swift in Sources */,
 				323F1460225B3872007D3DB3 /* PopoverViewController.swift in Sources */,
+				32009C1D225C605B005D5042 /* ModernGridView.swift in Sources */,
+				32009C0D225C605B005D5042 /* ModernUIConstants.swift in Sources */,
+				32009C10225C605B005D5042 /* UIColor+Core.swift in Sources */,
 				323F146D225B424E007D3DB3 /* Acknowledgement.swift in Sources */,
+				32009C14225C605B005D5042 /* EdgeInsets.swift in Sources */,
 				323F1455225B260A007D3DB3 /* ColorModeToggleButton.swift in Sources */,
 				32BEB7B2225AE12F00F51B0F /* Extensions.swift in Sources */,
 				32D9A0DF225AB93500AEC14B /* Document.swift in Sources */,
+				32009C2F225C6F07005D5042 /* BackgroundColorTableViewCell.swift in Sources */,
 				323F1456225B260A007D3DB3 /* ChromaHandle.swift in Sources */,
+				32009C21225C605B005D5042 /* ModernFluidTableView.swift in Sources */,
+				32009C17225C605B005D5042 /* UIStoryboard+Core.swift in Sources */,
 				32D9A0DD225AB93500AEC14B /* DocumentViewController.swift in Sources */,
+				32009C29225C6B62005D5042 /* SlideSizeTableViewCell.swift in Sources */,
+				32009C2D225C6C73005D5042 /* CustomEntryRatioCollectionViewCell.swift in Sources */,
+				32009BEC225C3804005D5042 /* Converter.swift in Sources */,
 				323F1453225B260A007D3DB3 /* UIColor+Utilities.swift in Sources */,
+				32009C1B225C605B005D5042 /* ModernTimer.swift in Sources */,
 				32D9A0DB225AB93500AEC14B /* DocumentBrowserViewController.swift in Sources */,
 				323F1462225B39FE007D3DB3 /* AddWidthHeightViewController.swift in Sources */,
+				3207B005225C78260036A470 /* JEKScrollableSectionCollectionViewLayout.m in Sources */,
+				32009C24225C605B005D5042 /* ModernContinuousContourView.swift in Sources */,
+				32009C18225C605B005D5042 /* UIEdgeInsets+Math.swift in Sources */,
+				32009C31225C703D005D5042 /* SingleColorCollectionViewCell.swift in Sources */,
+				32009C22225C605B005D5042 /* ModernNavigationBar.swift in Sources */,
+				32009C13225C605B005D5042 /* Array+ColorConversion.swift in Sources */,
 				32D9A0D9225AB93500AEC14B /* AppDelegate.swift in Sources */,
+				32009C16225C605B005D5042 /* UIViewController+Alerts.swift in Sources */,
+				32009C0F225C605B005D5042 /* UIWindow+Core.swift in Sources */,
 				323F146E225B424E007D3DB3 /* AcknowledgementViewController.swift in Sources */,
+				32009C15225C605B005D5042 /* CGSize+Math.swift in Sources */,
 				323F146F225B424E007D3DB3 /* AcknowledgementsTableViewController.swift in Sources */,
+				32009C2B225C6C67005D5042 /* AspectRatioCollectionViewCell.swift in Sources */,
+				32009C12225C605B005D5042 /* IndexPath+Grid.swift in Sources */,
+				32009C1E225C605B005D5042 /* ModernFluidButton.swift in Sources */,
+				32D4BAB8225C03120030852A /* ConfigurationViewController.swift in Sources */,
+				32009C19225C605B005D5042 /* UIView+Core.swift in Sources */,
+				32009C1F225C605B005D5042 /* ModernCircleView.swift in Sources */,
 				323F1457225B260A007D3DB3 /* ChromaAddButton.swift in Sources */,
 				323F1465225B3D8C007D3DB3 /* UITextField+Shake.m in Sources */,
+				32009C23225C605B005D5042 /* ModernGradientView.swift in Sources */,
+				32D4BABA225C09210030852A /* ConverterFloatingPanelLayout.swift in Sources */,
+				32009C27225C6579005D5042 /* FileInformationTableViewCell.swift in Sources */,
+				32009C33225C707E005D5042 /* MultipleColorCollectionViewCell.swift in Sources */,
+				32009C0E225C605B005D5042 /* UIViewController+Core.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,7 +718,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3Q7XKEDZ36;
-				INFOPLIST_FILE = PDFToKeynote/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/PDFToKeynote/Support/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -474,7 +726,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.blue.PDFToKeynote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "PDFToKeynote/PDFToKeynote-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "PDFToKeynote/Support/PDFToKeynote-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -489,7 +741,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3Q7XKEDZ36;
-				INFOPLIST_FILE = PDFToKeynote/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/PDFToKeynote/Support/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -497,7 +749,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.blue.PDFToKeynote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "PDFToKeynote/PDFToKeynote-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "PDFToKeynote/Support/PDFToKeynote-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
