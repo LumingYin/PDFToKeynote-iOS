@@ -462,7 +462,7 @@
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jg5-8D-xrU">
+                                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jg5-8D-xrU">
                                                                 <rect key="frame" x="12" y="52" width="288" height="187"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -473,33 +473,44 @@
                                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                                 </collectionViewFlowLayout>
                                                                 <cells>
-                                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AspectRatioCollectionViewCell" id="AWc-nr-hKN" customClass="AspectRatioCollectionViewCell" customModule="PDFToKeynote" customModuleProvider="target">
+                                                                    <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AspectRatioCollectionViewCell" id="AWc-nr-hKN" customClass="AspectRatioCollectionViewCell" customModule="PDFToKeynote" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="86" height="86"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                                             <rect key="frame" x="0.0" y="0.0" width="86" height="86"/>
                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                             <subviews>
-                                                                                <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cvZ-YT-g9u">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
-                                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="Snj-sJ-yUl">
+                                                                                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cvZ-YT-g9u">
+                                                                                    <rect key="frame" x="3" y="3" width="80" height="80"/>
+                                                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Snj-sJ-yUl">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                         <subviews>
-                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="4:3 Test" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dWf-bX-eEx">
-                                                                                                <rect key="frame" x="0.0" y="0.0" width="80" height="50"/>
-                                                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4:3 Test" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dWf-bX-eEx">
+                                                                                                <rect key="frame" x="26" y="24.5" width="28" height="31.5"/>
                                                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                 <nil key="highlightedColor"/>
                                                                                             </label>
-                                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="goldStarView" translatesAutoresizingMaskIntoConstraints="NO" id="ATZ-am-rMU">
-                                                                                                <rect key="frame" x="8" y="15" width="15" height="15"/>
-                                                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goldStarView" translatesAutoresizingMaskIntoConstraints="NO" id="ATZ-am-rMU">
+                                                                                                <rect key="frame" x="61" y="4" width="15" height="15"/>
+                                                                                                <constraints>
+                                                                                                    <constraint firstAttribute="height" constant="15" id="1xO-xu-CWB"/>
+                                                                                                    <constraint firstAttribute="width" constant="15" id="kwy-va-cbO"/>
+                                                                                                </constraints>
                                                                                             </imageView>
                                                                                         </subviews>
+                                                                                        <constraints>
+                                                                                            <constraint firstItem="ATZ-am-rMU" firstAttribute="top" secondItem="Snj-sJ-yUl" secondAttribute="top" constant="4" id="FT9-Qu-QjT"/>
+                                                                                            <constraint firstItem="dWf-bX-eEx" firstAttribute="centerY" secondItem="Snj-sJ-yUl" secondAttribute="centerY" id="UoQ-2A-25A"/>
+                                                                                            <constraint firstAttribute="trailing" secondItem="ATZ-am-rMU" secondAttribute="trailing" constant="4" id="daN-3W-jhw"/>
+                                                                                            <constraint firstItem="dWf-bX-eEx" firstAttribute="centerX" secondItem="Snj-sJ-yUl" secondAttribute="centerX" id="jd7-6e-JhF"/>
+                                                                                        </constraints>
                                                                                     </view>
+                                                                                    <constraints>
+                                                                                        <constraint firstAttribute="height" constant="80" id="Jxt-Fj-kox"/>
+                                                                                        <constraint firstAttribute="width" constant="80" id="u6o-YQ-Nax"/>
+                                                                                    </constraints>
                                                                                     <blurEffect style="light"/>
                                                                                     <userDefinedRuntimeAttributes>
                                                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -508,20 +519,34 @@
                                                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                                                     </userDefinedRuntimeAttributes>
                                                                                 </visualEffectView>
-                                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="greenTickView" translatesAutoresizingMaskIntoConstraints="NO" id="20E-J4-QfH">
-                                                                                    <rect key="frame" x="36" y="59" width="15" height="15"/>
-                                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenTickView" translatesAutoresizingMaskIntoConstraints="NO" id="20E-J4-QfH">
+                                                                                    <rect key="frame" x="35" y="75" width="16" height="16"/>
+                                                                                    <constraints>
+                                                                                        <constraint firstAttribute="width" constant="16" id="xMa-eP-iac"/>
+                                                                                        <constraint firstAttribute="height" constant="16" id="xn8-Ae-EVo"/>
+                                                                                    </constraints>
                                                                                 </imageView>
-                                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p1T-ln-RlI">
+                                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p1T-ln-RlI">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="86" height="86"/>
-                                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                     <connections>
                                                                                         <action selector="selectSizeTapped:" destination="AWc-nr-hKN" eventType="touchUpInside" id="sOK-ZH-Kxg"/>
                                                                                     </connections>
                                                                                 </button>
                                                                             </subviews>
                                                                         </view>
+                                                                        <constraints>
+                                                                            <constraint firstItem="p1T-ln-RlI" firstAttribute="top" secondItem="AWc-nr-hKN" secondAttribute="top" id="0m2-Sx-0tB"/>
+                                                                            <constraint firstItem="cvZ-YT-g9u" firstAttribute="bottom" secondItem="20E-J4-QfH" secondAttribute="bottom" constant="-8" id="4RX-yx-nfN"/>
+                                                                            <constraint firstItem="p1T-ln-RlI" firstAttribute="leading" secondItem="AWc-nr-hKN" secondAttribute="leading" id="Da5-OW-b7m"/>
+                                                                            <constraint firstItem="cvZ-YT-g9u" firstAttribute="centerX" secondItem="AWc-nr-hKN" secondAttribute="centerX" id="FS8-iP-MFY"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="p1T-ln-RlI" secondAttribute="trailing" id="MU6-e0-ovo"/>
+                                                                            <constraint firstItem="20E-J4-QfH" firstAttribute="centerX" secondItem="AWc-nr-hKN" secondAttribute="centerX" id="Vhj-dr-6uv"/>
+                                                                            <constraint firstItem="cvZ-YT-g9u" firstAttribute="centerY" secondItem="AWc-nr-hKN" secondAttribute="centerY" id="Y44-aM-80t"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="p1T-ln-RlI" secondAttribute="bottom" id="f3Q-jp-NXe"/>
+                                                                        </constraints>
                                                                         <connections>
+                                                                            <outlet property="effectsHeight" destination="Jxt-Fj-kox" id="5iu-zl-dzP"/>
+                                                                            <outlet property="effectsWidth" destination="u6o-YQ-Nax" id="bkT-lJ-QYv"/>
                                                                             <outlet property="greenTickView" destination="20E-J4-QfH" id="uuB-Sw-HZj"/>
                                                                             <outlet property="nativeGoldstarView" destination="ATZ-am-rMU" id="KHm-ni-mJB"/>
                                                                             <outlet property="ratioTextLabel" destination="dWf-bX-eEx" id="f53-QR-q2x"/>
