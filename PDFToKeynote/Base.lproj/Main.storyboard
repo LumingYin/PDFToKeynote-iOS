@@ -683,7 +683,7 @@
                                                                                     <rect key="frame" x="13" y="13" width="60" height="60"/>
                                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                     <subviews>
-                                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="greenTickView" translatesAutoresizingMaskIntoConstraints="NO" id="Rhe-Tr-ouq">
+                                                                                        <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="greenTickView" translatesAutoresizingMaskIntoConstraints="NO" id="Rhe-Tr-ouq">
                                                                                             <rect key="frame" x="23" y="23" width="15" height="15"/>
                                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                         </imageView>
@@ -754,7 +754,7 @@
                                                                                                 <action selector="colorButtonTapped:" destination="chp-EN-YqS" eventType="touchUpInside" id="eNY-92-5zL"/>
                                                                                             </connections>
                                                                                         </button>
-                                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="greenTickView" translatesAutoresizingMaskIntoConstraints="NO" id="znH-jV-MML">
+                                                                                        <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="greenTickView" translatesAutoresizingMaskIntoConstraints="NO" id="znH-jV-MML">
                                                                                             <rect key="frame" x="23" y="3" width="15" height="15"/>
                                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                         </imageView>
