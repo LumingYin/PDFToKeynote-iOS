@@ -78,8 +78,8 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
                 c.configurateCollectionView()
             }
         } else if row == 2 {
-            cell = tableView.dequeueReusableCell(withIdentifier: "BackgroundColorViewCell", for: indexPath)
-            if let c = cell as? BackgroundColorViewCell {
+            cell = tableView.dequeueReusableCell(withIdentifier: "BackgroundColorTableViewCell", for: indexPath)
+            if let c = cell as? BackgroundColorTableViewCell {
                 c.configurateCollectionView()
             }
         } else {

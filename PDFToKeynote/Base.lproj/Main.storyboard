@@ -583,7 +583,7 @@
                                             <outlet property="collectionView" destination="jg5-8D-xrU" id="qRH-yg-fz0"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BackgroundColorViewCell" rowHeight="268" id="Bz9-Su-DDx" customClass="BackgroundColorViewCell" customModule="PDFToKeynote" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BackgroundColorTableViewCell" rowHeight="268" id="Bz9-Su-DDx" customClass="BackgroundColorTableViewCell" customModule="PDFToKeynote" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="426" width="350" height="268"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Bz9-Su-DDx" id="eUt-p0-Kdu">

@@ -1,5 +1,5 @@
 //
-//  BackgroundColorViewCell.swift
+//  BackgroundColorTableViewCell.swift
 //  PDFToKeynote
 //
 //  Created by Blue on 4/9/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BackgroundColorViewCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate {
+class BackgroundColorTableViewCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 0 || section == 1 {
             return 6
