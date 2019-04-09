@@ -84,5 +84,9 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
         
         present(documentViewController, animated: true, completion: nil)
     }
+
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return .lightContent
+    }
 }
 

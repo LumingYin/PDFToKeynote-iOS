@@ -74,10 +74,17 @@ public extension FloatingPanelLayout {
     }
     
     func prepareLayout(surfaceView: UIView, in view: UIView) -> [NSLayoutConstraint] {
-        return [
-            surfaceView.leftAnchor.constraint(equalTo: view.sideLayoutGuide.leftAnchor, constant: 0.0),
-            surfaceView.rightAnchor.constraint(equalTo: view.sideLayoutGuide.rightAnchor, constant: 0.0),
-        ]
+        if #available(iOSApplicationExtension 11.0, *) {
+            return [
+                surfaceView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 8.0),
+                surfaceView.widthAnchor.constraint(equalToConstant: 291),
+            ]
+        } else {
+            return [
+                surfaceView.leftAnchor.constraint(equalTo: view.sideLayoutGuide.leftAnchor, constant: 0.0),
+                surfaceView.rightAnchor.constraint(equalTo: view.sideLayoutGuide.rightAnchor, constant: 0.0),
+            ]
+        }
     }
 
     func backdropAlphaFor(position: FloatingPanelPosition) -> CGFloat {

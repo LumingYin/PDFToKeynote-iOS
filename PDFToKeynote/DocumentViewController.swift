@@ -72,4 +72,8 @@ class DocumentViewController: UIViewController, FloatingPanelControllerDelegate 
             self.document?.close(completionHandler: nil)
         }
     }
+    
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return .lightContent
+    }
 }
