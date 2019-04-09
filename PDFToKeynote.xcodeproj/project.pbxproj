@@ -303,8 +303,8 @@
 			children = (
 				32009C26225C6579005D5042 /* FileInformationTableViewCell.swift */,
 				32009C28225C6B62005D5042 /* SlideSizeTableViewCell.swift */,
-				32009C2E225C6F07005D5042 /* BackgroundColorTableViewCell.swift */,
 				32009C2A225C6C67005D5042 /* AspectRatioCollectionViewCell.swift */,
+				32009C2E225C6F07005D5042 /* BackgroundColorTableViewCell.swift */,
 				32009C30225C703D005D5042 /* SingleColorCollectionViewCell.swift */,
 				32009C32225C707E005D5042 /* MultipleColorCollectionViewCell.swift */,
 				32009C2C225C6C73005D5042 /* CustomEntryRatioCollectionViewCell.swift */,

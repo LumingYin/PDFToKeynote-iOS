@@ -9,6 +9,29 @@
 import UIKit
 
 class BackgroundColorTableViewCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate {
+    var isConfigured = false
+    @IBOutlet weak var colorHexCodeLabel: UILabel!
+    @IBOutlet weak var colorReadableDescriptionLabel: UILabel!
+    @IBOutlet weak var collectionView: UICollectionView!
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+
+    func configurateCollectionView() {
+        if !isConfigured {
+            let layout = JEKScrollableSectionCollectionViewLayout()
+            layout.itemSize = CGSize(width: 86, height: 86)
+            layout.sectionInset = UIEdgeInsets(top: 3, left: 0, bottom: 3, right: 0)
+            layout.minimumInteritemSpacing = 10
+            collectionView.collectionViewLayout = layout
+            collectionView.delegate = self
+            collectionView.dataSource = self
+            isConfigured = true
+            collectionView.reloadData()
+        }
+    }
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 0 || section == 1 {
             return 6
@@ -38,32 +61,8 @@ class BackgroundColorTableViewCell: UITableViewCell, UICollectionViewDataSource,
         }
     }
 
-    var isConfigured = false
-    @IBOutlet weak var collectionView: UICollectionView!
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    func configurateCollectionView() {
-        if !isConfigured {
-            let layout = JEKScrollableSectionCollectionViewLayout()
-            layout.itemSize = CGSize(width: 86, height: 86)
-            layout.sectionInset = UIEdgeInsets(top: 3, left: 0, bottom: 3, right: 0)
-            layout.minimumInteritemSpacing = 10
-            collectionView.collectionViewLayout = layout
-            collectionView.delegate = self
-            collectionView.dataSource = self
-            isConfigured = true
-            collectionView.reloadData()
-        }
-    }
-
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }

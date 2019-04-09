@@ -12,7 +12,8 @@ class AspectRatioCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var ratioTextLabel: UILabel!
     @IBOutlet weak var nativeGoldstarView: UIImageView!
     @IBOutlet weak var visualEffectContainerView: UIVisualEffectView!
-
+    @IBOutlet weak var greenTickView: UIImageView!
+    
     @IBAction func selectColorTapped(_ sender: Any) {
 
     }

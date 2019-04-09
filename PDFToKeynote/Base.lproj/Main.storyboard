@@ -393,6 +393,12 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="documentNameLabel" destination="8uY-a4-B1B" id="A17-TD-ybt"/>
+                                            <outlet property="documentPageCountLabel" destination="DEW-cw-Z9e" id="TjR-xG-X5z"/>
+                                            <outlet property="documentResolutionLabel" destination="huG-iy-DYW" id="VbN-PG-QUd"/>
+                                            <outlet property="documentSizeLabel" destination="2Q5-Oe-0ak" id="eHv-wO-PFG"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SlideSizeTableViewCell" rowHeight="268" id="fVo-70-8Ve" customClass="SlideSizeTableViewCell" customModule="PDFToKeynote" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="158" width="350" height="268"/>
@@ -426,6 +432,9 @@
                                                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="-10" maxX="0.0" maxY="0.0"/>
                                                                 <state key="normal" image="slideSizeCell1x"/>
+                                                                <connections>
+                                                                    <action selector="switch1xRetinaTapped:" destination="fVo-70-8Ve" eventType="touchUpInside" id="kdS-NH-jGN"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yi7-K1-7xh">
                                                                 <rect key="frame" x="261" y="0.0" width="46" height="44"/>
@@ -433,6 +442,9 @@
                                                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="-10" maxX="0.0" maxY="0.0"/>
                                                                 <state key="normal" image="slideSizeCell_reset"/>
+                                                                <connections>
+                                                                    <action selector="resetToNativeResTapped:" destination="fVo-70-8Ve" eventType="touchUpInside" id="T4I-H7-bTe"/>
+                                                                </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Retina" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LaE-Hn-uXu">
                                                                 <rect key="frame" x="222" y="26" width="28" height="11"/>
@@ -508,6 +520,7 @@
                                                                             </subviews>
                                                                         </view>
                                                                         <connections>
+                                                                            <outlet property="greenTickView" destination="20E-J4-QfH" id="uuB-Sw-HZj"/>
                                                                             <outlet property="nativeGoldstarView" destination="ATZ-am-rMU" id="KHm-ni-mJB"/>
                                                                             <outlet property="ratioTextLabel" destination="dWf-bX-eEx" id="f53-QR-q2x"/>
                                                                             <outlet property="visualEffectContainerView" destination="cvZ-YT-g9u" id="cwJ-aS-tai"/>
@@ -819,6 +832,8 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="collectionView" destination="BoA-ei-n8w" id="g88-4L-Cv1"/>
+                                            <outlet property="colorHexCodeLabel" destination="MkO-Zq-tJd" id="7FU-QJ-5Ix"/>
+                                            <outlet property="colorReadableDescriptionLabel" destination="wz2-0z-KC9" id="2Oy-lZ-2B4"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="201" id="9uM-mI-a8I">
