@@ -33,6 +33,7 @@
 		32009C22225C605B005D5042 /* ModernNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009C09225C605B005D5042 /* ModernNavigationBar.swift */; };
 		32009C23225C605B005D5042 /* ModernGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009C0A225C605B005D5042 /* ModernGradientView.swift */; };
 		32009C24225C605B005D5042 /* ModernContinuousContourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009C0B225C605B005D5042 /* ModernContinuousContourView.swift */; };
+		32009C27225C6579005D5042 /* FileInformationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009C26225C6579005D5042 /* FileInformationTableViewCell.swift */; };
 		3228E9F4225ABC4B005F923D /* PDFKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3228E9F3225ABC4B005F923D /* PDFKit.framework */; };
 		323F1452225B260A007D3DB3 /* ChromaShadeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323F144C225B260A007D3DB3 /* ChromaShadeSlider.swift */; };
 		323F1453225B260A007D3DB3 /* UIColor+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323F144D225B260A007D3DB3 /* UIColor+Utilities.swift */; };
@@ -90,6 +91,7 @@
 		32009C09225C605B005D5042 /* ModernNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModernNavigationBar.swift; sourceTree = "<group>"; };
 		32009C0A225C605B005D5042 /* ModernGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModernGradientView.swift; sourceTree = "<group>"; };
 		32009C0B225C605B005D5042 /* ModernContinuousContourView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModernContinuousContourView.swift; sourceTree = "<group>"; };
+		32009C26225C6579005D5042 /* FileInformationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FileInformationTableViewCell.swift; path = PDFToKeynote/FileInformationTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		3228E9F3225ABC4B005F923D /* PDFKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PDFKit.framework; path = System/Library/Frameworks/PDFKit.framework; sourceTree = SDKROOT; };
 		323F144C225B260A007D3DB3 /* ChromaShadeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromaShadeSlider.swift; sourceTree = "<group>"; };
 		323F144D225B260A007D3DB3 /* UIColor+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Utilities.swift"; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 				32009BE7225C37B8005D5042 /* Templates */,
 				32009BE5225C37A9005D5042 /* Model */,
 				32009BED225C382A005D5042 /* Auxillary */,
+				32009C26225C6579005D5042 /* FileInformationTableViewCell.swift */,
 				32D9A0D8225AB93500AEC14B /* AppDelegate.swift */,
 				32D9A0DA225AB93500AEC14B /* DocumentBrowserViewController.swift */,
 				32D9A0DC225AB93500AEC14B /* DocumentViewController.swift */,
@@ -514,6 +517,7 @@
 				323F1465225B3D8C007D3DB3 /* UITextField+Shake.m in Sources */,
 				32009C23225C605B005D5042 /* ModernGradientView.swift in Sources */,
 				32D4BABA225C09210030852A /* ConverterFloatingPanelLayout.swift in Sources */,
+				32009C27225C6579005D5042 /* FileInformationTableViewCell.swift in Sources */,
 				32009C0E225C605B005D5042 /* UIViewController+Core.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

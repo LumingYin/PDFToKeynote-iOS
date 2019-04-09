@@ -10,7 +10,7 @@ import UIKit
 import PDFKit
 import FloatingPanel
 
-class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, ChromaColorPickerDelegate, UIPopoverPresentationControllerDelegate {
+class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, ChromaColorPickerDelegate, UIPopoverPresentationControllerDelegate, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var customizeImageView: UIImageView!
     @IBOutlet weak var startConversionButton: UIButton!
     @IBOutlet weak var documentNameLabel: UILabel!
@@ -57,8 +57,27 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
         let image = UIImage(named: "Settings")!.withRenderingMode(.alwaysTemplate)
         customizeImageView.image = image
         customizeImageView.tintColor = UIColor(named: "customBlue")
+        tableView.delegate = self
+        tableView.dataSource = self
         // dimensionPicker.dataSource = self
         // dimensionPicker.delegate = self
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FileInformationTableViewCell", for: indexPath)
+        return cell
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let row = indexPath.row
+        if row == 0 {
+            return 130
+        }
+        return 200
     }
 
     func initialSetupForPDF(_ newDocument: Document) {
