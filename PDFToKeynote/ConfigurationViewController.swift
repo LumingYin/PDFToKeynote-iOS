@@ -18,6 +18,7 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
     @IBOutlet weak var aspectRatioLabel: UILabel!
     @IBOutlet weak var colorPickerButton: UIButton!
     @IBOutlet weak var customizeAspectRatioButton: UIButton!
+    @IBOutlet weak var tableView: UITableView!
     var pdf: PDFDocument!
     weak var document: UIDocument?
     var enableDisableStateChanged: ((Bool) -> ())?
@@ -56,9 +57,8 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
         let image = UIImage(named: "Settings")!.withRenderingMode(.alwaysTemplate)
         customizeImageView.image = image
         customizeImageView.tintColor = UIColor(named: "customBlue")
-        dimensionPicker.dataSource = self
-        dimensionPicker.delegate = self
-
+        // dimensionPicker.dataSource = self
+        // dimensionPicker.delegate = self
     }
 
     func initialSetupForPDF(_ newDocument: Document) {

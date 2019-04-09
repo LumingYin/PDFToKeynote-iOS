@@ -64,7 +64,7 @@ class DocumentViewController: UIViewController, FloatingPanelControllerDelegate 
             }
             floatingController?.addPanel(toParent: self)
             //            floatingController?.move(to: .full, animated: true)
-            // fpc.track(scrollView: contentVC.tableView)
+            floatingController?.track(scrollView: configurationVC!.tableView)
         }
 
         document?.open(completionHandler: { (success) in
