@@ -16,15 +16,16 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
 
     @IBOutlet weak var customizeImageView: UIImageView!
     @IBOutlet weak var startConversionButton: UIButton!
-    @IBOutlet weak var dimensionPicker: UIPickerView!
-    @IBOutlet weak var aspectRatioLabel: UILabel!
+//    @IBOutlet weak var dimensionPicker: UIPickerView!
+//    @IBOutlet weak var aspectRatioLabel: UILabel!
     @IBOutlet weak var colorPickerButton: UIButton!
-    @IBOutlet weak var customizeAspectRatioButton: UIButton!
+//    @IBOutlet weak var customizeAspectRatioButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     var pdf: PDFDocument!
     weak var document: UIDocument?
     var enableDisableStateChanged: ((Bool) -> ())?
     var moveToPosition: (() -> ())?
+    var hideToTip: (() -> ())?
     var neatColorPicker: ChromaColorPicker!
 
     var selectedColor: UIColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1) {
@@ -63,6 +64,11 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
         tableView.dataSource = self
         // dimensionPicker.dataSource = self
         // dimensionPicker.delegate = self
+    }
+
+
+    @IBAction func dismissToTipModeTapped(_ sender: Any) {
+        self.hideToTip?()
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -62,6 +62,9 @@ class DocumentViewController: UIViewController, FloatingPanelControllerDelegate 
                     self.floatingController?.move(to: .tip, animated: true)
                 }
             }
+            configurationVC?.hideToTip = {
+                self.floatingController?.move(to: .tip, animated: true)
+            }
             floatingController?.addPanel(toParent: self)
             //            floatingController?.move(to: .full, animated: true)
             floatingController?.track(scrollView: configurationVC!.tableView)
