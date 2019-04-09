@@ -36,7 +36,7 @@ public class FloatingPanelSurfaceView: UIView {
     ///
     /// `self.contentView` is masked with the top rounded corners automatically on iOS 11 and later.
     /// On iOS 10, they are not automatically masked because of a UIVisualEffectView issue. See https://forums.developer.apple.com/thread/50854
-    public var cornerRadius: CGFloat = 0.0 { didSet { setNeedsLayout() } }
+    public var cornerRadiusFP: CGFloat = 0.0 { didSet { setNeedsLayout() } }
 
     /// A Boolean indicating whether the surface shadow is displayed.
     public var shadowHidden: Bool = false  { didSet { setNeedsLayout() } }
@@ -115,7 +115,7 @@ public class FloatingPanelSurfaceView: UIView {
         rect.size.height += bottomOverflow // Expand the height for overflow buffer
         let path = UIBezierPath(roundedRect: rect,
                                 byRoundingCorners: [.topLeft, .topRight],
-                                cornerRadii: CGSize(width: cornerRadius, height: cornerRadius))
+                                cornerRadii: CGSize(width: cornerRadiusFP, height: cornerRadiusFP))
         backgroundLayer.path = path.cgPath
         backgroundLayer.fillColor = color?.cgColor
 		
@@ -137,7 +137,7 @@ public class FloatingPanelSurfaceView: UIView {
             rect.size.height += bottomOverflow
             let path = UIBezierPath(roundedRect: rect,
                                     byRoundingCorners: [.topLeft, .topRight],
-                                    cornerRadii: CGSize(width: cornerRadius, height: cornerRadius))
+                                    cornerRadii: CGSize(width: cornerRadiusFP, height: cornerRadiusFP))
             maskLayer.path = path.cgPath
             contentView?.layer.mask = maskLayer
         } else {

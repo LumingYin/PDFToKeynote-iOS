@@ -45,7 +45,7 @@ class DocumentViewController: UIViewController, FloatingPanelControllerDelegate 
         if floatingController == nil {
             floatingController = FloatingPanelController()
             floatingController?.surfaceView.backgroundColor = .clear
-            floatingController?.surfaceView.cornerRadius = 9.0
+            floatingController?.surfaceView.cornerRadiusFP = 9.0
             floatingController?.surfaceView.shadowHidden = false
             floatingController?.delegate = self
 

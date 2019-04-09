@@ -9,6 +9,30 @@
 /* Begin PBXBuildFile section */
 		2D55A8556036E5F92222E213 /* Pods_PDFToKeynote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13B24480D71B5F0564439EC4 /* Pods_PDFToKeynote.framework */; };
 		32009BEC225C3804005D5042 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009BEB225C3804005D5042 /* Converter.swift */; };
+		32009C0D225C605B005D5042 /* ModernUIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009BEF225C605B005D5042 /* ModernUIConstants.swift */; };
+		32009C0E225C605B005D5042 /* UIViewController+Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009BF2225C605B005D5042 /* UIViewController+Core.swift */; };
+		32009C0F225C605B005D5042 /* UIWindow+Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009BF3225C605B005D5042 /* UIWindow+Core.swift */; };
+		32009C10225C605B005D5042 /* UIColor+Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009BF4225C605B005D5042 /* UIColor+Core.swift */; };
+		32009C11225C605B005D5042 /* CGRect+Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009BF6225C605B005D5042 /* CGRect+Math.swift */; };
+		32009C12225C605B005D5042 /* IndexPath+Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009BF7225C605B005D5042 /* IndexPath+Grid.swift */; };
+		32009C13225C605B005D5042 /* Array+ColorConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009BF8225C605B005D5042 /* Array+ColorConversion.swift */; };
+		32009C14225C605B005D5042 /* EdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009BF9225C605B005D5042 /* EdgeInsets.swift */; };
+		32009C15225C605B005D5042 /* CGSize+Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009BFA225C605B005D5042 /* CGSize+Math.swift */; };
+		32009C16225C605B005D5042 /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009BFB225C605B005D5042 /* UIViewController+Alerts.swift */; };
+		32009C17225C605B005D5042 /* UIStoryboard+Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009BFC225C605B005D5042 /* UIStoryboard+Core.swift */; };
+		32009C18225C605B005D5042 /* UIEdgeInsets+Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009BFD225C605B005D5042 /* UIEdgeInsets+Math.swift */; };
+		32009C19225C605B005D5042 /* UIView+Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009BFE225C605B005D5042 /* UIView+Core.swift */; };
+		32009C1A225C605B005D5042 /* UIDevice+Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009BFF225C605B005D5042 /* UIDevice+Core.swift */; };
+		32009C1B225C605B005D5042 /* ModernTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009C01225C605B005D5042 /* ModernTimer.swift */; };
+		32009C1C225C605B005D5042 /* ModernCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009C02225C605B005D5042 /* ModernCollectionViewFlowLayout.swift */; };
+		32009C1D225C605B005D5042 /* ModernGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009C04225C605B005D5042 /* ModernGridView.swift */; };
+		32009C1E225C605B005D5042 /* ModernFluidButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009C05225C605B005D5042 /* ModernFluidButton.swift */; };
+		32009C1F225C605B005D5042 /* ModernCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009C06225C605B005D5042 /* ModernCircleView.swift */; };
+		32009C20225C605B005D5042 /* ModernGradientContourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009C07225C605B005D5042 /* ModernGradientContourView.swift */; };
+		32009C21225C605B005D5042 /* ModernFluidTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009C08225C605B005D5042 /* ModernFluidTableView.swift */; };
+		32009C22225C605B005D5042 /* ModernNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009C09225C605B005D5042 /* ModernNavigationBar.swift */; };
+		32009C23225C605B005D5042 /* ModernGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009C0A225C605B005D5042 /* ModernGradientView.swift */; };
+		32009C24225C605B005D5042 /* ModernContinuousContourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009C0B225C605B005D5042 /* ModernContinuousContourView.swift */; };
 		3228E9F4225ABC4B005F923D /* PDFKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3228E9F3225ABC4B005F923D /* PDFKit.framework */; };
 		323F1452225B260A007D3DB3 /* ChromaShadeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323F144C225B260A007D3DB3 /* ChromaShadeSlider.swift */; };
 		323F1453225B260A007D3DB3 /* UIColor+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323F144D225B260A007D3DB3 /* UIColor+Utilities.swift */; };
@@ -42,6 +66,30 @@
 /* Begin PBXFileReference section */
 		13B24480D71B5F0564439EC4 /* Pods_PDFToKeynote.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PDFToKeynote.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32009BEB225C3804005D5042 /* Converter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
+		32009BEF225C605B005D5042 /* ModernUIConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModernUIConstants.swift; sourceTree = "<group>"; };
+		32009BF2225C605B005D5042 /* UIViewController+Core.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Core.swift"; sourceTree = "<group>"; };
+		32009BF3225C605B005D5042 /* UIWindow+Core.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIWindow+Core.swift"; sourceTree = "<group>"; };
+		32009BF4225C605B005D5042 /* UIColor+Core.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Core.swift"; sourceTree = "<group>"; };
+		32009BF6225C605B005D5042 /* CGRect+Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+Math.swift"; sourceTree = "<group>"; };
+		32009BF7225C605B005D5042 /* IndexPath+Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IndexPath+Grid.swift"; sourceTree = "<group>"; };
+		32009BF8225C605B005D5042 /* Array+ColorConversion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+ColorConversion.swift"; sourceTree = "<group>"; };
+		32009BF9225C605B005D5042 /* EdgeInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdgeInsets.swift; sourceTree = "<group>"; };
+		32009BFA225C605B005D5042 /* CGSize+Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGSize+Math.swift"; sourceTree = "<group>"; };
+		32009BFB225C605B005D5042 /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
+		32009BFC225C605B005D5042 /* UIStoryboard+Core.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Core.swift"; sourceTree = "<group>"; };
+		32009BFD225C605B005D5042 /* UIEdgeInsets+Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+Math.swift"; sourceTree = "<group>"; };
+		32009BFE225C605B005D5042 /* UIView+Core.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Core.swift"; sourceTree = "<group>"; };
+		32009BFF225C605B005D5042 /* UIDevice+Core.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+Core.swift"; sourceTree = "<group>"; };
+		32009C01225C605B005D5042 /* ModernTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModernTimer.swift; sourceTree = "<group>"; };
+		32009C02225C605B005D5042 /* ModernCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModernCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		32009C04225C605B005D5042 /* ModernGridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModernGridView.swift; sourceTree = "<group>"; };
+		32009C05225C605B005D5042 /* ModernFluidButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModernFluidButton.swift; sourceTree = "<group>"; };
+		32009C06225C605B005D5042 /* ModernCircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModernCircleView.swift; sourceTree = "<group>"; };
+		32009C07225C605B005D5042 /* ModernGradientContourView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModernGradientContourView.swift; sourceTree = "<group>"; };
+		32009C08225C605B005D5042 /* ModernFluidTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModernFluidTableView.swift; sourceTree = "<group>"; };
+		32009C09225C605B005D5042 /* ModernNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModernNavigationBar.swift; sourceTree = "<group>"; };
+		32009C0A225C605B005D5042 /* ModernGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModernGradientView.swift; sourceTree = "<group>"; };
+		32009C0B225C605B005D5042 /* ModernContinuousContourView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModernContinuousContourView.swift; sourceTree = "<group>"; };
 		3228E9F3225ABC4B005F923D /* PDFKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PDFKit.framework; path = System/Library/Frameworks/PDFKit.framework; sourceTree = SDKROOT; };
 		323F144C225B260A007D3DB3 /* ChromaShadeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromaShadeSlider.swift; sourceTree = "<group>"; };
 		323F144D225B260A007D3DB3 /* UIColor+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Utilities.swift"; sourceTree = "<group>"; };
@@ -142,6 +190,7 @@
 		32009BEA225C37D5005D5042 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				32009BEE225C605B005D5042 /* ModernUIKit */,
 				323F1468225B424E007D3DB3 /* SwiftyAcknowledgements */,
 				323F144B225B260A007D3DB3 /* ChromaColorPicker */,
 				32009BE9225C37CF005D5042 /* UITextField+Shake */,
@@ -156,6 +205,69 @@
 				32BEB7B1225AE12F00F51B0F /* Extensions.swift */,
 			);
 			path = Auxillary;
+			sourceTree = "<group>";
+		};
+		32009BEE225C605B005D5042 /* ModernUIKit */ = {
+			isa = PBXGroup;
+			children = (
+				32009BEF225C605B005D5042 /* ModernUIConstants.swift */,
+				32009BF1225C605B005D5042 /* Extensions */,
+				32009C00225C605B005D5042 /* Model */,
+				32009C03225C605B005D5042 /* View */,
+			);
+			path = ModernUIKit;
+			sourceTree = "<group>";
+		};
+		32009BF1225C605B005D5042 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				32009BF2225C605B005D5042 /* UIViewController+Core.swift */,
+				32009BF3225C605B005D5042 /* UIWindow+Core.swift */,
+				32009BF4225C605B005D5042 /* UIColor+Core.swift */,
+				32009BF5225C605B005D5042 /* Foundation */,
+				32009BFB225C605B005D5042 /* UIViewController+Alerts.swift */,
+				32009BFC225C605B005D5042 /* UIStoryboard+Core.swift */,
+				32009BFD225C605B005D5042 /* UIEdgeInsets+Math.swift */,
+				32009BFE225C605B005D5042 /* UIView+Core.swift */,
+				32009BFF225C605B005D5042 /* UIDevice+Core.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		32009BF5225C605B005D5042 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				32009BF6225C605B005D5042 /* CGRect+Math.swift */,
+				32009BF7225C605B005D5042 /* IndexPath+Grid.swift */,
+				32009BF8225C605B005D5042 /* Array+ColorConversion.swift */,
+				32009BF9225C605B005D5042 /* EdgeInsets.swift */,
+				32009BFA225C605B005D5042 /* CGSize+Math.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		32009C00225C605B005D5042 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				32009C01225C605B005D5042 /* ModernTimer.swift */,
+				32009C02225C605B005D5042 /* ModernCollectionViewFlowLayout.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		32009C03225C605B005D5042 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				32009C04225C605B005D5042 /* ModernGridView.swift */,
+				32009C05225C605B005D5042 /* ModernFluidButton.swift */,
+				32009C06225C605B005D5042 /* ModernCircleView.swift */,
+				32009C07225C605B005D5042 /* ModernGradientContourView.swift */,
+				32009C08225C605B005D5042 /* ModernFluidTableView.swift */,
+				32009C09225C605B005D5042 /* ModernNavigationBar.swift */,
+				32009C0A225C605B005D5042 /* ModernGradientView.swift */,
+				32009C0B225C605B005D5042 /* ModernContinuousContourView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		3228E9F2225ABC4B005F923D /* Frameworks */ = {
@@ -359,26 +471,50 @@
 			buildActionMask = 2147483647;
 			files = (
 				323F1452225B260A007D3DB3 /* ChromaShadeSlider.swift in Sources */,
+				32009C11225C605B005D5042 /* CGRect+Math.swift in Sources */,
 				323F1454225B260A007D3DB3 /* ChromaColorPicker.swift in Sources */,
+				32009C1A225C605B005D5042 /* UIDevice+Core.swift in Sources */,
+				32009C1C225C605B005D5042 /* ModernCollectionViewFlowLayout.swift in Sources */,
 				323F1470225B424E007D3DB3 /* UIFontDescriptorExtensions.swift in Sources */,
+				32009C20225C605B005D5042 /* ModernGradientContourView.swift in Sources */,
 				323F1460225B3872007D3DB3 /* PopoverViewController.swift in Sources */,
+				32009C1D225C605B005D5042 /* ModernGridView.swift in Sources */,
+				32009C0D225C605B005D5042 /* ModernUIConstants.swift in Sources */,
+				32009C10225C605B005D5042 /* UIColor+Core.swift in Sources */,
 				323F146D225B424E007D3DB3 /* Acknowledgement.swift in Sources */,
+				32009C14225C605B005D5042 /* EdgeInsets.swift in Sources */,
 				323F1455225B260A007D3DB3 /* ColorModeToggleButton.swift in Sources */,
 				32BEB7B2225AE12F00F51B0F /* Extensions.swift in Sources */,
 				32D9A0DF225AB93500AEC14B /* Document.swift in Sources */,
 				323F1456225B260A007D3DB3 /* ChromaHandle.swift in Sources */,
+				32009C21225C605B005D5042 /* ModernFluidTableView.swift in Sources */,
+				32009C17225C605B005D5042 /* UIStoryboard+Core.swift in Sources */,
 				32D9A0DD225AB93500AEC14B /* DocumentViewController.swift in Sources */,
 				32009BEC225C3804005D5042 /* Converter.swift in Sources */,
 				323F1453225B260A007D3DB3 /* UIColor+Utilities.swift in Sources */,
+				32009C1B225C605B005D5042 /* ModernTimer.swift in Sources */,
 				32D9A0DB225AB93500AEC14B /* DocumentBrowserViewController.swift in Sources */,
 				323F1462225B39FE007D3DB3 /* AddWidthHeightViewController.swift in Sources */,
+				32009C24225C605B005D5042 /* ModernContinuousContourView.swift in Sources */,
+				32009C18225C605B005D5042 /* UIEdgeInsets+Math.swift in Sources */,
+				32009C22225C605B005D5042 /* ModernNavigationBar.swift in Sources */,
+				32009C13225C605B005D5042 /* Array+ColorConversion.swift in Sources */,
 				32D9A0D9225AB93500AEC14B /* AppDelegate.swift in Sources */,
+				32009C16225C605B005D5042 /* UIViewController+Alerts.swift in Sources */,
+				32009C0F225C605B005D5042 /* UIWindow+Core.swift in Sources */,
 				323F146E225B424E007D3DB3 /* AcknowledgementViewController.swift in Sources */,
+				32009C15225C605B005D5042 /* CGSize+Math.swift in Sources */,
 				323F146F225B424E007D3DB3 /* AcknowledgementsTableViewController.swift in Sources */,
+				32009C12225C605B005D5042 /* IndexPath+Grid.swift in Sources */,
+				32009C1E225C605B005D5042 /* ModernFluidButton.swift in Sources */,
 				32D4BAB8225C03120030852A /* ConfigurationViewController.swift in Sources */,
+				32009C19225C605B005D5042 /* UIView+Core.swift in Sources */,
+				32009C1F225C605B005D5042 /* ModernCircleView.swift in Sources */,
 				323F1457225B260A007D3DB3 /* ChromaAddButton.swift in Sources */,
 				323F1465225B3D8C007D3DB3 /* UITextField+Shake.m in Sources */,
+				32009C23225C605B005D5042 /* ModernGradientView.swift in Sources */,
 				32D4BABA225C09210030852A /* ConverterFloatingPanelLayout.swift in Sources */,
+				32009C0E225C605B005D5042 /* UIViewController+Core.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
