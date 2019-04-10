@@ -15,17 +15,39 @@ class Weak<T: AnyObject> {
     }
 }
 
+extension Array where Element:Weak<AnyObject> {
+    mutating func reap() {
+        self = self.filter { nil != $0.value }
+    }
+}
+
 ///
 /// A button class that is more dynamic, customizable, and fluid
 ///
 public class ModernFluidButton: UIButton {
-    
     // MARK: - Settings
     
     @IBInspectable var makeCircular: Bool = false
     @IBInspectable var scalesInteractively: Bool = true
     @IBInspectable var highlightsInteractively: Bool = true
-    var trackedViews: [UIView] = []
+    private var trackedWeakViews: [Weak<UIView>] = []
+    var trackedViews: [UIView] {
+        set {
+            trackedWeakViews = []
+            for view in newValue {
+                trackedWeakViews.append(Weak(value: view))
+            }
+        }
+        get {
+            var temp: [UIView] = []
+            for weakView in trackedWeakViews {
+                if let view = weakView.value {
+                    temp.append(view)
+                }
+            }
+            return temp
+        }
+    }
 
     
     // MARK: - Public

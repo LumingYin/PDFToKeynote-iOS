@@ -55,7 +55,6 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
         tableView.dataSource = self
         customizeButton.trackedViews = [customizeImageView, customizeLabel]
         startConversionButton.trackedViews = [startConversionImageView, startConversionLabel]
-        startConversionButton.trackedViews = []
     }
 
 
