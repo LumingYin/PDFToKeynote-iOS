@@ -37,6 +37,14 @@ class DocumentViewController: UIViewController, FloatingPanelControllerDelegate 
 //        super.traitCollectionDidChange(previousTraitCollection)
     }
 
+    func floatingPanelDidChangePosition(_ vc: FloatingPanelController) {
+        if vc.position == .full {
+            configurationVC?.customizeLabel.text = "Minimize"
+        } else {
+            configurationVC?.customizeLabel.text = "Customize"
+        }
+    }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if floatingController == nil {
