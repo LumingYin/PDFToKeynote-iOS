@@ -374,12 +374,12 @@
 				32009BE7225C37B8005D5042 /* Templates */,
 				32009BE5225C37A9005D5042 /* Model */,
 				32009BED225C382A005D5042 /* Auxillary */,
+				3207B006225C7C790036A470 /* Cells */,
 				32D9A0D8225AB93500AEC14B /* AppDelegate.swift */,
 				32D9A0DA225AB93500AEC14B /* DocumentBrowserViewController.swift */,
 				32D9A0DC225AB93500AEC14B /* DocumentViewController.swift */,
 				323F1461225B39FE007D3DB3 /* AddWidthHeightViewController.swift */,
 				32D4BAB7225C03120030852A /* ConfigurationViewController.swift */,
-				3207B006225C7C790036A470 /* Cells */,
 				32D9A0E3225AB93700AEC14B /* Assets.xcassets */,
 				32D9A0E0225AB93500AEC14B /* Main.storyboard */,
 			);
