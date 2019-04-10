@@ -172,6 +172,7 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
                     self.nativeSizeIndex = i
                     self.selectSizeAtIndex(index: i)
                     self.updateParticularCollectionViewIndex(i: i, native: true, selected: true)
+
 //                    self.dimensionPicker.selectRow(i, inComponent: 0, animated: true)
 //                    self.aspectRatioLabel.text = self.sizes[i].description
                     matchedPreferredResolutions = true
@@ -187,6 +188,10 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
                 self.nativeSizeIndex = self.sizes.count - 1
                 self.selectSizeAtIndex(index: self.nativeSizeIndex)
                 self.updateParticularCollectionViewIndex(i: self.nativeSizeIndex, native: true, selected: true)
+                if let sizeCell = self.tableView.cellForRow(at: IndexPath(row: 0, section: 1)) as? SlideSizeTableViewCell {
+                    sizeCell.collectionView.insertItems(at: [IndexPath(row: getAllSizes().count - getCutoffCountForScreenResolution(), section: 1)])
+                }
+
             }
         }
         cachedFileSize = url.fileSizeString
