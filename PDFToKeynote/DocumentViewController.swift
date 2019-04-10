@@ -61,7 +61,11 @@ class DocumentViewController: UIViewController, FloatingPanelControllerDelegate 
                 }
             }
             configurationVC?.hideToTip = {
-                self.floatingController?.move(to: .tip, animated: true)
+                if self.floatingController?.position != .tip {
+                    self.floatingController?.move(to: .tip, animated: true)
+                } else {
+                    self.dismissDocumentViewController()
+                }
             }
             floatingController?.addPanel(toParent: self)
             //            floatingController?.move(to: .full, animated: true)
