@@ -153,8 +153,8 @@ class BackgroundColorTableViewCell: UITableViewCell, UICollectionViewDataSource,
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomEntryCollectionViewCell", for: indexPath) as! CustomEntryCollectionViewCell
             cell.colorSelectionCallback = { isRainbowMode, color in
                 if isRainbowMode {
-                    self.rainbowColors.append([color, color, color, color])
-                    self.selectedColorIndex = (self.rainbowColors.count - 1, 0)
+                    self.rainbowColors.append([color.adjust(by: 20), color, color.adjust(by: -20), color.adjust(by: -40)])
+                    self.selectedColorIndex = (self.rainbowColors.count - 1, 1)
                     self.hideTickOnEverythingExceptSelection()
                     self.collectionView.insertItems(at: [IndexPath(row: self.selectedColorIndex.0, section: 1)])
                 } else {
