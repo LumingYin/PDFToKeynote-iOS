@@ -777,7 +777,7 @@
                                                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                                                     </userDefinedRuntimeAttributes>
                                                                                 </view>
-                                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P43-8o-i1r">
+                                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P43-8o-i1r" customClass="ModernFluidButton" customModule="PDFToKeynote" customModuleProvider="target">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="86" height="86"/>
                                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                     <connections>
@@ -790,6 +790,7 @@
                                                                         <connections>
                                                                             <outlet property="colorView" destination="uLi-ha-tvS" id="rxe-y1-iVP"/>
                                                                             <outlet property="greenTickView" destination="Rhe-Tr-ouq" id="h8y-Tl-za4"/>
+                                                                            <outlet property="selectColorButton" destination="P43-8o-i1r" id="701-U9-Gcg"/>
                                                                         </connections>
                                                                     </collectionViewCell>
                                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MultipleColorCollectionViewCell" id="chp-EN-YqS" customClass="MultipleColorCollectionViewCell" customModule="PDFToKeynote" customModuleProvider="target">
@@ -911,7 +912,7 @@
                                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
-                                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8A1-OF-CJL">
+                                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8A1-OF-CJL" customClass="ModernFluidButton" customModule="PDFToKeynote" customModuleProvider="target">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="86" height="86"/>
                                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                     <connections>
@@ -921,6 +922,11 @@
                                                                             </subviews>
                                                                         </view>
                                                                         <size key="customSize" width="86" height="86"/>
+                                                                        <connections>
+                                                                            <outlet property="addEntryButton" destination="8A1-OF-CJL" id="fVz-eq-VeB"/>
+                                                                            <outlet property="customLabel" destination="C5c-we-DCg" id="SPL-2e-cpF"/>
+                                                                            <outlet property="visualEffectsView" destination="DwC-ns-B1r" id="wTj-gD-TOs"/>
+                                                                        </connections>
                                                                     </collectionViewCell>
                                                                 </cells>
                                                             </collectionView>
@@ -1019,8 +1025,12 @@
                     </view>
                     <size key="freeformSize" width="350" height="834"/>
                     <connections>
+                        <outlet property="customizeButton" destination="HQc-EP-wpV" id="txa-2L-0Cx"/>
                         <outlet property="customizeImageView" destination="2PO-bo-h0c" id="FDw-b0-Bb5"/>
+                        <outlet property="customizeLabel" destination="PhZ-7I-lmj" id="iNt-iy-WCk"/>
                         <outlet property="startConversionButton" destination="itw-CY-Mq2" id="ljU-xG-gcE"/>
+                        <outlet property="startConversionImageView" destination="LQC-gp-bhu" id="nbA-fj-52A"/>
+                        <outlet property="startConversionLabel" destination="6nL-d0-MF9" id="rrt-6W-n1m"/>
                         <outlet property="tableView" destination="zaa-b6-Yi3" id="4UL-yK-XeC"/>
                     </connections>
                 </viewController>

@@ -8,6 +8,13 @@
 
 import UIKit
 
+class Weak<T: AnyObject> {
+    weak var value : T?
+    init (value: T) {
+        self.value = value
+    }
+}
+
 ///
 /// A button class that is more dynamic, customizable, and fluid
 ///

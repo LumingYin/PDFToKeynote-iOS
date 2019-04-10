@@ -24,6 +24,8 @@ class CustomEntryCollectionViewCell: UICollectionViewCell, UIPopoverPresentation
     @IBOutlet weak var visualEffectsView: UIVisualEffectView!
     @IBOutlet weak var addEntryButton: ModernFluidButton!
 
+
+
     override func awakeFromNib() {
         addEntryButton.trackedViews = [customLabel, visualEffectsView]
     }

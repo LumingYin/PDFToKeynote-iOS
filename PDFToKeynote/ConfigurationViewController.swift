@@ -15,8 +15,13 @@ typealias SlideSize = (width: Int, height: Int, description: String)
 class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UIPopoverPresentationControllerDelegate, UITableViewDelegate, UITableViewDataSource, SlideSizeDelegate, ColorPickerDelegate {
 
     @IBOutlet weak var customizeImageView: UIImageView!
-    @IBOutlet weak var startConversionButton: UIButton!
-    @IBOutlet weak var colorPickerButton: UIButton!
+    @IBOutlet weak var customizeButton: ModernFluidButton!
+    @IBOutlet weak var customizeLabel: UILabel!
+
+    @IBOutlet weak var startConversionImageView: UIImageView!
+    @IBOutlet weak var startConversionButton: ModernFluidButton!
+    @IBOutlet weak var startConversionLabel: UILabel!
+
     @IBOutlet weak var tableView: UITableView!
     var pdf: PDFDocument!
     weak var document: UIDocument?
@@ -48,6 +53,9 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
         customizeImageView.tintColor = UIColor(named: "customBlue")
         tableView.delegate = self
         tableView.dataSource = self
+        customizeButton.trackedViews = [customizeImageView, customizeLabel]
+        startConversionButton.trackedViews = [startConversionImageView, startConversionLabel]
+        startConversionButton.trackedViews = []
     }
 
 

@@ -14,6 +14,11 @@ class SingleColorCollectionViewCell: UICollectionViewCell {
     weak var delegate: ColorPickerDelegate?
     var correspondingIndex: Int?
     var colorTappedCallback: ((_ color: UIColor, _ index: Int, _ cell: SingleColorCollectionViewCell) -> ())?
+    @IBOutlet weak var selectColorButton: ModernFluidButton!
+
+    override func awakeFromNib() {
+        selectColorButton.trackedViews = [colorView, greenTickView]
+    }
 
     @IBAction func colorButtonTapped(_ sender: UIButton) {
 //        delegate?.changeToNewColor(color: colorView.backgroundColor!)
