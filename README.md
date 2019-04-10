@@ -6,4 +6,5 @@ Small utility to import PDF files into Keynote for iOS. This utility is especial
 
 
 Note:
-This project is heavily inspired by Melissa O'Neill's [PDF to Keynote for macOS](https://www.cs.hmc.edu/~oneill/freesoftware/pdftokeynote.html).
+- This project is heavily inspired by Melissa O'Neill's [PDF to Keynote for macOS](https://www.cs.hmc.edu/~oneill/freesoftware/pdftokeynote.html).
+- Don't run `pod udpate` or `pod install` to update the CocoaPods in this project. Modifications have been made to the FloatingPanel framework in order to make the project behave as intended.
