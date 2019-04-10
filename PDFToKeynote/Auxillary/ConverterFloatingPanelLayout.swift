@@ -20,8 +20,8 @@ class ConverterFloatingPanelLayout: FloatingPanelLayout {
 
         switch position {
         case .full: return 16.0 // A top inset from safe area
-        case .half: return (285.0 - pixelOffset - bottomPadding) // A bottom inset from the safe area
-        case .tip: return (150.0 - pixelOffset - bottomPadding) // A bottom inset from the safe area
+        case .half: return (285.0 - compactPixelOffset - bottomPadding) // A bottom inset from the safe area
+        case .tip: return (150.0 - compactPixelOffset - bottomPadding) // A bottom inset from the safe area
         default: return nil // Or `case .hidden: return nil`
         }
     }
@@ -34,6 +34,7 @@ class ConverterFloatingPanelLayout: FloatingPanelLayout {
     }
 }
 
+let compactPixelOffset: CGFloat = 2
 let pixelOffset: CGFloat = 3
 
 public class ConverterFloatingLandscapePanelLayout: FloatingPanelLayout {
