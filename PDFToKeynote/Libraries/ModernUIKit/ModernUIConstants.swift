@@ -9,9 +9,9 @@
 import Foundation
 
 // Scaling
-public let ModernUIContentScalingFactor: CGFloat = 0.93
+public let ModernUIContentScalingFactor: CGFloat = 0.75
 public let ModernUIScaleAnimationDuration: TimeInterval = 0.175
 
 // Alpha Animation
 public let ModernUIAnimationDuration: TimeInterval = 0.28
-public let ModernUILowAlphaLevel: CGFloat = 0.725
+public let ModernUILowAlphaLevel: CGFloat = 0.525

@@ -128,7 +128,7 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vMT-0j-UN8">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vMT-0j-UN8" customClass="ModernFluidButton" customModule="PDFToKeynote" customModuleProvider="target">
                                 <rect key="frame" x="36" y="132" width="97" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.55046018835616439" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -145,7 +145,7 @@
                                     <action selector="cancelTapped:" destination="kAH-Yg-reu" eventType="touchUpInside" id="Z2X-Tz-zzZ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nk0-RI-A1a">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nk0-RI-A1a" customClass="ModernFluidButton" customModule="PDFToKeynote" customModuleProvider="target">
                                 <rect key="frame" x="165" y="132" width="97" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.55046018835616439" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -473,7 +473,7 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N68-rE-dFP">
                                                                 <rect key="frame" x="213" y="0.0" width="94" height="44"/>
                                                                 <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U5Q-Tq-ntp">
+                                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U5Q-Tq-ntp" customClass="ModernFluidButton" customModule="PDFToKeynote" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="46" height="44"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
@@ -483,7 +483,7 @@
                                                                             <action selector="switch1xRetinaTapped:" destination="fVo-70-8Ve" eventType="touchUpInside" id="kdS-NH-jGN"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yi7-K1-7xh">
+                                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yi7-K1-7xh" customClass="ModernFluidButton" customModule="PDFToKeynote" customModuleProvider="target">
                                                                         <rect key="frame" x="48" y="0.0" width="46" height="44"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
@@ -577,7 +577,7 @@
                                                                                         <constraint firstAttribute="height" constant="16" id="xn8-Ae-EVo"/>
                                                                                     </constraints>
                                                                                 </imageView>
-                                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p1T-ln-RlI">
+                                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p1T-ln-RlI" customClass="ModernFluidButton" customModule="PDFToKeynote" customModuleProvider="target">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="86" height="86"/>
                                                                                     <connections>
                                                                                         <action selector="selectSizeTapped:" destination="AWc-nr-hKN" eventType="touchUpInside" id="sOK-ZH-Kxg"/>
@@ -600,6 +600,7 @@
                                                                             <outlet property="effectsWidth" destination="u6o-YQ-Nax" id="bkT-lJ-QYv"/>
                                                                             <outlet property="greenTickView" destination="20E-J4-QfH" id="uuB-Sw-HZj"/>
                                                                             <outlet property="nativeGoldstarView" destination="ATZ-am-rMU" id="KHm-ni-mJB"/>
+                                                                            <outlet property="ratioActivationButton" destination="p1T-ln-RlI" id="xuN-4u-Jqx"/>
                                                                             <outlet property="ratioTextLabel" destination="dWf-bX-eEx" id="f53-QR-q2x"/>
                                                                             <outlet property="visualEffectContainerView" destination="cvZ-YT-g9u" id="cwJ-aS-tai"/>
                                                                         </connections>
@@ -640,7 +641,7 @@
                                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
-                                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F0q-JR-xE9">
+                                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F0q-JR-xE9" customClass="ModernFluidButton" customModule="PDFToKeynote" customModuleProvider="target">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="86" height="86"/>
                                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                     <connections>
@@ -649,6 +650,11 @@
                                                                                 </button>
                                                                             </subviews>
                                                                         </view>
+                                                                        <connections>
+                                                                            <outlet property="addEntryButton" destination="F0q-JR-xE9" id="klk-ab-AKv"/>
+                                                                            <outlet property="customLabel" destination="n94-Pd-HkJ" id="86G-bO-dqF"/>
+                                                                            <outlet property="visualEffectsView" destination="bBB-aO-gQ9" id="5rj-jl-IXm"/>
+                                                                        </connections>
                                                                     </collectionViewCell>
                                                                 </cells>
                                                             </collectionView>
@@ -693,6 +699,8 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="collectionView" destination="jg5-8D-xrU" id="qRH-yg-fz0"/>
+                                            <outlet property="resetButton" destination="yi7-K1-7xh" id="OmW-wS-cCQ"/>
+                                            <outlet property="resetLabel" destination="qdh-Lo-Oki" id="fsc-r4-b7T"/>
                                             <outlet property="retinaScaleButton" destination="U5Q-Tq-ntp" id="P8l-NT-Xad"/>
                                             <outlet property="retinaScaleLabel" destination="LaE-Hn-uXu" id="glH-tg-74r"/>
                                         </connections>

@@ -18,6 +18,7 @@ public class ModernFluidButton: UIButton {
     @IBInspectable var makeCircular: Bool = false
     @IBInspectable var scalesInteractively: Bool = true
     @IBInspectable var highlightsInteractively: Bool = true
+    var trackedViews: [UIView] = []
 
     
     // MARK: - Public
@@ -52,10 +53,16 @@ public class ModernFluidButton: UIButton {
                 UIView.animate(withDuration: ModernUIScaleAnimationDuration) {
                     if self.highlightsInteractively {
                         self.alpha = self.isHighlighted ? ModernUILowAlphaLevel : 1.0
+                        for view in self.trackedViews {
+                            view.alpha = self.isHighlighted ? ModernUILowAlphaLevel : 1.0
+                        }
                     }
                     if self.scalesInteractively {
                         let scale = ModernUIContentScalingFactor
                         self.transform = self.isHighlighted ? CGAffineTransform(scaleX: scale, y: scale) : .identity
+                        for view in self.trackedViews {
+                            view.transform = self.isHighlighted ? CGAffineTransform(scaleX: scale, y: scale) : .identity
+                        }
                     }
                 }
             }

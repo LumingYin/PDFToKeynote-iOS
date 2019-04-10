@@ -20,6 +20,11 @@ class AspectRatioCollectionViewCell: UICollectionViewCell {
     var ratioCorrespondingIndex: Int = 0
     var correspondingSize: SlideSize!
     let cutoffForVisualization: CGFloat = 45
+    @IBOutlet weak var ratioActivationButton: ModernFluidButton!
+
+    override func awakeFromNib() {
+        ratioActivationButton.trackedViews = [visualEffectContainerView, greenTickView]
+    }
 
     func configurateCellAppearance() {
         print("AspectRatioCollectionViewCell.bounds: \(self.bounds)")

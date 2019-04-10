@@ -13,12 +13,16 @@ class SlideSizeTableViewCell: UITableViewCell, UICollectionViewDelegate, UIColle
     @IBOutlet weak var collectionView: UICollectionView!
     var configurated = false
     @IBOutlet weak var retinaScaleLabel: UILabel!
-    @IBOutlet weak var retinaScaleButton: UIButton!
+    @IBOutlet weak var retinaScaleButton: ModernFluidButton!
+    @IBOutlet weak var resetButton: ModernFluidButton!
     var oneXImage: UIImage?
     var twoXImage: UIImage?
+    @IBOutlet weak var resetLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        retinaScaleButton.trackedViews = [retinaScaleLabel]
+        resetButton.trackedViews = [resetLabel]
     }
 
     @IBAction func switch1xRetinaTapped(_ sender: Any) {

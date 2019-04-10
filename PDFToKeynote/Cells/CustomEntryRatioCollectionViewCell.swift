@@ -20,6 +20,14 @@ class CustomEntryCollectionViewCell: UICollectionViewCell, UIPopoverPresentation
     var colorSelectionCallback: ((UIColor) -> Void)?
     weak var colorDelegate: ColorPickerDelegate!
 
+    @IBOutlet weak var customLabel: UILabel!
+    @IBOutlet weak var visualEffectsView: UIVisualEffectView!
+    @IBOutlet weak var addEntryButton: ModernFluidButton!
+
+    override func awakeFromNib() {
+        addEntryButton.trackedViews = [customLabel, visualEffectsView]
+    }
+
     @IBAction func addCustomEntryTapped(_ sender: UIButton) {
         if !isColorMode {
             self.addNewAspectRatioTapped(sender)
