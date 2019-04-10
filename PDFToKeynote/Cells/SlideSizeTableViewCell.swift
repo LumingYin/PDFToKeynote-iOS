@@ -96,7 +96,21 @@ class SlideSizeTableViewCell: UITableViewCell, UICollectionViewDelegate, UIColle
             let size = delegate.getAllSizes()[arrayIndex]
             cell.correspondingSize = size
             cell.ratioCorrespondingIndex = arrayIndex
-            cell.ratioTextLabel.text = size.description
+            let description = size.description
+            if (description.contains("Landscape") || description.contains("Portrait")) {
+                var range = (description as NSString).range(of: "Landscape")
+                if range.location == NSNotFound {
+                    range = (description as NSString).range(of: "Portrait")
+                }
+                let attributedString: NSMutableAttributedString = NSMutableAttributedString(string: description)
+                attributedString.addAttributes([.font: UIFont.systemFont(ofSize: 9, weight: .regular)], range: range)
+                cell.ratioTextLabel.attributedText = attributedString
+            } else if (description.contains("W:") && description.contains("H:")) {
+                cell.ratioTextLabel.text = size.description
+//                let attributedString =
+            } else {
+                cell.ratioTextLabel.text = size.description
+            }
             cell.delegate = self.delegate
             cell.parentTableCell = self
             cell.configurateCellAppearance()

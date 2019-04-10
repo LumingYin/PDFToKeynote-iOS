@@ -458,9 +458,10 @@ NSString * const JEKCollectionElementKindSectionBackground = @"JEKCollectionElem
         // is stopped, which makes its scrolling indicator stay visible forever. We make sure that the scroll view
         // knows that it is stopped by forcing a stop whenever anything else receives a touch.
 //        NSLog(@"Current content offset: %f, %f. self.contentSize.width is: %f", self.contentOffset.x, self.contentOffset.y, self.contentSize.width);
-//        [self setContentOffset:self.contentOffset animated:NO];
         if (self.contentOffset.x < 0) {
             [self setContentOffset:CGPointZero animated:YES];
+        } else {
+            [self setContentOffset:self.contentOffset animated:NO];
         }
         return NO;
     }
