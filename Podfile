@@ -7,6 +7,6 @@ target 'PDFToKeynote' do
 
   # Pods for PDFToKeynote
 source 'https://github.com/CocoaPods/Specs.git'
-pod 'Zip'
-pod 'SVProgressHUD'
+pod 'Zip', '1.1.0'
+pod 'SVProgressHUD', '2.2.5'
 end
