@@ -48,6 +48,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Reveal / import the document at the URL
         guard let documentBrowserViewController = window?.rootViewController as? DocumentBrowserViewController else { return false }
 
+        if let documentVC = documentBrowserViewController.presentedViewController as? DocumentViewController {
+            documentVC.dismissDocumentViewController()
+        }
+
         documentBrowserViewController.revealDocument(at: inputURL, importIfNeeded: true) { (revealedDocumentURL, error) in
             if let error = error {
                 // Handle the error appropriately

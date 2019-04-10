@@ -92,6 +92,7 @@ class DocumentViewController: UIViewController, FloatingPanelControllerDelegate 
     }
 
     @IBAction func dismissDocumentViewController() {
+        SVProgressHUD.dismiss()
         dismiss(animated: true) {
             self.document?.close(completionHandler: nil)
         }
