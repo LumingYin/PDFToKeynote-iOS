@@ -35,6 +35,8 @@ class ConverterFloatingPanelLayout: FloatingPanelLayout {
     }
 }
 
+let iPadPixelOffset: CGFloat = 3
+
 public class ConverterFloatingLandscapePanelLayout: FloatingPanelLayout {
     public var initialPosition: FloatingPanelPosition {
         return .tip
@@ -51,8 +53,8 @@ public class ConverterFloatingLandscapePanelLayout: FloatingPanelLayout {
 
         switch position {
         case .full: return 16.0 // A top inset from safe area
-        case .half: return (285.0 - bottomPadding) // A bottom inset from the safe area
-        case .tip: return (150.0 - bottomPadding) // A bottom inset from the safe area
+        case .half: return (285.0 - iPadPixelOffset - bottomPadding) // A bottom inset from the safe area
+        case .tip: return (150.0 - iPadPixelOffset - bottomPadding) // A bottom inset from the safe area
         default: return nil // Or `case .hidden: return nil`
         }
     }
@@ -85,8 +87,8 @@ public class ConverterFloatingiPadNonLandscapePanelLayout: FloatingPanelLayout {
 
         switch position {
         case .full: return 16.0 // A top inset from safe area
-        case .half: return (285.0 - bottomPadding) // A bottom inset from the safe area
-        case .tip: return (150.0 - bottomPadding) // A bottom inset from the safe area
+        case .half: return (285.0 - iPadPixelOffset - bottomPadding) // A bottom inset from the safe area
+        case .tip: return (150.0 - iPadPixelOffset - bottomPadding) // A bottom inset from the safe area
         default: return nil // Or `case .hidden: return nil`
         }
     }
