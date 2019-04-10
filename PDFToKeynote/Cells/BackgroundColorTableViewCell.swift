@@ -20,6 +20,7 @@ class BackgroundColorTableViewCell: UITableViewCell, UICollectionViewDataSource,
                                       UIColor(hexString: "929192"),
                                       UIColor(hexString: "5D5D5D"),
                                       UIColor(hexString: "D5D4D4")]
+    var greyscaleColorsDescription = ["White", "Black", "Mid Gray", "Dark Gray", "Light Gray"]
 
     var rainbowColors: [[UIColor]] = [[UIColor(hexString: "73BDF9"),
                                        UIColor(hexString: "489EF7"),
@@ -51,6 +52,9 @@ class BackgroundColorTableViewCell: UITableViewCell, UICollectionViewDataSource,
                                        UIColor(hexString: "BA3979"),
                                        UIColor(hexString: "8D275D")],
     ]
+
+    var rainbowColorsDescription = ["Blue", "Cyan", "Green", "Yellow", "Red", "Magenta"]
+    let rainbowModifier = ["Light", "Mid", "Dim", "Dark"]
 
     var selectedColorIndex: (Int, Int) = (-1, 0)
 
@@ -120,7 +124,7 @@ class BackgroundColorTableViewCell: UITableViewCell, UICollectionViewDataSource,
                 cell.greenTickView.isHidden = false
                 self.hideTickOnEverythingExceptSelection()
                 self.colorHexCodeLabel.text = "#\(color.hexCode)"
-                self.colorReadableDescriptionLabel.text = "Color"
+                self.colorReadableDescriptionLabel.text = self.greyscaleColorsDescription[index]
             }
 
             return cell
@@ -146,7 +150,7 @@ class BackgroundColorTableViewCell: UITableViewCell, UICollectionViewDataSource,
                 cell.greenTickView.isHidden = false
                 self.hideTickOnEverythingExceptSelection()
                 self.colorHexCodeLabel.text = "#\(color.hexCode)"
-                self.colorReadableDescriptionLabel.text = "Color"
+                self.colorReadableDescriptionLabel.text = "\(self.rainbowModifier[index.1]) \(self.rainbowColorsDescription[index.0])"
             }
             return cell
         } else {
@@ -154,18 +158,20 @@ class BackgroundColorTableViewCell: UITableViewCell, UICollectionViewDataSource,
             cell.colorSelectionCallback = { isRainbowMode, color in
                 if isRainbowMode {
                     self.rainbowColors.append([color.adjust(by: 20), color, color.adjust(by: -20), color.adjust(by: -40)])
+                    self.rainbowColorsDescription.append("Custom")
                     self.selectedColorIndex = (self.rainbowColors.count - 1, 1)
                     self.hideTickOnEverythingExceptSelection()
                     self.collectionView.insertItems(at: [IndexPath(row: self.selectedColorIndex.0, section: 1)])
                 } else {
                     self.greyscaleColors.append(color)
+                    self.greyscaleColorsDescription.append("Custom")
                     self.selectedColorIndex = (-1, self.greyscaleColors.count - 1)
                     self.hideTickOnEverythingExceptSelection()
                     self.collectionView.insertItems(at: [IndexPath(row: self.selectedColorIndex.1, section: 0)])
                 }
                 self.delegate?.changeToNewColor(color: color)
                 self.colorHexCodeLabel.text = "#\(color.hexCode)"
-                self.colorReadableDescriptionLabel.text = "Color"
+                self.colorReadableDescriptionLabel.text = isRainbowMode ? "Mid Custom" : "Custom"
             }
             cell.isRainbowMode = indexPath.section != 0
             cell.colorDelegate = self.delegate

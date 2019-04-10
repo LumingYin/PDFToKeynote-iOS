@@ -732,10 +732,7 @@
                                                                 </constraints>
                                                             </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="White" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wz2-0z-KC9">
-                                                                <rect key="frame" x="248" y="28" width="50" height="11"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="50" id="MhT-a6-vdS"/>
-                                                                </constraints>
+                                                                <rect key="frame" x="272.33333333333331" y="28" width="25.666666666666686" height="11"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
