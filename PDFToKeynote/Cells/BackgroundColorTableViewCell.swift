@@ -134,6 +134,7 @@ class BackgroundColorTableViewCell: UITableViewCell, UICollectionViewDataSource,
             cell.color4Button.backgroundColor = rainbow[3]
             cell.correspondingIndex = indexPath.row
             if (selectedColorIndex.0 == indexPath.row) {
+                cell.greenTickView.isHidden = false
                 cell.setTickAtLocation(selectedColorIndex.1)
             } else {
                 cell.greenTickView.isHidden = true
@@ -150,13 +151,23 @@ class BackgroundColorTableViewCell: UITableViewCell, UICollectionViewDataSource,
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomEntryCollectionViewCell", for: indexPath) as! CustomEntryCollectionViewCell
-            cell.colorSelectionCallback = { color in
-                self.selectedColorIndex = (-2, 0) // FIXME: Use better semantics.
-                self.hideTickOnEverythingExceptSelection()
+            cell.colorSelectionCallback = { isRainbowMode, color in
+                if isRainbowMode {
+                    self.rainbowColors.append([color, color, color, color])
+                    self.selectedColorIndex = (self.rainbowColors.count - 1, 0)
+                    self.hideTickOnEverythingExceptSelection()
+                    self.collectionView.insertItems(at: [IndexPath(row: self.selectedColorIndex.0, section: 1)])
+                } else {
+                    self.greyscaleColors.append(color)
+                    self.selectedColorIndex = (-1, self.greyscaleColors.count - 1)
+                    self.hideTickOnEverythingExceptSelection()
+                    self.collectionView.insertItems(at: [IndexPath(row: self.selectedColorIndex.1, section: 0)])
+                }
                 self.delegate?.changeToNewColor(color: color)
                 self.colorHexCodeLabel.text = "#\(color.hexCode)"
                 self.colorReadableDescriptionLabel.text = "Color"
             }
+            cell.isRainbowMode = indexPath.section != 0
             cell.colorDelegate = self.delegate
             cell.isColorMode = true
             return cell

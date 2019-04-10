@@ -17,8 +17,9 @@ class CustomEntryCollectionViewCell: UICollectionViewCell, UIPopoverPresentation
     weak var delegate: SlideSizeDelegate!
     weak var parentTableViewCell: SlideSizeTableViewCell!
     var isColorMode = false
-    var colorSelectionCallback: ((UIColor) -> Void)?
+    var colorSelectionCallback: ((_ isSingleColor: Bool, _ color: UIColor) -> Void)?
     weak var colorDelegate: ColorPickerDelegate!
+    var isRainbowMode = false
 
     @IBOutlet weak var customLabel: UILabel!
     @IBOutlet weak var visualEffectsView: UIVisualEffectView!
@@ -67,7 +68,7 @@ class CustomEntryCollectionViewCell: UICollectionViewCell, UIPopoverPresentation
     }
 
     func colorPickerDidChooseColor(_ colorPicker: ChromaColorPicker, color: UIColor) {
-        colorSelectionCallback?(color)
+        colorSelectionCallback?(isRainbowMode, color)
     }
 
 
