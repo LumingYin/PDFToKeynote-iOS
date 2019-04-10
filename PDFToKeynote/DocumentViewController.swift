@@ -22,9 +22,13 @@ class DocumentViewController: UIViewController, FloatingPanelControllerDelegate 
 
     func floatingPanel(_ vc: FloatingPanelController, layoutFor newCollection: UITraitCollection) -> FloatingPanelLayout? {
         print("Size class: (V: \(newCollection.verticalSizeClass.rawValue), H: \(newCollection.horizontalSizeClass.rawValue))")
-        if newCollection.verticalSizeClass == .regular && newCollection.horizontalSizeClass == .regular {
+        let isiPad = UIDevice.current.userInterfaceIdiom == .pad // Workaround for layout constraint bugs
+        if (newCollection.verticalSizeClass == .regular && newCollection.horizontalSizeClass == .regular) {
+//        if newCollection.verticalSizeClass == .regular && isiPad {
             print("Returning ConverterFloatingLandscapePanelLayout")
             return ConverterFloatingLandscapePanelLayout()
+        } else if (isiPad) {
+            return ConverterFloatingiPadNonLandscapePanelLayout()
         } else {
             print("Returning ConverterFloatingPanelLayout")
             return ConverterFloatingPanelLayout()

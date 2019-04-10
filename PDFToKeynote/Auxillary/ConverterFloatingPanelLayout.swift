@@ -52,7 +52,37 @@ public class ConverterFloatingLandscapePanelLayout: FloatingPanelLayout {
     public func prepareLayout(surfaceView: UIView, in view: UIView) -> [NSLayoutConstraint] {
         return [
             surfaceView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -18.0),
-            surfaceView.widthAnchor.constraint(equalToConstant: 350),
+            surfaceView.widthAnchor.constraint(equalToConstant: 320),
+        ]
+    }
+
+    public func backdropAlphaFor(position: FloatingPanelPosition) -> CGFloat {
+        return 0.0
+    }
+}
+
+public class ConverterFloatingiPadNonLandscapePanelLayout: FloatingPanelLayout {
+    public var initialPosition: FloatingPanelPosition {
+        return .tip
+    }
+
+    public var supportedPositions: Set<FloatingPanelPosition> {
+        return [.full, .half, .tip]
+    }
+
+    public func insetFor(position: FloatingPanelPosition) -> CGFloat? {
+        switch position {
+        case .full: return 16.0
+        case .half: return 300.0
+        case .tip: return 150.0
+        default: return nil
+        }
+    }
+
+    public func prepareLayout(surfaceView: UIView, in view: UIView) -> [NSLayoutConstraint] {
+        return [
+            surfaceView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: 0),
+            surfaceView.widthAnchor.constraint(equalToConstant: 320),
         ]
     }
 
