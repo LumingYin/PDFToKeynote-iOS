@@ -299,10 +299,10 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="convert" translatesAutoresizingMaskIntoConstraints="NO" id="LQC-gp-bhu">
-                                <rect key="frame" x="181.66666666666663" y="76" width="150.33333333333337" height="24"/>
+                                <rect key="frame" x="181.66666666666663" y="78" width="150.33333333333337" height="19"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="kNO-Jc-qOZ"/>
+                                    <constraint firstAttribute="height" constant="19" id="kNO-Jc-qOZ"/>
                                 </constraints>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zaa-b6-Yi3" customClass="ModernFluidTableView" customModule="PDFToKeynote" customModuleProvider="target">
@@ -992,7 +992,7 @@
                             <constraint firstItem="HQc-EP-wpV" firstAttribute="trailing" secondItem="2PO-bo-h0c" secondAttribute="trailing" id="6Ct-d6-wdV"/>
                             <constraint firstItem="WtT-iS-yoK" firstAttribute="trailing" secondItem="2K3-a1-G5m" secondAttribute="trailing" id="8hy-SA-gOU"/>
                             <constraint firstItem="LQC-gp-bhu" firstAttribute="width" secondItem="itw-CY-Mq2" secondAttribute="width" id="AiB-Th-mbu"/>
-                            <constraint firstItem="LQC-gp-bhu" firstAttribute="top" secondItem="GjE-GS-rmP" secondAttribute="bottom" constant="30" id="B2I-n7-keK"/>
+                            <constraint firstItem="LQC-gp-bhu" firstAttribute="top" secondItem="GjE-GS-rmP" secondAttribute="bottom" constant="32" id="B2I-n7-keK"/>
                             <constraint firstItem="HQc-EP-wpV" firstAttribute="leading" secondItem="HVh-QO-i0X" secondAttribute="leading" constant="16" id="I4g-Xa-yjr"/>
                             <constraint firstItem="WtT-iS-yoK" firstAttribute="bottom" secondItem="2K3-a1-G5m" secondAttribute="bottom" id="Ix9-E3-j2y"/>
                             <constraint firstAttribute="bottom" secondItem="zaa-b6-Yi3" secondAttribute="bottom" id="JKP-cf-bGg"/>
@@ -1011,7 +1011,7 @@
                             <constraint firstItem="LQC-gp-bhu" firstAttribute="leading" secondItem="itw-CY-Mq2" secondAttribute="leading" id="ddx-Th-JTd"/>
                             <constraint firstItem="Tqo-vm-IWB" firstAttribute="top" secondItem="2K3-a1-G5m" secondAttribute="top" constant="19" id="de4-d9-sut"/>
                             <constraint firstItem="itw-CY-Mq2" firstAttribute="top" secondItem="GjE-GS-rmP" secondAttribute="bottom" constant="21" id="e2x-s1-OBj"/>
-                            <constraint firstItem="6nL-d0-MF9" firstAttribute="bottom" secondItem="LQC-gp-bhu" secondAttribute="bottom" constant="18" id="fXY-4g-jbL"/>
+                            <constraint firstItem="6nL-d0-MF9" firstAttribute="bottom" secondItem="LQC-gp-bhu" secondAttribute="bottom" constant="21" id="fXY-4g-jbL"/>
                             <constraint firstItem="2U4-Uw-ejU" firstAttribute="bottom" secondItem="GjE-GS-rmP" secondAttribute="bottom" constant="14" id="lcM-dZ-Pnz"/>
                             <constraint firstItem="2PO-bo-h0c" firstAttribute="leading" secondItem="PhZ-7I-lmj" secondAttribute="leading" id="qzM-1Y-RLe"/>
                             <constraint firstItem="HQc-EP-wpV" firstAttribute="top" secondItem="Tqo-vm-IWB" secondAttribute="bottom" constant="15" id="rxA-89-dsv"/>
@@ -1039,7 +1039,7 @@
     <resources>
         <image name="Settings" width="32" height="32"/>
         <image name="closeButton" width="23" height="22.666666030883789"/>
-        <image name="convert" width="256" height="256"/>
+        <image name="convert" width="104" height="104"/>
         <image name="goldStarView" width="46" height="46"/>
         <image name="greenTickView" width="61" height="61"/>
         <image name="pdf" width="512" height="512"/>
