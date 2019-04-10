@@ -20,7 +20,6 @@ class MultipleColorCollectionViewCell: UICollectionViewCell {
     var colorTappedCallback: ((_ color: UIColor, _ index: (Int, Int), _ cell: MultipleColorCollectionViewCell) -> ())?
 
     @IBAction func colorButtonTapped(_ sender: UIButton) {
-//        delegate?.changeToNewColor(color: sender.backgroundColor!)
         var index = 0
         if sender == color1Button {
             index = 0

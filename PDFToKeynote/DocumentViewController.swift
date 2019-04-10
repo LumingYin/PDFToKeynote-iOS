@@ -23,18 +23,15 @@ class DocumentViewController: UIViewController, FloatingPanelControllerDelegate 
 //        print("Size class: (V: \(newCollection.verticalSizeClass.rawValue), H: \(newCollection.horizontalSizeClass.rawValue))")
         let isiPad = UIDevice.current.userInterfaceIdiom == .pad // Workaround for layout constraint bugs by fixating width to always be 320
         if (newCollection.verticalSizeClass == .regular && newCollection.horizontalSizeClass == .regular) {
-//            print("Returning ConverterFloatingLandscapePanelLayout")
             return ConverterFloatingLandscapePanelLayout()
         } else if (isiPad) {
             return ConverterFloatingiPadNonLandscapePanelLayout()
         } else {
-//            print("Returning ConverterFloatingPanelLayout")
             return ConverterFloatingPanelLayout()
         }
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-//        super.traitCollectionDidChange(previousTraitCollection)
     }
 
     func floatingPanelDidChangePosition(_ vc: FloatingPanelController) {
@@ -75,7 +72,6 @@ class DocumentViewController: UIViewController, FloatingPanelControllerDelegate 
                 }
             }
             floatingController?.addPanel(toParent: self)
-            //            floatingController?.move(to: .full, animated: true)
             floatingController?.track(scrollView: configurationVC!.tableView)
         }
 

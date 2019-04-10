@@ -79,7 +79,6 @@ class SlideSizeTableViewCell: UITableViewCell, UICollectionViewDelegate, UIColle
         }
     }
 
-//    let hardcodedResolutionCount = 4
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 0 {

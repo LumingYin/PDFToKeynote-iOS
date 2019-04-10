@@ -25,8 +25,6 @@ class CustomEntryCollectionViewCell: UICollectionViewCell, UIPopoverPresentation
     @IBOutlet weak var visualEffectsView: UIVisualEffectView!
     @IBOutlet weak var addEntryButton: ModernFluidButton!
 
-
-
     override func awakeFromNib() {
         addEntryButton.trackedViews = [customLabel, visualEffectsView]
     }
@@ -40,7 +38,6 @@ class CustomEntryCollectionViewCell: UICollectionViewCell, UIPopoverPresentation
             neatColorPicker = ChromaColorPicker(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
             neatColorPicker.supportsShadesOfGray = true
             neatColorPicker.togglePickerColorMode()
-//            neatColorPicker.adjustToColor(selectedColor)
             neatColorPicker.delegate = self
             neatColorPicker.padding = 5
             neatColorPicker.stroke = 3
@@ -63,8 +60,6 @@ class CustomEntryCollectionViewCell: UICollectionViewCell, UIPopoverPresentation
     }
 
     @objc func colorChanged(_ colorPicker: ChromaColorPicker) {
-//        colorSelectionCallback?(colorPicker.currentColor)
-//        selectedColor = colorPicker.currentColor
     }
 
     func colorPickerDidChooseColor(_ colorPicker: ChromaColorPicker, color: UIColor) {
@@ -80,7 +75,6 @@ class CustomEntryCollectionViewCell: UICollectionViewCell, UIPopoverPresentation
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyBoard.instantiateViewController(withIdentifier: "AddWidthHeight") as! AddWidthHeightViewController
         controller.newSizeAdded = { (width, height) in
-//            self.delegate.addNewSize(width: width, height: height, description: "\(width) × \(height)")
             self.delegate.addNewSize(width: width, height: height, description: "W:\(width)\nH:\(height)")
             let sectionOneLocation = self.delegate.getAllSizes().count - self.delegate.getCutoffCountForScreenResolution() - 1
             self.delegate.selectSizeAtIndex(index: self.delegate.getAllSizes().count - 1)
@@ -91,10 +85,6 @@ class CustomEntryCollectionViewCell: UICollectionViewCell, UIPopoverPresentation
             if let newItem = self.parentTableViewCell.collectionView.cellForItem(at: newIndexPath) as? AspectRatioCollectionViewCell {
                 newItem.selectSizeTapped(newItem)
             }
-//            self.sizes.append((width, height, "Custom: \(width) × \(height)"))
-//            self.dimensionPicker.reloadComponent(0)
-//            self.dimensionPicker.selectRow(self.sizes.count - 1, inComponent: 0, animated: true)
-//            self.aspectRatioLabel.text = self.sizes[self.selectedRow].description
         }
         controller.modalPresentationStyle = .popover
         controller.preferredContentSize = CGSize(width: 300, height: 200)
