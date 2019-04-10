@@ -1029,6 +1029,7 @@
                         <outlet property="startConversionImageView" destination="LQC-gp-bhu" id="nbA-fj-52A"/>
                         <outlet property="startConversionLabel" destination="6nL-d0-MF9" id="rrt-6W-n1m"/>
                         <outlet property="tableView" destination="zaa-b6-Yi3" id="4UL-yK-XeC"/>
+                        <outlet property="topCloseButton" destination="2U4-Uw-ejU" id="xxy-U1-drd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2pQ-a2-6hN" userLabel="First Responder" sceneMemberID="firstResponder"/>

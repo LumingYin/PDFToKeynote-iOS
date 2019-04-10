@@ -20,7 +20,7 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
     @IBOutlet weak var startConversionImageView: UIImageView!
     @IBOutlet weak var startConversionButton: ModernFluidButton!
     @IBOutlet weak var startConversionLabel: UILabel!
-
+    @IBOutlet weak var topCloseButton: ModernFluidButton!
     @IBOutlet weak var tableView: UITableView!
     var pdf: PDFDocument!
     weak var document: UIDocument?
@@ -234,10 +234,14 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
             if (active) {
                 SVProgressHUD.dismiss()
                 self.enableDisableStateChanged?(true)
+                self.tableView.isUserInteractionEnabled = true
+                self.topCloseButton.isEnabled = true
                 self.startConversionButton.isEnabled = true
                 self.startConversionButton.backgroundColor = UIColor(red: 0.3882352941, green: 0.7058823529, blue: 0.8431372549, alpha: 1)
             } else {
                 self.enableDisableStateChanged?(false)
+                self.tableView.isUserInteractionEnabled = false
+                self.topCloseButton.isEnabled = false
                 self.startConversionButton.isEnabled = false
                 self.startConversionButton.backgroundColor = UIColor.gray
             }
