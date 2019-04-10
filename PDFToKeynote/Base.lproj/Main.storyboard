@@ -795,15 +795,18 @@
                                                                                     <rect key="frame" x="13" y="1" width="60" height="84"/>
                                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                     <subviews>
-                                                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJm-Q6-UfW">
+                                                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJm-Q6-UfW" customClass="ModernFluidButton" customModule="PDFToKeynote" customModuleProvider="target">
                                                                                             <rect key="frame" x="0.0" y="0.0" width="60" height="21"/>
                                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                             <color key="backgroundColor" red="0.44647878408432007" green="0.74247825145721436" blue="0.97632497549057007" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                                            <userDefinedRuntimeAttributes>
+                                                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="scalesInteractively" value="NO"/>
+                                                                                            </userDefinedRuntimeAttributes>
                                                                                             <connections>
                                                                                                 <action selector="colorButtonTapped:" destination="chp-EN-YqS" eventType="touchUpInside" id="dEc-U1-bu6"/>
                                                                                             </connections>
                                                                                         </button>
-                                                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sTt-de-9ZM">
+                                                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sTt-de-9ZM" customClass="ModernFluidButton" customModule="PDFToKeynote" customModuleProvider="target">
                                                                                             <rect key="frame" x="0.0" y="21" width="60" height="21"/>
                                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                             <color key="backgroundColor" red="0.28077390789985657" green="0.61908239126205444" blue="0.96842473745346069" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -811,7 +814,7 @@
                                                                                                 <action selector="colorButtonTapped:" destination="chp-EN-YqS" eventType="touchUpInside" id="8J4-lF-itY"/>
                                                                                             </connections>
                                                                                         </button>
-                                                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oOT-vJ-I9G">
+                                                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oOT-vJ-I9G" customClass="ModernFluidButton" customModule="PDFToKeynote" customModuleProvider="target">
                                                                                             <rect key="frame" x="0.0" y="42" width="60" height="21"/>
                                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                             <color key="backgroundColor" red="0.1955839991569519" green="0.45568996667861938" blue="0.70573621988296509" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -819,10 +822,13 @@
                                                                                                 <action selector="colorButtonTapped:" destination="chp-EN-YqS" eventType="touchUpInside" id="eXP-bs-29H"/>
                                                                                             </connections>
                                                                                         </button>
-                                                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OjG-st-kHL">
+                                                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OjG-st-kHL" customClass="ModernFluidButton" customModule="PDFToKeynote" customModuleProvider="target">
                                                                                             <rect key="frame" x="0.0" y="63" width="60" height="21"/>
                                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                             <color key="backgroundColor" red="0.11871211975812912" green="0.29564574360847473" blue="0.48224502801895142" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                                            <userDefinedRuntimeAttributes>
+                                                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="scalesInteractively" value="NO"/>
+                                                                                            </userDefinedRuntimeAttributes>
                                                                                             <connections>
                                                                                                 <action selector="colorButtonTapped:" destination="chp-EN-YqS" eventType="touchUpInside" id="eNY-92-5zL"/>
                                                                                             </connections>

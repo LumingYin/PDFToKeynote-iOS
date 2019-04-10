@@ -16,7 +16,7 @@ public class ModernFluidButton: UIButton {
     // MARK: - Settings
     
     @IBInspectable var makeCircular: Bool = false
-    @IBInspectable var scalesInteractively: Bool = false
+    @IBInspectable var scalesInteractively: Bool = true
     @IBInspectable var highlightsInteractively: Bool = true
 
     
