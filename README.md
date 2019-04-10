@@ -1,8 +1,8 @@
 # PDFToKeynote-iOS
-Small utility to import PDF files into Keynote for iOS. This utility is especially helpful when presenting slideshows created by LaTeX.
+Small utility to import PDF files into Keynote for iOS. This utility is especially helpful when presenting slideshows created by LaTeX. [A screen recording demoing the app is available here](https://www.youtube.com/watch?v=8aLM4_vE-rk).
 
 
-![](https://raw.githubusercontent.com/LumingYin/PDFToKeynote-iOS/master/screenshot.jpg "Screenshot of Quick Caption")
+[![Screenshot of PDF to Keynote for iOS](https://raw.githubusercontent.com/LumingYin/PDFToKeynote-iOS/master/screenshot.jpg)](https://www.youtube.com/watch?v=8aLM4_vE-rk)
 
 
 Credits:
