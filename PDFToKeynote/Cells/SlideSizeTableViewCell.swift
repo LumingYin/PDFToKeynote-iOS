@@ -107,7 +107,6 @@ class SlideSizeTableViewCell: UITableViewCell, UICollectionViewDelegate, UIColle
                 cell.ratioTextLabel.attributedText = attributedString
             } else if (description.contains("W:") && description.contains("H:")) {
                 cell.ratioTextLabel.text = size.description
-//                let attributedString =
             } else {
                 cell.ratioTextLabel.text = size.description
             }
