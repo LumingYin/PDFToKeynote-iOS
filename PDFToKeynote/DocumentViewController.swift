@@ -22,9 +22,8 @@ class DocumentViewController: UIViewController, FloatingPanelControllerDelegate 
 
     func floatingPanel(_ vc: FloatingPanelController, layoutFor newCollection: UITraitCollection) -> FloatingPanelLayout? {
         print("Size class: (V: \(newCollection.verticalSizeClass.rawValue), H: \(newCollection.horizontalSizeClass.rawValue))")
-        let isiPad = UIDevice.current.userInterfaceIdiom == .pad // Workaround for layout constraint bugs
+        let isiPad = UIDevice.current.userInterfaceIdiom == .pad // Workaround for layout constraint bugs by fixating width to always be 320
         if (newCollection.verticalSizeClass == .regular && newCollection.horizontalSizeClass == .regular) {
-//        if newCollection.verticalSizeClass == .regular && isiPad {
             print("Returning ConverterFloatingLandscapePanelLayout")
             return ConverterFloatingLandscapePanelLayout()
         } else if (isiPad) {
@@ -33,15 +32,10 @@ class DocumentViewController: UIViewController, FloatingPanelControllerDelegate 
             print("Returning ConverterFloatingPanelLayout")
             return ConverterFloatingPanelLayout()
         }
-//        return (newCollection.verticalSizeClass == .regular) ? ConverterFloatingPanelLayout() : ConverterFloatingLandscapePanelLayout()
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-
-//        if (traitCollection.horizontalSizeClass == .compact) {
-//        } else {
-//            floatingController?.removePanelFromParent(animated: false)
-//        }
+//        super.traitCollectionDidChange(previousTraitCollection)
     }
 
     override func viewWillAppear(_ animated: Bool) {
