@@ -197,7 +197,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2U4-Uw-ejU">
-                                            <rect key="frame" x="314" y="44" width="16" height="22"/>
+                                            <rect key="frame" x="307" y="44" width="23" height="22"/>
                                             <state key="normal" image="closeButton"/>
                                             <connections>
                                                 <action selector="dismissToTipModeTapped:" destination="ofo-jH-SYk" eventType="touchUpInside" id="ujX-bX-ylq"/>
@@ -720,7 +720,7 @@
                                                                 </constraints>
                                                             </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="White" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wz2-0z-KC9">
-                                                                <rect key="frame" x="272.5" y="26" width="25.5" height="11"/>
+                                                                <rect key="frame" x="272.5" y="28" width="25.5" height="11"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -913,8 +913,8 @@
                                                         <constraints>
                                                             <constraint firstItem="6kz-dY-hRy" firstAttribute="top" secondItem="u3b-IJ-wEV" secondAttribute="top" constant="13" id="A40-bI-Ct9"/>
                                                             <constraint firstItem="BoA-ei-n8w" firstAttribute="top" secondItem="AdG-PL-swo" secondAttribute="bottom" constant="2" id="Dvs-68-QFB"/>
-                                                            <constraint firstItem="AdG-PL-swo" firstAttribute="top" secondItem="wz2-0z-KC9" secondAttribute="bottom" constant="9" id="JSK-8C-edl"/>
-                                                            <constraint firstItem="wz2-0z-KC9" firstAttribute="top" secondItem="u3b-IJ-wEV" secondAttribute="top" constant="26" id="Rel-gu-Y0G"/>
+                                                            <constraint firstItem="AdG-PL-swo" firstAttribute="top" secondItem="wz2-0z-KC9" secondAttribute="bottom" constant="7" id="JSK-8C-edl"/>
+                                                            <constraint firstItem="wz2-0z-KC9" firstAttribute="top" secondItem="u3b-IJ-wEV" secondAttribute="top" constant="28" id="Rel-gu-Y0G"/>
                                                             <constraint firstAttribute="trailing" secondItem="BoA-ei-n8w" secondAttribute="trailing" id="T3J-RH-UPl"/>
                                                             <constraint firstAttribute="trailing" secondItem="wz2-0z-KC9" secondAttribute="trailing" constant="20" id="YzO-uS-XzG"/>
                                                             <constraint firstItem="AdG-PL-swo" firstAttribute="leading" secondItem="u3b-IJ-wEV" secondAttribute="leading" constant="12" id="mBj-4B-Abp"/>
