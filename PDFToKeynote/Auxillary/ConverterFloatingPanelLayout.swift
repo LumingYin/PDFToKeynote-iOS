@@ -15,10 +15,14 @@ class ConverterFloatingPanelLayout: FloatingPanelLayout {
     }
 
     public func insetFor(position: FloatingPanelPosition) -> CGFloat? {
+        let window = UIApplication.shared.keyWindow
+//        let topPadding = window?.safeAreaInsets.top ?? 0
+        let bottomPadding = window?.safeAreaInsets.bottom ?? 0
+
         switch position {
         case .full: return 16.0 // A top inset from safe area
-        case .half: return 300.0 // A bottom inset from the safe area
-        case .tip: return 150.0 // A bottom inset from the safe area
+        case .half: return (300.0 - bottomPadding) // A bottom inset from the safe area
+        case .tip: return (150.0 - bottomPadding) // A bottom inset from the safe area
         default: return nil // Or `case .hidden: return nil`
         }
     }
