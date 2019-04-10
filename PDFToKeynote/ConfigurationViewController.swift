@@ -188,13 +188,13 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
     }
 
     @IBAction func buttonTouched(_ sender: UIButton) {
-        UIButton.animate(withDuration: 0.2, animations: {
-            sender.transform = CGAffineTransform(scaleX: 0.975, y: 0.96)
-        }, completion: { finish in
-            UIButton.animate(withDuration: 0.2, animations: {
-                sender.transform = CGAffineTransform.identity
-            })
-        })
+//        UIButton.animate(withDuration: 0.2, animations: {
+//            sender.transform = CGAffineTransform(scaleX: 0.975, y: 0.96)
+//        }, completion: { finish in
+//            UIButton.animate(withDuration: 0.2, animations: {
+//                sender.transform = CGAffineTransform.identity
+//            })
+//        })
     }
 
     @IBAction func startConversion(_ sender: Any) {
