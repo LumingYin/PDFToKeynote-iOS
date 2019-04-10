@@ -4,6 +4,20 @@
 <array>
 	<dict>
 		<key>text</key>
+		<string>Huge thanks to Melissa O&apos;Neill, Professor of Computer Science in the CS department at Harvey Mudd College for creating the original PDF to Keynote app for macOS. 
+
+She has spent countless hours fighting dragons in order to make sense of the unreadable Keynote XML format. This has, in turn, helped me tremendously when creating an iOS version of the PDF to Keynote converter in Swift. 
+
+Download PDF to Keynote by Melissa O&apos;Neill for macOS:
+https://www.cs.hmc.edu/~oneill/freesoftware/pdftokeynote.html
+
+Learn more about Melissa O&apos;Neill&apos;s free softwares, papers and teaching at her website:
+https://www.cs.hmc.edu/~oneill/#</string>
+		<key>title</key>
+		<string>Melissa O&apos;Neill</string>
+	</dict>
+	<dict>
+		<key>text</key>
 		<string>MIT License
 
 Copyright (c) 2016 Jonathan Cardasis
