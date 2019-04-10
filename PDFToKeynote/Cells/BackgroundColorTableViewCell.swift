@@ -149,7 +149,7 @@ class BackgroundColorTableViewCell: UITableViewCell, UICollectionViewDataSource,
                 cell.setTickAtLocation(self.selectedColorIndex.1)
                 cell.greenTickView.isHidden = false
                 self.hideTickOnEverythingExceptSelection()
-                self.colorHexCodeLabel.text = "#\(color.hexCode)"
+                self.colorHexCodeLabel.text = "#\(color.altHexString())"
                 self.colorReadableDescriptionLabel.text = "\(self.rainbowModifier[index.1]) \(self.rainbowColorsDescription[index.0])"
             }
             return cell

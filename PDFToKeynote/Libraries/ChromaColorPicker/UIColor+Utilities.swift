@@ -33,7 +33,20 @@ public extension UIColor{
             return String(format: "%02x%02x%02x", Int(colorComponents[0]*255.0), Int(colorComponents[1]*255.0),Int(colorComponents[2]*255.0)).uppercased()
         }
     }
-    
+
+    func altHexString() -> String {
+        var r:CGFloat = 0
+        var g:CGFloat = 0
+        var b:CGFloat = 0
+        var a:CGFloat = 0
+
+        getRed(&r, green: &g, blue: &b, alpha: &a)
+
+        let rgb:Int = (Int)(r*255)<<16 | (Int)(g*255)<<8 | (Int)(b*255)<<0
+
+        return String(NSString(format:"%06x", rgb).uppercased)
+    }
+
     //Amount should be between 0 and 1
     func lighterColor(_ amount: CGFloat) -> UIColor{
         return UIColor.blendColors(color: self, destinationColor: UIColor.white, amount: amount)
