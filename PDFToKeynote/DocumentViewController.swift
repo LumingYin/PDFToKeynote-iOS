@@ -20,15 +20,15 @@ class DocumentViewController: UIViewController, FloatingPanelControllerDelegate 
     weak var configurationVC: ConfigurationViewController?
 
     func floatingPanel(_ vc: FloatingPanelController, layoutFor newCollection: UITraitCollection) -> FloatingPanelLayout? {
-        print("Size class: (V: \(newCollection.verticalSizeClass.rawValue), H: \(newCollection.horizontalSizeClass.rawValue))")
+//        print("Size class: (V: \(newCollection.verticalSizeClass.rawValue), H: \(newCollection.horizontalSizeClass.rawValue))")
         let isiPad = UIDevice.current.userInterfaceIdiom == .pad // Workaround for layout constraint bugs by fixating width to always be 320
         if (newCollection.verticalSizeClass == .regular && newCollection.horizontalSizeClass == .regular) {
-            print("Returning ConverterFloatingLandscapePanelLayout")
+//            print("Returning ConverterFloatingLandscapePanelLayout")
             return ConverterFloatingLandscapePanelLayout()
         } else if (isiPad) {
             return ConverterFloatingiPadNonLandscapePanelLayout()
         } else {
-            print("Returning ConverterFloatingPanelLayout")
+//            print("Returning ConverterFloatingPanelLayout")
             return ConverterFloatingPanelLayout()
         }
     }

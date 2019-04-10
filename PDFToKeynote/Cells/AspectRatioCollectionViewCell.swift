@@ -27,7 +27,7 @@ class AspectRatioCollectionViewCell: UICollectionViewCell {
     }
 
     func configurateCellAppearance() {
-        print("AspectRatioCollectionViewCell.bounds: \(self.bounds)")
+//        print("AspectRatioCollectionViewCell.bounds: \(self.bounds)")
         self.greenTickView.isHidden = ratioCorrespondingIndex != delegate.getSelectedSizeIndex()
         self.nativeGoldstarView.isHidden = ratioCorrespondingIndex != delegate.getNativeSizeIndex()
         let maxSide = self.bounds.width
