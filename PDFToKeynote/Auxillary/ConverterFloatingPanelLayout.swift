@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FloatingPanel
 
 class ConverterFloatingPanelLayout: FloatingPanelLayout {
     public var initialPosition: FloatingPanelPosition {

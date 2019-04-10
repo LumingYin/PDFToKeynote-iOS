@@ -8,7 +8,6 @@
 
 import UIKit
 import PDFKit
-import FloatingPanel
 
 typealias SlideSize = (width: Int, height: Int, description: String)
 

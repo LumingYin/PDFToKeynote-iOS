@@ -1,24 +1,20 @@
 PODS:
-  - FloatingPanel (1.3.2)
   - SVProgressHUD (2.2.5)
   - Zip (1.1.0)
 
 DEPENDENCIES:
-  - FloatingPanel
   - SVProgressHUD
   - Zip
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - FloatingPanel
     - SVProgressHUD
     - Zip
 
 SPEC CHECKSUMS:
-  FloatingPanel: a17dec0ef2b40eb614ee743de1a2529140fb2a6a
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   Zip: 8877eede3dda76bcac281225c20e71c25270774c
 
-PODFILE CHECKSUM: a8c25bcaef26b6210797258d90567e7a1b57e8a9
+PODFILE CHECKSUM: 22a2ae6b88467e388b0d77b816e2668a9ff3db64
 
 COCOAPODS: 1.5.3

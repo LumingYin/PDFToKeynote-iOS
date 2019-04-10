@@ -9,7 +9,6 @@
 import UIKit
 import PDFKit
 import Zip
-import FloatingPanel
 
 class DocumentViewController: UIViewController, FloatingPanelControllerDelegate {
 

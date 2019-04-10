@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2D55A8556036E5F92222E213 /* Pods_PDFToKeynote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13B24480D71B5F0564439EC4 /* Pods_PDFToKeynote.framework */; };
 		32009BEC225C3804005D5042 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009BEB225C3804005D5042 /* Converter.swift */; };
 		32009C0D225C605B005D5042 /* ModernUIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009BEF225C605B005D5042 /* ModernUIConstants.swift */; };
 		32009C0E225C605B005D5042 /* UIViewController+Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32009BF2225C605B005D5042 /* UIViewController+Core.swift */; };
@@ -70,10 +69,21 @@
 		32D9A0F1225ABAAB00AEC14B /* template_content.txt in Resources */ = {isa = PBXBuildFile; fileRef = 32D9A0EE225ABAAB00AEC14B /* template_content.txt */; };
 		32D9A0F2225ABAAB00AEC14B /* template_ending.txt in Resources */ = {isa = PBXBuildFile; fileRef = 32D9A0EF225ABAAB00AEC14B /* template_ending.txt */; };
 		32D9A0F3225ABAAB00AEC14B /* template_beginning.txt in Resources */ = {isa = PBXBuildFile; fileRef = 32D9A0F0225ABAAB00AEC14B /* template_beginning.txt */; };
+		32FD6D5A225D9AA40046F1EF /* FloatingPanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FD6D4F225D9AA40046F1EF /* FloatingPanelController.swift */; };
+		32FD6D5B225D9AA40046F1EF /* FloatingPanelSurfaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FD6D50225D9AA40046F1EF /* FloatingPanelSurfaceView.swift */; };
+		32FD6D5C225D9AA40046F1EF /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FD6D51225D9AA40046F1EF /* Logger.swift */; };
+		32FD6D5D225D9AA40046F1EF /* FloatingPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FD6D52225D9AA40046F1EF /* FloatingPanel.swift */; };
+		32FD6D5E225D9AA40046F1EF /* FloatingPanelBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FD6D53225D9AA40046F1EF /* FloatingPanelBehavior.swift */; };
+		32FD6D5F225D9AA40046F1EF /* FloatingPanelTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FD6D54225D9AA40046F1EF /* FloatingPanelTransitioning.swift */; };
+		32FD6D60225D9AA40046F1EF /* FloatingPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FD6D55225D9AA40046F1EF /* FloatingPanelView.swift */; };
+		32FD6D61225D9AA40046F1EF /* GrabberHandleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FD6D56225D9AA40046F1EF /* GrabberHandleView.swift */; };
+		32FD6D62225D9AA40046F1EF /* FloatingPanelLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FD6D57225D9AA40046F1EF /* FloatingPanelLayout.swift */; };
+		32FD6D63225D9AA40046F1EF /* FloatingPanelBackdropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FD6D58225D9AA40046F1EF /* FloatingPanelBackdropView.swift */; };
+		32FD6D64225D9AA40046F1EF /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FD6D59225D9AA40046F1EF /* UIExtensions.swift */; };
+		8B91363BD63953A51608CADA /* Pods_PDFToKeynote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3779E6647C4A58274E7B3B3A /* Pods_PDFToKeynote.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		13B24480D71B5F0564439EC4 /* Pods_PDFToKeynote.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PDFToKeynote.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32009BEB225C3804005D5042 /* Converter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
 		32009BEF225C605B005D5042 /* ModernUIConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModernUIConstants.swift; sourceTree = "<group>"; };
 		32009BF2225C605B005D5042 /* UIViewController+Core.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Core.swift"; sourceTree = "<group>"; };
@@ -141,8 +151,20 @@
 		32D9A0EE225ABAAB00AEC14B /* template_content.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = template_content.txt; sourceTree = "<group>"; };
 		32D9A0EF225ABAAB00AEC14B /* template_ending.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = template_ending.txt; sourceTree = "<group>"; };
 		32D9A0F0225ABAAB00AEC14B /* template_beginning.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = template_beginning.txt; sourceTree = "<group>"; };
-		3B6F695D52E13E08A70619DA /* Pods-PDFToKeynote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PDFToKeynote.release.xcconfig"; path = "Pods/Target Support Files/Pods-PDFToKeynote/Pods-PDFToKeynote.release.xcconfig"; sourceTree = "<group>"; };
-		9A9AFBF59FCC80F55919B9C1 /* Pods-PDFToKeynote.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PDFToKeynote.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PDFToKeynote/Pods-PDFToKeynote.debug.xcconfig"; sourceTree = "<group>"; };
+		32FD6D4F225D9AA40046F1EF /* FloatingPanelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingPanelController.swift; sourceTree = "<group>"; };
+		32FD6D50225D9AA40046F1EF /* FloatingPanelSurfaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingPanelSurfaceView.swift; sourceTree = "<group>"; };
+		32FD6D51225D9AA40046F1EF /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		32FD6D52225D9AA40046F1EF /* FloatingPanel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingPanel.swift; sourceTree = "<group>"; };
+		32FD6D53225D9AA40046F1EF /* FloatingPanelBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingPanelBehavior.swift; sourceTree = "<group>"; };
+		32FD6D54225D9AA40046F1EF /* FloatingPanelTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingPanelTransitioning.swift; sourceTree = "<group>"; };
+		32FD6D55225D9AA40046F1EF /* FloatingPanelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingPanelView.swift; sourceTree = "<group>"; };
+		32FD6D56225D9AA40046F1EF /* GrabberHandleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrabberHandleView.swift; sourceTree = "<group>"; };
+		32FD6D57225D9AA40046F1EF /* FloatingPanelLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingPanelLayout.swift; sourceTree = "<group>"; };
+		32FD6D58225D9AA40046F1EF /* FloatingPanelBackdropView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingPanelBackdropView.swift; sourceTree = "<group>"; };
+		32FD6D59225D9AA40046F1EF /* UIExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
+		3779E6647C4A58274E7B3B3A /* Pods_PDFToKeynote.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PDFToKeynote.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F1D32F90CE9CFCE990E2BAC /* Pods-PDFToKeynote.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PDFToKeynote.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PDFToKeynote/Pods-PDFToKeynote.debug.xcconfig"; sourceTree = "<group>"; };
+		A58F8E60433B0A1351A7BB53 /* Pods-PDFToKeynote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PDFToKeynote.release.xcconfig"; path = "Pods/Target Support Files/Pods-PDFToKeynote/Pods-PDFToKeynote.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,22 +173,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3228E9F4225ABC4B005F923D /* PDFKit.framework in Frameworks */,
-				2D55A8556036E5F92222E213 /* Pods_PDFToKeynote.framework in Frameworks */,
+				8B91363BD63953A51608CADA /* Pods_PDFToKeynote.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		23343A32AC5095005E43B8D5 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				9A9AFBF59FCC80F55919B9C1 /* Pods-PDFToKeynote.debug.xcconfig */,
-				3B6F695D52E13E08A70619DA /* Pods-PDFToKeynote.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		32009BE5225C37A9005D5042 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +222,7 @@
 		32009BEA225C37D5005D5042 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				32FD6D4E225D9AA40046F1EF /* FloatingPanel */,
 				3207B002225C78260036A470 /* JEKScrollableSectionCollectionViewLayout */,
 				32009BEE225C605B005D5042 /* ModernUIKit */,
 				323F1468225B424E007D3DB3 /* SwiftyAcknowledgements */,
@@ -319,7 +333,7 @@
 			isa = PBXGroup;
 			children = (
 				3228E9F3225ABC4B005F923D /* PDFKit.framework */,
-				13B24480D71B5F0564439EC4 /* Pods_PDFToKeynote.framework */,
+				3779E6647C4A58274E7B3B3A /* Pods_PDFToKeynote.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -354,7 +368,7 @@
 				32D9A0D7225AB93500AEC14B /* PDFToKeynote */,
 				32D9A0D6225AB93500AEC14B /* Products */,
 				3228E9F2225ABC4B005F923D /* Frameworks */,
-				23343A32AC5095005E43B8D5 /* Pods */,
+				4FD28C390E2C119CBDAFA1DE /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -386,6 +400,33 @@
 			path = PDFToKeynote;
 			sourceTree = "<group>";
 		};
+		32FD6D4E225D9AA40046F1EF /* FloatingPanel */ = {
+			isa = PBXGroup;
+			children = (
+				32FD6D4F225D9AA40046F1EF /* FloatingPanelController.swift */,
+				32FD6D50225D9AA40046F1EF /* FloatingPanelSurfaceView.swift */,
+				32FD6D51225D9AA40046F1EF /* Logger.swift */,
+				32FD6D52225D9AA40046F1EF /* FloatingPanel.swift */,
+				32FD6D53225D9AA40046F1EF /* FloatingPanelBehavior.swift */,
+				32FD6D54225D9AA40046F1EF /* FloatingPanelTransitioning.swift */,
+				32FD6D55225D9AA40046F1EF /* FloatingPanelView.swift */,
+				32FD6D56225D9AA40046F1EF /* GrabberHandleView.swift */,
+				32FD6D57225D9AA40046F1EF /* FloatingPanelLayout.swift */,
+				32FD6D58225D9AA40046F1EF /* FloatingPanelBackdropView.swift */,
+				32FD6D59225D9AA40046F1EF /* UIExtensions.swift */,
+			);
+			path = FloatingPanel;
+			sourceTree = "<group>";
+		};
+		4FD28C390E2C119CBDAFA1DE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9F1D32F90CE9CFCE990E2BAC /* Pods-PDFToKeynote.debug.xcconfig */,
+				A58F8E60433B0A1351A7BB53 /* Pods-PDFToKeynote.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -393,11 +434,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 32D9A0EB225AB93700AEC14B /* Build configuration list for PBXNativeTarget "PDFToKeynote" */;
 			buildPhases = (
-				17A594D8BBC0A79D444D08F4 /* [CP] Check Pods Manifest.lock */,
+				58FE4E968B6D874C10D87C1A /* [CP] Check Pods Manifest.lock */,
 				32D9A0D1225AB93500AEC14B /* Sources */,
 				32D9A0D2225AB93500AEC14B /* Frameworks */,
 				32D9A0D3225AB93500AEC14B /* Resources */,
-				650B751DBAE199A0B8D8C5C0 /* [CP] Embed Pods Frameworks */,
+				D5DFCE648D84C8A8E12D5F1C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -460,7 +501,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		17A594D8BBC0A79D444D08F4 /* [CP] Check Pods Manifest.lock */ = {
+		58FE4E968B6D874C10D87C1A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -482,7 +523,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		650B751DBAE199A0B8D8C5C0 /* [CP] Embed Pods Frameworks */ = {
+		D5DFCE648D84C8A8E12D5F1C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -491,7 +532,6 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PDFToKeynote/Pods-PDFToKeynote-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/FloatingPanel/FloatingPanel.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Zip/Zip.framework",
 			);
@@ -499,7 +539,6 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FloatingPanel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Zip.framework",
 			);
@@ -524,6 +563,8 @@
 				323F1470225B424E007D3DB3 /* UIFontDescriptorExtensions.swift in Sources */,
 				32009C20225C605B005D5042 /* ModernGradientContourView.swift in Sources */,
 				323F1460225B3872007D3DB3 /* PopoverViewController.swift in Sources */,
+				32FD6D5B225D9AA40046F1EF /* FloatingPanelSurfaceView.swift in Sources */,
+				32FD6D5A225D9AA40046F1EF /* FloatingPanelController.swift in Sources */,
 				32009C1D225C605B005D5042 /* ModernGridView.swift in Sources */,
 				32009C0D225C605B005D5042 /* ModernUIConstants.swift in Sources */,
 				32009C10225C605B005D5042 /* UIColor+Core.swift in Sources */,
@@ -532,6 +573,7 @@
 				323F1455225B260A007D3DB3 /* ColorModeToggleButton.swift in Sources */,
 				32BEB7B2225AE12F00F51B0F /* Extensions.swift in Sources */,
 				32D9A0DF225AB93500AEC14B /* Document.swift in Sources */,
+				32FD6D5C225D9AA40046F1EF /* Logger.swift in Sources */,
 				32009C2F225C6F07005D5042 /* BackgroundColorTableViewCell.swift in Sources */,
 				323F1456225B260A007D3DB3 /* ChromaHandle.swift in Sources */,
 				32009C21225C605B005D5042 /* ModernFluidTableView.swift in Sources */,
@@ -540,10 +582,14 @@
 				32009C29225C6B62005D5042 /* SlideSizeTableViewCell.swift in Sources */,
 				32009C2D225C6C73005D5042 /* CustomEntryRatioCollectionViewCell.swift in Sources */,
 				32009BEC225C3804005D5042 /* Converter.swift in Sources */,
+				32FD6D64225D9AA40046F1EF /* UIExtensions.swift in Sources */,
+				32FD6D62225D9AA40046F1EF /* FloatingPanelLayout.swift in Sources */,
 				323F1453225B260A007D3DB3 /* UIColor+Utilities.swift in Sources */,
 				32009C1B225C605B005D5042 /* ModernTimer.swift in Sources */,
+				32FD6D63225D9AA40046F1EF /* FloatingPanelBackdropView.swift in Sources */,
 				32D9A0DB225AB93500AEC14B /* DocumentBrowserViewController.swift in Sources */,
 				323F1462225B39FE007D3DB3 /* AddWidthHeightViewController.swift in Sources */,
+				32FD6D60225D9AA40046F1EF /* FloatingPanelView.swift in Sources */,
 				3207B005225C78260036A470 /* JEKScrollableSectionCollectionViewLayout.m in Sources */,
 				32009C24225C605B005D5042 /* ModernContinuousContourView.swift in Sources */,
 				32009C18225C605B005D5042 /* UIEdgeInsets+Math.swift in Sources */,
@@ -560,14 +606,18 @@
 				32009C12225C605B005D5042 /* IndexPath+Grid.swift in Sources */,
 				32009C1E225C605B005D5042 /* ModernFluidButton.swift in Sources */,
 				32D4BAB8225C03120030852A /* ConfigurationViewController.swift in Sources */,
+				32FD6D5F225D9AA40046F1EF /* FloatingPanelTransitioning.swift in Sources */,
 				32009C19225C605B005D5042 /* UIView+Core.swift in Sources */,
 				32009C1F225C605B005D5042 /* ModernCircleView.swift in Sources */,
+				32FD6D61225D9AA40046F1EF /* GrabberHandleView.swift in Sources */,
+				32FD6D5D225D9AA40046F1EF /* FloatingPanel.swift in Sources */,
 				323F1457225B260A007D3DB3 /* ChromaAddButton.swift in Sources */,
 				323F1465225B3D8C007D3DB3 /* UITextField+Shake.m in Sources */,
 				32009C23225C605B005D5042 /* ModernGradientView.swift in Sources */,
 				32D4BABA225C09210030852A /* ConverterFloatingPanelLayout.swift in Sources */,
 				32009C27225C6579005D5042 /* FileInformationTableViewCell.swift in Sources */,
 				32009C33225C707E005D5042 /* MultipleColorCollectionViewCell.swift in Sources */,
+				32FD6D5E225D9AA40046F1EF /* FloatingPanelBehavior.swift in Sources */,
 				32009C0E225C605B005D5042 /* UIViewController+Core.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -712,7 +762,7 @@
 		};
 		32D9A0EC225AB93700AEC14B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9A9AFBF59FCC80F55919B9C1 /* Pods-PDFToKeynote.debug.xcconfig */;
+			baseConfigurationReference = 9F1D32F90CE9CFCE990E2BAC /* Pods-PDFToKeynote.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -735,7 +785,7 @@
 		};
 		32D9A0ED225AB93700AEC14B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B6F695D52E13E08A70619DA /* Pods-PDFToKeynote.release.xcconfig */;
+			baseConfigurationReference = A58F8E60433B0A1351A7BB53 /* Pods-PDFToKeynote.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

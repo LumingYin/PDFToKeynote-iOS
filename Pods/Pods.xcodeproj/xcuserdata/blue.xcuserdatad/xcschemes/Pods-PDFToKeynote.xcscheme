@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "77187A4852201E2D367DCA208E72FFDE"
+               BlueprintIdentifier = "23FD5F87D2C22BF5B94844CFA849952D"
                BuildableName = "Pods_PDFToKeynote.framework"
                BlueprintName = "Pods-PDFToKeynote"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "77187A4852201E2D367DCA208E72FFDE"
+            BlueprintIdentifier = "23FD5F87D2C22BF5B94844CFA849952D"
             BuildableName = "Pods_PDFToKeynote.framework"
             BlueprintName = "Pods-PDFToKeynote"
             ReferencedContainer = "container:Pods.xcodeproj">
