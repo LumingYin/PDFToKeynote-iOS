@@ -81,7 +81,9 @@ class DocumentViewController: UIViewController, FloatingPanelControllerDelegate 
                 self.natigationBarItem.title = self.document?.fileURL.lastPathComponent.stripFileExtension()
                 self.pdfView.document = PDFDocument(url: self.document!.fileURL)
                 self.pdfView.backgroundColor = UIColor.gray
-                self.pdfView.autoScales = true
+                self.pdfView.scaleFactor = self.pdfView.scaleFactorForSizeToFit
+                self.scrollToTop()
+//                self.pdfView.autoScales = true
                 self.configurationVC?.pdf = self.pdfView.document
                 if let doc = self.document as? Document {
                     self.configurationVC?.initialSetupForPDF(doc)
@@ -90,6 +92,33 @@ class DocumentViewController: UIViewController, FloatingPanelControllerDelegate 
                 print("Failed to load PDF document")
             }
         })
+    }
+    
+    func scrollToTop() {
+        var topLeftX: CGFloat!
+        var topLeftY: CGFloat!
+        guard let firstPage = pdfView!.document?.page(at: 0) else {
+            return;
+        }
+        let firstPageBounds = firstPage.bounds(for: pdfView!.displayBox)
+        switch (firstPage.rotation % 360) {
+        case 0:
+            topLeftX = firstPageBounds.minX
+            topLeftY = firstPageBounds.maxY
+        case 90:
+            topLeftX = firstPageBounds.minX
+            topLeftY = firstPageBounds.minY
+        case 180:
+            topLeftX = firstPageBounds.maxX
+            topLeftY = firstPageBounds.minY
+        case 270:
+            topLeftX = firstPageBounds.maxX
+            topLeftY = firstPageBounds.maxY
+        default:
+            print ("Invalid rotation value, not divisible by 90")
+        }
+        
+        pdfView!.go(to: CGRect(x: topLeftX, y: topLeftY, width: 1.0, height: 1.0), on: firstPage)
     }
 
     override func viewDidLoad() {
