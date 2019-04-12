@@ -105,7 +105,19 @@ class SlideSizeTableViewCell: UITableViewCell, UICollectionViewDelegate, UIColle
                 attributedString.addAttributes([.font: UIFont.systemFont(ofSize: 9, weight: .regular)], range: range)
                 cell.ratioTextLabel.attributedText = attributedString
             } else if (description.contains("W:") && description.contains("H:")) {
-                cell.ratioTextLabel.text = size.description
+                let range1 = (description as NSString).range(of: "W:")
+                let range2 = (description as NSString).range(of: "H:")
+                let attributedString: NSMutableAttributedString = NSMutableAttributedString(string: description)
+                attributedString.addAttributes([.font: UIFont.systemFont(ofSize: 8, weight: .regular)], range: range1)
+                attributedString.addAttributes([.font: UIFont.systemFont(ofSize: 8, weight: .regular)], range: range2)
+                attributedString.addAttributes([.kern: 1.55], range: NSRange(location: range2.location, length: 1)) // Assuming SF Text
+                let titleParagraphStyle = NSMutableParagraphStyle()
+                titleParagraphStyle.alignment = .left
+                attributedString.addAttributes([.paragraphStyle: titleParagraphStyle], range: NSRange(location: 0, length: description.count))
+                let monoFont = UIFont.monospacedDigitSystemFont(ofSize: 13.0, weight: .bold)
+                attributedString.addAttributes([.font: monoFont], range: NSRange(location: range1.location + range1.length, length: range2.location - (range1.location + range1.length)))
+                attributedString.addAttributes([.font: monoFont], range: NSRange(location: range2.location + range2.length, length: description.count - (range2.location + range2.length)))
+                cell.ratioTextLabel.attributedText = attributedString
             } else {
                 cell.ratioTextLabel.text = size.description
             }
