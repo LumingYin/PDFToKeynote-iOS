@@ -94,6 +94,16 @@ class DocumentViewController: UIViewController, FloatingPanelControllerDelegate 
         })
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        coordinator.animate(alongsideTransition: { (context) in
+        }) { (context) in
+            if self.pdfView.scaleFactor > self.pdfView.scaleFactorForSizeToFit {
+                self.pdfView.scaleFactor = self.pdfView.scaleFactorForSizeToFit
+            }
+        }
+    }
+    
     func scrollToTop() {
         var topLeftX: CGFloat!
         var topLeftY: CGFloat!
