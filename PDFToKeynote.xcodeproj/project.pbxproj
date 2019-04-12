@@ -127,7 +127,7 @@
 		323F1450225B260A007D3DB3 /* ChromaHandle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromaHandle.swift; sourceTree = "<group>"; };
 		323F1451225B260A007D3DB3 /* ChromaAddButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromaAddButton.swift; sourceTree = "<group>"; };
 		323F1458225B2CEF007D3DB3 /* PDFToKeynote-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PDFToKeynote-Bridging-Header.h"; sourceTree = "<group>"; };
-		323F145F225B3872007D3DB3 /* PopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PopoverViewController.swift; path = /Volumes/SSD/blue/Repos/PDFToKeynote/PDFToKeynote/PopoverViewController.swift; sourceTree = "<absolute>"; };
+		323F145F225B3872007D3DB3 /* PopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
 		323F1461225B39FE007D3DB3 /* AddWidthHeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWidthHeightViewController.swift; sourceTree = "<group>"; };
 		323F1463225B3D8C007D3DB3 /* UITextField+Shake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Shake.h"; sourceTree = "<group>"; };
 		323F1464225B3D8C007D3DB3 /* UITextField+Shake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Shake.m"; sourceTree = "<group>"; };
@@ -232,7 +232,7 @@
 			path = Libraries;
 			sourceTree = "<group>";
 		};
-		32009BED225C382A005D5042 /* Auxillary */ = {
+		32009BED225C382A005D5042 /* Auxiliary */ = {
 			isa = PBXGroup;
 			children = (
 				32D4BAB9225C09210030852A /* ConverterFloatingPanelLayout.swift */,
@@ -240,7 +240,7 @@
 				3207B007225C824E0036A470 /* Helper.swift */,
 				323F145F225B3872007D3DB3 /* PopoverViewController.swift */,
 			);
-			path = Auxillary;
+			path = Auxiliary;
 			sourceTree = "<group>";
 		};
 		32009BEE225C605B005D5042 /* ModernUIKit */ = {
@@ -387,7 +387,7 @@
 				32009BE8225C37C6005D5042 /* Support */,
 				32009BE7225C37B8005D5042 /* Templates */,
 				32009BE5225C37A9005D5042 /* Model */,
-				32009BED225C382A005D5042 /* Auxillary */,
+				32009BED225C382A005D5042 /* Auxiliary */,
 				3207B006225C7C790036A470 /* Cells */,
 				32D9A0D8225AB93500AEC14B /* AppDelegate.swift */,
 				32D9A0DA225AB93500AEC14B /* DocumentBrowserViewController.swift */,

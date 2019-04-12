@@ -39,6 +39,7 @@ class DocumentViewController: UIViewController, FloatingPanelControllerDelegate 
             configurationVC?.customizeLabel.text = "Minimize"
         } else {
             configurationVC?.customizeLabel.text = "Customize"
+            configurationVC?.tableView.scrollToRow(at: IndexPath(row: 0, column: 0), at: .top, animated: true)
         }
     }
 
