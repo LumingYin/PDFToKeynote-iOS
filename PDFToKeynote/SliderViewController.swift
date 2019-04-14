@@ -32,10 +32,8 @@ class SliderViewController: UIViewController, UIGestureRecognizerDelegate {
         set {
             let bounds = self.view.bounds.size
             var toUse = newValue
-            if toUse < 0.1 { toUse = 0.1 }
-            if toUse > 0.95 { toUse = 1 }
 
-            self.barConstraint.constant = bounds.width * CGFloat((1 - newValue))
+            self.barConstraint.constant = bounds.width * CGFloat((1 - toUse))
             self.scalePercentLabel.text = String(format: "%.0f%%", newValue * 100)
         }
         get {
@@ -48,16 +46,18 @@ class SliderViewController: UIViewController, UIGestureRecognizerDelegate {
 
     @IBAction func gesturePanned(_ sender: UIPanGestureRecognizer) {
         let translation = sender.translation(in: self.view)
-        print("\(translation)")
-        var new = self.containerVisualEffectView.frame.width - (barConstraint.constant - translation.x)
-//        if new >= containerVisualEffectView.frame.width * 0.95 {
-//            new = containerVisualEffectView.frame.width
-//        }
-//        if new < 0.1 {
-//            new = 0
-//        }
-//        barConstraint.constant = barConstraint.constant + (translation.x / self.containerVisualEffectView.frame.width)
-        percentageValue = Float(new / self.containerVisualEffectView.frame.width)
+        print("\(sender.state): \(translation)")
+        let new = self.containerVisualEffectView.frame.width - (barConstraint.constant - translation.x)
+        let percentage = Float(new / self.containerVisualEffectView.frame.width)
+        var toUse = percentage
+        if (sender.state == .ended || sender.state == .cancelled || sender.state == .failed) {
+            if toUse < 0.05 { toUse = 0.05 }
+            if toUse > 1 { toUse = 1 }
+        } else {
+            if toUse < 0 { toUse = 0 }
+            if toUse > 1 { toUse = 1 }
+        }
+        percentageValue = toUse
         sender.setTranslation(CGPoint.zero, in: self.view)
     }
 
