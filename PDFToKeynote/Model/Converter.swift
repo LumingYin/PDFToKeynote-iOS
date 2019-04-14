@@ -167,8 +167,10 @@ class Converter: NSObject {
     }
 
     static func fitSizeIntoSlide(pdfWidth: Float, pdfHeight: Float, angle: Int, canvasWidth: Int, canvasHeight: Int, scale: Float) -> (fittingWidth: Float, fittingHeight: Float, originX: Float, originY: Float) {
-        let displayWidthRatio = Float(canvasWidth) / pdfWidth
-        let displayHeightRatio = Float(canvasHeight) / pdfHeight
+        let scaledCanvasWidth = Float(canvasWidth) * scale
+        let scaledCanvasHeight = Float(canvasHeight) * scale
+        let displayWidthRatio = Float(scaledCanvasWidth) / pdfWidth
+        let displayHeightRatio = Float(scaledCanvasHeight) / pdfHeight
         let zoomShrinkFactor = min(displayWidthRatio, displayHeightRatio)
         let finalWidth = pdfWidth * zoomShrinkFactor
         let finalHeight = pdfHeight * zoomShrinkFactor
