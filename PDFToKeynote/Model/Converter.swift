@@ -8,19 +8,20 @@
 import UIKit
 import PDFKit
 import Zip
+import CoreGraphics
 
 class Converter: NSObject {
 
-    static func calculateNativeSizesForPDF(url: URL) -> [(width: Float, height: Float)] {
-        var nativeSizesForPDF: [(width: Float, height: Float)] = []
+    static func calculateNativeSizesForPDF(url: URL) -> [(width: Float, height: Float, angle: Int)] {
+        var nativeSizesForPDF: [(width: Float, height: Float, angle: Int)] = []
         let cgPDF = CGPDFDocument((url as CFURL))
-        for i in 1...cgPDF!.numberOfPages {
+        for i in 1...cgPDF!.numberOfPages + 1 {
             if let pdfPage = cgPDF!.page(at: i) {
                 let mediaBox = pdfPage.getBoxRect(.mediaBox)
-                //                        print(mediaBox)
+                // print(mediaBox)
                 let angle = CGFloat(pdfPage.rotationAngle) * CGFloat.pi / 180
                 let rotatedBox = mediaBox.applying(CGAffineTransform(rotationAngle: angle))
-                nativeSizesForPDF.append((Float(rotatedBox.width), Float(rotatedBox.height)))
+                nativeSizesForPDF.append((Float(rotatedBox.width), Float(rotatedBox.height), Int(pdfPage.rotationAngle)))
             }
         }
         return nativeSizesForPDF
@@ -30,24 +31,33 @@ class Converter: NSObject {
         guard let totalPages = pdf?.pageCount else {return}
         let nativeSizesForPDF = calculateNativeSizesForPDF(url: (pdf?.documentURL!)!)
         let uuid = NSUUID().uuidString
+        // let cachePath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
         let cachePath = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)[0]
 
-        for count in 0..<totalPages {
-            let progress = (Float(count + 1) / Float(totalPages)) * 0.3
-            SVProgressHUD.showProgress(Float(progress), status: "Extracting PDF:\n\(count + 1) of \(totalPages)")
-            if let page = pdf?.page(at: count) {
-                let document = PDFDocument()
-                document.insert(page, at: 0)
-                let data = document.dataRepresentation()
-                do {
-                    try FileManager.default.createDirectory(atPath: "\(cachePath)/\(uuid)", withIntermediateDirectories: true, attributes: nil)
-                    let pageString = String(format: "pg_%04d.pdf", (count + 1))
-                    let url = URL(fileURLWithPath: "\(cachePath)/\(uuid)/\(pageString)")
-                    try data?.write(to: url)
-                } catch {
-                    print(error)
-                }
+        let cgPDF = CGPDFDocument(((pdf?.documentURL!)! as CFURL))
+        do {try FileManager.default.createDirectory(atPath: "\(cachePath)/\(uuid)", withIntermediateDirectories: true, attributes: nil)} catch {print("\(error)")}
+        let provider = CGDataProvider(url: ((pdf?.documentURL!)! as CFURL))!
+        for count in 1..<cgPDF!.numberOfPages + 1 {
+            let progress = (Float(count) / Float(totalPages)) * 0.3
+            SVProgressHUD.showProgress(Float(progress), status: "Extracting PDF:\n\(count) of \(totalPages)")
+
+            let document = CGPDFDocument(provider)!
+            let page = document.page(at: count)!
+            let rotation = page.rotationAngle
+            var origBoxRect = page.getBoxRect(.mediaBox)
+            var destinationBoxRect = page.getBoxRect(.mediaBox)
+            if (rotation == 90 || rotation == 270) {
+                destinationBoxRect = CGRect(x: destinationBoxRect.origin.x, y: destinationBoxRect.origin.y, width: destinationBoxRect.height, height: destinationBoxRect.width)
             }
+            let pageString = String(format: "pg_%04d.pdf", count)
+            let path = URL(fileURLWithPath: "\(cachePath)/\(uuid)/\(pageString)")
+            let urlContext = CGContext(path as CFURL, mediaBox: &origBoxRect, nil)
+            urlContext?.beginPage(mediaBox: &destinationBoxRect)
+            let transform = page.getDrawingTransform(.mediaBox, rect: destinationBoxRect, rotate: 0, preserveAspectRatio: true)
+            urlContext?.concatenate(transform)
+            urlContext?.drawPDFPage(page)
+            urlContext?.endPage()
+            urlContext?.flush()
         }
 
         var templateBeginning = String.stringForTextFileName("template_beginning")
@@ -77,7 +87,7 @@ class Converter: NSObject {
                 pageContent = pageContent.replacingOccurrences(of: "xxxNWIDTHxxx", with: formattedNaturalWidth)
                 pageContent = pageContent.replacingOccurrences(of: "xxxNHEIGHTxxx", with: formattedNaturalHeight)
 
-                let (finalWidth, finalHeight, offsetX, offsetY) = fitSizeIntoSlide(pdfWidth: nativeSizesForPDF[count].width, pdfHeight: nativeSizesForPDF[count].height, canvasWidth: selectedSize.width, canvasHeight: selectedSize.height)
+                let (finalWidth, finalHeight, offsetX, offsetY) = fitSizeIntoSlide(pdfWidth: nativeSizesForPDF[count].width, pdfHeight: nativeSizesForPDF[count].height, angle: nativeSizesForPDF[count].angle, canvasWidth: selectedSize.width, canvasHeight: selectedSize.height, scale: 1)
                 pageContent = pageContent.replacingOccurrences(of: "xxxDWIDTHxxx", with: String(format: "%06f", finalWidth))
                 pageContent = pageContent.replacingOccurrences(of: "xxxDHEIGHTxxx", with: String(format: "%06f", finalHeight))
                 pageContent = pageContent.replacingOccurrences(of: "xxxPOSXxxx", with: String(format: "%06f", offsetX))
@@ -150,9 +160,17 @@ class Converter: NSObject {
         conversionEndedCallback?()
     }
 
-    static func fitSizeIntoSlide(pdfWidth: Float, pdfHeight: Float, canvasWidth: Int, canvasHeight: Int) -> (fittingWidth: Float, fittingHeight: Float, originX: Float, originY: Float) {
-        let displayWidthRatio = Float(canvasWidth) / pdfWidth
-        let displayHeightRatio = Float(canvasHeight) / pdfHeight
+    static func swapWithoutTuples(_ a: inout Float, _ b: inout Float) {
+        let temporaryA = a
+        a = b
+        b = temporaryA
+    }
+
+    static func fitSizeIntoSlide(pdfWidth: Float, pdfHeight: Float, angle: Int, canvasWidth: Int, canvasHeight: Int, scale: Float) -> (fittingWidth: Float, fittingHeight: Float, originX: Float, originY: Float) {
+        let scaledCanvasWidth = Float(canvasWidth) * scale
+        let scaledCanvasHeight = Float(canvasHeight) * scale
+        let displayWidthRatio = Float(scaledCanvasWidth) / pdfWidth
+        let displayHeightRatio = Float(scaledCanvasHeight) / pdfHeight
         let zoomShrinkFactor = min(displayWidthRatio, displayHeightRatio)
         let finalWidth = pdfWidth * zoomShrinkFactor
         let finalHeight = pdfHeight * zoomShrinkFactor
