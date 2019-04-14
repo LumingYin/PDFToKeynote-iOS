@@ -15,7 +15,7 @@ class Converter: NSObject {
     static func calculateNativeSizesForPDF(url: URL) -> [(width: Float, height: Float, angle: Int)] {
         var nativeSizesForPDF: [(width: Float, height: Float, angle: Int)] = []
         let cgPDF = CGPDFDocument((url as CFURL))
-        for i in 1...cgPDF!.numberOfPages {
+        for i in 1...cgPDF!.numberOfPages + 1 {
             if let pdfPage = cgPDF!.page(at: i) {
                 let mediaBox = pdfPage.getBoxRect(.mediaBox)
                 // print(mediaBox)
@@ -35,9 +35,12 @@ class Converter: NSObject {
         let cachePath = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)[0]
 
         let cgPDF = CGPDFDocument(((pdf?.documentURL!)! as CFURL))
-        do {try FileManager.default.createDirectory(atPath: "\(cachePath)/\(uuid)", withIntermediateDirectories: true, attributes: nil)} catch {}
+        do {try FileManager.default.createDirectory(atPath: "\(cachePath)/\(uuid)", withIntermediateDirectories: true, attributes: nil)} catch {print("\(error)")}
         let provider = CGDataProvider(url: ((pdf?.documentURL!)! as CFURL))!
         for count in 1..<cgPDF!.numberOfPages + 1 {
+            let progress = (Float(count) / Float(totalPages)) * 0.3
+            SVProgressHUD.showProgress(Float(progress), status: "Extracting PDF:\n\(count) of \(totalPages)")
+
             let document = CGPDFDocument(provider)!
             let page = document.page(at: count)!
             let rotation = page.rotationAngle
