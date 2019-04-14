@@ -66,7 +66,7 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 4
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -87,6 +87,11 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
             let cell = tableView.dequeueReusableCell(withIdentifier: "BackgroundColorTableViewCell", for: indexPath) as! BackgroundColorTableViewCell
             cell.configurateCollectionView()
             cell.delegate = self
+            return cell
+        } else if row == 3 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TransformationsTableViewCell", for: indexPath) as! TransformationsTableViewCell
+//            cell.configurateCollectionView()
+//            cell.delegate = self
             return cell
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: "FileInformationTableViewCell", for: indexPath)
@@ -111,6 +116,8 @@ class ConfigurationViewController: UIViewController, UIPickerViewDelegate, UIPic
             return 268
         } else if row == 2 {
             return 268
+        } else if row == 3 {
+            return 176
         }
         return 200
     }
