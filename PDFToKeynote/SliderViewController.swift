@@ -53,11 +53,16 @@ class SliderViewController: UIViewController, UIGestureRecognizerDelegate {
         if (sender.state == .ended || sender.state == .cancelled || sender.state == .failed) {
             if toUse < 0.05 { toUse = 0.05 }
             if toUse > 1 { toUse = 1 }
+            self.view.layoutIfNeeded()
+            UIView.animate(withDuration: 0.3) {
+                self.percentageValue = toUse
+                self.view.layoutIfNeeded()
+            }
         } else {
             if toUse < 0 { toUse = 0 }
             if toUse > 1 { toUse = 1 }
+            percentageValue = toUse
         }
-        percentageValue = toUse
         sender.setTranslation(CGPoint.zero, in: self.view)
     }
 
