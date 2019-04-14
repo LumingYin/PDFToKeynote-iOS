@@ -5,3 +5,4 @@
 @import SVProgressHUD;
 #import "UITextField+Shake.h"
 #import "JEKScrollableSectionCollectionViewLayout.h"
+#import "PDFPageRenderer.h"

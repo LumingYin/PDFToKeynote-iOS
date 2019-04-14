@@ -56,6 +56,8 @@
 		323F146F225B424E007D3DB3 /* AcknowledgementsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323F146B225B424E007D3DB3 /* AcknowledgementsTableViewController.swift */; };
 		323F1470225B424E007D3DB3 /* UIFontDescriptorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323F146C225B424E007D3DB3 /* UIFontDescriptorExtensions.swift */; };
 		323F1472225B427E007D3DB3 /* Acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 323F1471225B427E007D3DB3 /* Acknowledgements.plist */; };
+		3288AB842262E56000502099 /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3288AB822262E56000502099 /* license.txt */; };
+		3288AB852262E56000502099 /* PDFPageRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3288AB832262E56000502099 /* PDFPageRenderer.m */; };
 		32BEB7B2225AE12F00F51B0F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BEB7B1225AE12F00F51B0F /* Extensions.swift */; };
 		32D4BAB8225C03120030852A /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D4BAB7225C03120030852A /* ConfigurationViewController.swift */; };
 		32D4BABA225C09210030852A /* ConverterFloatingPanelLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D4BAB9225C09210030852A /* ConverterFloatingPanelLayout.swift */; };
@@ -136,6 +138,9 @@
 		323F146B225B424E007D3DB3 /* AcknowledgementsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcknowledgementsTableViewController.swift; sourceTree = "<group>"; };
 		323F146C225B424E007D3DB3 /* UIFontDescriptorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFontDescriptorExtensions.swift; sourceTree = "<group>"; };
 		323F1471225B427E007D3DB3 /* Acknowledgements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Acknowledgements.plist; sourceTree = "<group>"; };
+		3288AB812262E56000502099 /* PDFPageRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFPageRenderer.h; sourceTree = "<group>"; };
+		3288AB822262E56000502099 /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
+		3288AB832262E56000502099 /* PDFPageRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFPageRenderer.m; sourceTree = "<group>"; };
 		32BEB7B1225AE12F00F51B0F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		32D4BAB7225C03120030852A /* ConfigurationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
 		32D4BAB9225C09210030852A /* ConverterFloatingPanelLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterFloatingPanelLayout.swift; sourceTree = "<group>"; };
@@ -222,6 +227,7 @@
 		32009BEA225C37D5005D5042 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				3288AB802262E56000502099 /* PDFPageRenderer */,
 				32FD6D4E225D9AA40046F1EF /* FloatingPanel */,
 				3207B002225C78260036A470 /* JEKScrollableSectionCollectionViewLayout */,
 				32009BEE225C605B005D5042 /* ModernUIKit */,
@@ -362,6 +368,16 @@
 			path = SwiftyAcknowledgements;
 			sourceTree = "<group>";
 		};
+		3288AB802262E56000502099 /* PDFPageRenderer */ = {
+			isa = PBXGroup;
+			children = (
+				3288AB812262E56000502099 /* PDFPageRenderer.h */,
+				3288AB822262E56000502099 /* license.txt */,
+				3288AB832262E56000502099 /* PDFPageRenderer.m */,
+			);
+			path = PDFPageRenderer;
+			sourceTree = "<group>";
+		};
 		32D9A0CC225AB93500AEC14B = {
 			isa = PBXGroup;
 			children = (
@@ -492,6 +508,7 @@
 				32D9A0F1225ABAAB00AEC14B /* template_content.txt in Resources */,
 				32D9A0E7225AB93700AEC14B /* LaunchScreen.storyboard in Resources */,
 				32D9A0E4225AB93700AEC14B /* Assets.xcassets in Resources */,
+				3288AB842262E56000502099 /* license.txt in Resources */,
 				32D9A0E2225AB93500AEC14B /* Main.storyboard in Resources */,
 				32D9A0F3225ABAAB00AEC14B /* template_beginning.txt in Resources */,
 				32D9A0F2225ABAAB00AEC14B /* template_ending.txt in Resources */,
@@ -588,6 +605,7 @@
 				32009C1B225C605B005D5042 /* ModernTimer.swift in Sources */,
 				32FD6D63225D9AA40046F1EF /* FloatingPanelBackdropView.swift in Sources */,
 				32D9A0DB225AB93500AEC14B /* DocumentBrowserViewController.swift in Sources */,
+				3288AB852262E56000502099 /* PDFPageRenderer.m in Sources */,
 				323F1462225B39FE007D3DB3 /* AddWidthHeightViewController.swift in Sources */,
 				32FD6D60225D9AA40046F1EF /* FloatingPanelView.swift in Sources */,
 				3207B005225C78260036A470 /* JEKScrollableSectionCollectionViewLayout.m in Sources */,
