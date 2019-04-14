@@ -21,10 +21,8 @@ class SliderViewController: UIViewController, UIGestureRecognizerDelegate {
         super.viewDidLoad()
 //        self.view.cornerRadius = 23.0
         gestureRecongnizer.delegate = self
-
-
-
-        // Do any additional setup after loading the view.
+        let image = UIImage(named: "scaler")!.withRenderingMode(.alwaysTemplate)
+        scalerView.image = image
     }
 
     private var sliderValue: Float = 1

@@ -1252,7 +1252,7 @@
                                             <color key="backgroundColor" red="0.61075800657272339" green="0.7008243203163147" blue="0.81168681383132935" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </view>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scaler" translatesAutoresizingMaskIntoConstraints="NO" id="PNl-Jp-B9q" userLabel="scalerIcon">
-                                            <rect key="frame" x="8" y="8" width="20" height="20"/>
+                                            <rect key="frame" x="7.9999999999999982" y="7.9999999999999982" width="20" height="20"/>
                                             <color key="tintColor" red="0.16602286696434021" green="0.38718080520629883" blue="0.7292255163192749" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="20" id="aiP-xe-IkY"/>
