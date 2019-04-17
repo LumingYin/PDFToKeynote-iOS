@@ -23,13 +23,14 @@ class SliderViewController: UIViewController, UIGestureRecognizerDelegate {
         gestureRecongnizer.delegate = self
         let image = UIImage(named: "scaler")!.withRenderingMode(.alwaysTemplate)
         scalerView.image = image
+        scalerView.tintColor = UIColor(fullRed: 42, fullGreen: 99, fullBlue: 186)
     }
 
     private var sliderValue: Float = 1
     var percentageValue: Float {
         set {
             let bounds = self.view.bounds.size
-            var toUse = newValue
+            let toUse = newValue
 
             self.barConstraint.constant = bounds.width * CGFloat((1 - toUse))
             self.scalePercentLabel.text = String(format: "%.0f%%", newValue * 100)
