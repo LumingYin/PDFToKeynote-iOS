@@ -19,6 +19,12 @@ class DocumentViewController: UIViewController, FloatingPanelControllerDelegate 
     var floatingController: FloatingPanelController?
     weak var configurationVC: ConfigurationViewController?
 
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        var urlpath = Bundle.main.path(forResource: "test", ofType: "pdf")!
+        document = Document(fileURL: URL(fileURLWithPath: urlpath))
+    }
+
     func floatingPanel(_ vc: FloatingPanelController, layoutFor newCollection: UITraitCollection) -> FloatingPanelLayout? {
 //        print("Size class: (V: \(newCollection.verticalSizeClass.rawValue), H: \(newCollection.horizontalSizeClass.rawValue))")
         let isiPad = UIDevice.current.userInterfaceIdiom == .pad // Workaround for layout constraint bugs by fixating width to always be 320
@@ -146,3 +152,8 @@ class DocumentViewController: UIViewController, FloatingPanelControllerDelegate 
         return .lightContent
     }
 }
+
+extension UIVisualEffectView {
+
+}
+
