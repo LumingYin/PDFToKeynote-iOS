@@ -96,6 +96,7 @@
 		32BEB7B2225AE12F00F51B0F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BEB7B1225AE12F00F51B0F /* Extensions.swift */; };
 		32D4BAB8225C03120030852A /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D4BAB7225C03120030852A /* ConfigurationViewController.swift */; };
 		32D4BABA225C09210030852A /* ConverterFloatingPanelLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D4BAB9225C09210030852A /* ConverterFloatingPanelLayout.swift */; };
+		32D99435227543A30024B93D /* RotationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D99434227543A30024B93D /* RotationViewController.swift */; };
 		32D9A0D9225AB93500AEC14B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D9A0D8225AB93500AEC14B /* AppDelegate.swift */; };
 		32D9A0DB225AB93500AEC14B /* DocumentBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D9A0DA225AB93500AEC14B /* DocumentBrowserViewController.swift */; };
 		32D9A0DD225AB93500AEC14B /* DocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D9A0DC225AB93500AEC14B /* DocumentViewController.swift */; };
@@ -213,6 +214,7 @@
 		32BEB7B1225AE12F00F51B0F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		32D4BAB7225C03120030852A /* ConfigurationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
 		32D4BAB9225C09210030852A /* ConverterFloatingPanelLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterFloatingPanelLayout.swift; sourceTree = "<group>"; };
+		32D99434227543A30024B93D /* RotationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationViewController.swift; sourceTree = "<group>"; };
 		32D9A0D5225AB93500AEC14B /* PDFToKeynote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PDFToKeynote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32D9A0D8225AB93500AEC14B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32D9A0DA225AB93500AEC14B /* DocumentBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentBrowserViewController.swift; sourceTree = "<group>"; };
@@ -515,6 +517,7 @@
 				32D9A0E3225AB93700AEC14B /* Assets.xcassets */,
 				3288AB8D2263081200502099 /* SliderViewController.swift */,
 				32D9A0E0225AB93500AEC14B /* Main.storyboard */,
+				32D99434227543A30024B93D /* RotationViewController.swift */,
 			);
 			path = PDFToKeynote;
 			sourceTree = "<group>";
@@ -708,6 +711,7 @@
 				32FD6D5C225D9AA40046F1EF /* Logger.swift in Sources */,
 				32009C2F225C6F07005D5042 /* BackgroundColorTableViewCell.swift in Sources */,
 				323F1456225B260A007D3DB3 /* ChromaHandle.swift in Sources */,
+				32D99435227543A30024B93D /* RotationViewController.swift in Sources */,
 				3288ABBD22630BD500502099 /* ConstraintPriority.swift in Sources */,
 				32009C21225C605B005D5042 /* ModernFluidTableView.swift in Sources */,
 				32009C17225C605B005D5042 /* UIStoryboard+Core.swift in Sources */,
